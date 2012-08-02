@@ -1,0 +1,34 @@
+.tip {
+  background-color:    @tipcolor;
+  border:              @tipborderwith solid @tipbordercolor;
+  padding:@tippadding;
+  position:relative;
+  text-align:center;
+  width:@tipwidth;
+
+	  .shadow(0,0,5px);
+	  .roundcorner(10px,10px,10px,10px);
+}
+
+.tip-arrow-border {
+  border-color: @tipbordercolor transparent transparent transparent;
+  border-style: solid;
+  border-width: @tiparrowwidth;
+  height:0;
+  width:0;
+  position:absolute;
+  bottom: ((@tiparrowwidth*2)+@tipborderwith)*-1;
+  left:@tipwidth/5;
+}
+
+.tip-arrow {
+  border-color: @tipcolor transparent transparent transparent;
+  border-style: solid;
+  border-width: @tiparrowwidth;
+  height:0;
+  width:0;
+  position:absolute;
+  bottom:((@tiparrowwidth*2)-1)*-1;
+  left:@tipwidth/5;
+}
+

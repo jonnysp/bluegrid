@@ -1,0 +1,37 @@
+
+
+
+.button{
+	*zoom:1; //IE-fix
+	
+	display: inline-block;
+	cursor: pointer;
+	padding:5px 15px;
+	border:1px solid rgba(0,0,0,0.4);
+	
+	
+	.roundcorner(5px,5px,5px,5px);
+	.vertival-gradient(lighten(@ribboncolor,20%),@ribboncolor);
+	
+   .shadow(0,0,2px);
+   
+  color: darken(@ribboncolor,15%);
+.textshadow( 1px, 1px, 0px, lighten(@ribboncolor,20%); 
+   
+
+}
+
+.button:hover{
+	.vertival-gradient(@ribboncolor,lighten(@ribboncolor,20%));
+
+}
+.button:active{
+	.vertival-gradient(@ribboncolor,lighten(@ribboncolor,20%));
+	.shadow-inset(0,0,2px);
+	
+
+}
+
+.button.round{
+	.roundcorner(20px,20px,20px,20px);
+}

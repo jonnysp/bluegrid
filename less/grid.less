@@ -1,0 +1,38 @@
+
+.container {
+
+	margin:0 auto;
+	width: (@cols * @colwith) + (@gutter * (@cols - 1));
+
+}
+
+.row{
+	.clearfix();
+	margin-left: @gutter  * -1;
+	margin-bottom:@gutter;
+}
+
+	[class*="span"] {
+		float: left;
+		margin-left: @gutter;
+	  }
+  
+ 
+    .spanX (@index) when (@index > 0) {
+      (~".span@{index}") { 
+	  	.span(@index);
+//		background-color: lighten( @testcolor, @index*6);
+		position:relative;
+	 }
+      .spanX(@index - 1);
+    }
+    
+	.spanX (0) {}
+	
+    .span (@columns) {
+      width: (@colwith * @columns) + (@gutter * (@columns - 1));
+    }
+
+  
+.spanX (@cols);  
+  

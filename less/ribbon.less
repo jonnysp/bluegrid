@@ -1,0 +1,54 @@
+.ribbon-full,
+.ribbon {
+ position: relative;
+  
+ .vertival-gradient(lighten(@ribboncolor,20%),@ribboncolor);
+ 
+ text-align: center;
+
+ padding: @ribbonsize/2;
+ margin:0 -@ribbonsize/2 0 -@ribbonsize/2;
+ .shadow(0,0,5px);
+color: darken(@ribboncolor,15%);
+.textshadow( 1px, 1px, 0px, lighten(@ribboncolor,20%);
+
+}
+
+.ribbon-full:before, .ribbon-full:after {
+	 content: "";
+	 position: absolute;
+	 display: block;
+	 bottom: @ribbonsize/2*-1;
+	 border: @ribbonsize*0.75 solid darken(@ribboncolor,15%);
+	 z-index: -1;
+}
+.ribbon-full:before {
+	 left: @ribbonsize*-1;
+	 border-right-width: @ribbonsize*0.75;
+	 border-left-color: transparent;
+}
+.ribbon-full:after {
+	 right: @ribbonsize*-1;
+	 border-left-width: @ribbonsize*0.75;
+	 border-right-color: transparent;
+}
+
+.ribbon-full .ribbon-content:before, .ribbon-full .ribbon-content:after ,
+.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+ content: "";
+ position: absolute;
+ display: block;
+ border-style: solid;
+ border-color: darken(@ribboncolor,25%) transparent transparent transparent;
+ bottom: @ribbonsize/2*-1;
+}
+.ribbon-full .ribbon-content:before,
+.ribbon .ribbon-content:before {
+	 left: 0;
+   border-width: @ribbonsize/2 0 0 @ribbonsize/2;
+}
+.ribbon-full .ribbon-content:after,
+.ribbon .ribbon-content:after {
+	 right: 0;
+	 border-width: @ribbonsize/2 @ribbonsize/2 0 0;
+}
