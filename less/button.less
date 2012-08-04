@@ -1,37 +1,49 @@
 
-
+@btn-border-width:1px;
 
 .btn{
 	*zoom:1; //IE-fix
 	
+	font-size: @font-size;
 	display: inline-block;
 	cursor: pointer;
-	padding:5px 15px;
-	border:1px solid rgba(0,0,0,0.4);
-	
+	padding:4px 16px;
 	
 	.roundcorner(5px,5px,5px,5px);
-	.vertival-gradient(lighten(@buttoncolor,20%),@buttoncolor);
-	
-   .shadow(0,0,2px);
+	.vertival-gradient(@buttoncolor,darken(@buttoncolor,10%));
+	.shadow(0,0,1px,0,darken(@buttoncolor,50%));
+	.textshadow( 1px, 1px, 0px, @buttoncolor); 
    
-   color: darken(@ribboncolor,15%);
-   .textshadow( 1px, 1px, 0px, lighten(@buttoncolor,20%); 
-   text-decoration: none;
-
+	border:@btn-border-width solid darken(@buttoncolor,50%);
+	color: darken(@buttoncolor,70%);
+  
+	text-decoration: none;
 }
 
 .btn:hover{
-	.vertival-gradient(@buttoncolor,lighten(@buttoncolor,20%));
-
+	.vertival-gradient(@buttoncolor, darken(@buttoncolor,10%));
 }
+
 .btn:active{
-	.vertival-gradient(@buttoncolor,lighten(@buttoncolor,20%));
-	.shadow-inset(0,0,2px);
-	
-
+	.vertival-gradient(darken(@buttoncolor,10%),@buttoncolor);
+	.shadow-inset(0,0,1px);
 }
 
-.btn.round{
-	.roundcorner(20px,20px,20px,20px);
+.btn-group{
+	font-size: 0;
 }
+
+.btn-group > .btn{
+	.roundcorner(0px,0px,0px,0px);
+	border-right: 0px;
+}
+
+.btn-group > .btn:first-child{
+	.roundcorner(5px,0px,0px,5px);
+}
+
+.btn-group > .btn:last-child{
+	.roundcorner(0px,5px,5px,0px);
+	border:@btn-border-width solid darken(@buttoncolor,50%);
+}
+
