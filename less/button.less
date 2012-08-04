@@ -1,7 +1,7 @@
 
 
 
-.button{
+.btn{
 	*zoom:1; //IE-fix
 	
 	display: inline-block;
@@ -11,27 +11,27 @@
 	
 	
 	.roundcorner(5px,5px,5px,5px);
-	.vertival-gradient(lighten(@ribboncolor,20%),@ribboncolor);
+	.vertival-gradient(lighten(@buttoncolor,20%),@buttoncolor);
 	
    .shadow(0,0,2px);
    
-  color: darken(@ribboncolor,15%);
-.textshadow( 1px, 1px, 0px, lighten(@ribboncolor,20%); 
-   
+   color: darken(@ribboncolor,15%);
+   .textshadow( 1px, 1px, 0px, lighten(@buttoncolor,20%); 
+   text-decoration: none;
 
 }
 
-.button:hover{
-	.vertival-gradient(@ribboncolor,lighten(@ribboncolor,20%));
+.btn:hover{
+	.vertival-gradient(@buttoncolor,lighten(@buttoncolor,20%));
 
 }
-.button:active{
-	.vertival-gradient(@ribboncolor,lighten(@ribboncolor,20%));
+.btn:active{
+	.vertival-gradient(@buttoncolor,lighten(@buttoncolor,20%));
 	.shadow-inset(0,0,2px);
 	
 
 }
 
-.button.round{
+.btn.round{
 	.roundcorner(20px,20px,20px,20px);
 }
