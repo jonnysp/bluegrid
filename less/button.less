@@ -1,5 +1,6 @@
 
 @btn-border-width:1px;
+@btn-corner-radius:@font-size/4;
 
 .btn{
 	*zoom:1; //IE-fix
@@ -7,11 +8,10 @@
 	font-size: @font-size;
 	display: inline-block;
 	cursor: pointer;
-	padding:4px 16px;
+	padding:@font-size/3 @font-size;
 	
-	.roundcorner(5px,5px,5px,5px);
+	.roundcorner(@btn-corner-radius,@btn-corner-radius,@btn-corner-radius,@btn-corner-radius);
 	.vertival-gradient(@buttoncolor,darken(@buttoncolor,10%));
-	.shadow(0,0,1px,0,darken(@buttoncolor,50%));
 	.textshadow( 1px, 1px, 0px, @buttoncolor); 
    
 	border:@btn-border-width solid darken(@buttoncolor,50%);
@@ -21,12 +21,12 @@
 }
 
 .btn:hover{
-	.vertival-gradient(@buttoncolor, darken(@buttoncolor,10%));
+	.vertival-gradient(darken(@buttoncolor,5%), darken(@buttoncolor,15%));
 }
 
 .btn:active{
 	.vertival-gradient(darken(@buttoncolor,10%),@buttoncolor);
-	.shadow-inset(0,0,1px);
+	.shadow-inset(0,0,4px,2px,darken(@buttoncolor,20%));
 }
 
 .btn-group{
@@ -39,11 +39,11 @@
 }
 
 .btn-group > .btn:first-child{
-	.roundcorner(5px,0px,0px,5px);
+	.roundcorner(@btn-corner-radius,0px,0px,@btn-corner-radius);
 }
 
 .btn-group > .btn:last-child{
-	.roundcorner(0px,5px,5px,0px);
+	.roundcorner(0px,@btn-corner-radius,@btn-corner-radius,0px);
 	border:@btn-border-width solid darken(@buttoncolor,50%);
 }
 
