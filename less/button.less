@@ -17,8 +17,18 @@
 	border:@btn-border-width solid darken(@buttoncolor,50%);
 	color: darken(@buttoncolor,70%);
   
+  	.shadow-inset(0,2px,0,0,lighten(@buttoncolor,1%));
+  
 	text-decoration: none;
 }
+
+.btn > [class^="icon-"],
+.btn > [class*=" icon-"]{
+	position: relative;
+	margin: 16-@font-size auto;
+
+}
+
 
 .btn:hover{
 	.vertival-gradient(darken(@buttoncolor,5%), darken(@buttoncolor,15%));
