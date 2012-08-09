@@ -57,3 +57,40 @@
 	border:@btn-border-width solid darken(@buttoncolor,50%);
 }
 
+
+.btn.btn-info{
+	.vertival-gradient(@info,darken(@info,10%));
+	.shadow-inset(1px,1px,0,0,lighten(@info,1%));
+}
+.btn:active.btn-info ,.btn.active.btn-info{
+	.vertival-gradient(darken(@info,10%),@info);
+	.shadow-inset(0,0,3px,2px,darken(@info,30%));
+}
+
+.btn.btn-warning{
+	.vertival-gradient(@warning,darken(@warning,10%));
+	.shadow-inset(1px,1px,0,0,lighten(@warning,1%));
+}
+.btn:active.btn-warning ,.btn.active.btn-warning{
+	.vertival-gradient(darken(@warning,10%),@warning);
+	.shadow-inset(0,0,3px,2px,darken(@warning,30%));
+}
+
+
+.btn.btn-error{
+	.vertival-gradient(@error,darken(@error,10%));
+	.shadow-inset(1px,1px,0,0,lighten(@error,1%));
+}
+.btn:active.btn-error ,.btn.active.btn-error{
+	.vertival-gradient(darken(@error,10%),@error);
+	.shadow-inset(0,0,3px,2px,darken(@error,30%));
+}
+
+.btn.btn-success{
+	.vertival-gradient(@success,darken(@success,10%));
+	.shadow-inset(1px,1px,0,0,lighten(@success,1%));
+}
+.btn:active.btn-success ,.btn.active.btn-success{
+	.vertival-gradient(darken(@success,10%),@success);
+	.shadow-inset(0,0,3px,2px,darken(@success,30%));
+}
