@@ -1,0 +1,1298 @@
+/* =============================================================================
+HTML5 display definitions
+========================================================================== */
+/*! normalize.css 2012-03-11T12:53 UTC - http://github.com/necolas/normalize.css */
+/* =============================================================================
+HTML5 display definitions
+========================================================================== */
+/*
+* Corrects block display not defined in IE6/7/8/9 & FF3
+*/
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+/*
+* Corrects inline-block display not defined in IE6/7/8/9 & FF3
+*/
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+/*
+* Prevents modern browsers from displaying 'audio' without controls
+* Remove excess height in iOS5 devices
+*/
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+/*
+* Addresses styling for 'hidden' attribute not present in IE7/8/9, FF3, S4
+* Known issue: no IE6 support
+*/
+[hidden] {
+  display: none;
+}
+/* =============================================================================
+Base
+========================================================================== */
+/*
+* 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
+* http://clagnut.com/blog/348/#c790
+* 2. Prevents iOS text size adjust after orientation change, without disabling user zoom
+* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+*/
+html {
+  font-size: 100%;
+  /* 1 */
+
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+
+}
+/*
+* Addresses font-family inconsistency between 'textarea' and other form elements.
+*/
+html,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+}
+/*
+* Addresses margins handled incorrectly in IE6/7
+*/
+body {
+  margin: 0;
+}
+/* =============================================================================
+Links
+========================================================================== */
+/*
+* Addresses outline displayed oddly in Chrome
+*/
+a:focus {
+  outline: thin dotted;
+}
+/*
+* Improves readability when focused and also mouse hovered in all browsers
+* people.opera.com/patrickl/experiments/keyboard/test
+*/
+a:hover,
+a:active {
+  outline: 0;
+}
+/* =============================================================================
+Typography
+========================================================================== */
+/*
+* Addresses font sizes and margins set differently in IE6/7
+* Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
+*/
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0;
+}
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0;
+}
+h5 {
+  font-size: 0.83em;
+  margin: 1.67em 0;
+}
+h6 {
+  font-size: 0.75em;
+  margin: 2.33em 0;
+}
+/*
+* Addresses styling not present in IE7/8/9, S5, Chrome
+*/
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+/*
+* Addresses style set to 'bolder' in FF3+, S4/5, Chrome
+*/
+b,
+strong {
+  font-weight: bold;
+}
+blockquote {
+  margin: 1em 40px;
+}
+/*
+* Addresses styling not present in S5, Chrome
+*/
+dfn {
+  font-style: italic;
+}
+/*
+* Addresses styling not present in IE6/7/8/9
+*/
+mark {
+  background: #ff0;
+  color: #000;
+}
+/*
+* Addresses margins set differently in IE6/7
+*/
+p,
+pre {
+  margin: 1em 0;
+}
+/*
+* Corrects font family set oddly in IE6, S4/5, Chrome
+* en.wikipedia.org/wiki/User:Davidgothberg/Test59
+*/
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, serif;
+  _font-family: 'courier new', monospace;
+  font-size: 1em;
+}
+/*
+* Improves readability of pre-formatted text in all browsers
+*/
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+/*
+* 1. Addresses CSS quotes not supported in IE6/7
+* 2. Addresses quote property not supported in S4
+*/
+/* 1 */
+q {
+  quotes: none;
+}
+/* 2 */
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+small {
+  font-size: 75%;
+}
+/*
+* Prevents sub and sup affecting line-height in all browsers
+* gist.github.com/413930
+*/
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+/* =============================================================================
+Lists
+========================================================================== */
+/*
+* Addresses margins set differently in IE6/7
+*/
+dl,
+menu,
+ol,
+ul {
+  margin: 1em 0;
+}
+dd {
+  margin: 0 0 0 40px;
+}
+/*
+* Addresses paddings set differently in IE6/7
+*/
+menu,
+ol,
+ul {
+  padding: 0 0 0 40px;
+}
+/*
+* Corrects list images handled incorrectly in IE7
+*/
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+}
+/* =============================================================================
+Embedded content
+========================================================================== */
+/*
+* 1. Removes border when inside 'a' element in IE6/7/8/9, FF3
+* 2. Improves image quality when scaled in IE7
+* code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
+*/
+img {
+  border: 0;
+  /* 1 */
+
+  -ms-interpolation-mode: bicubic;
+  /* 2 */
+
+}
+/*
+* Corrects overflow displayed oddly in IE9
+*/
+svg:not(:root) {
+  overflow: hidden;
+}
+/* =============================================================================
+Figures
+========================================================================== */
+/*
+* Addresses margin not present in IE6/7/8/9, S5, O11
+*/
+figure {
+  margin: 0;
+}
+/* =============================================================================
+Forms
+========================================================================== */
+/*
+* Corrects margin displayed oddly in IE6/7
+*/
+form {
+  margin: 0;
+}
+/*
+* Define consistent border, margin, and padding
+*/
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+/*
+* 1. Corrects color not being inherited in IE6/7/8/9
+* 2. Corrects text not wrapping in FF3
+* 3. Corrects alignment displayed oddly in IE6/7
+*/
+legend {
+  border: 0;
+  /* 1 */
+
+  padding: 0;
+  white-space: normal;
+  /* 2 */
+
+  *margin-left: -7px;
+  /* 3 */
+
+}
+/*
+* 1. Corrects font size not being inherited in all browsers
+* 2. Addresses margins set differently in IE6/7, FF3+, S5, Chrome
+* 3. Improves appearance and consistency in all browsers
+*/
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* 1 */
+
+  margin: 0;
+  /* 2 */
+
+  vertical-align: baseline;
+  /* 3 */
+
+  *vertical-align: middle;
+  /* 3 */
+
+}
+/*
+* Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet
+*/
+button,
+input {
+  line-height: normal;
+  /* 1 */
+
+}
+/*
+* 1. Improves usability and consistency of cursor style between image-type 'input' and others
+* 2. Corrects inability to style clickable 'input' types in iOS
+* 3. Removes inner spacing in IE7 without affecting normal text inputs
+* Known issue: inner spacing remains in IE6
+*/
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  /* 1 */
+
+  -webkit-appearance: button;
+  /* 2 */
+
+  *overflow: visible;
+  /* 3 */
+
+}
+/*
+* Re-set default cursor for disabled elements
+*/
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+/*
+* 1. Addresses box sizing set to content-box in IE8/9
+* 2. Removes excess padding in IE8/9
+* 3. Removes excess padding in IE7
+Known issue: excess padding remains in IE6
+*/
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+
+  padding: 0;
+  /* 2 */
+
+  *height: 13px;
+  /* 3 */
+
+  *width: 13px;
+  /* 3 */
+
+}
+/*
+* 1. Addresses appearance set to searchfield in S5, Chrome
+* 2. Addresses box-sizing set to border-box in S5, Chrome (include -moz to future-proof)
+*/
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+
+  box-sizing: content-box;
+}
+/*
+* Removes inner padding and search cancel button in S5, Chrome on OS X
+*/
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+/*
+* Removes inner padding and border in FF3+
+* www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
+*/
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+/*
+* 1. Removes default vertical scrollbar in IE6/7/8/9
+* 2. Improves readability and alignment in all browsers
+*/
+textarea {
+  overflow: auto;
+  /* 1 */
+
+  vertical-align: top;
+  /* 2 */
+
+}
+/* =============================================================================
+Tables
+========================================================================== */
+/*
+* Remove most spacing between table cells
+*/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* Styles */
+}
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 321px) {
+  /* Styles */
+}
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+  /* Styles */
+}
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Styles */
+}
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  /* Styles */
+}
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  /* Styles */
+}
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  /* Styles */
+}
+/* Large screens ----------- */
+@media only screen and (min-width: 1824px) {
+  /* Styles */
+}
+/* iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  /* Styles */
+}
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+.clearfix:after {
+  clear: both;
+}
+.container {
+  margin: 0 auto;
+  width: 1060px;
+}
+.row {
+  *zoom: 1;
+  margin-left: -20px;
+  margin-bottom: 20px;
+}
+.row:before,
+.row:after {
+  display: table;
+  content: "";
+}
+.row:after {
+  clear: both;
+}
+[class*="span"] {
+  float: left;
+  margin-left: 20px;
+}
+.span12 {
+  width: 1060px;
+  position: relative;
+}
+.span11 {
+  width: 970px;
+  position: relative;
+}
+.span10 {
+  width: 880px;
+  position: relative;
+}
+.span9 {
+  width: 790px;
+  position: relative;
+}
+.span8 {
+  width: 700px;
+  position: relative;
+}
+.span7 {
+  width: 610px;
+  position: relative;
+}
+.span6 {
+  width: 520px;
+  position: relative;
+}
+.span5 {
+  width: 430px;
+  position: relative;
+}
+.span4 {
+  width: 340px;
+  position: relative;
+}
+.span3 {
+  width: 250px;
+  position: relative;
+}
+.span2 {
+  width: 160px;
+  position: relative;
+}
+.span1 {
+  width: 70px;
+  position: relative;
+}
+body {
+  font-size: 16px;
+}
+.shadow {
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.8);
+}
+[class*="span"] p {
+  padding: 20px;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  line-height: 14px;
+  vertical-align: text-top;
+  background-image: url("../img/glyphicons_black.png");
+  background-position: 14px 14px;
+  background-repeat: no-repeat;
+}
+.icon-white {
+  background-image: url("../img/glyphicons_white.png");
+}
+.icon-glass {
+  background-position: 0      0;
+}
+.icon-music {
+  background-position: -24px 0;
+}
+.icon-search {
+  background-position: -48px 0;
+}
+.icon-envelope {
+  background-position: -72px 0;
+}
+.icon-heart {
+  background-position: -96px 0;
+}
+.icon-star {
+  background-position: -120px 0;
+}
+.icon-star-empty {
+  background-position: -144px 0;
+}
+.icon-user {
+  background-position: -168px 0;
+}
+.icon-film {
+  background-position: -192px 0;
+}
+.icon-th-large {
+  background-position: -216px 0;
+}
+.icon-th {
+  background-position: -240px 0;
+}
+.icon-th-list {
+  background-position: -264px 0;
+}
+.icon-ok {
+  background-position: -288px 0;
+}
+.icon-remove {
+  background-position: -312px 0;
+}
+.icon-zoom-in {
+  background-position: -336px 0;
+}
+.icon-zoom-out {
+  background-position: -360px 0;
+}
+.icon-off {
+  background-position: -384px 0;
+}
+.icon-signal {
+  background-position: -408px 0;
+}
+.icon-cog {
+  background-position: -432px 0;
+}
+.icon-trash {
+  background-position: -456px 0;
+}
+.icon-home {
+  background-position: 0 -24px;
+}
+.icon-file {
+  background-position: -24px -24px;
+}
+.icon-time {
+  background-position: -48px -24px;
+}
+.icon-road {
+  background-position: -72px -24px;
+}
+.icon-download-alt {
+  background-position: -96px -24px;
+}
+.icon-download {
+  background-position: -120px -24px;
+}
+.icon-upload {
+  background-position: -144px -24px;
+}
+.icon-inbox {
+  background-position: -168px -24px;
+}
+.icon-play-circle {
+  background-position: -192px -24px;
+}
+.icon-repeat {
+  background-position: -216px -24px;
+}
+.icon-refresh {
+  background-position: -240px -24px;
+}
+.icon-list-alt {
+  background-position: -264px -24px;
+}
+.icon-lock {
+  background-position: -287px -24px;
+}
+.icon-flag {
+  background-position: -312px -24px;
+}
+.icon-headphones {
+  background-position: -336px -24px;
+}
+.icon-volume-off {
+  background-position: -360px -24px;
+}
+.icon-volume-down {
+  background-position: -384px -24px;
+}
+.icon-volume-up {
+  background-position: -408px -24px;
+}
+.icon-qrcode {
+  background-position: -432px -24px;
+}
+.icon-barcode {
+  background-position: -456px -24px;
+}
+.icon-tag {
+  background-position: 0 -48px;
+}
+.icon-tags {
+  background-position: -25px -48px;
+}
+.icon-book {
+  background-position: -48px -48px;
+}
+.icon-bookmark {
+  background-position: -72px -48px;
+}
+.icon-print {
+  background-position: -96px -48px;
+}
+.icon-camera {
+  background-position: -120px -48px;
+}
+.icon-font {
+  background-position: -144px -48px;
+}
+.icon-bold {
+  background-position: -167px -48px;
+}
+.icon-italic {
+  background-position: -192px -48px;
+}
+.icon-text-height {
+  background-position: -216px -48px;
+}
+.icon-text-width {
+  background-position: -240px -48px;
+}
+.icon-align-left {
+  background-position: -264px -48px;
+}
+.icon-align-center {
+  background-position: -288px -48px;
+}
+.icon-align-right {
+  background-position: -312px -48px;
+}
+.icon-align-justify {
+  background-position: -336px -48px;
+}
+.icon-list {
+  background-position: -360px -48px;
+}
+.icon-indent-left {
+  background-position: -384px -48px;
+}
+.icon-indent-right {
+  background-position: -408px -48px;
+}
+.icon-facetime-video {
+  background-position: -432px -48px;
+}
+.icon-picture {
+  background-position: -456px -48px;
+}
+.icon-pencil {
+  background-position: 0 -72px;
+}
+.icon-map-marker {
+  background-position: -24px -72px;
+}
+.icon-adjust {
+  background-position: -48px -72px;
+}
+.icon-tint {
+  background-position: -72px -72px;
+}
+.icon-edit {
+  background-position: -96px -72px;
+}
+.icon-share {
+  background-position: -120px -72px;
+}
+.icon-check {
+  background-position: -144px -72px;
+}
+.icon-move {
+  background-position: -168px -72px;
+}
+.icon-step-backward {
+  background-position: -192px -72px;
+}
+.icon-fast-backward {
+  background-position: -216px -72px;
+}
+.icon-backward {
+  background-position: -240px -72px;
+}
+.icon-play {
+  background-position: -264px -72px;
+}
+.icon-pause {
+  background-position: -288px -72px;
+}
+.icon-stop {
+  background-position: -312px -72px;
+}
+.icon-forward {
+  background-position: -336px -72px;
+}
+.icon-fast-forward {
+  background-position: -360px -72px;
+}
+.icon-step-forward {
+  background-position: -384px -72px;
+}
+.icon-eject {
+  background-position: -408px -72px;
+}
+.icon-chevron-left {
+  background-position: -432px -72px;
+}
+.icon-chevron-right {
+  background-position: -456px -72px;
+}
+.icon-plus-sign {
+  background-position: 0 -96px;
+}
+.icon-minus-sign {
+  background-position: -24px -96px;
+}
+.icon-remove-sign {
+  background-position: -48px -96px;
+}
+.icon-ok-sign {
+  background-position: -72px -96px;
+}
+.icon-question-sign {
+  background-position: -96px -96px;
+}
+.icon-info-sign {
+  background-position: -120px -96px;
+}
+.icon-screenshot {
+  background-position: -144px -96px;
+}
+.icon-remove-circle {
+  background-position: -168px -96px;
+}
+.icon-ok-circle {
+  background-position: -192px -96px;
+}
+.icon-ban-circle {
+  background-position: -216px -96px;
+}
+.icon-arrow-left {
+  background-position: -240px -96px;
+}
+.icon-arrow-right {
+  background-position: -264px -96px;
+}
+.icon-arrow-up {
+  background-position: -289px -96px;
+}
+.icon-arrow-down {
+  background-position: -312px -96px;
+}
+.icon-share-alt {
+  background-position: -336px -96px;
+}
+.icon-resize-full {
+  background-position: -360px -96px;
+}
+.icon-resize-small {
+  background-position: -384px -96px;
+}
+.icon-plus {
+  background-position: -408px -96px;
+}
+.icon-minus {
+  background-position: -433px -96px;
+}
+.icon-asterisk {
+  background-position: -456px -96px;
+}
+.icon-exclamation-sign {
+  background-position: 0 -120px;
+}
+.icon-gift {
+  background-position: -24px -120px;
+}
+.icon-leaf {
+  background-position: -48px -120px;
+}
+.icon-fire {
+  background-position: -72px -120px;
+}
+.icon-eye-open {
+  background-position: -96px -120px;
+}
+.icon-eye-close {
+  background-position: -120px -120px;
+}
+.icon-warning-sign {
+  background-position: -144px -120px;
+}
+.icon-plane {
+  background-position: -168px -120px;
+}
+.icon-calendar {
+  background-position: -192px -120px;
+}
+.icon-random {
+  background-position: -216px -120px;
+  width: 16px;
+}
+.icon-comment {
+  background-position: -240px -120px;
+}
+.icon-magnet {
+  background-position: -264px -120px;
+}
+.icon-chevron-up {
+  background-position: -288px -120px;
+}
+.icon-chevron-down {
+  background-position: -313px -119px;
+}
+.icon-retweet {
+  background-position: -336px -120px;
+}
+.icon-shopping-cart {
+  background-position: -360px -120px;
+}
+.icon-folder-close {
+  background-position: -384px -120px;
+}
+.icon-folder-open {
+  background-position: -408px -120px;
+  width: 16px;
+}
+.icon-resize-vertical {
+  background-position: -432px -119px;
+}
+.icon-resize-horizontal {
+  background-position: -456px -118px;
+}
+.icon-hdd {
+  background-position: 0 -144px;
+}
+.icon-bullhorn {
+  background-position: -24px -144px;
+}
+.icon-bell {
+  background-position: -48px -144px;
+}
+.icon-certificate {
+  background-position: -72px -144px;
+}
+.icon-thumbs-up {
+  background-position: -96px -144px;
+}
+.icon-thumbs-down {
+  background-position: -120px -144px;
+}
+.icon-hand-right {
+  background-position: -144px -144px;
+}
+.icon-hand-left {
+  background-position: -168px -144px;
+}
+.icon-hand-up {
+  background-position: -192px -144px;
+}
+.icon-hand-down {
+  background-position: -216px -144px;
+}
+.icon-circle-arrow-right {
+  background-position: -240px -144px;
+}
+.icon-circle-arrow-left {
+  background-position: -264px -144px;
+}
+.icon-circle-arrow-up {
+  background-position: -288px -144px;
+}
+.icon-circle-arrow-down {
+  background-position: -312px -144px;
+}
+.icon-globe {
+  background-position: -336px -144px;
+}
+.icon-wrench {
+  background-position: -360px -144px;
+}
+.icon-tasks {
+  background-position: -384px -144px;
+}
+.icon-filter {
+  background-position: -408px -144px;
+}
+.icon-briefcase {
+  background-position: -432px -144px;
+}
+.icon-fullscreen {
+  background-position: -456px -144px;
+}
+.tip {
+  background-color: #ffffff;
+  border: 2px solid #666666;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+  width: 300px;
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.8);
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+}
+.tip-arrow-border {
+  border-color: #666666 transparent transparent transparent;
+  border-style: solid;
+  border-width: 10px;
+  height: 0;
+  width: 0;
+  position: absolute;
+  bottom: -22px;
+  left: 60px;
+}
+.tip-arrow {
+  border-color: #ffffff transparent transparent transparent;
+  border-style: solid;
+  border-width: 10px;
+  height: 0;
+  width: 0;
+  position: absolute;
+  bottom: -19px;
+  left: 60px;
+}
+.ribbon-full,
+.ribbon {
+  position: relative;
+  background-color: #ffc266;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffc266), color-stop(100%, #ff9900));
+  background-image: -webkit-linear-gradient(center top, #ffc266 0%, #ff9900 100%);
+  background-image: -moz-linear-gradient(center top, #ffc266 0%, #ff9900 100%);
+  background-image: -o-linear-gradient(center top, #ffc266 0%, #ff9900 100%);
+  background-image: -ms-linear-gradient(center top, #ffc266 0%, #ff9900 100%);
+  background-image: linear-gradient(center top, #ffc266 0%, #ff9900 100%);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffc266', endColorstr='#ff9900', GradientType=0);
+  text-align: center;
+  padding: 15px;
+  margin: 0 -15px 0 -15px;
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.8);
+  color: #b36b00;
+  text-shadow: 1px 1px 0px #ffc266;
+}
+.ribbon-full:before,
+.ribbon-full:after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -15px;
+  border: 22.5px solid #b36b00;
+  z-index: -1;
+}
+.ribbon-full:before {
+  left: -30px;
+  border-right-width: 22.5px;
+  border-left-color: transparent;
+}
+.ribbon-full:after {
+  right: -30px;
+  border-left-width: 22.5px;
+  border-right-color: transparent;
+}
+.ribbon-full .ribbon-content:before,
+.ribbon-full .ribbon-content:after,
+.ribbon .ribbon-content:before,
+.ribbon .ribbon-content:after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-style: solid;
+  border-color: #804d00 transparent transparent transparent;
+  bottom: -15px;
+}
+.ribbon-full .ribbon-content:before,
+.ribbon .ribbon-content:before {
+  left: 0;
+  border-width: 15px 0 0 15px;
+}
+.ribbon-full .ribbon-content:after,
+.ribbon .ribbon-content:after {
+  right: 0;
+  border-width: 15px 15px 0 0;
+}
+.btn {
+  *zoom: 1;
+  font-size: 16px;
+  display: inline-block;
+  cursor: pointer;
+  padding: 5.333333333333333px 16px;
+  text-align: center;
+  -webkit-border-radius: 5.333333333333333px 5.333333333333333px 5.333333333333333px 5.333333333333333px;
+  -moz-border-radius: 5.333333333333333px 5.333333333333333px 5.333333333333333px 5.333333333333333px;
+  border-radius: 5.333333333333333px 5.333333333333333px 5.333333333333333px 5.333333333333333px;
+  background-color: #f4f4f4;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f4f4f4), color-stop(100%, #dbdbdb));
+  background-image: -webkit-linear-gradient(center top, #f4f4f4 0%, #dbdbdb 100%);
+  background-image: -moz-linear-gradient(center top, #f4f4f4 0%, #dbdbdb 100%);
+  background-image: -o-linear-gradient(center top, #f4f4f4 0%, #dbdbdb 100%);
+  background-image: -ms-linear-gradient(center top, #f4f4f4 0%, #dbdbdb 100%);
+  background-image: linear-gradient(center top, #f4f4f4 0%, #dbdbdb 100%);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffc266', endColorstr='#ff9900', GradientType=0);
+  text-decoration: none;
+  -webkit-box-shadow: inset 1px 1px 0 0 #ffffff;
+  -moz-box-shadow: inset 1px 1px 0 0 #ffffff;
+  box-shadow: inset 1px 1px 0 0 #ffffff;
+  border: 1px solid #a8a8a8;
+  color: #757575;
+  text-shadow: 1px 1px 0px #ffffff;
+}
+.btn:hover {
+  background-color: #e7e7e7;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e7e7e7), color-stop(100%, #cecece));
+  background-image: -webkit-linear-gradient(center top, #e7e7e7 0%, #cecece 100%);
+  background-image: -moz-linear-gradient(center top, #e7e7e7 0%, #cecece 100%);
+  background-image: -o-linear-gradient(center top, #e7e7e7 0%, #cecece 100%);
+  background-image: -ms-linear-gradient(center top, #e7e7e7 0%, #cecece 100%);
+  background-image: linear-gradient(center top, #e7e7e7 0%, #cecece 100%);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffc266', endColorstr='#ff9900', GradientType=0);
+}
+.btn:active,
+.btn.active {
+  background-color: #dbdbdb;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dbdbdb), color-stop(100%, #f4f4f4));
+  background-image: -webkit-linear-gradient(center top, #dbdbdb 0%, #f4f4f4 100%);
+  background-image: -moz-linear-gradient(center top, #dbdbdb 0%, #f4f4f4 100%);
+  background-image: -o-linear-gradient(center top, #dbdbdb 0%, #f4f4f4 100%);
+  background-image: -ms-linear-gradient(center top, #dbdbdb 0%, #f4f4f4 100%);
+  background-image: linear-gradient(center top, #dbdbdb 0%, #f4f4f4 100%);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffc266', endColorstr='#ff9900', GradientType=0);
+  -webkit-box-shadow: inset 0 0 3px 2px #a8a8a8;
+  -moz-box-shadow: inset 0 0 3px 2px #a8a8a8;
+  box-shadow: inset 0 0 3px 2px #a8a8a8;
+}
+.btn-group {
+  font-size: 0;
+}
+.btn-group > .btn {
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -moz-border-radius: 0px 0px 0px 0px;
+  border-radius: 0px 0px 0px 0px;
+  border-right: 0px;
+}
+.btn-group > .btn:first-child {
+  -webkit-border-radius: 5.333333333333333px 0px 0px 5.333333333333333px;
+  -moz-border-radius: 5.333333333333333px 0px 0px 5.333333333333333px;
+  border-radius: 5.333333333333333px 0px 0px 5.333333333333333px;
+}
+.btn-group > .btn:last-child {
+  -webkit-border-radius: 0px 5.333333333333333px 5.333333333333333px 0px;
+  -moz-border-radius: 0px 5.333333333333333px 5.333333333333333px 0px;
+  border-radius: 0px 5.333333333333333px 5.333333333333333px 0px;
+  border: 1px solid #a8a8a8;
+}
+.btn.btn-info {
+  background-color: #3399ff;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3399ff), color-stop(100%, #007fff));
+  background-image: -webkit-linear-gradient(center top, #3399ff 0%, #007fff 100%);
+  background-image: -moz-linear-gradient(center top, #3399ff 0%, #007fff 100%);
+  background-image: -o-linear-gradient(center top, #3399ff 0%, #007fff 100%);
+  background-image: -ms-linear-gradient(center top, #3399ff 0%, #007fff 100%);
+  background-image: linear-gradient(center top, #3399ff 0%, #007fff 100%);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffc266', endColorstr='#ff9900', GradientType=0);
+  -webkit-box-shadow: inset 1px 1px 0 0 #66b2ff;
+  -moz-box-shadow: inset 1px 1px 0 0 #66b2ff;
+  box-shadow: inset 1px 1px 0 0 #66b2ff;
+  border-color: #004c99;
+  color: #001933;
+  text-shadow: 1px 1px 0px #66b2ff;
+}
+.btn:active.btn-info,
+.btn.active.btn-info {
+  background-color: #007fff;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #007fff), color-stop(100%, #3399ff));
+  background-image: -webkit-linear-gradient(center top, #007fff 0%, #3399ff 100%);
+  background-image: -moz-linear-gradient(center top, #007fff 0%, #3399ff 100%);
+  background-image: -o-linear-gradient(center top, #007fff 0%, #3399ff 100%);
+  background-image: -ms-linear-gradient(center top, #007fff 0%, #3399ff 100%);
+  background-image: linear-gradient(center top, #007fff 0%, #3399ff 100%);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffc266', endColorstr='#ff9900', GradientType=0);
+  -webkit-box-shadow: inset 0 0 3px 2px #004c99;
+  -moz-box-shadow: inset 0 0 3px 2px #004c99;
+  box-shadow: inset 0 0 3px 2px #004c99;
+}
+.btn.btn-warning {
+  background-color: #ffcc66;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffcc66), color-stop(100%, #ffbb33));
+  background-image: -webkit-linear-gradient(center top, #ffcc66 0%, #ffbb33 100%);
+  background-image: -moz-linear-gradient(center top, #ffcc66 0%, #ffbb33 100%);
+  background-image: -o-linear-gradient(center top, #ffcc66 0%, #ffbb33 100%);
+  background-image: -ms-linear-gradient(center top, #ffcc66 0%, #ffbb33 100%);
+  background-image: linear-gradient(center top, #ffcc66 0%, #ffbb33 100%);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffc266', endColorstr='#ff9900', GradientType=0);
+  -webkit-box-shadow: inset 1px 1px 0 0 #ffdd99;
+  -moz-box-shadow: inset 1px 1px 0 0 #ffdd99;
+  box-shadow: inset 1px 1px 0 0 #ffdd99;
+  border-color: #cc8800;
+  color: #664400;
+  text-shadow: 1px 1px 0px #ffdd99;
+}
+.btn:active.btn-warning,
+.btn.active.btn-warning {
+  background-color: #ffbb33;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffbb33), color-stop(100%, #ffcc66));
+  background-image: -webkit-linear-gradient(center top, #ffbb33 0%, #ffcc66 100%);
+  background-image: -moz-linear-gradient(center top, #ffbb33 0%, #ffcc66 100%);
+  background-image: -o-linear-gradient(center top, #ffbb33 0%, #ffcc66 100%);
+  background-image: -ms-linear-gradient(center top, #ffbb33 0%, #ffcc66 100%);
+  background-image: linear-gradient(center top, #ffbb33 0%, #ffcc66 100%);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffc266', endColorstr='#ff9900', GradientType=0);
+  -webkit-box-shadow: inset 0 0 3px 2px #cc8800;
+  -moz-box-shadow: inset 0 0 3px 2px #cc8800;
+  box-shadow: inset 0 0 3px 2px #cc8800;
+}
+.btn.btn-error {
+  background-color: #ff6666;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff6666), color-stop(100%, #ff3333));
+  background-image: -webkit-linear-gradient(center top, #ff6666 0%, #ff3333 100%);
+  background-image: -moz-linear-gradient(center top, #ff6666 0%, #ff3333 100%);
+  background-image: -o-linear-gradient(center top, #ff6666 0%, #ff3333 100%);
+  background-image: -ms-linear-gradient(center top, #ff6666 0%, #ff3333 100%);
+  background-image: linear-gradient(center top, #ff6666 0%, #ff3333 100%);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffc266', endColorstr='#ff9900', GradientType=0);
+  -webkit-box-shadow: inset 1px 1px 0 0 #ff9999;
+  -moz-box-shadow: inset 1px 1px 0 0 #ff9999;
+  box-shadow: inset 1px 1px 0 0 #ff9999;
+  border-color: #cc0000;
+  color: #660000;
+  text-shadow: 1px 1px 0px #ff9999;
+}
+.btn:active.btn-error,
+.btn.active.btn-error {
+  background-color: #ff3333;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff3333), color-stop(100%, #ff6666));
+  background-image: -webkit-linear-gradient(center top, #ff3333 0%, #ff6666 100%);
+  background-image: -moz-linear-gradient(center top, #ff3333 0%, #ff6666 100%);
+  background-image: -o-linear-gradient(center top, #ff3333 0%, #ff6666 100%);
+  background-image: -ms-linear-gradient(center top, #ff3333 0%, #ff6666 100%);
+  background-image: linear-gradient(center top, #ff3333 0%, #ff6666 100%);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffc266', endColorstr='#ff9900', GradientType=0);
+  -webkit-box-shadow: inset 0 0 3px 2px #cc0000;
+  -moz-box-shadow: inset 0 0 3px 2px #cc0000;
+  box-shadow: inset 0 0 3px 2px #cc0000;
+}
+.btn.btn-success {
+  background-color: #66cc33;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #66cc33), color-stop(100%, #52a329));
+  background-image: -webkit-linear-gradient(center top, #66cc33 0%, #52a329 100%);
+  background-image: -moz-linear-gradient(center top, #66cc33 0%, #52a329 100%);
+  background-image: -o-linear-gradient(center top, #66cc33 0%, #52a329 100%);
+  background-image: -ms-linear-gradient(center top, #66cc33 0%, #52a329 100%);
+  background-image: linear-gradient(center top, #66cc33 0%, #52a329 100%);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffc266', endColorstr='#ff9900', GradientType=0);
+  -webkit-box-shadow: inset 1px 1px 0 0 #85d65c;
+  -moz-box-shadow: inset 1px 1px 0 0 #85d65c;
+  box-shadow: inset 1px 1px 0 0 #85d65c;
+  border-color: #295214;
+  color: #000000;
+  text-shadow: 1px 1px 0px #85d65c;
+}
+.btn:active.btn-success,
+.btn.active.btn-success {
+  background-color: #52a329;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #52a329), color-stop(100%, #66cc33));
+  background-image: -webkit-linear-gradient(center top, #52a329 0%, #66cc33 100%);
+  background-image: -moz-linear-gradient(center top, #52a329 0%, #66cc33 100%);
+  background-image: -o-linear-gradient(center top, #52a329 0%, #66cc33 100%);
+  background-image: -ms-linear-gradient(center top, #52a329 0%, #66cc33 100%);
+  background-image: linear-gradient(center top, #52a329 0%, #66cc33 100%);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffc266', endColorstr='#ff9900', GradientType=0);
+  -webkit-box-shadow: inset 0 0 3px 2px #295214;
+  -moz-box-shadow: inset 0 0 3px 2px #295214;
+  box-shadow: inset 0 0 3px 2px #295214;
+}
+
+/* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */
