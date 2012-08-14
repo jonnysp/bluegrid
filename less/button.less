@@ -70,6 +70,11 @@
 	.vertival-gradient(darken(@info,10%),@info);
 	.shadow-inset(0,0,3px,2px,darken(@info,30%));
 }
+.btn:hover.btn-info{
+	.vertival-gradient(darken(@info,5%), darken(@info,15%));
+}
+
+
 
 .btn.btn-warning{
 	.vertival-gradient(@warning,darken(@warning,10%));
@@ -82,7 +87,9 @@
 	.vertival-gradient(darken(@warning,10%),@warning);
 	.shadow-inset(0,0,3px,2px,darken(@warning,30%));
 }
-
+.btn:hover.btn-warning{
+	.vertival-gradient(darken(@warning,5%), darken(@warning,15%));
+}
 
 
 .btn.btn-error{
@@ -96,7 +103,9 @@
 	.vertival-gradient(darken(@error,10%),@error);
 	.shadow-inset(0,0,3px,2px,darken(@error,30%));
 }
-
+.btn:hover.btn-error{
+	.vertival-gradient(darken(@error,5%), darken(@error,15%));
+}
 
 
 .btn.btn-success{
@@ -109,4 +118,7 @@
 .btn:active.btn-success ,.btn.active.btn-success{
 	.vertival-gradient(darken(@success,10%),@success);
 	.shadow-inset(0,0,3px,2px,darken(@success,30%));
+}
+.btn:hover.btn-success{
+	.vertival-gradient(darken(@success,5%), darken(@success,15%));
 }
