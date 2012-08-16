@@ -1,124 +1,76 @@
-
 @btn-border-width:1px;
 @btn-corner-radius:@font-size/3;
 
+.colorize-btn(@color){
+	.vertival-gradient(@color,darken(@color,10%));
+	.shadow-inset(1px,1px,0,0,lighten(@color,10%));
+	.textshadow( 1px, 1px, 0px, lighten(@color,10%));
+	
+	border-color:darken(@color,30%);
+	color:darken(@color,50%);
+
+	&:active ,&.active{
+		.vertival-gradient(darken(@color,10%),@color);
+		.shadow-inset(0,0,3px,2px,darken(@color,30%));
+	}
+	&:hover{
+		.vertival-gradient(darken(@color,5%), darken(@color,15%));
+	}
+}
+
+
 .btn{
+
 	*zoom:1; //IE-fix
-	
 	font-size: @font-size;
-	display: inline-block;
-	cursor: pointer;
-	padding:@btn-corner-radius @font-size;
 	text-align: center;
-	
-	.roundcorner(@btn-corner-radius,@btn-corner-radius,@btn-corner-radius,@btn-corner-radius);
-	.vertival-gradient(@buttoncolor,darken(@buttoncolor,10%));
 	text-decoration: none;
-		
-	.shadow-inset(1px,1px,0,0,lighten(@buttoncolor,10%));
+	display: inline-block;
+	padding:@btn-corner-radius + 2 @font-size @btn-corner-radius @font-size;
+	cursor: pointer;
 	border:@btn-border-width solid darken(@buttoncolor,30%);
+
+	.roundcorner(@btn-corner-radius,@btn-corner-radius,@btn-corner-radius,@btn-corner-radius);
+	.colorize-btn(@buttoncolor);
+
+	&.btn-info{
+		.colorize-btn(@info);
+	}
 	
-	color:darken(@buttoncolor,50%);
-  	.textshadow( 1px, 1px, 0px, lighten(@buttoncolor,10%));
-  
+	&.btn-warning{
+		.colorize-btn(@warning);
+	}
+	
+	&.btn-error{
+		.colorize-btn(@error);
+	}
+
+	&.btn-success{
+		.colorize-btn(@success);
+	}
 
 }
 
-//.btn > [class^="icon-"],
-//.btn > [class*=" icon-"]{
-//	position: relative;
-//	margin: 16-@font-size 0;
-//}
 
-
-.btn:hover{
-	.vertival-gradient(darken(@buttoncolor,5%), darken(@buttoncolor,15%));
-}
-
-.btn:active ,.btn.active{
-	.vertival-gradient(darken(@buttoncolor,10%),@buttoncolor);
-	.shadow-inset(0,0,3px,2px,darken(@buttoncolor,30%));
-}
-
+// button group
 .btn-group{
+
 	font-size: 0;
+	margin:10px 0;
+	
+	& > .btn{
+	  .roundcorner(0px,0px,0px,0px);
+	   border-right-width: 0px;
+		
+		&:first-child{
+			.roundcorner(@btn-corner-radius,0px,0px,@btn-corner-radius);
+		}
+		
+		&:last-child{
+			.roundcorner(0px,@btn-corner-radius,@btn-corner-radius,0px);
+			border-right-width:@btn-border-width;
+		}
+	}
+
 }
 
-.btn-group > .btn{
-	.roundcorner(0px,0px,0px,0px);
-	border-right: 0px;
-}
-
-.btn-group > .btn:first-child{
-	.roundcorner(@btn-corner-radius,0px,0px,@btn-corner-radius);
-}
-
-.btn-group > .btn:last-child{
-	.roundcorner(0px,@btn-corner-radius,@btn-corner-radius,0px);
-	border:@btn-border-width solid darken(@buttoncolor,30%);
-}
-
-//colors
-.btn.btn-info{
-	.vertival-gradient(@info,darken(@info,10%));
-	.shadow-inset(1px,1px,0,0,lighten(@info,10%));
-	border-color:darken(@info,30%);
-	color:darken(@info,50%);
-	.textshadow( 1px, 1px, 0px, lighten(@info,10%));
-}
-.btn:active.btn-info ,.btn.active.btn-info{
-	.vertival-gradient(darken(@info,10%),@info);
-	.shadow-inset(0,0,3px,2px,darken(@info,30%));
-}
-.btn:hover.btn-info{
-	.vertival-gradient(darken(@info,5%), darken(@info,15%));
-}
-
-
-
-.btn.btn-warning{
-	.vertival-gradient(@warning,darken(@warning,10%));
-	.shadow-inset(1px,1px,0,0,lighten(@warning,10%));
-	border-color:darken(@warning,30%);
-	color:darken(@warning,50%);
-	.textshadow( 1px, 1px, 0px, lighten(@warning,10%));
-}
-.btn:active.btn-warning ,.btn.active.btn-warning{
-	.vertival-gradient(darken(@warning,10%),@warning);
-	.shadow-inset(0,0,3px,2px,darken(@warning,30%));
-}
-.btn:hover.btn-warning{
-	.vertival-gradient(darken(@warning,5%), darken(@warning,15%));
-}
-
-
-.btn.btn-error{
-	.vertival-gradient(@error,darken(@error,10%));
-	.shadow-inset(1px,1px,0,0,lighten(@error,10%));
-	border-color:darken(@error,30%);
-	color:darken(@error,50%);
-	.textshadow( 1px, 1px, 0px, lighten(@error,10%));
-}
-.btn:active.btn-error ,.btn.active.btn-error{
-	.vertival-gradient(darken(@error,10%),@error);
-	.shadow-inset(0,0,3px,2px,darken(@error,30%));
-}
-.btn:hover.btn-error{
-	.vertival-gradient(darken(@error,5%), darken(@error,15%));
-}
-
-
-.btn.btn-success{
-	.vertival-gradient(@success,darken(@success,10%));
-	.shadow-inset(1px,1px,0,0,lighten(@success,10%));
-	border-color:darken(@success,30%);
-	color:darken(@success,50%);
-	.textshadow( 1px, 1px, 0px, lighten(@success,10%));
-}
-.btn:active.btn-success ,.btn.active.btn-success{
-	.vertival-gradient(darken(@success,10%),@success);
-	.shadow-inset(0,0,3px,2px,darken(@success,30%));
-}
-.btn:hover.btn-success{
-	.vertival-gradient(darken(@success,5%), darken(@success,15%));
-}
