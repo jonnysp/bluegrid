@@ -1,7 +1,8 @@
 @btn-border-width:1px;
-@btn-corner-radius:@font-size/3;
+@btn-corner-radius:5px;
 
 .colorize-btn(@color){
+	
 	.vertival-gradient(@color,darken(@color,10%));
 	.shadow-inset(1px,1px,0,0,lighten(@color,10%));
 	.textshadow( 1px, 1px, 0px, lighten(@color,10%));
@@ -13,11 +14,43 @@
 		.vertival-gradient(darken(@color,10%),@color);
 		.shadow-inset(0,0,3px,2px,darken(@color,30%));
 	}
+	
 	&:hover{
 		.vertival-gradient(darken(@color,5%), darken(@color,15%));
 	}
+	
 }
 
+.caret{
+ 	
+ 	@caret-with:@font-size / 2 - 2;
+ 	@caret-color:black;
+ 	
+ 	border-color: @caret-color transparent transparent transparent;
+  border-width:@caret-with;
+  border-style:solid;
+  width:0;
+  height:0;
+  display: inline-block;
+  content: "";
+  
+  &.down{
+  	border-color: @caret-color transparent transparent transparent;
+  }
+  
+  &.up{
+  	border-color: transparent transparent @caret-color transparent;
+  }
+   
+  &.left{
+  	border-color: transparent @caret-color transparent  transparent;
+  }
+  
+  &.right{
+  	border-color: transparent  transparent  transparent @caret-color;
+   }
+  
+}
 
 .btn{
 
@@ -26,7 +59,7 @@
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
-	padding:@btn-corner-radius + 2 @font-size @btn-corner-radius @font-size;
+	padding:@font-size /2  @font-size;
 	cursor: pointer;
 	border:@btn-border-width solid darken(@buttoncolor,30%);
 
@@ -48,6 +81,10 @@
 	&.btn-success{
 		.colorize-btn(@success);
 	}
+
+  & > .caret{
+  	.opac(0.30);
+  }
 
 }
 
