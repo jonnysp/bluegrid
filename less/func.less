@@ -12,30 +12,86 @@
 
 
 
-.roundcorner(@top:0,@right:0,@bottom:0,@left:0){
-	-webkit-border-radius: @arguments;
-	   -moz-border-radius: @arguments;
-	        border-radius: @arguments; 
+.roundcorner(@radius:0){
+	-webkit-border-radius: @radius;
+	   -moz-border-radius: @radius;
+	        border-radius: @radius; 
 }
 
+.roundcorner-top(@top:0){
+	-webkit-border-top-left-radius: @top;
+	-webkit-border-top-right-radius: @top;
+	-moz-border-radius-topleft: @top;
+	-moz-border-radius-topright: @top;
+	border-top-left-radius: @top;
+	border-top-right-radius: @top;
+}
+
+.roundcorner-top-right(@right:0){
+	-webkit-border-top-right-radius: @right;
+	-moz-border-radius-topright: @right;
+	border-top-right-radius: @right;
+}
+
+.roundcorner-top-left(@left:0){
+	-webkit-border-top-left-radius: @left;
+	-moz-border-radius-topleft: @left;
+	border-top-left-radius: @left;
+}
+
+.roundcorner-bottom(@bottom:0){
+	-webkit-border-bottom-right-radius: @bottom;
+	-webkit-border-bottom-left-radius: @bottom;
+	-moz-border-radius-bottomright: @bottom;
+	-moz-border-radius-bottomleft: @bottom;
+	border-bottom-right-radius: @bottom;
+	border-bottom-left-radius: @bottom;
+}
+
+.roundcorner-bottom-right(@right:0){
+	-webkit-border-bottom-right-radius: @right;
+	-moz-border-radius-bottomright: @right;
+	border-bottom-right-radius: @right;
+}
+
+.roundcorner-bottom-left(@left:0){
+	-webkit-border-bottom-left-radius:@left;
+	-moz-border-radius-bottomleft: @left;
+	border-bottom-left-radius: @left;
+}
+
+.roundcorner-left(@left:0){
+	-webkit-border-top-right-radius: @left;
+	-webkit-border-bottom-right-radius: @left;
+	-moz-border-radius-topright: @left;
+	-moz-border-radius-bottomright: @left;
+	border-top-right-radius: @left;
+	border-bottom-right-radius: @left;
+}
+
+.roundcorner-right(@right:0){
+	-webkit-border-top-left-radius: @right;
+	-webkit-border-bottom-left-radius: @right;
+	-moz-border-radius-topleft: @right;
+	-moz-border-radius-bottomleft: @right;
+	border-top-left-radius: @right;
+	border-bottom-left-radius: @right;
+}
 
 .shadow(@x: 0, @y: 0, @blur: 0,@spread:0, @color: @shadow) {
 	 -webkit-box-shadow: @arguments;
 		-moz-box-shadow: @arguments;
 	         box-shadow: @arguments;
-
 }
 
 .shadow-inset(@x: 0, @y: 0, @blur: 0, @spread:0, @color: @shadow) {
 	 -webkit-box-shadow: inset @arguments;
 		-moz-box-shadow: inset @arguments;
 	         box-shadow: inset @arguments;
-
 }
 
 .textshadow(@x:0,@y:1px,@z:0,@color:rgba(255,255,255,0.5)){
 		text-shadow: @arguments;
-	
 }
 
 .vertival-gradient(@startcolor, @stopcolor){
@@ -47,7 +103,6 @@
 	background-image: 		 -ms-linear-gradient(center top,  @startcolor 0%,@stopcolor 100%);
 	background-image: 			 linear-gradient(center top,  @startcolor 0%,@stopcolor 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@{startcolor}',endColorstr='@{stopcolor}',GradientType=0);
-
 }
 
 .rotate(@degree){
@@ -63,5 +118,4 @@
 	-ms-filter:~"progid:DXImageTransform.Microsoft.Alpha(Opacity=@opacity * 100)";
 	//filter: alpha(opacity=@opacity * 100);
 	opacity: @opacity;
-
 }

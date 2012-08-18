@@ -1,32 +1,11 @@
 @btn-border-width:1px;
-@btn-corner-radius:5px;
-@btn-padding:4px @font-size - @btn-corner-radius;
+@btn-corner-radius:3px;
+@btn-padding:5px 10px 4px 10px;
+@caret-with:6px;
+@caret-color:black;
 
- @caret-with:@font-size / 2;
- @caret-color:black;
 
-.colorize-btn(@color){
-
-	.vertival-gradient(@color,darken(@color,10%));
-	.shadow-inset(1px,1px,0,0,lighten(@color,10%));
-	.textshadow( 1px, 1px, 0px, lighten(@color,10%));
-	
-	border-color:darken(@color,30%);
-	color:darken(@color,50%);
-
-	&:active ,&.active{
-		.vertival-gradient(darken(@color,10%),@color);
-		.shadow-inset(0,0,3px,2px,darken(@color,30%));
-	}
-	
-	&:hover{
-		.vertival-gradient(darken(@color,5%), darken(@color,15%));
-	}
-	
-}
-
-.caret{
- 	
+.caret{ 	
   border-width:@caret-with;
   border-style:solid;
   display: inline-block;
@@ -35,17 +14,40 @@
   height:0;
   vertical-align:middle;
   
-  &.down{
-  	border-color: @caret-color transparent transparent transparent;
-  	border-bottom-width:0;
-  }
+  border-color: @caret-color transparent transparent transparent;
+  border-bottom-width:0;
   
-  &.up{
+  &.up{	
   	border-color: transparent transparent @caret-color transparent;
   	border-top-width:0px;
+	border-bottom-width:@caret-with;
   }
      
 }
+
+
+.colorize-btn(@color){
+
+	.vertival-gradient(@color,darken(@color,10%));
+	.shadow-inset(1px,1px,0,0,lighten(@color,10%));
+	.textshadow( 1px, 1px, 0px, lighten(@color,10%));
+	border-color:darken(@color,30%);
+	color:darken(@color,50%);
+
+	
+	&:active , &.active{
+		.vertival-gradient(darken(@color,10%),@color);
+		.shadow-inset(0,0,3px,2px,darken(@color,30%));
+		outline: 0;
+	}
+	
+	&:hover,&.hover,&:focus,&.focus {
+		.vertival-gradient(darken(@color,5%), darken(@color,15%));
+		outline: 0;
+	}
+	
+}
+
 
 .btn{
 
@@ -54,13 +56,15 @@
 	text-align: center;
 	text-decoration: none;
 	vertical-align:middle;
+	
 	display: inline-block;
 	padding:@btn-padding;
 	cursor: pointer;
 	border:@btn-border-width solid darken(@buttoncolor,30%);
-	.roundcorner(@btn-corner-radius,@btn-corner-radius,@btn-corner-radius,@btn-corner-radius);
+	.roundcorner(@btn-corner-radius);
+	
 	.colorize-btn(@buttoncolor);
-
+	 
 	&.btn-info{
 		.colorize-btn(@info);
 	}
@@ -88,21 +92,45 @@
 .btn-group{
 
 	font-size: 0;
-	margin:10px 0;
+	margin:10px 0 0 0;
+	vertical-align:middle;
 	
 	& > .btn{
-	  .roundcorner(0px,0px,0px,0px);
+	  .roundcorner();
 	   border-right-width: 0px;
 		
 		&:first-child{
-			.roundcorner(@btn-corner-radius,0px,0px,@btn-corner-radius);
+			.roundcorner-right(@btn-corner-radius);
 		}
 		
 		&:last-child{
-			.roundcorner(0px,@btn-corner-radius,@btn-corner-radius,0px);
+			.roundcorner-left(@btn-corner-radius);
 			border-right-width:@btn-border-width;
 		}
 	}
 
 }
+
+
+//button bar
+.btn-bar{
+	
+	& > .btn-group {
+		display:inline-block;
+		margin-left:5px;
+		
+		&:first-child{
+			margin-left:0;
+			
+		}
+	}
+
+
+
+}
+
+
+
+
+
 
