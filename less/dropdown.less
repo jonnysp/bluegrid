@@ -1,0 +1,95 @@
+@dropdown-corner-radius:5px;
+@dropdown-color:#888;
+@dropdown-background-color:#fff;
+
+.dropdown{
+
+	float:left;
+	position:absolute;
+	min-width:150px;
+	list-style:none;
+	display:inline-block;
+	border:1px solid darken(@dropdown-color,20%);
+	padding:@dropdown-corner-radius 0;
+	background-color:@dropdown-background-color;
+	.shadow(0,@dropdown-corner-radius,10px,0);
+	.roundcorner(@dropdown-corner-radius);
+	
+	& > li{
+
+		&:hover{
+			.vertival-gradient(@info,darken(@info,10%));
+			& > a{
+				color:lighten(@info,50%);
+				.textshadow( 1px, 1px, 0px, lighten(@info,10%));
+			}
+		}
+		
+		& > a{
+			vertical-align: middle;
+			outline: 0;
+			text-decoration:none;
+			display:block;
+			padding:4px @font-size;
+			
+			.textshadow( 1px, 1px, 0px, lighten(@dropdown-color,40%));
+			color:darken(@dropdown-color,20%);
+			
+			&:hover{
+				color:lighten(@dropdown-color,100%);
+				.textshadow( 1px, 1px, 0px, lighten(@info,10%));
+				
+				& > [class^="icon-"],
+				& > [class*=" icon-"]{
+				  background-image: url("@{iconWhiteSpritePath}");
+				} 
+				
+			}	
+			
+		}
+		
+		&.divider{
+			border-top:1px solid @dropdown-color;
+			margin:5px 2px;
+		}
+
+		&.submenu {
+		
+			& > a:after {
+				border-color: transparent transparent transparent darken(@dropdown-color,20%);
+				border-style: solid;
+				border-width: 5px 0 5px 5px;
+				content: " ";
+				display: block;
+				float: right;
+				height: 0;
+				width: 0;
+				margin-top:3px;
+				
+			}
+			
+			&:hover > a:after {
+				border-left-color: lighten(@dropdown-color,50%);
+			}
+		
+			& > .dropdown{
+				.roundcorner();
+				.roundcorner-top-right(@dropdown-corner-radius);
+				.roundcorner-bottom(@dropdown-corner-radius);
+				
+				margin-top: -29px;
+				margin-left:-1px;
+		
+				left:100%;
+				display:none;
+			}
+		
+			&:hover > .dropdown{
+				display:block;
+			}
+		
+		}
+		
+	}
+	
+}
