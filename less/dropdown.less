@@ -1,21 +1,27 @@
 @dropdown-corner-radius:5px;
 @dropdown-color:#888;
 @dropdown-background-color:#fff;
+@dropdown-a-padding:3px;
 
 .dropdown{
 
 	float:left;
-	position:absolute;
-	min-width:150px;
+
 	list-style:none;
 	display:inline-block;
-	border:1px solid darken(@dropdown-color,20%);
+	position:absolute;
+	margin:0;
+	min-width:150px;
 	padding:@dropdown-corner-radius 0;
+	border:1px solid darken(@dropdown-color,20%);
+	
 	background-color:@dropdown-background-color;
 	.shadow(0,@dropdown-corner-radius,10px,0);
 	.roundcorner(@dropdown-corner-radius);
 	
 	& > li{
+	
+		vertical-align: middle;
 
 		&:hover{
 			.vertival-gradient(@info,darken(@info,10%));
@@ -30,7 +36,10 @@
 			outline: 0;
 			text-decoration:none;
 			display:block;
-			padding:4px @font-size;
+			font-size: @font-size;
+			line-height: @line-height;
+		
+			padding:@dropdown-a-padding @font-size;
 			
 			.textshadow( 1px, 1px, 0px, lighten(@dropdown-color,40%));
 			color:darken(@dropdown-color,20%);
@@ -54,8 +63,9 @@
 		}
 
 		&.submenu {
-		
-			& > a:after {
+
+			
+			& > a:after  {
 				border-color: transparent transparent transparent darken(@dropdown-color,20%);
 				border-style: solid;
 				border-width: 5px 0 5px 5px;
@@ -77,7 +87,7 @@
 				.roundcorner-top-right(@dropdown-corner-radius);
 				.roundcorner-bottom(@dropdown-corner-radius);
 				
-				margin-top: -29px;
+				margin-top: (@dropdown-corner-radius * -1) - (@dropdown-a-padding * 2) - @line-height - 1 ;
 				margin-left:-1px;
 		
 				left:100%;
@@ -85,7 +95,8 @@
 			}
 		
 			&:hover > .dropdown{
-				display:block;
+				display:inline-block;
+				//float:left;
 			}
 		
 		}
