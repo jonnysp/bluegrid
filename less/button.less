@@ -2,51 +2,40 @@
 @btn-corner-radius:3px;
 @btn-padding-topbottom:3px;
 @btn-padding-leftright:10px;
-@caret-with:5px;
+@caret-with:6px;
 @caret-color:black;
-
-
-.caret{ 	
-  border-width:@caret-with;
-  border-style:solid;
-  display: inline-block;
-  content: "";
-  width:0;
-  height:0;
-  vertical-align:middle;
-  
-  border-color: @caret-color transparent transparent transparent;
-  border-bottom-width:0;
-  
-  &.up{	
-  	border-color: transparent transparent @caret-color transparent;
-  	border-top-width:0px;
-	border-bottom-width:@caret-with;
-  }
-     
-}
-
 
 .icocolor (@color) when (lightness(@color) >= 50%) {	 	
     background-image: url("@{iconSpritePath}");
 }
+
 .icocolor (@color) when (lightness(@color) < 50%) {
 	background-image: url("@{iconWhiteSpritePath}");
 }
 
+.textcolor(@color) when (lightness(@color) >= 50%) {
+	color:darken(@color,70%);
+	.textshadow( 1px, 1px, 0px, lighten(@color,10%));
+}
+
+.textcolor(@color) when (lightness(@color) < 50%) {
+	color:lighten(@color,70%);
+	.textshadow( 1px, 1px, 0px, darken(@color,10%));
+}
+
+
 .colorize-btn(@color){
 
-	
-	& > [class^="icon-"], & > [class*=" icon-"] {
+	&> [class^="icon-"], & > [class*=" icon-"] {
 		.icocolor(@color);
 	}
 
 	.vertival-gradient(@color,darken(@color,10%));
 	.shadow-inset(1px,1px,0,0,lighten(@color,10%));
-	.textshadow( 1px, 1px, 0px, lighten(@color,10%));
+	
 	border-color:darken(@color,30%);
-	color:darken(@color,50%);
-
+	.textcolor(@color);
+	
 	&:active , &.active{
 		.vertival-gradient(darken(@color,10%),@color);
 		.shadow-inset(0,0,3px,2px,darken(@color,30%));
@@ -64,6 +53,25 @@
 		cursor:default;
 	}
 
+	 &> .caret{ 	
+		border-width:@caret-with;
+		border-style:solid;
+		display: inline-block;
+		content: "";
+		width:0;
+		height:0;
+		vertical-align:middle;
+		.opac(0.30);
+		
+		border-color: @caret-color transparent transparent transparent;
+		border-bottom-width:0;
+		
+		&.up{	
+		  border-color: transparent transparent @caret-color transparent;
+		  border-top-width:0px;
+		  border-bottom-width:@caret-with;
+		}
+	  }
 }
 
 
@@ -72,14 +80,11 @@ input.btn {
   	height:@line-height + (@btn-padding-topbottom * 2) + (@btn-border-width * 2) ;
 }
 
-
 .btn{
 
 	*zoom:1; //IE-fix
 	font-size: @font-size;
-	
     line-height: @line-height;
-
 	text-align: center;
 	text-decoration: none;
 	vertical-align:middle;
@@ -107,11 +112,10 @@ input.btn {
 	&.btn-success{
 		.colorize-btn(@success);
 	}
-
-   & > .caret{
-  	.opac(0.30);
-   }
-
+	
+	&.btn-invert{
+		.colorize-btn(@invert);
+	}
 }
 
 
@@ -122,7 +126,7 @@ input.btn {
 	margin:10px 0 0 0;
 	vertical-align:middle;
 	
-	& > .btn{
+	&> .btn{
 	  .roundcorner();
 	   border-right-width: 0px;
 	
@@ -148,11 +152,11 @@ input.btn {
 	margin:10px 0 0 0;
 	display:inline-block;
 	
-	& > button.btn{
+	&> button.btn{
 		width:100%;
 	}
 	
-	& > .btn{
+	&> .btn{
 	    .roundcorner();
 		float:none;
 		display:block;
@@ -171,27 +175,17 @@ input.btn {
 }
 
 
-
-
-
-
-
-
 //button bar
 .btn-bar{
 	font-size: 0;
-	& > .btn-group {
+	&> .btn-group {
 		display:inline-block;
 		margin-left:5px;
 		
 		&:first-child{
 			margin-left:0;
-			
 		}
 	}
-
-
-
 }
 
 

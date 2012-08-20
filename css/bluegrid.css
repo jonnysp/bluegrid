@@ -1013,22 +1013,6 @@ body {
 .icon-fullscreen {
   background-position: -456px -144px;
 }
-.caret {
-  border-width: 5px;
-  border-style: solid;
-  display: inline-block;
-  content: "";
-  width: 0;
-  height: 0;
-  vertical-align: middle;
-  border-color: #000000 transparent transparent transparent;
-  border-bottom-width: 0;
-}
-.caret.up {
-  border-color: transparent transparent #000000 transparent;
-  border-top-width: 0px;
-  border-bottom-width: 5px;
-}
 input.btn {
   height: 28px;
 }
@@ -1057,9 +1041,13 @@ input.btn {
   -webkit-box-shadow: inset 1px 1px 0 0 #ffffff;
   -moz-box-shadow: inset 1px 1px 0 0 #ffffff;
   box-shadow: inset 1px 1px 0 0 #ffffff;
-  text-shadow: 1px 1px 0px #ffffff;
   border-color: #a8a8a8;
-  color: #757575;
+  color: #424242;
+  text-shadow: 1px 1px 0px #ffffff;
+}
+.btn > [class^="icon-"],
+.btn  > [class*=" icon-"] {
+  background-image: url("../img/glyphicons_black.png");
 }
 .btn:active,
 .btn.active {
@@ -1105,6 +1093,23 @@ input.btn {
   box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0.3);
   cursor: default;
 }
+.btn > .caret {
+  border-width: 6px;
+  border-style: solid;
+  display: inline-block;
+  content: "";
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  opacity: 0.3;
+  border-color: #000000 transparent transparent transparent;
+  border-bottom-width: 0;
+}
+.btn > .caret.up {
+  border-color: transparent transparent #000000 transparent;
+  border-top-width: 0px;
+  border-bottom-width: 6px;
+}
 .btn.btn-info {
   background-color: #4e97f1;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4e97f1), color-stop(100%, #1f7bed));
@@ -1117,9 +1122,13 @@ input.btn {
   -webkit-box-shadow: inset 1px 1px 0 0 #7db3f5;
   -moz-box-shadow: inset 1px 1px 0 0 #7db3f5;
   box-shadow: inset 1px 1px 0 0 #7db3f5;
-  text-shadow: 1px 1px 0px #7db3f5;
   border-color: #0c4c9a;
-  color: #051d3b;
+  color: #000000;
+  text-shadow: 1px 1px 0px #7db3f5;
+}
+.btn.btn-info > [class^="icon-"],
+.btn.btn-info  > [class*=" icon-"] {
+  background-image: url("../img/glyphicons_black.png");
 }
 .btn.btn-info:active,
 .btn.btn-info.active {
@@ -1165,6 +1174,23 @@ input.btn {
   box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0.3);
   cursor: default;
 }
+.btn.btn-info > .caret {
+  border-width: 6px;
+  border-style: solid;
+  display: inline-block;
+  content: "";
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  opacity: 0.3;
+  border-color: #000000 transparent transparent transparent;
+  border-bottom-width: 0;
+}
+.btn.btn-info > .caret.up {
+  border-color: transparent transparent #000000 transparent;
+  border-top-width: 0px;
+  border-bottom-width: 6px;
+}
 .btn.btn-warning {
   background-color: #ffcc66;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffcc66), color-stop(100%, #ffbb33));
@@ -1177,9 +1203,13 @@ input.btn {
   -webkit-box-shadow: inset 1px 1px 0 0 #ffdd99;
   -moz-box-shadow: inset 1px 1px 0 0 #ffdd99;
   box-shadow: inset 1px 1px 0 0 #ffdd99;
-  text-shadow: 1px 1px 0px #ffdd99;
   border-color: #cc8800;
-  color: #664400;
+  color: #000000;
+  text-shadow: 1px 1px 0px #ffdd99;
+}
+.btn.btn-warning > [class^="icon-"],
+.btn.btn-warning  > [class*=" icon-"] {
+  background-image: url("../img/glyphicons_black.png");
 }
 .btn.btn-warning:active,
 .btn.btn-warning.active {
@@ -1225,6 +1255,23 @@ input.btn {
   box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0.3);
   cursor: default;
 }
+.btn.btn-warning > .caret {
+  border-width: 6px;
+  border-style: solid;
+  display: inline-block;
+  content: "";
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  opacity: 0.3;
+  border-color: #000000 transparent transparent transparent;
+  border-bottom-width: 0;
+}
+.btn.btn-warning > .caret.up {
+  border-color: transparent transparent #000000 transparent;
+  border-top-width: 0px;
+  border-bottom-width: 6px;
+}
 .btn.btn-error {
   background-color: #ff855b;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff855b), color-stop(100%, #ff5f28));
@@ -1237,9 +1284,13 @@ input.btn {
   -webkit-box-shadow: inset 1px 1px 0 0 #ffab8e;
   -moz-box-shadow: inset 1px 1px 0 0 #ffab8e;
   box-shadow: inset 1px 1px 0 0 #ffab8e;
-  text-shadow: 1px 1px 0px #ffab8e;
   border-color: #c13100;
-  color: #5b1700;
+  color: #000000;
+  text-shadow: 1px 1px 0px #ffab8e;
+}
+.btn.btn-error > [class^="icon-"],
+.btn.btn-error  > [class*=" icon-"] {
+  background-image: url("../img/glyphicons_black.png");
 }
 .btn.btn-error:active,
 .btn.btn-error.active {
@@ -1285,6 +1336,23 @@ input.btn {
   box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0.3);
   cursor: default;
 }
+.btn.btn-error > .caret {
+  border-width: 6px;
+  border-style: solid;
+  display: inline-block;
+  content: "";
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  opacity: 0.3;
+  border-color: #000000 transparent transparent transparent;
+  border-bottom-width: 0;
+}
+.btn.btn-error > .caret.up {
+  border-color: transparent transparent #000000 transparent;
+  border-top-width: 0px;
+  border-bottom-width: 6px;
+}
 .btn.btn-success {
   background-color: #66cc66;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #66cc66), color-stop(100%, #40bf40));
@@ -1297,9 +1365,13 @@ input.btn {
   -webkit-box-shadow: inset 1px 1px 0 0 #8cd98c;
   -moz-box-shadow: inset 1px 1px 0 0 #8cd98c;
   box-shadow: inset 1px 1px 0 0 #8cd98c;
-  text-shadow: 1px 1px 0px #8cd98c;
   border-color: #267326;
-  color: #0d260d;
+  color: #000000;
+  text-shadow: 1px 1px 0px #8cd98c;
+}
+.btn.btn-success > [class^="icon-"],
+.btn.btn-success  > [class*=" icon-"] {
+  background-image: url("../img/glyphicons_black.png");
 }
 .btn.btn-success:active,
 .btn.btn-success.active {
@@ -1345,21 +1417,116 @@ input.btn {
   box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0.3);
   cursor: default;
 }
-.btn  > .caret {
+.btn.btn-success > .caret {
+  border-width: 6px;
+  border-style: solid;
+  display: inline-block;
+  content: "";
+  width: 0;
+  height: 0;
+  vertical-align: middle;
   opacity: 0.3;
+  border-color: #000000 transparent transparent transparent;
+  border-bottom-width: 0;
+}
+.btn.btn-success > .caret.up {
+  border-color: transparent transparent #000000 transparent;
+  border-top-width: 0px;
+  border-bottom-width: 6px;
+}
+.btn.btn-invert {
+  background-color: #777777;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #777777), color-stop(100%, #5e5e5e));
+  background-image: -webkit-linear-gradient(center top, #777777 0%, #5e5e5e 100%);
+  background-image: -moz-linear-gradient(center top, #777777 0%, #5e5e5e 100%);
+  background-image: -o-linear-gradient(center top, #777777 0%, #5e5e5e 100%);
+  background-image: -ms-linear-gradient(center top, #777777 0%, #5e5e5e 100%);
+  background-image: linear-gradient(center top, #777777 0%, #5e5e5e 100%);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#f4f4f4', endColorstr='#dbdbdb', GradientType=0);
+  -webkit-box-shadow: inset 1px 1px 0 0 #919191;
+  -moz-box-shadow: inset 1px 1px 0 0 #919191;
+  box-shadow: inset 1px 1px 0 0 #919191;
+  border-color: #2b2b2b;
+  color: #ffffff;
+  text-shadow: 1px 1px 0px #5e5e5e;
+}
+.btn.btn-invert > [class^="icon-"],
+.btn.btn-invert  > [class*=" icon-"] {
+  background-image: url("../img/glyphicons_white.png");
+}
+.btn.btn-invert:active,
+.btn.btn-invert.active {
+  background-color: #5e5e5e;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5e5e5e), color-stop(100%, #777777));
+  background-image: -webkit-linear-gradient(center top, #5e5e5e 0%, #777777 100%);
+  background-image: -moz-linear-gradient(center top, #5e5e5e 0%, #777777 100%);
+  background-image: -o-linear-gradient(center top, #5e5e5e 0%, #777777 100%);
+  background-image: -ms-linear-gradient(center top, #5e5e5e 0%, #777777 100%);
+  background-image: linear-gradient(center top, #5e5e5e 0%, #777777 100%);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#f4f4f4', endColorstr='#dbdbdb', GradientType=0);
+  -webkit-box-shadow: inset 0 0 3px 2px #2b2b2b;
+  -moz-box-shadow: inset 0 0 3px 2px #2b2b2b;
+  box-shadow: inset 0 0 3px 2px #2b2b2b;
+  outline: 0;
+}
+.btn.btn-invert:hover,
+.btn.btn-invert.hover,
+.btn.btn-invert:focus,
+.btn.btn-invert.focus {
+  background-color: #6a6a6a;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #6a6a6a), color-stop(100%, #515151));
+  background-image: -webkit-linear-gradient(center top, #6a6a6a 0%, #515151 100%);
+  background-image: -moz-linear-gradient(center top, #6a6a6a 0%, #515151 100%);
+  background-image: -o-linear-gradient(center top, #6a6a6a 0%, #515151 100%);
+  background-image: -ms-linear-gradient(center top, #6a6a6a 0%, #515151 100%);
+  background-image: linear-gradient(center top, #6a6a6a 0%, #515151 100%);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#f4f4f4', endColorstr='#dbdbdb', GradientType=0);
+  outline: 0;
+}
+.btn.btn-invert[disabled],
+.btn.btn-invert.disabled {
+  background-color: #919191;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #919191), color-stop(100%, #919191));
+  background-image: -webkit-linear-gradient(center top, #919191 0%, #919191 100%);
+  background-image: -moz-linear-gradient(center top, #919191 0%, #919191 100%);
+  background-image: -o-linear-gradient(center top, #919191 0%, #919191 100%);
+  background-image: -ms-linear-gradient(center top, #919191 0%, #919191 100%);
+  background-image: linear-gradient(center top, #919191 0%, #919191 100%);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#f4f4f4', endColorstr='#dbdbdb', GradientType=0);
+  -webkit-box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0.3);
+  cursor: default;
+}
+.btn.btn-invert > .caret {
+  border-width: 6px;
+  border-style: solid;
+  display: inline-block;
+  content: "";
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  opacity: 0.3;
+  border-color: #000000 transparent transparent transparent;
+  border-bottom-width: 0;
+}
+.btn.btn-invert > .caret.up {
+  border-color: transparent transparent #000000 transparent;
+  border-top-width: 0px;
+  border-bottom-width: 6px;
 }
 .btn-group {
   font-size: 0;
   margin: 10px 0 0 0;
   vertical-align: middle;
 }
-.btn-group  > .btn {
+.btn-group > .btn {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
   border-right-width: 0px;
 }
-.btn-group  > .btn:first-child {
+.btn-group > .btn:first-child {
   -webkit-border-top-left-radius: 3px;
   -webkit-border-bottom-left-radius: 3px;
   -moz-border-radius-topleft: 3px;
@@ -1367,7 +1534,7 @@ input.btn {
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
-.btn-group  > .btn:last-child {
+.btn-group > .btn:last-child {
   -webkit-border-top-right-radius: 3px;
   -webkit-border-bottom-right-radius: 3px;
   -moz-border-radius-topright: 3px;
@@ -1382,10 +1549,10 @@ input.btn {
   margin: 10px 0 0 0;
   display: inline-block;
 }
-.btn-group-vertival  > button.btn {
+.btn-group-vertival > button.btn {
   width: 100%;
 }
-.btn-group-vertival  > .btn {
+.btn-group-vertival > .btn {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
@@ -1393,7 +1560,7 @@ input.btn {
   display: block;
   border-bottom-width: 0px;
 }
-.btn-group-vertival  > .btn:first-child {
+.btn-group-vertival > .btn:first-child {
   -webkit-border-top-left-radius: 3px;
   -webkit-border-top-right-radius: 3px;
   -moz-border-radius-topleft: 3px;
@@ -1401,7 +1568,7 @@ input.btn {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
-.btn-group-vertival  > .btn:last-child {
+.btn-group-vertival > .btn:last-child {
   -webkit-border-bottom-right-radius: 3px;
   -webkit-border-bottom-left-radius: 3px;
   -moz-border-radius-bottomright: 3px;
@@ -1413,11 +1580,11 @@ input.btn {
 .btn-bar {
   font-size: 0;
 }
-.btn-bar  > .btn-group {
+.btn-bar > .btn-group {
   display: inline-block;
   margin-left: 5px;
 }
-.btn-bar  > .btn-group:first-child {
+.btn-bar > .btn-group:first-child {
   margin-left: 0;
 }
 .dropdown {
@@ -1480,7 +1647,7 @@ input.btn {
 .dropdown  > li.submenu  > a:after {
   border-color: transparent transparent transparent #555555;
   border-style: solid;
-  border-width: 5px 0 5px 5px;
+  border-width: 6px 0 6px 6px;
   content: " ";
   display: block;
   float: right;
