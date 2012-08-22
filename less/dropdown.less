@@ -19,26 +19,29 @@
 	.shadow(0,@dropdown-corner-radius,10px,0);
 	.roundcorner(@dropdown-corner-radius);
 	
-	& > li{
+	&> li{
 	
 		vertical-align: middle;
 
 		&:hover{
 			.vertival-gradient(@info,darken(@info,10%));
-			& > a{
+			&> a,&> span{
 				color:lighten(@info,50%);
 				.textshadow( 1px, 1px, 0px, lighten(@info,10%));
 			}
 		}
 		
-		& > a{
+		&> span{
+			cursor:default;
+		}
+		
+		&> a ,&> span{
 			vertical-align: middle;
 			outline: 0;
 			text-decoration:none;
 			display:block;
 			font-size: @font-size;
 			line-height: @line-height;
-		
 			padding:@dropdown-a-padding @font-size;
 			
 			.textshadow( 1px, 1px, 0px, lighten(@dropdown-color,40%));
@@ -48,8 +51,8 @@
 				color:lighten(@dropdown-color,100%);
 				.textshadow( 1px, 1px, 0px, lighten(@info,10%));
 				
-				& > [class^="icon-"],
-				& > [class*=" icon-"]{
+				&> [class^="icon-"],
+				&> [class*=" icon-"]{
 				  background-image: url("@{iconWhiteSpritePath}");
 				} 
 				
@@ -64,8 +67,7 @@
 
 		&.submenu {
 
-			
-			& > a:after  {
+			&> a:after ,&> span:after  {
 				border-color: transparent transparent transparent darken(@dropdown-color,20%);
 				border-style: solid;
 				border-width: 6px 0 6px 6px;
@@ -75,14 +77,20 @@
 				height: 0;
 				width: 0;
 				margin-top:3px;
-				
 			}
 			
-			&:hover > a:after {
+			&:hover > a > [class^="icon-"],
+			&:hover > a > [class*=" icon-"],
+			&:hover > span > [class^="icon-"],
+			&:hover > span > [class*=" icon-"]{
+				 background-image: url("@{iconWhiteSpritePath}");
+			}
+			
+			&:hover > a:after,&:hover > span:after {
 				border-left-color: lighten(@dropdown-color,50%);
 			}
-		
-			& > .dropdown{
+			
+			&> .dropdown{
 				.roundcorner();
 				.roundcorner-top-right(@dropdown-corner-radius);
 				.roundcorner-bottom(@dropdown-corner-radius);
@@ -96,11 +104,7 @@
 		
 			&:hover > .dropdown{
 				display:inline-block;
-				//float:left;
 			}
-		
 		}
-		
 	}
-	
 }
