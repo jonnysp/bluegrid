@@ -6,31 +6,6 @@
 @caret-color:black;
 
 
-// color detection
-
-.icocolor (@color) {
-	background-image: url("@{iconSpritePath}");
-}
-.icocolor (@color) when (lightness(@color) >= 50%) {	 	
-    background-image: url("@{iconSpritePath}");
-}
-.icocolor (@color) when (lightness(@color) < 50%) {
-	background-image: url("@{iconWhiteSpritePath}");
-}
-
-.textcolor(@color) {
-	color:darken(@color,70%);
-	.textshadow( 1px, 1px, 0px, lighten(@color,10%));
-}
-.textcolor(@color) when (lightness(@color) >= 50%) {
-	color:darken(@color,70%);
-	.textshadow( 1px, 1px, 0px, lighten(@color,10%));
-}
-.textcolor(@color) when (lightness(@color) < 50%) {
-	color:lighten(@color,70%);
-	.textshadow( 1px, 1px, 0px, darken(@color,10%));
-}
-// -----------------------------------------------------
 
 
 .colorize-btn(@color){
@@ -59,7 +34,7 @@
 	&[disabled] ,&.disabled {
 		.vertival-gradient(lighten(@color,10%), lighten(@color,10%));
 		.shadow-inset(0,0,0,0);
-		cursor:default;
+		cursor:not-allowed;
 	}
 
 	 &> .caret{ 	

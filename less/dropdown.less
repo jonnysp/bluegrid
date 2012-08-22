@@ -1,11 +1,17 @@
-@dropdown-corner-radius:5px;
-@dropdown-color:#888;
+
+@dropdown-corner-radius:7px;
+@dropdown-item-padding:3px;
+@dropdown-boarder-width:2px;
+
+
 @dropdown-background-color:#fff;
-@dropdown-a-padding:3px;
+@dropdown-boarder-color:fade(#000, 100%);
 
-.dropdown{
+@dropdown-invert-background-color:#000; 
+@dropdown-invert-boarder-color: fade(#fff, 100%);
 
-	float:left;
+
+.mixin-dropdown(@backcolor,@boarder-color,@hovercolor){
 
 	list-style:none;
 	display:inline-block;
@@ -13,21 +19,21 @@
 	margin:0;
 	min-width:150px;
 	padding:@dropdown-corner-radius 0;
-	border:1px solid darken(@dropdown-color,20%);
+	border:@dropdown-boarder-width solid @boarder-color;
+	background-color:@backcolor;
 	
-	background-color:@dropdown-background-color;
 	.shadow(0,@dropdown-corner-radius,10px,0);
 	.roundcorner(@dropdown-corner-radius);
-	
+
 	&> li{
 	
 		vertical-align: middle;
 
 		&:hover{
-			.vertival-gradient(@info,darken(@info,10%));
+			.vertival-gradient(@hovercolor,darken(@hovercolor,20%));
 			&> a,&> span{
-				color:lighten(@info,50%);
-				.textshadow( 1px, 1px, 0px, lighten(@info,10%));
+				color:lighten(@hovercolor,50%);
+				.textshadow( 1px, 1px, 0px, darken(@hovercolor,20%));
 			}
 		}
 		
@@ -42,69 +48,85 @@
 			display:block;
 			font-size: @font-size;
 			line-height: @line-height;
-			padding:@dropdown-a-padding @font-size;
+			padding:@dropdown-item-padding @font-size;
 			
-			.textshadow( 1px, 1px, 0px, lighten(@dropdown-color,40%));
-			color:darken(@dropdown-color,20%);
-			
+			.textcolor(@backcolor);
+			//color:@boarder-color;
+			//.textshadow( 1px, 1px, 0px, lighten(@backcolor,20%));
+
+			&> [class^="icon-"],
+			&> [class*=" icon-"]{
+				  .icocolor(@backcolor);
+			} 
+					
 			&:hover{
-				color:lighten(@dropdown-color,100%);
-				.textshadow( 1px, 1px, 0px, lighten(@info,10%));
+				color:lighten(@hovercolor,100%);
+				.textshadow( 1px, 1px, 0px, darken(@hovercolor,20%));
 				
 				&> [class^="icon-"],
 				&> [class*=" icon-"]{
-				  background-image: url("@{iconWhiteSpritePath}");
+				  .icocolor(@hovercolor);
 				} 
-				
 			}	
-			
 		}
 		
 		&.divider{
-			border-top:1px solid @dropdown-color;
-			margin:5px 2px;
+			border-top:@dropdown-boarder-width solid @boarder-color;
+			margin:@dropdown-corner-radius 0;
 		}
 
 		&.submenu {
 
+			//caret
 			&> a:after ,&> span:after  {
-				border-color: transparent transparent transparent darken(@dropdown-color,20%);
+				border-color: transparent transparent transparent @boarder-color;
 				border-style: solid;
 				border-width: 6px 0 6px 6px;
 				content: " ";
 				display: block;
+				vertical-align:middle;
 				float: right;
 				height: 0;
 				width: 0;
 				margin-top:3px;
 			}
 			
+			//caret-color
+			&:hover > a:after,&:hover > span:after {
+				border-left-color: lighten(@boarder-color,50%);
+			}
+			
 			&:hover > a > [class^="icon-"],
 			&:hover > a > [class*=" icon-"],
 			&:hover > span > [class^="icon-"],
 			&:hover > span > [class*=" icon-"]{
-				 background-image: url("@{iconWhiteSpritePath}");
+				 .icocolor(@hovercolor);
 			}
 			
-			&:hover > a:after,&:hover > span:after {
-				border-left-color: lighten(@dropdown-color,50%);
-			}
-			
-			&> .dropdown{
+			//submenue dropdown
+			&> .dropdown,&> .dropdown-invert{
 				.roundcorner();
 				.roundcorner-top-right(@dropdown-corner-radius);
 				.roundcorner-bottom(@dropdown-corner-radius);
 				
-				margin-top: (@dropdown-corner-radius * -1) - (@dropdown-a-padding * 2) - @line-height - 1 ;
-				margin-left:-1px;
+				margin-top: (@dropdown-corner-radius * -1) - (@dropdown-item-padding * 2) - @line-height - @dropdown-boarder-width ;
+				margin-left: -@dropdown-boarder-width;
 		
 				left:100%;
 				display:none;
 			}
 		
-			&:hover > .dropdown{
-				display:inline-block;
+			&:hover > .dropdown,&:hover > .dropdown-invert{
+				display:block;
 			}
 		}
 	}
+}
+
+
+.dropdown{
+	.mixin-dropdown(@dropdown-background-color,@dropdown-boarder-color,@info);
+}
+.dropdown-invert{
+	.mixin-dropdown(@dropdown-invert-background-color,@dropdown-invert-boarder-color,@info);
 }
