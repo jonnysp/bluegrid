@@ -1,14 +1,14 @@
 
-@dropdown-corner-radius:7px;
+@dropdown-corner-radius:5px;
 @dropdown-item-padding:3px;
-@dropdown-boarder-width:2px;
+@dropdown-boarder-width:1px;
 
 
-@dropdown-background-color:#fff;
-@dropdown-boarder-color:fade(#000, 100%);
+@dropdown-background-color:fade(#fff, 90%);
+@dropdown-boarder-color:#000;
 
-@dropdown-invert-background-color:#000; 
-@dropdown-invert-boarder-color: fade(#fff, 100%);
+@dropdown-invert-background-color:fade(#000, 90%); 
+@dropdown-invert-boarder-color: #fff;
 
 
 .mixin-dropdown(@backcolor,@boarder-color,@hovercolor){
@@ -32,8 +32,7 @@
 		&:hover{
 			.vertival-gradient(@hovercolor,darken(@hovercolor,20%));
 			&> a,&> span{
-				color:lighten(@hovercolor,50%);
-				.textshadow( 1px, 1px, 0px, darken(@hovercolor,20%));
+				.textcolor(@hovercolor);
 			}
 		}
 		
@@ -51,18 +50,15 @@
 			padding:@dropdown-item-padding @font-size;
 			
 			.textcolor(@backcolor);
-			//color:@boarder-color;
-			//.textshadow( 1px, 1px, 0px, lighten(@backcolor,20%));
-
+			
 			&> [class^="icon-"],
 			&> [class*=" icon-"]{
 				  .icocolor(@backcolor);
 			} 
 					
 			&:hover{
-				color:lighten(@hovercolor,100%);
-				.textshadow( 1px, 1px, 0px, darken(@hovercolor,20%));
-				
+			   .textcolor(@hovercolor);
+			   
 				&> [class^="icon-"],
 				&> [class*=" icon-"]{
 				  .icocolor(@hovercolor);
@@ -70,6 +66,7 @@
 			}	
 		}
 		
+		//divider
 		&.divider{
 			border-top:@dropdown-boarder-width solid @boarder-color;
 			margin:@dropdown-corner-radius 0;
@@ -110,7 +107,7 @@
 				.roundcorner-bottom(@dropdown-corner-radius);
 				
 				margin-top: (@dropdown-corner-radius * -1) - (@dropdown-item-padding * 2) - @line-height - @dropdown-boarder-width ;
-				margin-left: -@dropdown-boarder-width;
+				//margin-left: -@dropdown-boarder-width;
 		
 				left:100%;
 				display:none;
@@ -128,5 +125,5 @@
 	.mixin-dropdown(@dropdown-background-color,@dropdown-boarder-color,@info);
 }
 .dropdown-invert{
-	.mixin-dropdown(@dropdown-invert-background-color,@dropdown-invert-boarder-color,@info);
+	.mixin-dropdown(@dropdown-invert-background-color,@dropdown-invert-boarder-color,@success);
 }
