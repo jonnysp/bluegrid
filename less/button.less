@@ -26,9 +26,13 @@
 		outline: 0;
 	}
 	
-	&:hover,&.hover,&:focus,&.focus {
-		.vertival-gradient(darken(@color,5%), darken(@color,15%));
+	&:focus,&.focus{
 		outline: 0;
+	}
+	
+	
+	&:hover,&.hover {
+		.vertival-gradient(darken(@color,5%), darken(@color,15%));
 	}
 	
 	&[disabled] ,&.disabled {
@@ -72,32 +76,32 @@ input.btn {
 	text-align: center;
 	text-decoration: none;
 	vertical-align:middle;
-	
 	display: inline-block;
 	padding:@btn-padding-topbottom @btn-padding-leftright;
 	cursor: pointer;
 	border:@btn-border-width solid darken(@default,30%);
 	.roundcorner(@btn-corner-radius);
 	
+	
 	.colorize-btn(@default);
 	 
-	&.btn-info{
+	&.info{
 		.colorize-btn(@info);
 	}
 	
-	&.btn-warning{
+	&.warning{
 		.colorize-btn(@warning);
 	}
 	
-	&.btn-error{
+	&.error{
 		.colorize-btn(@error);
 	}
 
-	&.btn-success{
+	&.success{
 		.colorize-btn(@success);
 	}
 	
-	&.btn-invert{
+	&.invert{
 		.colorize-btn(@invert);
 	}
 }

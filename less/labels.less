@@ -1,7 +1,7 @@
 
 
 @label-height:@line-height - 2;
-@label-font-zize : @font-size - 2;
+@label-font-zize : @font-size - 3;
 
 .setlabel(@color:@default){
 	.textcolor(@color);
@@ -10,9 +10,8 @@
 	
 	height:@label-height;
 	font-size: @label-font-zize;
-	margin:(@line-height - @label-height ) / 2 0 ;
 	
-	padding: 0 @label-height - @label-font-zize;
+	padding: 0 @label-height / 2;
 	.shadow-inset(0,0,1px,1px,darken(@color,30%));
 	.roundcorner(2px);
 	font-weight:bold;
