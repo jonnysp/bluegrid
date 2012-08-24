@@ -76,10 +76,10 @@ input.btn {
 	display: inline-block;
 	padding:@btn-padding-topbottom @btn-padding-leftright;
 	cursor: pointer;
-	border:@btn-border-width solid darken(@buttoncolor,30%);
+	border:@btn-border-width solid darken(@default,30%);
 	.roundcorner(@btn-corner-radius);
 	
-	.colorize-btn(@buttoncolor);
+	.colorize-btn(@default);
 	 
 	&.btn-info{
 		.colorize-btn(@info);
