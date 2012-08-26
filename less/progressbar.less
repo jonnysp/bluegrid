@@ -1,8 +1,8 @@
-@progress-height:@line-height - 4;
+@progress-height:@line-height - 6;
 
 .colorize-progress(@color){
 
-	margin:( @line-height - @progress-height - 2 ) / 2  0;
+	margin:( @line-height - @progress-height - 4 ) / 2  0;
 
 	display:block;
 	height:@progress-height;
@@ -10,14 +10,14 @@
 	.shadow-inset(0,0,2px,2px,darken(@default,30%));
 	.roundcorner(@progress-height / 2);
 	overflow: hidden;
-	border:1px solid darken(@color,15%);
+	border:2px solid @color;
 	
 	&> .bar{
 		display:block;
 		float:left;
 		height:@progress-height;
-		.roundcorner((@progress-height - 2) / 2);
-		.barbackground(darken(@color,10%), darken(@color,15%));
+		.roundcorner-left((@progress-height - 4) / 2);
+		.barbackground(darken(@color,5%), darken(@color,15%));
 	}
 	
 }
@@ -53,19 +53,37 @@
 
 .barbackground(@startcolor, @stopcolor){
 
-	background-repeat: repeat-x;
+
+
+	
+
+	
 	background: @startcolor;
-	background-image:-moz-linear-gradient(45deg, @stopcolor 25%,@stopcolor 50%,@stopcolor 50%, @startcolor 50%,@startcolor 75%, @stopcolor 75%, @stopcolor 100%);
-	background-image:-webkit-linear-gradient(45deg, @stopcolor 25%,@stopcolor 50%,@stopcolor 50%, @startcolor 50%,@startcolor 75%, @stopcolor 75%, @stopcolor 100%);
-	background-image:-ms-linear-gradient(45deg, @stopcolor 25%,@stopcolor 50%,@stopcolor 50%, @startcolor 50%,@startcolor 75%, @stopcolor 75%, @stopcolor 100%);
-	background-image:-o-linear-gradient(45deg, @stopcolor 25%,@stopcolor 50%,@stopcolor 50%, @startcolor 50%,@startcolor 75%, @stopcolor 75%, @stopcolor 100%);
-	background-image:linear-gradient(45deg, @stopcolor 25%,@stopcolor 50%,@stopcolor 50%, @startcolor 50%,@startcolor 75%, @stopcolor 75%, @stopcolor 100%);
+	
+	background-image: -moz-linear-gradient(top, rgba(100,100,100,0.2) 0%, rgba(239,239,239,0.5) 40%, rgba(226,226,226,0.5) 60%, rgba(100,100,100,0.2) 100% ),
+					 -moz-linear-gradient(45deg, @stopcolor 25%,@stopcolor 50%,@stopcolor 50%, @startcolor 50%,@startcolor 75%, @stopcolor 75%, @stopcolor 100%),;
+	
+	background-image:-webkit-linear-gradient(top, rgba(100,100,100,0.2) 0%, rgba(239,239,239,0.5) 40%, rgba(226,226,226,0.5) 60%, rgba(100,100,100,0.2) 100% ),
+					 -webkit-linear-gradient(45deg, @stopcolor 25%,@stopcolor 50%,@stopcolor 50%, @startcolor 50%,@startcolor 75%, @stopcolor 75%, @stopcolor 100%);
+	
+	background-image:-ms-linear-gradient(top, rgba(100,100,100,0.2) 0%, rgba(239,239,239,0.5) 40%, rgba(226,226,226,0.5) 60%, rgba(100,100,100,0.2) 100% ),
+					 -ms-linear-gradient(45deg, @stopcolor 25%,@stopcolor 50%,@stopcolor 50%, @startcolor 50%,@startcolor 75%, @stopcolor 75%, @stopcolor 100%);
+	
+	background-image:-o-linear-gradient(top, rgba(100,100,100,0.2) 0%, rgba(239,239,239,0.5) 40%, rgba(226,226,226,0.5) 60%, rgba(100,100,100,0.2) 100% ),
+					 -o-linear-gradient(45deg, @stopcolor 25%,@stopcolor 50%,@stopcolor 50%, @startcolor 50%,@startcolor 75%, @stopcolor 75%, @stopcolor 100%);
+	
+	background-image:linear-gradient(top, rgba(100,100,100,0.2) 0%, rgba(239,239,239,0.5) 40%, rgba(226,226,226,0.5) 60%, rgba(100,100,100,0.2) 100% ),
+					 linear-gradient(45deg, @stopcolor 25%,@stopcolor 50%,@stopcolor 50%, @startcolor 50%,@startcolor 75%, @stopcolor 75%, @stopcolor 100%);
+	
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@{startcolor}', endColorstr='@{stopcolor}',GradientType=1 );
-	 
-	 -webkit-background-size: 40px 40px;
-	 -moz-background-size: 40px 40px;
-	 -o-background-size: 40px 40px;
-	  background-size: 40px 40px;
+	
+	 -moz-background-size: 40px @progress-height, 40px 40px;
+	 -webkit-background-size:  40px @progress-height, 40px 40px;
+	 -o-background-size:  40px @progress-height, 40px 40px;
+	  background-size:  40px @progress-height, 40px 40px;
+		
+	background-repeat: repeat-x, repeat-x;
+	background-position: center center, center center;
 	
 	-moz-animation:progress-bar 2s infinite linear;
 	-webkit-animation:progress-bar 2s infinite linear;
@@ -76,43 +94,43 @@
 
 @-moz-keyframes progress-bar {
   from {
-    background-position: -40px 0;
+    background-position:  0 0, -40px 0;
   }
   to {
-    background-position: 0 0;
+    background-position: 0 0, 0 0;
   }
 }
 @-webkit-keyframes progress-bar {
 	 from {
-    background-position: -40px 0;
+    background-position: 0 0, -40px 0;
   }
   to {
-    background-position: 0 0;
+    background-position: 0 0, 0 0;
   }
 }
 @-ms-keyframes progress-bar-stripes {
   from {
-    background-position: -40px 0;
+    background-position: 0 0, -40px 0;
   }
   to {
-    background-position: 0 0;
+    background-position: 0 0, 0 0;
   }
 }
 
 @-o-keyframes progress-bar-stripes {
   from {
- 	 background-position: -40px 0;
+ 	 background-position: right center, 0 0, -40px 0;
   }
   to {
-    background-position: 0 0;
+    background-position: right center, 0 0, 0 0;
   }
 }
 
 @keyframes progress-bar-stripes {
   from {
-    background-position: -40px 0;
+    background-position: right center, 0 0, -40px 0;
   }
   to {
-    background-position: 0 0;
+    background-position: right center, 0 0, 0 0;
   }
 }
