@@ -124,23 +124,19 @@
 	opacity: @opacity;
 }
 
-// color detection
 
-.icocolor (@color) {
-	background-image: url("@{iconSpritePath}");
-}
-.icocolor (@color) when (lightness(@color) >= 30%) {	 	
+// color detection
+.icocolor (@color) when (lightness(@color) >= 70% ) {
+	//back:lightness(@color);	 	
     background-image: url("@{iconSpritePath}");
 }
-.icocolor (@color) when (lightness(@color) < 70%) {
+.icocolor (@color) when (lightness(@color) < 70% ) {
+	//back:lightness(@color);	
 	background-image: url("@{iconWhiteSpritePath}");
 }
 
-.textcolor(@color) {
-	color:darken(@color,100%);
-	.textshadow( 1px, 1px, 0px, lighten(@color,10%));
-}
-.textcolor(@color) when (lightness(@color) >= 30%) {
+
+.textcolor(@color) when (lightness(@color) >= 70%) {
 	color:darken(@color,100%);
 	.textshadow( 1px, 1px, 0px, lighten(@color,10%));
 }
