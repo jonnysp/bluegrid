@@ -144,5 +144,14 @@
 	color:lighten(@color,100%);
 	.textshadow( 1px, 1px, 0px, darken(@color,10%));
 }
+
+
+.dropdown-arrow(@color) when (lightness(@color) >= 70%) {
+	border-left-color: darken(@color,100%);
+}
+.dropdown-arrow(@color) when (lightness(@color) < 70%) {
+	border-left-color: lighten(@color,100%);
+}
+
 // -----------------------------------------------------
 

@@ -11,7 +11,7 @@
 @dropdown-invert-boarder-color: #fff;
 
 
-.mixin-dropdown(@backcolor,@boarder-color,@hovercolor){
+.gen-dropdown(@backcolor,@boarder-color,@hovercolor){
 
 	list-style:none;
 	display:inline-block;
@@ -76,7 +76,8 @@
 
 			//caret
 			&> a:after ,&> span:after  {
-				border-color: transparent transparent transparent @boarder-color;
+				border-color: transparent transparent transparent #000;
+				.dropdown-arrow(@backcolor);
 				border-style: solid;
 				border-width: 6px 0 6px 6px;
 				content: " ";
@@ -90,7 +91,8 @@
 			
 			//caret-color
 			&:hover > a:after,&:hover > span:after {
-				border-left-color: lighten(@boarder-color,50%);
+				//border-left-color: lighten(@boarder-color,50%);
+				.dropdown-arrow(@hovercolor);
 			}
 			
 			&:hover > a > [class^="icon-"],
@@ -107,8 +109,7 @@
 				.roundcorner-bottom(@dropdown-corner-radius);
 				
 				margin-top: (@dropdown-corner-radius * -1) - (@dropdown-item-padding * 2) - @line-height - @dropdown-boarder-width ;
-				//margin-left: -@dropdown-boarder-width;
-		
+					
 				left:100%;
 				display:none;
 			}
@@ -122,8 +123,8 @@
 
 
 .dropdown{
-	.mixin-dropdown(@dropdown-background-color,@dropdown-boarder-color,@info);
+	.gen-dropdown(@dropdown-background-color,@dropdown-boarder-color,@info);
 }
 .dropdown-invert{
-	.mixin-dropdown(@dropdown-invert-background-color,@dropdown-invert-boarder-color,@success);
+	.gen-dropdown(@dropdown-invert-background-color,@dropdown-invert-boarder-color,@success);
 }

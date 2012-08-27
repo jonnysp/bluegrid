@@ -8,7 +8,7 @@
 
 
 
-.colorize-btn(@color){
+.gen-btn(@color){
 
 	&> [class^="icon-"], & > [class*=" icon-"] {
 		.icocolor(@color);
@@ -82,26 +82,26 @@ input.btn {
 	border:@btn-border-width solid darken(@default,30%);
 	.roundcorner(@btn-corner-radius);
 	
-	.colorize-btn(@default);
+	.gen-btn(@default);
 	 
 	&.info{
-		.colorize-btn(@info);
+		.gen-btn(@info);
 	}
 	
 	&.warning{
-		.colorize-btn(@warning);
+		.gen-btn(@warning);
 	}
 	
 	&.error{
-		.colorize-btn(@error);
+		.gen-btn(@error);
 	}
 
 	&.success{
-		.colorize-btn(@success);
+		.gen-btn(@success);
 	}
 	
 	&.invert{
-		.colorize-btn(@invert);
+		.gen-btn(@invert);
 	}
 }
 
