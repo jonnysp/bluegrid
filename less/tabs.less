@@ -1,0 +1,46 @@
+@tab-padding-topbottom:3px;
+@tab-padding-leftright:10px;
+
+.gen-tabs(@color){
+.clearfix();
+	display:block;
+	list-style:none;
+	border-bottom: 1px solid @color;
+	margin:0;
+	padding:0;
+
+	&>li{
+		display:inline-block;
+		float:left;
+		border: 1px solid @color;
+		margin-bottom:-1px;
+		padding:@tab-padding-topbottom @tab-padding-leftright;
+		
+		
+		&>a{
+			display:block;
+			*zoom:1; //IE-fix
+			font-size: @font-size;
+			line-height: @line-height;
+			text-align: center;
+			text-decoration: none;
+			vertical-align:middle;
+		}
+		
+	 &.active{
+	 	border-bottom: 1px solid transparent;
+		margin-bottom:-1px;
+	 
+	 }
+		
+		
+	}
+
+}
+
+
+.tabs{
+	.gen-tabs(@default);
+
+
+}
