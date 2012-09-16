@@ -1,17 +1,17 @@
 
-@dropdown-corner-radius:5px;
+@dropdown-corner-radius:6px;
 @dropdown-item-padding:3px;
 @dropdown-boarder-width:1px;
 
 
-@dropdown-background-color:fade(#fff, 90%);
+//@dropdown-background-color:fade(#fff, 90%);
 @dropdown-boarder-color:#000;
 
 @dropdown-invert-background-color:fade(#000, 90%); 
 @dropdown-invert-boarder-color: #fff;
 
 
-.gen-dropdown(@backcolor,@boarder-color,@hovercolor){
+.gen-dropdown(@backcolor,@boarder-color){
 
 	list-style:none;
 	display:inline-block;
@@ -20,7 +20,7 @@
 	min-width:150px;
 	padding:@dropdown-corner-radius 0;
 	border:@dropdown-boarder-width solid @boarder-color;
-	background-color:@backcolor;
+	background-color:darken(@backcolor,10%);
 	
 	.shadow(0,0,2px,2px);
 	.roundcorner(@dropdown-corner-radius);
@@ -30,9 +30,9 @@
 		vertical-align: middle;
 
 		&:hover{
-			.vertival-gradient(@hovercolor,darken(@hovercolor,20%));
+			.vertival-gradient(@backcolor,darken(@backcolor,20%));
 			&> a,&> span{
-				.textcolor(@hovercolor);
+				.textcolor(@backcolor);
 			}
 		}
 		
@@ -57,11 +57,11 @@
 			} 
 					
 			&:hover{
-			   .textcolor(@hovercolor);
+			   .textcolor(@backcolor);
 			   
 				&> [class^="icon-"],
 				&> [class*=" icon-"]{
-				  .icocolor(@hovercolor);
+				  .icocolor(@backcolor);
 				} 
 			}	
 		}
@@ -92,18 +92,18 @@
 			//caret-color
 			&:hover > a:after,&:hover > span:after {
 				//border-left-color: lighten(@boarder-color,50%);
-				.dropdown-arrow(@hovercolor);
+				.dropdown-arrow(@backcolor);
 			}
 			
 			&:hover > a > [class^="icon-"],
 			&:hover > a > [class*=" icon-"],
 			&:hover > span > [class^="icon-"],
 			&:hover > span > [class*=" icon-"]{
-				 .icocolor(@hovercolor);
+				 .icocolor(@backcolor);
 			}
 			
 			//submenue dropdown
-			&> .dropdown,&> .dropdown-invert{
+			&>.dropdown{
 				.roundcorner();
 				.roundcorner-top-right(@dropdown-corner-radius);
 				.roundcorner-bottom(@dropdown-corner-radius);
@@ -114,7 +114,7 @@
 				display:none;
 			}
 		
-			&:hover > .dropdown,&:hover > .dropdown-invert{
+			&:hover>.dropdown{
 				display:block;
 			}
 		}
@@ -123,8 +123,24 @@
 
 
 .dropdown{
-	.gen-dropdown(@dropdown-background-color,@dropdown-boarder-color,@info);
+	.gen-dropdown(@default,@dropdown-boarder-color);
 }
-.dropdown-invert{
-	.gen-dropdown(@dropdown-invert-background-color,@dropdown-invert-boarder-color,@success);
+
+.dropdown.info{
+	.gen-dropdown(@info,@dropdown-invert-boarder-color);
+}
+
+.dropdown.warning{
+	.gen-dropdown(@warning,@dropdown-invert-boarder-color);
+}
+.dropdown.error{
+	.gen-dropdown(@error,@dropdown-invert-boarder-color);
+}
+
+.dropdown.success{
+	.gen-dropdown(@success,@dropdown-invert-boarder-color);
+}
+
+.dropdown.invert{
+	.gen-dropdown(@invert,@dropdown-invert-boarder-color);
 }

@@ -1,5 +1,5 @@
 @btn-border-width:1px;
-@btn-corner-radius:3px;
+@btn-corner-radius:4px;
 @btn-padding-topbottom:3px;
 @btn-padding-leftright:10px;
 @caret-with:6px;
@@ -14,22 +14,17 @@
 		.icocolor(@color);
 	}
 
-	.vertival-gradient(@color,darken(@color,10%));
-	.shadow-inset(1px,1px,0,0,lighten(@color,10%));
+	.vertival-gradient(@color,darken(@color,15%));
+	.shadow-inset(1px,1px,1px,0,lighten(@color,10%));
 	
-	border-color:darken(@color,30%);
+	border-color:darken(@color,25%);
 	.textcolor(@color);
 	
 	&:active , &.active{
-		.vertival-gradient(darken(@color,10%),@color);
+		.vertival-gradient(darken(@color,5%), darken(@color,15%));
 		.shadow-inset(0,0,3px,3px,darken(@color,20%));
 		outline: 0;
 	}
-	
-	&:focus,&.focus{
-		outline: 0;
-	}
-	
 	
 	&:hover,&.hover {
 		.vertival-gradient(darken(@color,5%), darken(@color,15%));
@@ -41,25 +36,7 @@
 		cursor:not-allowed;
 	}
 
-	 &> .caret{ 	
-		border-width:@caret-with;
-		border-style:solid;
-		display: inline-block;
-		content: "";
-		width:0;
-		height:0;
-		vertical-align:middle;
-		.opac(0.30);
-		
-		border-color: @caret-color transparent transparent transparent;
-		border-bottom-width:0;
-		
-		&.up{	
-		  border-color: transparent transparent @caret-color transparent;
-		  border-top-width:0px;
-		  border-bottom-width:@caret-with;
-		}
-	  }
+
 }
 
 
@@ -82,6 +59,32 @@ input.btn {
 	border:@btn-border-width solid darken(@default,30%);
 	.roundcorner(@btn-corner-radius);
 	
+	&:focus,&.focus{
+		outline: 0;
+	}
+
+	 &> .caret{ 	
+		border-width:@caret-with;
+		border-style:solid;
+		display: inline-block;
+		content: "";
+		width:0;
+		height:0;
+		vertical-align:middle;
+		.opac(0.30);
+		
+		border-color: @caret-color transparent transparent transparent;
+		border-bottom-width:0;
+		
+		&.up{	
+		  border-color: transparent transparent @caret-color transparent;
+		  border-top-width:0px;
+		  border-bottom-width:@caret-with;
+		}
+	  }
+
+	
+	//colors
 	.gen-btn(@default);
 	 
 	&.info{

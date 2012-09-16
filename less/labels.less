@@ -1,24 +1,25 @@
 
-
-@label-height:@line-height - 2;
 @label-font-zize : @font-size - 3;
 
 .setlabel(@color:@default){
 	.textcolor(@color);
 	background-color:@color;
-	display:inline-block;
 	
-	height:@label-height;
-	font-size: @label-font-zize;
-	
-	padding: 0 @label-height / 2;
 	.shadow-inset(0,0,1px,1px,darken(@color,30%));
-	.roundcorner(2px);
-	font-weight:bold;
+	
 }
 
 
 .label{
+
+
+	display:inline-block;
+	height:@line-height - 2;
+	font-size: @label-font-zize;
+	padding: 0 @line-height / 2;
+	.roundcorner(2px);
+	font-weight:bold;
+
 	.setlabel(@default);
 	
 	&.info{

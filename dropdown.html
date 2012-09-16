@@ -20,8 +20,8 @@ width:100%;
 overflow: auto;
 }
 body{
-	background-image:url(img/novomac03.png);
-	background-size: cover;
+	background-image:url(img/defaultdesktop.png);
+	/*ackground-size: cover*/;
 	}
 
 
@@ -38,19 +38,30 @@ body{
     <div class="row">
         <div class="span12">
             
-          <ul class="dropdown-invert">
-          	<li><a href="#"><i class="icon-chevron-right"></i> Item 1</a></li>
-            <li><a href="#"><i class="icon-chevron-right"></i> Item 2 <span class="label success pull-right">10</span></a>   </li>
-            <li><a href="#"><i class="icon-chevron-right"></i> Item 3 <span class="badge success pull-right">10</span></a></li>
+          <ul class="dropdown invert">
+          	<li class="submenu">
+                    	<span><i class="icon-chevron-right"></i> Item 1</span>
+                        <ul class="dropdown">
+                            <li><a href="#">Item 1</a></li>
+                            <li><a href="#">Item 2</a></li>
+                            <li><a href="#">Item 3</a></li>
+                            <li><a href="#">Item 4</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Item 5 <span class="label pull-right">0</span></a></li>
+                            <li><a href="#">Item 6</a></li>
+                      	</ul>
+                    </li>
+            <li><a href="#"><i class="icon-chevron-right"></i> Item 2 <span class="label invert pull-right">10</span></a>   </li>
+            <li><a href="#"><i class="icon-chevron-right"></i> Item 3 <span class="badge invert pull-right">10</span></a></li>
             
             <li class="submenu">
             	<a href="#"><i class="icon-chevron-right"></i> Item 4</a>
-            	 <ul class="dropdown">
+            	 <ul class="dropdown error">
                     <li><a href="#">Item 1</a></li>
                     <li><a href="#">Item 2</a></li>
                     <li class="submenu">
                     	<span><i class="icon-chevron-right"></i> Item 3</span>
-                        <ul class="dropdown">
+                        <ul class="dropdown info">
                             <li><a href="#">Item 1</a></li>
                             <li><a href="#">Item 2</a></li>
                             <li><a href="#">Item 3</a></li>
@@ -62,10 +73,10 @@ body{
                     </li>
                     <li class="submenu">
                     	<a href="#">Item 4</a>
-                    	<ul class="dropdown-invert">
+                    	<ul class="dropdown warning">
                             <li>
                             <span>
-                             <div class="progress success">
+                             <div class="progress warning">
            				 			<div class="bar" style="width:50%;"></div>
          					</div>
                             </span>
@@ -81,7 +92,25 @@ body{
                     </li>
                     <li class="divider"></li>
                     <li><a href="#">Item 5</a></li>
-                    <li><a href="#">Item 6</a></li>
+                    <li class="submenu"><a href="#">Item 6</a>
+                    	<ul class="dropdown success">
+                            <li>
+                            <span>
+                             <div class="progress success">
+           				 			<div class="bar" style="width:50%;"></div>
+         					</div>
+                            </span>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="#">Item 2</a></li>
+                            <li><a href="#">Item 3</a></li>
+                            <li><a href="#">Item 4</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Item 5</a></li>
+                            <li><a href="#">Item 6</a></li>
+                      	</ul>
+                    
+                    </li>
                   </ul>
             </li>
             <li class="divider"></li>

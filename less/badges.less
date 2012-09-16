@@ -1,25 +1,25 @@
 
-
-@badge-height:@line-height - 2;
 @badge-font-zize : @font-size - 3;
 
 .setbadge(@color:@default){
 
 	.textcolor(@color);
 	background-color:@color;
-	display:inline-block;
-	
-	height:@badge-height;
-	font-size: @badge-font-zize;
-	
-	padding: 0 @badge-height / 2;
 	.shadow-inset(0,0,1px,1px,darken(@color,30%));
-	.roundcorner(@badge-height / 2);
-	font-weight:bold;
+	
 }
 
 
 .badge{
+
+	display:inline-block;
+	height:@line-height - 2;
+	font-size: @badge-font-zize;
+	padding: 0 @line-height / 2;
+	.roundcorner(@line-height / 2);
+	font-weight:bold;
+
+	//colors
 	.setbadge(@default);
 	
 	&.info{
