@@ -20,28 +20,31 @@
 	.roundcorner(2px);
 	font-weight:bold;
 
-	.setlabel(@default);
+	.setlabel(@gray);
+
+	&.red{
+		.setlabel(@red);
+	}
+
+	&.orange{
+		.setlabel(@orange);
+	}
+
+	&.yellow{
+		.setlabel(@yellow);
+	}
 	
-	&.info{
-		.setlabel(@info);
+	&.green{
+		.setlabel(@green);
 	}
 
-	&.success{
-		.setlabel(@success);
-	}
-
-	&.warning{
-		.setlabel(@warning);
+	&.blue{
+		.setlabel(@blue);
 	}
 	
-	&.error{
-		.setlabel(@error);
+	&.purple{
+		.setlabel(@purple);
 	}
-
-	&.invert{
-		.setlabel(@invert);
-	}
-
 
 }
 

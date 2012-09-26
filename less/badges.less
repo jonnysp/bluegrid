@@ -20,27 +20,32 @@
 	font-weight:bold;
 
 	//colors
-	.setbadge(@default);
+	.setbadge(@gray);
+
+	&.red{
+		.setbadge(@red);
+	}
+
+	&.orange{
+		.setbadge(@orange);
+	}
+
+	&.yellow{
+		.setbadge(@yellow);
+	}
 	
-	&.info{
-		.setbadge(@info);
+	&.green{
+		.setbadge(@green);
 	}
 
-	&.success{
-		.setbadge(@success);
-	}
-
-	&.warning{
-		.setbadge(@warning);
+	&.blue{
+		.setbadge(@blue);
 	}
 	
-	&.error{
-		.setbadge(@error);
+	&.purple{
+		.setbadge(@purple);
 	}
 
-	&.invert{
-		.setbadge(@invert);
-	}
 
 
 }
