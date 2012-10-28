@@ -1,5 +1,5 @@
 @btn-border-width:1px;
-@btn-corner-radius:4px;
+@btn-corner-radius:2px;
 @btn-padding-topbottom:3px;
 @btn-padding-leftright:10px;
 @caret-with:6px;
@@ -14,25 +14,38 @@
 		.icocolor(@color);
 	}
 
-	.vertival-gradient(@color,darken(@color,5%));
-	
+	.vertival-gradient(lighten(@color,10%),darken(@color,2%));
 	.shadow-inset(1px,1px,1px,0,lighten(@color,10%));
 	
-	border-color:darken(@color,25%);
+	border-color:darken(@color,10%) darken(@color,10%) darken(@color,20%);
+
 	.textcolor(@color);
 	
+	&:hover,&.hover {
+		.vertival-gradient(lighten(@color,6%), lighten(@color,3%));
+	
+		box-shadow: 0 0px 2px rgba(0, 0, 0, 0.25);
+		   
+		z-index:1000;
+	}	
+	
 	&:active , &.active{
-		.vertival-gradient(darken(@color,5%), darken(@color,15%));
-		.shadow-inset(0,0,3px,3px,darken(@color,20%));
+	
+		.vertival-gradient(darken(@color,10%), lighten(@color,3%));
+		 border-color: darken(@color,35%) darken(@color,20%) darken(@color,10%);
+		
+		//todo multi shadow
+		 box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25) inset, 0 1px 0 #FFFFFF;
+	
+		
 		outline: 0;
+		z-index:999;
 	}
 	
-	&:hover,&.hover {
-		.vertival-gradient(darken(@color,5%), darken(@color,15%));
-	}
+
 	
 	&[disabled] ,&.disabled {
-		.vertival-gradient(lighten(@color,10%), lighten(@color,10%));
+		.vertival-gradient(@color, @color);
 		.shadow-inset(0,0,0,0);
 		cursor:not-allowed;
 	}
@@ -53,11 +66,18 @@ input.btn {
     line-height: @line-height;
 	text-align: center;
 	text-decoration: none;
+	font-weight: bold;
+	position:relative;
+	
 	vertical-align:middle;
 	display: inline-block;
 	padding:@btn-padding-topbottom @btn-padding-leftright;
 	cursor: pointer;
-	border:@btn-border-width solid darken(@default,30%);
+	
+	border-width: @btn-border-width;
+	border-style: solid;
+	
+
 	.roundcorner(@btn-corner-radius);
 	
 	&:focus,&.focus{
@@ -65,27 +85,23 @@ input.btn {
 	}
 
 	 &> .caret{ 	
-		border-width:@caret-with;
-		border-style:solid;
-		display: inline-block;
-		content: "";
-		width:0;
-		height:0;
-		vertical-align:middle;
-		.opac(0.30);
+		display:inline-block;
 		
-		border-color: @caret-color transparent transparent transparent;
-		border-bottom-width:0;
-		
-		&.up{	
-		  border-color: transparent transparent @caret-color transparent;
-		  border-top-width:0px;
-		  border-bottom-width:@caret-with;
+		&.left:after{
+			content:'\25C2';
+		}
+		&.right:after{
+			content:'\25B8';
+		}
+		&.up:after{	
+			content:'\25B4';
+		}
+		&.down:after{
+			content:'\25BE';
 		}
 	  }
 
-	
-	//colors
+
 	.gen-btn(@gray);
 	 
 	&.red{
