@@ -20,12 +20,34 @@
 		$(elm).hover(
 		  function () {
 			  
-			var tip_width = $(tip).width();
-			var tip_height = $(tip).height();
+			var tip_width = $(tip).outerWidth();
+			var tip_height = $(tip).outerHeight();
 			
 			var elmpos = $(this).position();
+		    var elmwidth = $(this).outerWidth();
+			var elmheight = $(this).outerHeight();
 			
+			var padding = 5;		
+							
 			var tp = {'top':0,'left':0};
+			
+			switch(data_target){
+				case 'top':
+					tp = {'top':elmpos.top - tip_height - padding,'left':(elmpos.left + (elmwidth / 2)) - (tip_width / 2) };
+					break	
+				case 'bottom':
+					tp = {'top':elmpos.top + elmheight + padding,'left':(elmpos.left + (elmwidth / 2)) - (tip_width / 2) };
+					break
+				case 'left':
+					tp = {'top':(elmpos.top + (elmheight / 2)) - (tip_height / 2),'left':elmpos.left - tip_width - padding };
+					break
+				case 'right':
+					tp = {'top':(elmpos.top + (elmheight / 2)) - (tip_height / 2),'left':elmpos.left + elmwidth + padding };
+					break
+			}
+			
+			
+			
 			
 			$(tip).css(tp).show();
 			
@@ -34,7 +56,9 @@
 			
 			
 		  }, 
-		  function () {	$(tip).hide(); }
+		  function () {	
+		  	$(tip).hide();
+		   }
 		);
 
 		
