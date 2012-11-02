@@ -1,6 +1,7 @@
 //tipsettings
-@tippadding: 	  5px;
-@tiparrowwidth:   4px;
+@tip-padding: 	  5px;
+@tip-arrow-width:   6px;
+@tip-corner-radius: 2px;
 //------------------------------------
 
 .tipcolor(@tipcolor:@black) {
@@ -27,16 +28,21 @@
 
 .tip{
 	
-  z-index:1001;
+  z-index:1010;
 
-  padding:				@tippadding;
+  padding:				@tip-padding;
   position:			absolute;
-  //position:				relative;
   text-align:			center;
   display:				block;
-  font-size:			@font-size - 2;
-  line-height: 			@font-size - 2;
-  .roundcorner(3px);
+  font-size:@font-size;
+  font-weight: bold;
+  min-width:@tip-arrow-width*3;
+  min-height:@tip-arrow-width*3;
+  margin:@tip-arrow-width+1;
+  
+  .noselect();
+  .shadow(2px,2px);
+  .roundcorner(@tip-corner-radius);
 	 
    &:before,&:after{
 	  content:'';
@@ -45,7 +51,7 @@
 	  position:absolute;
 	  border-color: transparent;
 	  border-style: solid;
-	  border-width: @tiparrowwidth;
+	  border-width: @tip-arrow-width;
    } 
 	 
    &:before{
@@ -58,23 +64,23 @@
 
 
  &.bottom:before{
-	  top: (@tiparrowwidth*2)*-1;
-	  margin-left:@tiparrowwidth*-1;
+	  top: (@tip-arrow-width*2)*-1;
+	  margin-left:@tip-arrow-width*-1;
    } 
 	 
 	&.top:before{
-	  bottom: (@tiparrowwidth*2)*-1;
-	  margin-left:@tiparrowwidth*-1;
+	  bottom: (@tip-arrow-width*2)*-1;
+	  margin-left:@tip-arrow-width*-1;
 	}  
 	 
 	&.left:after{
-	  right: (@tiparrowwidth*2)*-1;
-	  margin-top:@tiparrowwidth*-1;
+	  right: (@tip-arrow-width*2)*-1;
+	  margin-top:@tip-arrow-width*-1;
 	}
 		 
 	&.right:after{
-	  left: (@tiparrowwidth*2)*-1;
-	  margin-top:@tiparrowwidth*-1;
+	  left: (@tip-arrow-width*2)*-1;
+	  margin-top:@tip-arrow-width*-1;
 	}	  
 
 

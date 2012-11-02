@@ -23,9 +23,10 @@
 	
 	&:hover,&.hover {
 		.vertival-gradient(lighten(@color,6%), lighten(@color,3%));
-	
+		
+		//todo shadow color
 		box-shadow: 0 0px 2px rgba(0, 0, 0, 0.25);
-		   
+		
 		z-index:1000;
 	}	
 	
@@ -36,13 +37,10 @@
 		
 		//todo multi shadow
 		 box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25) inset, 0 1px 0 #FFFFFF;
-	
 		
 		outline: 0;
 		z-index:999;
 	}
-	
-
 	
 	&[disabled] ,&.disabled {
 		.vertival-gradient(@color, @color);
@@ -77,6 +75,7 @@ input.btn {
 	border-width: @btn-border-width;
 	border-style: solid;
 	
+	.noselect();
 
 	.roundcorner(@btn-corner-radius);
 	
