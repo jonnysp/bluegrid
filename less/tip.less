@@ -1,34 +1,108 @@
-.tip {
-  background-color:    @tipcolor;
-  border:              @tipborderwith solid @tipbordercolor;
-  padding:@tippadding;
-  position:relative;
-  text-align:center;
-  width:@tipwidth;
+//tipsettings
+@tippadding: 	  5px;
+@tiparrowwidth:   4px;
+//------------------------------------
 
-	  .shadow(0,0,5px);
-	  .roundcorner(10px,10px,10px,10px);
+.tipcolor(@tipcolor:@black) {
+  
+  @color : fadeout(@tipcolor,5%);
+  .textcolor(@color);  
+   background-color:@color;
+  
+    &.bottom:before{
+	  border-color: transparent transparent @color transparent;
+    } 
+	&.top:before{
+	  border-color: @color transparent transparent transparent;
+	}  
+	&.left:after{
+		border-color: transparent transparent transparent @color;
+	}
+	&.right:after{
+	 	border-color: transparent @color transparent transparent;
+	}	  
+
 }
 
-.tip-arrow-border {
-  border-color: @tipbordercolor transparent transparent transparent;
-  border-style: solid;
-  border-width: @tiparrowwidth;
-  height:0;
-  width:0;
-  position:absolute;
-  bottom: ((@tiparrowwidth*2)+@tipborderwith)*-1;
-  left:@tipwidth/5;
+
+.tip{
+	
+  z-index:1001;
+
+  padding:				@tippadding;
+  position:			absolute;
+  //position:				relative;
+  text-align:			center;
+  display:				block;
+  font-size:			@font-size - 2;
+  line-height: 			@font-size - 2;
+  .roundcorner(3px);
+	 
+   &:before,&:after{
+	  content:'';
+	  height:0;
+	  width:0;
+	  position:absolute;
+	  border-color: transparent;
+	  border-style: solid;
+	  border-width: @tiparrowwidth;
+   } 
+	 
+   &:before{
+     left:50%;
+   }
+   
+   &:after{
+     top:50%;
+   } 
+
+
+ &.bottom:before{
+	  top: (@tiparrowwidth*2)*-1;
+	  margin-left:@tiparrowwidth*-1;
+   } 
+	 
+	&.top:before{
+	  bottom: (@tiparrowwidth*2)*-1;
+	  margin-left:@tiparrowwidth*-1;
+	}  
+	 
+	&.left:after{
+	  right: (@tiparrowwidth*2)*-1;
+	  margin-top:@tiparrowwidth*-1;
+	}
+		 
+	&.right:after{
+	  left: (@tiparrowwidth*2)*-1;
+	  margin-top:@tiparrowwidth*-1;
+	}	  
+
+
+	.tipcolor();
+
+	&.gray{
+		.tipcolor(@gray);
+	}
+	&.red{
+		.tipcolor(@red);
+	}
+	&.orange{
+		.tipcolor(@orange);
+	}
+	&.yellow{
+		.tipcolor(@yellow);
+	}
+	&.green{
+		.tipcolor(@green);
+	}
+	&.blue{
+		.tipcolor(@blue);
+	}
+	&.purple{
+		.tipcolor(@purple);
+	}
+
 }
 
-.tip-arrow {
-  border-color: @tipcolor transparent transparent transparent;
-  border-style: solid;
-  border-width: @tiparrowwidth;
-  height:0;
-  width:0;
-  position:absolute;
-  bottom:((@tiparrowwidth*2)-1)*-1;
-  left:@tipwidth/5;
-}
+
 
