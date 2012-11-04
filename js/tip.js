@@ -1,24 +1,25 @@
-
 (function( $ ){
 
   $.fn.tip = function(options) {  
-
-    var settings = $.extend( { }, options);
-
+    var settings = $.extend( {}, options);
+		 
     return this.each(function() {        
 		
-		var elm = this;
-		var data = $(elm).data();
-		var data_title = data['title'] ? data['title'] : '';
+		var data = $(this).data();
+		var data_content = $(data['content']).html() ? $(data['content']).html() : data['content'];
 		var data_class = data['class'] ? data['class'] : '';
-		var data_target = data['target'] ? data['target'] : 'top';
-		var tip = $('<div class="tip '+ data_class +'" >'+ data_title +'</div>').addClass(data_target).hide();
+		var data_pos = data['pos'] ? data['pos'] : 'top';
+		var tip = $('<div class="tip" />')
+			.addClass(data_class)
+			.addClass(data_pos)
+			.html(data_content)
+			.hide();
 		
-		$(tip).insertAfter(this);
-
-		$(elm).hover(
+		$(this).hover(
 		  function () {
 			  
+			$(tip).insertAfter(this);
+			
 			var tip_width = $(tip).outerWidth(true);
 			var tip_height = $(tip).outerHeight(true);
 			
@@ -27,8 +28,7 @@
 			var elmheight = $(this).outerHeight(true);
 			
 			var tp = {'top':0,'left':0,'display':'none'};
-			
-			switch(data_target){
+			switch(data_pos){
 				case 'top':
 					tp = {'top':elmpos.top - tip_height,'left':(elmpos.left + (elmwidth / 2)) - (tip_width / 2) };
 					break	
@@ -42,11 +42,14 @@
 					tp = {'top':(elmpos.top + (elmheight / 2)) - (tip_height / 2),'left':elmpos.left + elmwidth};
 					break
 			}
-
-			$(tip).css(tp).show();
+			
+			 if (data_content && data_content != '') {
+				  $(tip).css(tp).show();
+			 };
+			
 		  }, 
 		  function () {	
-		  	$(tip).hide();
+		  	$(tip).remove();
 		   }
 		);
 

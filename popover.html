@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bluegrid-Popover</title>
+
+<link rel="stylesheet/less" type="text/css" href="less/bluegrid.less">
+
+<!--<link rel="stylesheet" type="text/css" href="css/bluegrid.css">-->
+
+<link rel="stylesheet" type="text/css" href="css/prettify.css">
+
+
+<script src="js/prettify.js" type="text/javascript"></script>
+<script src="js/less-1.3.0.min.js" type="text/javascript"></script>
+<script src="js/jquery-1.8.0.js" type="text/javascript"></script>
+
+<script src="js/popover.js" type="text/javascript"></script>
+
+<style type="text/css">
+
+html{
+height:100%;
+width:100%;
+overflow: auto;
+}
+body{
+	background-color:#D0D0D0;
+	background-image:url(img/back.png);
+	/*background-image:url(img/defaultdesktop.png);
+	background-size: cover;*/
+	}
+
+
+
+</style>
+
+</head>
+
+<body>
+<br /><br /><br />
+<div class="container">
+
+    <div class="row">
+        <div class="span12">
+            <br>
+<br>
+<br>
+<br>
+
+<div class="btn-group">
+   <button class="btn" rel="popover" data-pos="left" data-class="black" data-content="Popover Left" data-title="Popover Left">Left</button>
+   <button class="btn" rel="popover" data-pos="top" data-content="Popover Top" data-title="Popover Top">Top</button>
+   <button class="btn" rel="popover" data-pos="bottom" data-class="green"  data-content="Popover Bottom" data-title="Popover Bottom">Bottom</button>
+   <button class="btn" rel="popover" data-pos="right" data-class="orange"  data-content="#textcontent" data-title="Popover Right">Right</button>
+
+</div>  
+ 
+     <p id="textcontent">Lorem ipsum dolor sit amet, <a href="#" class="btn" rel="tip" data-pos="top" data-class="blue" data-content="Tip Top">consetetur</a> sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+
+  
+        </div>
+            
+    </div>
+    
+ 
+</div>
+
+<script type="text/javascript">
+
+prettyPrint();
+
+</script>
+
+
+</body>
+</html>
