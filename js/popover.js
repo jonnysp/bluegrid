@@ -1,45 +1,21 @@
+
 (function( $ ){
 
   $.fn.popover = function(options) {  
-    var settings = $.extend( { }, options);
-		 
-    return this.each(function() {        
-		
-    	var data = $(this).data();
-		var data_content = $(data['content']).html() ? $(data['content']).html() : data['content'];
-		var data_title = data['title'] ? data['title'] : '';
-		var data_class = data['class'] ? data['class'] : '';
-		var data_pos = data['pos'] ? data['pos'] : 'top';
-		
-		var title = $('<div>').addClass('popover-title').html(data_title);
-		var content = $('<div>').addClass('popover-content').html(data_content);
-		
-		var popover = $('<div class="popover" />')
-			.addClass(data_class)
-			.addClass(data_pos)
-			.append(title)
-			.append(content)
-			.hide();
+   // var settings = $.extend( { }, options);
 
-		
-		$(this).toggle(
-		  function () {
-			 
-			if ($(this).hasClass('btn')){
-				$(this).addClass('active');
-			} 
-			  
-			$(popover).insertAfter(this);
-			
+
+
+	var setpos = function(elm,popover,pos){
+	
 			var popover_width = $(popover).outerWidth(true);
 			var popover_height = $(popover).outerHeight(true);
+			var elmpos = $(elm).position();
+		    var elmwidth = $(elm).outerWidth(true);
+			var elmheight = $(elm).outerHeight(true);
 			
-			var elmpos = $(this).position();
-		    var elmwidth = $(this).outerWidth(true);
-			var elmheight = $(this).outerHeight(true);
-			
-			var pp = {'top':0,'left':0,'display':'none'};
-			switch(data_pos){
+			var pp = {'top':0,'left':0};
+			switch(pos){
 				case 'top':
 					pp = {'top':elmpos.top - popover_height,'left':(elmpos.left + (elmwidth / 2)) - (popover_width / 2) };
 					break	
@@ -53,19 +29,68 @@
 					pp = {'top':(elmpos.top + (elmheight / 2)) - (popover_height / 2),'left':elmpos.left + elmwidth};
 					break
 			}
+			$(popover).css(pp);
+	}
+	
+	var show = function(elm,popover,pos){
+			if ($(elm).hasClass('btn')){
+				$(elm).addClass('active');
+			} 
+			$(popover).insertAfter(elm);
+			setpos(elm,popover,pos);
+			$(popover).removeClass('out').addClass('in');
+	}
+	
+	var hide = function(elm,popover){
+			$(popover).removeClass('in').addClass('out');
+			//.remove();
 		
-			$(popover).css(pp).show();
+		
+			$(elm).removeClass('active');
+
 			
-	  }, 
+	}
+	
+    return this.each(function() {        
+		
+    	var data = $(this).data();
+		var data_content = $(data['content']).html() ? $(data['content']).html() : data['content'];
+		var data_title = data['title'] ? data['title'] : '';
+		var data_class = data['class'] ? data['class'] : '';
+		var data_pos = data['pos'] ? data['pos'] : 'top';
+		
+		var title = $('<div>')
+					.addClass('popover-title')
+					.html(data_title);
+					
+		var content = $('<div>')
+					  .addClass('popover-content')
+					  .html(data_content);
+		
+		var popover = $('<div class="popover" />')
+						.addClass(data_class)
+						.addClass(data_pos)
+						.append(title)
+						.append(content);
+
+		var elm = this;
+		$(window).resize(function(e) {
+        	setpos(elm,popover,data_pos);
+    	});
+		
+		$(elm).toggle(
+		  function () {
+			show(this,popover,data_pos);
+	  	  }, 
 		  function () {	
-		  	$(popover).remove();
-			$(this).removeClass('active');
+		    hide(this,popover);
 		   }
 		);
-
+		
     });
-
+	
   };
+  
 })( jQuery );
 
 $(document).ready(function(){

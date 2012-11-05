@@ -7,6 +7,10 @@
 
 .popovercolor(@color:@gray){
 
+
+
+		
+
 	border-color:darken(@color,10%) darken(@color,10%) darken(@color,20%);
 	background-color: @color;
 	.shadow(0px,0px,4px,0px, fadeout(darken(@color,50%),50%));
@@ -54,11 +58,19 @@
 
 	  z-index:2000;
 	  position:	absolute;
+	  display:block;
 	  font-size:@font-size;
-	  display:	block;
 	  border-width: @popover-boarder-width;
 	  border-style: solid;
 	  max-width: 30%;
+	  opacity:0;
+	   
+	     -webkit-transition: opacity 0.2s linear;
+        -moz-transition: opacity 0.2s linear;
+		-ms-transition: opacity 0.2s linear;
+        -o-transition: opacity 0.2s linear;
+        transition: opacity 0.2s linear;
+	  
 	  
 	 .roundcorner(@popover-corner-radius);
 	  
@@ -70,7 +82,7 @@
 	 }
 	 
 	 &>.popover-content{
-		padding:		@popover-padding;
+		margin:		@popover-padding;
 		.roundcorner-bottom(@popover-corner-radius);
 		
 		max-height: 200px;
@@ -123,19 +135,23 @@
 	}
 	
 	&.top:before{
-		bottom: ((@popover-arrow-width + @popover-boarder-width)*2)*-1;
+		bottom: (@popover-arrow-width + @popover-boarder-width)*-1;
+		border-bottom-width:0px;
 	}
 	
 	&.top:after{
-		bottom: (@popover-arrow-width*2)*-1;
+		bottom: @popover-arrow-width*-1;
+		border-bottom-width:0px;
 	}
 	
 	&.bottom:before{
-		top: ((@popover-arrow-width + @popover-boarder-width)*2)*-1;
+		top: (@popover-arrow-width + @popover-boarder-width)*-1;
+		border-top-width:0px;
 	}
 	
 	&.bottom:after{
-		top: (@popover-arrow-width*2)*-1;
+		top: @popover-arrow-width*-1;
+		border-top-width:0px;
 	}
 
 	&.left:before,&.left:after,&.right:before,&.right:after{
@@ -151,19 +167,23 @@
 	}
 	
 	&.left:before{
-		right: ((@popover-arrow-width + @popover-boarder-width)*2)*-1;
+		right: (@popover-arrow-width + @popover-boarder-width)*-1;
+		border-right-width:0px;
 	}
 	
 	&.left:after{
-		right: (@popover-arrow-width*2)*-1;
+		right: @popover-arrow-width*-1;
+		border-right-width:0px;
 	}
 	
 	&.right:before{
-		left: ((@popover-arrow-width + @popover-boarder-width)*2)*-1;
+		left: (@popover-arrow-width + @popover-boarder-width)*-1;
+		border-left-width:0px;
 	}
 	
 	&.right:after{
-		left: (@popover-arrow-width*2)*-1;
+		left: @popover-arrow-width*-1;
+		border-left-width:0px;
 	}
 
 	.popovercolor();
@@ -195,5 +215,22 @@
 	&.purple{
 		.popovercolor(@purple);
 	}
+	
+	//animation 
+	
+	&.in{
+	  opacity:1;
+	 // display:block;
+	}
 
+	&.out{
+
+		opacity:0;
+	  //display:none;
+	}
+
+	
+	
 }
+
+

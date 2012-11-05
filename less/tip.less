@@ -1,16 +1,18 @@
 //tipsettings
 @tip-padding: 	  5px;
 @tip-arrow-width:   6px;
-@tip-corner-radius: 2px;
+@tip-corner-radius: 6px;
 //------------------------------------
 
 .tipcolor(@tipcolor:@black) {
   
   @color : fadeout(@tipcolor,5%);
+  
+  .shadow(0px,0px,2px,0px, fadeout(darken(@color,50%),50%));
   .textcolor(@color);  
    background-color:@color;
    
-  .shadow(0px,0px,2px,0px, fadeout(darken(@tipcolor,50%),50%));
+  
 
     &.bottom:before{
 	  border-color: transparent transparent @color transparent;
@@ -77,22 +79,26 @@
  }
 
    &.bottom:before{
-	  top: (@tip-arrow-width*2)*-1;
+	  top: @tip-arrow-width*-1;
+	  border-top-width:0px;
 	  margin-left:@tip-arrow-width*-1;
    } 
 	 
 	&.top:before{
-	  bottom: (@tip-arrow-width*2)*-1;
+	  bottom: @tip-arrow-width*-1;
+	  border-bottom-width:0px;
 	  margin-left:@tip-arrow-width*-1;
 	}  
 	 
 	&.left:after{
-	  right: (@tip-arrow-width*2)*-1;
+	  right: @tip-arrow-width*-1;
+	  border-right-width:0px;
 	  margin-top:@tip-arrow-width*-1;
 	}
 		 
 	&.right:after{
-	  left: (@tip-arrow-width*2)*-1;
+	  left: @tip-arrow-width*-1;
+	  border-left-width:0px;
 	  margin-top:@tip-arrow-width*-1;
 	}	  
 

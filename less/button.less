@@ -35,7 +35,7 @@
 		 border-color: darken(@color,35%) darken(@color,20%) darken(@color,10%);
 		
 		//todo multi shadow
-		 box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25) inset, 0 1px 0 #FFFFFF;
+		 box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25) inset, 0 1px 0 fadeout(#ffffff,40%);
 		
 		outline: 0;
 		z-index:999;
@@ -139,16 +139,14 @@ input.btn {
 
 	font-size: 0;
 	margin:10px 0 0 0;
-	vertical-align:middle;
+	//vertical-align:middle;
 	
 	&> .btn{
 	  .roundcorner();
 	   margin-left:@btn-border-width*-1px;
-		//float:left;
-		
+				
 		&:first-child{
 			.roundcorner-right(@btn-corner-radius);
-			margin-left:0;
 		}
 		
 		&:last-child{
