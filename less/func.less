@@ -122,9 +122,6 @@
 }
 
 
-
-
-
 .rotate(@degree){
   -webkit-transform: rotate(@degree);
   -moz-transform:    rotate(@degree);
@@ -140,14 +137,6 @@
 	opacity: @opacity;
 }
 
-
-// color detection
-.icocolor (@color) when (lightness(@color) >= 70% ) {	
-    background-image: url("@{iconSpritePath}");
-}
-.icocolor (@color) when (lightness(@color) < 70% ) {	
-	background-image: url("@{iconWhiteSpritePath}");
-}
 
 .textcolor(@color) when (lightness(@color) >= 50%) {
 	color:darken(@color,55%);

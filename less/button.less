@@ -10,9 +10,6 @@
 
 .gen-btn(@color){
 
-	&> [class^="icon-"], & > [class*=" icon-"] {
-		.icocolor(@color);
-	}
 
 	.vertival-gradient(lighten(@color,10%),darken(@color,2%));
 	.shadow-inset(1px,1px,1px,0,lighten(@color,10%));
@@ -128,6 +125,9 @@ input.btn {
 	
 	&.purple{
 		.gen-btn(@purple);
+	}		
+	&.white{
+		.gen-btn(@white);
 	}		
 
 	
