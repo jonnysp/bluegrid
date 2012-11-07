@@ -94,17 +94,15 @@
 	border-bottom-left-radius: @right;
 }
 
-.shadow(@x: 0, @y: 0, @blur: 0,@spread:0, @color: @shadow) {
+.shadow(@x: 0, @y: 0, @blur: 0,@spread:0, @color: @shadow,@inset : '') {
 	 -webkit-box-shadow: @arguments;
 		-moz-box-shadow: @arguments;
 	         box-shadow: @arguments;
 }
 
-.shadow-inset(@x: 0, @y: 0, @blur: 0, @spread:0, @color: @shadow) {
-	 -webkit-box-shadow: inset @arguments;
-		-moz-box-shadow: inset @arguments;
-	         box-shadow: inset @arguments;
-}
+
+
+
 
 .textshadow(@x:0,@y:1px,@z:0,@color:rgba(255,255,255,0.5)){
 		text-shadow: @arguments;
