@@ -1,6 +1,6 @@
 @btn-border-width:1px;
-@btn-corner-radius:2px;
-@btn-padding-topbottom:3px;
+@btn-corner-radius:4px;
+@btn-padding-topbottom:4px;
 @btn-padding-leftright:10px;
 @caret-with:6px;
 @caret-color:black;
@@ -12,7 +12,7 @@
 
 
 	.vertival-gradient(lighten(@color,10%),darken(@color,2%));
-	.shadow(1px,1px,1px,0,lighten(@color,10%),inset);
+	.shadow(1px,1px,0,0,lighten(@color,20%),inset);
 	
 	border-color:darken(@color,10%) darken(@color,10%) darken(@color,20%);
 
@@ -31,7 +31,7 @@
 		 border-color: darken(@color,35%) darken(@color,20%) darken(@color,10%);
 		
 		//todo multi shadow
-		 box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25) inset, 0 1px 0 fadeout(lighten(@color,20%),40%);
+		 box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25) inset, 0 1px 0 fadeout(lighten(@color,50%),40%);
 		
 		outline: 0;
 		z-index:999;
