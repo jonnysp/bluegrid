@@ -136,22 +136,16 @@
 }
 
 
-.textcolor(@color) when (lightness(@color) >= 50%) {
-	color:darken(@color,55%);
+.textcolor(@color) when (lightness(@color) >= 51%) {
+	color:darken(@color,40%);
 	.textshadow( 1px, 1px, 0px, lighten(@color,10%));
 }
-.textcolor(@color) when (lightness(@color) < 50%) {
-	color:lighten(@color,55%);
+.textcolor(@color) when (lightness(@color) < 51%) {
+	color:lighten(@color,40%);
 	.textshadow( 1px, 1px, 0px, darken(@color,10%));
 }
 
 
-.dropdown-arrow(@color) when (lightness(@color) >= 70%) {
-	border-left-color: darken(@color,40%);
-}
-.dropdown-arrow(@color) when (lightness(@color) < 70%) {
-	border-left-color: lighten(@color,40%);
-}
 
 // -----------------------------------------------------
 

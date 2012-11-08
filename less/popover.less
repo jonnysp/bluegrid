@@ -5,7 +5,7 @@
 @popover-boarder-width: 1px;
 //------------------------------------
 
-.popovercolor(@color:@gray){
+.popovercolor(@color){
 
 
 
@@ -186,7 +186,7 @@
 		border-left-width:0px;
 	}
 
-	.popovercolor();
+	.popovercolor(@white);
 
 	&.black{
 		.popovercolor(@black);
@@ -215,6 +215,15 @@
 	&.purple{
 		.popovercolor(@purple);
 	}
+	
+	&.pink{
+		.popovercolor(@pink);
+	}
+	
+	&.gray{
+		.popovercolor(@gray);
+	}
+	
 	
 	//animation 
 	
