@@ -1,0 +1,90 @@
+//alertsettings
+@alert-corner-radius: 5px;
+@alert-padding: 	  8px;
+@alert-boarder-width: 1px;
+//------------------------------------
+
+.alertcolor(@color:@white){
+
+.textcolor(@color);
+.vertival-gradient(lighten(@color,10%),darken(@color,2%));
+border-color:darken(@color,10%) darken(@color,10%) darken(@color,20%);
+.shadow(0px,0px,4px,0px, fadeout(darken(@color,50%),50%));
+
+
+}
+
+
+
+.alert{
+
+	display:block;
+	padding:@alert-padding;
+	margin-bottom:@alert-padding;
+	border-width: @alert-boarder-width;
+	border-style: solid;
+	  
+	.roundcorner(@alert-corner-radius);
+	
+	
+	
+	&:before{
+		content: "\e014";
+		float:right;
+		font-family: 'Glyphicons Halflings';
+		font-style: normal;
+		font-weight: normal;
+		line-height: 1;
+		cursor: pointer;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	.alertcolor();
+
+	&.black{
+		.alertcolor(@black);
+	}
+	
+	&.red{
+		.alertcolor(@red);
+	}
+	
+	&.orange{
+		.alertcolor(@orange);
+	}
+	
+	&.yellow{
+		.alertcolor(@yellow);
+	}
+	
+	&.green{
+		.alertcolor(@green);
+	}
+	
+	&.blue{
+		.alertcolor(@blue);
+	}
+	
+	&.purple{
+		.alertcolor(@purple);
+	}
+	
+	&.pink{
+		.alertcolor(@pink);
+	}
+	
+	&.gray{
+		.alertcolor(@gray);
+	}
+
+
+
+
+}

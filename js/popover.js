@@ -36,16 +36,14 @@
 			if ($(elm).hasClass('btn')){
 				$(elm).addClass('active');
 			} 
-			$(popover).insertAfter(elm);
+			$(popover).appendTo('body');
 			setpos(elm,popover,pos);
 			$(popover).removeClass('out').addClass('in');
 	}
 	
 	var hide = function(elm,popover){
-			$(popover).removeClass('in').addClass('out');
-			//.remove();
 		
-		
+			$(popover).removeClass('in').addClass('out').remove();;
 			$(elm).removeClass('active');
 
 			

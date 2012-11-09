@@ -5,7 +5,7 @@
 @popover-boarder-width: 1px;
 //------------------------------------
 
-.popovercolor(@color){
+.popovercolor(@color:@white){
 
 
 
@@ -13,7 +13,7 @@
 
 	border-color:darken(@color,10%) darken(@color,10%) darken(@color,20%);
 	background-color: @color;
-	.shadow(0px,0px,4px,0px, fadeout(darken(@color,50%),50%));
+	.shadow(0px,0px,4px,0px, fadeout(@color,50%));
 	.textcolor(@color);
 	
 	&>.popover-title{
@@ -188,7 +188,7 @@
 		border-left-width:0px;
 	}
 
-	.popovercolor(@white);
+	.popovercolor();
 
 	&.black{
 		.popovercolor(@black);

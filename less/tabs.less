@@ -1,46 +1,111 @@
-@tab-padding-topbottom:3px;
+@tab-padding-topbottom:4px;
 @tab-padding-leftright:10px;
+@tab-corner-radius:4px;
+@tab-border-width:1px;
+
 
 .gen-tabs(@color){
-.clearfix();
-	display:block;
-	list-style:none;
-	border-bottom: 1px solid @color;
-	margin:0;
-	padding:0;
+
+	border-bottom: @tab-border-width solid darken(@color,20%);
 
 	&>li{
-		display:inline-block;
-		float:left;
-		border: 1px solid @color;
-		margin-bottom:-1px;
-		padding:@tab-padding-topbottom @tab-padding-leftright;
+
+		.vertival-gradient(lighten(@color,10%),darken(@color,2%));
+		.shadow(1px,1px,0,0,lighten(@color,20%),inset);
 		
+		border-color:darken(@color,10%) darken(@color,10%) darken(@color,20%);
 		
 		&>a{
+			.textcolor(@color);
+		}
+		
+		&:hover{
+			.vertival-gradient(lighten(@color,6%), lighten(@color,3%));
+		}	
+		
+		&.active{
+			.shadow(0px,-1px,1px,0px, fadeout(@color,50%));
+			background:none;
+			background-color:@body-background;
+			&>a{
+				.textcolor(@body-background);
+			}
+		}
+		
+		
+	}
+}
+
+
+.tabs{
+
+	margin:0 0 5px 0;
+	padding:0;
+	.clearfix();
+	
+	&>li{
+		float:left;	
+		margin-bottom: @tab-border-width * -1;
+		margin-left: @tab-padding-topbottom;
+		display:block;
+		.roundcorner-top(@tab-corner-radius);
+		border-width: @tab-border-width @tab-border-width 0 @tab-border-width;
+		border-style:solid;
+		
+		&:first-child{
+			margin-left:0;
+		}
+
+		&>a{
+			padding:@tab-padding-topbottom @tab-padding-leftright;
 			display:block;
-			*zoom:1; //IE-fix
 			font-size: @font-size;
 			line-height: @line-height;
 			text-align: center;
 			text-decoration: none;
 			vertical-align:middle;
+			outline:none;
 		}
 		
-	 &.active{
-	 	border-bottom: 1px solid transparent;
-		margin-bottom:-1px;
-	 
-	 }
-		
+		&.active{
+			margin-top:@tab-border-width;
+		}
 		
 	}
 
-}
+	.gen-tabs(@white);
 
-
-.tabs{
-	.gen-tabs(@gray);
-
-
+	&.black{
+		.gen-tabs(@black);
+	}
+	 
+	&.red{
+		.gen-tabs(@red);
+	}
+	
+	&.orange{
+		.gen-tabs(@orange);
+	}
+	
+	&.yellow{
+		.gen-tabs(@yellow);
+	}
+	
+	&.green{
+		.gen-tabs(@green);
+	}
+	
+	&.blue{
+		.gen-tabs(@blue);
+	}
+	
+	&.purple{
+		.gen-tabs(@purple);
+	}		
+	&.gray{
+		.gen-tabs(@gray);
+	}
+	&.pink{
+		.gen-tabs(@pink);
+	}	
 }

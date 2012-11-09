@@ -12,44 +12,45 @@
 		var tip = $('<div class="tip" />')
 			.addClass(data_class)
 			.addClass(data_pos)
-			.html(data_content)
-			.hide();
+			.html(data_content).hide();
 		
 		$(this).hover(
 		  function () {
 			  
-			$(tip).insertAfter(this);
-			
-			var tip_width = $(tip).outerWidth(true);
-			var tip_height = $(tip).outerHeight(true);
-			
-			var elmpos = $(this).position();
-		    var elmwidth = $(this).outerWidth(true);
-			var elmheight = $(this).outerHeight(true);
-			
-			var tp = {'top':0,'left':0,'display':'none'};
-			switch(data_pos){
-				case 'top':
-					tp = {'top':elmpos.top - tip_height,'left':(elmpos.left + (elmwidth / 2)) - (tip_width / 2) };
-					break	
-				case 'bottom':
-					tp = {'top':elmpos.top + elmheight,'left':(elmpos.left + (elmwidth / 2)) - (tip_width / 2) };
-					break
-				case 'left':
-					tp = {'top':(elmpos.top + (elmheight / 2)) - (tip_height / 2),'left':elmpos.left - tip_width};
-					break
-				case 'right':
-					tp = {'top':(elmpos.top + (elmheight / 2)) - (tip_height / 2),'left':elmpos.left + elmwidth};
-					break
-			}
-			
-			 if (data_content && data_content != '') {
-				  $(tip).css(tp).show();
+			if (data_content && data_content != '') { 
+			 
+				$(tip).appendTo('body');
+				
+				var tip_width = $(tip).outerWidth(true);
+				var tip_height = $(tip).outerHeight(true);
+				
+				var elmpos = $(this).position();
+				var elmwidth = $(this).outerWidth(true);
+				var elmheight = $(this).outerHeight(true);
+				
+				var tp = {'top':0,'left':0};
+				switch(data_pos){
+					case 'top':
+						tp = {'top':elmpos.top - tip_height,'left':(elmpos.left + (elmwidth / 2)) - (tip_width / 2) };
+						break	
+					case 'bottom':
+						tp = {'top':elmpos.top + elmheight,'left':(elmpos.left + (elmwidth / 2)) - (tip_width / 2) };
+						break
+					case 'left':
+						tp = {'top':(elmpos.top + (elmheight / 2)) - (tip_height / 2),'left':elmpos.left - tip_width};
+						break
+					case 'right':
+						tp = {'top':(elmpos.top + (elmheight / 2)) - (tip_height / 2),'left':elmpos.left + elmwidth};
+						break
+				}
+				
+			 
+				  $(tip).css(tp).addClass('in').removeClass('out').show();
 			 };
 			
 		  }, 
 		  function () {	
-		  	$(tip).remove();
+		  	$(tip).addClass('out').removeClass('in').remove();
 		   }
 		);
 

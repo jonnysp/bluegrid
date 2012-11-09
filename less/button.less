@@ -2,8 +2,7 @@
 @btn-corner-radius:4px;
 @btn-padding-topbottom:4px;
 @btn-padding-leftright:10px;
-@caret-with:6px;
-@caret-color:black;
+
 
 
 
@@ -21,7 +20,7 @@
 	&:hover,&.hover {
 	
     	.vertival-gradient(lighten(@color,6%), lighten(@color,3%));
-		.shadow(0px,0px,2px,0px, fadeout(darken(@color,50%),50%));
+		.shadow(0px,0px,2px,0px, fadeout(@color,50%));
 		z-index:1000;
 	}	
 	
@@ -152,7 +151,7 @@ input.btn {
 	margin:10px 0 0 0;
 	//vertical-align:middle;
 	
-	&> .btn{
+	& > .btn{
 	  .roundcorner();
 	   margin-left:@btn-border-width*-1px;
 				
@@ -160,7 +159,7 @@ input.btn {
 			.roundcorner-right(@btn-corner-radius);
 		}
 		
-		&:last-child{
+		&:last-child {
 			.roundcorner-left(@btn-corner-radius);
 		}
 	}
@@ -180,7 +179,7 @@ input.btn {
 		width:100%;
 	}
 	
-	&> .btn{
+	& > .btn{
 	    .roundcorner();
 		float:none;
 		display:block;

@@ -1,6 +1,6 @@
 //tipsettings
 @tip-padding: 	  5px;
-@tip-arrow-width:   6px;
+@tip-arrow-width:   5px;
 @tip-corner-radius: 6px;
 //------------------------------------
 
@@ -8,10 +8,10 @@
   
   @color : fadeout(@tipcolor,5%);
   
-  .shadow(0px,0px,2px,0px, fadeout(darken(@color,50%),50%));
+  .shadow(0px,0px,2px,0px, fadeout(@color,50%));
   .textcolor(@color);  
    background-color:@color;
-   
+
   
 
     &.bottom:before{
@@ -32,11 +32,23 @@
 
 .tip{
 	
+	
+
+	
   z-index:2000;
   padding:				@tip-padding;
   position:			absolute;
-  display:				block;
+  opacity:0;
+  display:none;
   font-size:@font-size;
+
+	-webkit-transition: opacity 0.2s linear;
+	-moz-transition: opacity 0.2s linear;
+	-ms-transition: opacity 0.2s linear;
+	-o-transition: opacity 0.2s linear;
+    transition: opacity 0.2s linear;	
+	
+
 
   min-width:@tip-arrow-width*3;
   min-height:@tip-arrow-width*3;
@@ -64,6 +76,19 @@
    &:after{
      top:50%;
    } 
+
+	//animation 
+	&.in{
+	  opacity:1;
+	  //display:block;
+	}
+
+	&.out{
+		opacity:0;
+	}
+
+
+
 
  &.bottom{
  	margin-top: @tip-arrow-width+1;
@@ -103,6 +128,7 @@
 	}	  
 
 
+
 	.tipcolor();
 
 	&.gray{
@@ -125,6 +151,9 @@
 	}
 	&.purple{
 		.tipcolor(@purple);
+	}
+	&.white{
+		.tipcolor(@white);
 	}
 
 }
