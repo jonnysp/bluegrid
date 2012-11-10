@@ -147,6 +147,40 @@
 
 
 
-// -----------------------------------------------------
+// for shadow -----------------------------------------------------
 
+.borderradius(@first,@second) when (ispixel(@first)) and (ispixel(@second)){
+	-webkit-border-radius:~"@{first}px / @{second}px";
+	-moz-border-radius:~"@{first}px / @{second}px";
+	 border-radius:~"@{first}px / @{second}px";
+}
+.borderradius(@first,@second) when (ispercentage(@first)) and (ispixel(@second)){
+	-webkit-border-radius:~"@{first}% / @{second}px";
+	-moz-border-radius:~"@{first}% / @{second}px";
+	 border-radius:~"@{first}% / @{second}px";
+}
+.borderradius(@first,@second) when (ispixel(@first)) and (ispercentage(@second)){
+	-webkit-border-radius:~"@{first}px / @{second}%";
+	-moz-border-radius:~"@{first}px / @{second}%";
+	 border-radius:~"@{first}px / @{second}%";
+}
+.borderradius(@first,@second) when (ispercentage(@first)) and (ispercentage(@second)){
+	-webkit-border-radius:~"@{first}% / @{second}%";
+	-moz-border-radius:~"@{first}% / @{second}%";
+	 border-radius:~"@{first}% / @{second}%";
+}
+
+//.shadow(@x:0px,@y:0px,@blur:0px,@spread:0px,@color:rgba(0, 0, 0, 0.3)){
+//	-webkit-box-shadow: @arguments;
+//	-moz-box-shadow: @arguments;
+//    box-shadow: @arguments;
+//}
+
+.rotate(@deg:0deg){
+	-webkit-transform: rotate(@arguments); 
+	-moz-transform: rotate(@arguments); 
+    -o-transform:  rotate(@arguments); 
+    -ms-transform: rotate(@arguments); 
+    transform:  rotate(@arguments); 
+}
 
