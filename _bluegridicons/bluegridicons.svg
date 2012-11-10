@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   width="1000"
+   height="1000"
+   id="svg5496"
+   sodipodi:version="0.32"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="bluegridicons.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <metadata
+     id="metadata5594">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     inkscape:window-height="877"
+     inkscape:window-width="1358"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:zoom="0.454"
+     inkscape:cx="-73.377093"
+     inkscape:cy="290.82849"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:current-layer="svg5496"
+     inkscape:window-maximized="1">
+    <sodipodi:guide
+       orientation="horizontal"
+       position="200"
+       id="guide5596" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="500,1253.304"
+       id="guide3148" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="136.56388,500"
+       id="guide3150" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="-223.56828,800"
+       id="guide3152" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="200,378.85463"
+       id="guide3154" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="800,341.40969"
+       id="guide3156" />
+  </sodipodi:namedview>
+  <defs
+     id="defs5498">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 500 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="1000 : 500 : 1"
+       inkscape:persp3d-origin="500 : 333.33333 : 1"
+       id="perspective3931" />
+    <font
+       horiz-adv-x="1024"
+       id="font3933"
+       inkscape:label="font 1">
+      <font-face
+         units-per-em="1024"
+         id="font-face3935"
+         font-family="bluegridicons" />
+      <missing-glyph
+         d="M0,0h1000v1024h-1000z"
+         id="missing-glyph3937" />
+      <glyph
+         glyph-name="icon-music"
+         id="glyph3135"
+         unicode="&amp;#xf001;"
+         d="m 454.5548,823.54494 0,-391.31029 c -95.21867,18.80119 -194.54591,-65.77687 -166.42409,-145.44708 37.17923,-105.35208 246.70303,-73.62069 246.86443,68.47441 0.0392,34.796 -0.012,179.7187 -0.0489,311.18741 75.12042,-55.49185 146.13327,-90.16013 132.04037,-183.93342 164.58828,198.46522 -132.08915,244.27484 -132.08915,341.02897 l -80.34266,0 z" />
+      <glyph
+         glyph-name="icon-search"
+         id="glyph3168"
+         unicode="&amp;#xf002;"
+         d="M 797.89343,332.92077 627.31978,503.49442 c 70.87642,146.98994 -36.26493,320.60097 -201.67432,320.60097 -123.36835,0 -223.73716,-100.36881 -223.73716,-223.73862 0,-162.75514 168.55311,-270.04945 315.11184,-204.22076 l 172.045,-172.04062 c 48.93303,-4.08334 113.05148,58.19375 108.82829,108.82538 z M 425.64546,450.97772 c -82.36163,0 -149.37031,67.01015 -149.37031,149.37905 0,82.36454 67.00868,149.37468 149.37031,149.37468 82.36745,0 149.37905,-67.01014 149.37905,-149.37468 0,-82.3689 -67.0116,-149.37905 -149.37905,-149.37905 z" />
+      <glyph
+         glyph-name="icon-envelope"
+         id="glyph3180"
+         unicode="&amp;#xf003;"
+         d="m 95.846197,824 0,-600 808.307603,0 0,600 -808.307603,0 z m 94.891943,-78.64159 617.76593,0 L 499.20011,489.73113 190.73814,745.35841 z m 634.77407,-92.99748 0,-349.71934 -651.02442,0 0,348.96155 324.62812,-268.93074 326.3963,269.68853 z" />
+      <glyph
+         glyph-name="icon-heart"
+         id="glyph3193"
+         unicode="&amp;#xf004;"
+         d="M 353.15625,824.53125 C 291.06596,824.95052 227.17375,795.0557 195.53125,730.3125 120.92938,577.6701 294.0681,432.2823 500,224 705.93191,432.2823 879.07061,577.6716 804.46875,730.3125 741.18374,859.8004 548.92663,849.78715 500,736.96875 c -24.46332,56.4092 -84.75346,87.14323 -146.84375,87.5625 z" />
+      <hkern
+         u1="&amp;#xf001;"
+         u2="&amp;#xf002;"
+         k="0"
+         id="hkern3033" />
+    </font>
+  </defs>
+  <g
+     id="layer1" />
+  <path
+     d="m -488.17648,-141.02897 0,391.31029 c -95.21867,-18.80119 -194.54591,65.77687 -166.42409,145.44708 37.17923,105.35208 246.70303,73.62069 246.86443,-68.47441 0.0392,-34.796 -0.012,-179.7187 -0.0489,-311.18741 C -332.66462,71.55843 -261.65177,106.22671 -275.74467,200 -111.15639,1.53478 -407.83382,-44.27484 -407.83382,-141.02897 l -80.34266,0 z"
+     id="audio-8-icon"
+     inkscape:connector-curvature="0" />
+  <path
+     d="M -107.39291,437.77527 -277.96656,267.20162 c 70.87642,-146.98994 -36.26493,-320.600975 -201.67432,-320.600975 -123.36835,0 -223.73716,100.36881 -223.73716,223.738625 0,162.75514 168.55311,270.04945 315.11184,204.22076 l 172.045,172.04062 c 48.93303,4.08334 113.05148,-58.19375 108.82829,-108.82538 z M -479.64088,319.71832 c -82.36163,0 -149.37031,-67.01015 -149.37031,-149.37905 0,-82.364545 67.00868,-149.374685 149.37031,-149.374685 82.36745,0 149.37905,67.01014 149.37905,149.374685 0,82.3689 -67.0116,149.37905 -149.37905,149.37905 z"
+     id="magnifier-5-icon"
+     inkscape:connector-curvature="0" />
+  <path
+     d="m -1104.5943,328.36093 0,600 808.30757,0 0,-600 -808.30757,0 z m 94.8919,78.64159 617.76594,0 L -701.24042,662.6298 -1009.7024,407.00252 z M -374.92832,500 l 0,349.71934 -651.02438,0 0,-348.96155 324.62808,268.93074 L -374.92832,500 z"
+     id="email-4-icon"
+     inkscape:connector-curvature="0" />
+  <path
+     d="m -556.53538,200 c -62.09029,-0.41927 -125.9825,29.47555 -157.625,94.21875 -74.60187,152.6424 98.53685,298.0302 304.46875,506.3125 205.93191,-208.2823 379.07061,-353.6716 304.46875,-506.3125 C -168.50789,164.73085 -360.765,174.7441 -409.69163,287.5625 -434.15495,231.1533 -494.44509,200.41927 -556.53538,200 z"
+     id="favorite-2-icon"
+     inkscape:connector-curvature="0" />
+</svg>
