@@ -1,0 +1,46 @@
+
+@rating-size: @font-size;
+
+.rating {
+
+ 	 unicode-bidi: bidi-override;
+	 direction: rtl;
+	 
+	 margin: 0;
+	 padding:0;
+	 text-align:left;
+	 .textcolor(@black);
+
+	& > .star{
+	
+		font-family: FontAwesome;
+		font-style: normal;
+		font-weight: normal;
+	    line-height: 1;
+		display: inline-block;
+		text-decoration: inherit;
+		font-size: @rating-size;
+
+		&:before {
+		  content: "\f006";
+		}	 	
+		
+		&:hover, &:hover ~ & {
+		  color: transparent;
+		  cursor: pointer;
+
+		}
+
+		&:hover:before,
+		&:hover ~ .star:before {
+		  
+		  content: "\f005";
+		   left: 0;
+		   color: @yellow;
+		}
+		
+	}  
+}
+		
+
+
