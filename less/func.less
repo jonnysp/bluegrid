@@ -120,6 +120,18 @@
 }
 
 
+.horizontal-gradient(@startcolor, @stopcolor){
+	background-color: @startcolor;
+	background-image: 			-webkit-gradient(linear, left top, right top, color-stop(0%,@startcolor), color-stop(100%,@stopcolor));
+	background-image: 	 -webkit-linear-gradient(left,  @startcolor 0%,@stopcolor 100%);
+	background-image: 		-moz-linear-gradient(left,  @startcolor 0%,@stopcolor 100%);
+	background-image: 		  -o-linear-gradient(left,  @startcolor 0%,@stopcolor 100%);
+	background-image: 		 -ms-linear-gradient(left,  @startcolor 0%,@stopcolor 100%);
+	background-image: 			 linear-gradient(left,  @startcolor 0%,@stopcolor 100%);
+	filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{startcolor}',endColorstr='@{stopcolor}',GradientType=1)";
+}
+
+
 .rotate(@degree){
   -webkit-transform: rotate(@degree);
   -moz-transform:    rotate(@degree);
