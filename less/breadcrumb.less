@@ -5,14 +5,46 @@
 //------------------------------------
 
 
-.gen-breadcrumb(@color:@white){
+.gen-breadcrumb(@color:@black){
+
+	& > li {
+		.vertival-gradient(lighten(@color,10%),darken(@color,2%));
+		.shadow(1px,1px,0,0,lighten(@color,20%),inset);
+		border-color:darken(@color,10%) darken(@color,10%) darken(@color,20%);
+		.textcolor(@color);
+		& > a{
+			.textcolor(@color);
+			
+		}
+	}
+
 
 
 }
 
 
 .breadcrumb{
+	list-style:none;
+	margin:0;
+	padding:0;
+	
+	& > li {
+		float:left;	
+		display:inline-block;
+		
+		
+		& > a {
+			padding:@breadcrumb-padding;
+			display:block;
+			font-size: @font-size;
+			line-height: @line-height;
+			text-align: center;
+			text-decoration: none;
+		}
+		
+			
+	}
 
-
+.gen-breadcrumb();
 
 }
