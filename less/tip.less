@@ -4,15 +4,13 @@
 @tip-corner-radius: 6px;
 //------------------------------------
 
-.tipcolor(@tipcolor:@black) {
+.gen-tip(@tipcolor:@black) {
   
   @color : fadeout(@tipcolor,5%);
   
   .shadow(0px,0px,2px,0px, fadeout(@color,50%));
   .textcolor(@color);  
    background-color:@color;
-
-  
 
     &.bottom:before{
 	  border-color: transparent transparent @color transparent;
@@ -32,9 +30,7 @@
 
 .tip{
 	
-	
 
-	
   z-index:2000;
   padding:				@tip-padding;
   position:			absolute;
@@ -48,13 +44,9 @@
 	-o-transition: opacity 0.2s linear;
     transition: opacity 0.2s linear;	
 	
-
-
-  min-width:@tip-arrow-width*3;
-  min-height:@tip-arrow-width*3;
+  min-width:@tip-arrow-width+@tip-corner-radius*2;
+  min-height:@tip-arrow-width+@tip-corner-radius*2;
   max-width: 30%;
-  
-  //margin:@tip-arrow-width+1;
   
   .noselect();
   .roundcorner(@tip-corner-radius);
@@ -77,17 +69,13 @@
      top:50%;
    } 
 
-	//animation 
 	&.in{
 	  opacity:1;
-	  //display:block;
 	}
 
 	&.out{
 		opacity:0;
 	}
-
-
 
 
  &.bottom{
@@ -129,31 +117,31 @@
 
 
 
-	.tipcolor();
+	.gen-tip();
 
 	&.gray{
-		.tipcolor(@gray);
+		.gen-tip(@gray);
 	}
 	&.red{
-		.tipcolor(@red);
+		.gen-tip(@red);
 	}
 	&.orange{
-		.tipcolor(@orange);
+		.gen-tip(@orange);
 	}
 	&.yellow{
-		.tipcolor(@yellow);
+		.gen-tip(@yellow);
 	}
 	&.green{
-		.tipcolor(@green);
+		.gen-tip(@green);
 	}
 	&.blue{
-		.tipcolor(@blue);
+		.gen-tip(@blue);
 	}
 	&.purple{
-		.tipcolor(@purple);
+		.gen-tip(@purple);
 	}
 	&.white{
-		.tipcolor(@white);
+		.gen-tip(@white);
 	}
 
 }
