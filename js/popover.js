@@ -1,4 +1,3 @@
-
 (function( $ ){
 
   $.fn.popover = function(options) {  
@@ -43,8 +42,23 @@
 	
 	var hide = function(elm,popover){
 		
-			$(popover).removeClass('in').addClass('out').remove();;
+			$(popover).removeClass('in').addClass('out');
 			$(elm).removeClass('active');
+		
+		
+		    var s = document.body.style,
+			supportsTransitions =  'WebkitTransition' in s || 'MozTransition' in s || 'msTransition' in s || 'OTransition' in s || 'Transition' in s;
+		  	if (supportsTransitions){
+				$(popover).one("transitionend webkitTransitionEnd otransitionend", function(){ 
+					$(this).remove();
+				});
+			}else{
+				$(popover).remove();
+			}
+		
+			
+			
+			
 
 			
 	}
@@ -91,8 +105,11 @@
   
 })( jQuery );
 
+
+
 $(document).ready(function(){
 	$('*[rel="popover"]').popover();	
 });
 	
-
+	
+	

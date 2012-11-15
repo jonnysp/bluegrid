@@ -4,12 +4,14 @@
     var settings = $.extend( {}, options);
 	
 	var modalclose = function(that) {
-			
 			if ($(that).data('close') ){
+				$($(that).data('close')).removeClass('in').addClass('out');
 				if ($(that).data('target')){
-					$($(that).data('target')).removeClass('active');
-					$($(that).data('close')).removeClass('in').addClass('out');
-					$($(that).data('target')).data('backdrop').removeClass('in').addClass('out');
+					$($($(that).data('target'))).each(function(index, element) {
+                        $(this).removeClass('active');
+						var backd = $($(this).data('backdrop'));
+						$(backd).removeClass('in').addClass('out');
+                    });
 				}
 			}else{
 				if ($(that).data('target')){
@@ -18,13 +20,12 @@
 					$($(that).data('backdrop')).removeClass('in').addClass('out');
 				}
 			}
-
 	} ;
 	
 	var modalshow = function(that){
 		  if ($(that).data('target')){
 				if (!$($(that).data('target')).hasClass('in')){
-					$(that).addClass('active');
+					$(this).addClass('active');
 					$($(that).data('backdrop')).appendTo('body').addClass('in').removeClass('out');
 					$($(that).data('target')).removeClass('out').addClass('in');
 				}
@@ -57,16 +58,14 @@
 		}else{
 			var backdrop =  $('<div class="modal-backdrop" />').addClass('out');
 			$(that).data('backdrop',backdrop) ;
-				$(backdrop).click(function() {
+			$(backdrop).click(function() {
 				modalclose(that);
 			})
 			$(that).click(function() {
 				modalshow(that);
 			});
 		}
-		
-		
-		
+
     });
 	
   };

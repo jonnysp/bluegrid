@@ -50,7 +50,22 @@
 			
 		  }, 
 		  function () {	
-		  	$(tip).addClass('out').removeClass('in').remove();
+		  
+		  	$(tip).addClass('out').removeClass('in');
+		  
+		 	var s = document.body.style,
+			supportsTransitions =   'WebkitTransition' in s || 'MozTransition' in s || 'msTransition' in s || 'OTransition' in s || 'Transition' in s;
+		  	
+			if (supportsTransitions){
+				$(tip).one("transitionend webkitTransitionEnd otransitionend", function(){ 
+					$(this).detach();
+				});
+			}else{
+				$(tip).remove();
+			}
+			
+			
+			
 		   }
 		);
 

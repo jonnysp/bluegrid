@@ -54,18 +54,17 @@
 
 	  z-index:2000;
 	  position:	absolute;
-	  display:block;
 	  font-size:@font-size;
 	  border-width: @popover-boarder-width;
 	  border-style: solid;
 	  max-width: 30%;
 	  opacity:0;
 	   
-	     -webkit-transition: all 0.2s linear;
-        -moz-transition: all 0.2s linear;
-		-ms-transition: all 0.2s linear;
-        -o-transition: all 0.2s linear;
-        transition: all 0.2s linear;
+	     -webkit-transition: opacity 0.2s linear;
+        -moz-transition: opacity 0.2s linear;
+		-ms-transition: opacity 0.2s linear;
+        -o-transition: opacity 0.2s linear;
+        transition: opacity 0.2s linear;
 	  
 	  
 	 .roundcorner(@popover-corner-radius);
@@ -227,14 +226,11 @@
 	//animation 
 	
 	&.in{
-	  opacity:1;
-	 // display:block;
+	   opacity:1;
 	}
 
 	&.out{
-
 		opacity:0;
-	  //display:none;
 	}
 
 	
