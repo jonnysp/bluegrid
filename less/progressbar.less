@@ -11,6 +11,7 @@
 	
 	&> .bar{
 		.barbackground(@color, lighten(@color,20%));
+		border-right:1px solid  darken(@color,20%);
 	}
 	
 }
@@ -32,7 +33,7 @@
 			display:block;
 			float:left;
 			height:@progress-height;
-			.roundcorner-left((@progress-height - 4) / 2);
+	
 		}
 
 		.colorize-progress(@white);
