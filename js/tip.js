@@ -99,7 +99,7 @@
 					}else{
 						var self = new Tip(this);
 						self.init(self);
-						element.data('Tip', self);
+						element.data('tip', self);
 					};
 			  });
 		};
