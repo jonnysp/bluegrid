@@ -3,13 +3,17 @@
 		function Modal(element) {
 			this.$element = $(element);
 			this.$target =  $(this.$element.data('target')).length > 0 ? $(this.$element.data('target')) : $(this.$element.data('target'));
-			this.$class = this.$element.data('class') ? this.$element.data('class') : '';
-			this.$transition = this.$element.data('transition') ? this.$element.data('transition') : '';
+			
+			
 			this.$isclose = this.$element.data('close') ? true : false;
 			if (this.$isclose === true){
 				this.$target = $(this.$element.data('close')).length > 0 ? $(this.$element.data('close')) : $(this.$element.data('close'));
+			}else{
+				this.$target.data('backdrop', $('<div />').addClass('modal-backdrop').addClass('out') );
+				this.$class = this.$element.data('class') ? this.$element.data('class') : '';
+				this.$transition = this.$element.data('transition') ? this.$element.data('transition') : '';
 			}
-			this.$target.data('backdrop', $('<div />').addClass('modal-backdrop').addClass('out') );
+			
 		};
 
 
@@ -20,17 +24,21 @@
 					
 					self.$target.addClass(self.$class).addClass(self.$transition);
 					if (self.$isclose === true){
+						
 						self.$element.click(function(){
 							self.hide()
-						})
+						});
+						
 					}else{
+						
 						self.$element.click(function(){
 							self.show()
 						});
-					}
-					this.$target.data('backdrop').click(function(){
+						self.$target.data('backdrop').click(function(){
 							self.hide()
-					});	
+						});	
+					}
+					
 					
 			},
 			
