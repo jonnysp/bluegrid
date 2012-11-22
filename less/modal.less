@@ -38,11 +38,11 @@
 
 	z-index:1020;
 	
-	-webkit-transition: opacity 0.3s linear, top 0.3s linear;
-	-moz-transition: opacity 0.3s linear, top 0.3s linear;
-	-ms-transition: opacity 0.3s linear, top 0.3s linear;
-	-o-transition: opacity 0.3s linear, top 0.3s linear;
-	transition: opacity 0.3s linear, top 0.3s linear;
+	-webkit-transition: opacity 0.3s linear;
+	-moz-transition: opacity 0.3s linear;
+	-ms-transition: opacity 0.3s linear;
+	-o-transition: opacity 0.3s linear;
+	transition: opacity 0.3s linear;
 	
 	&.in{
 	  opacity:1;
@@ -65,17 +65,38 @@
 	visibility: hidden;
 	opacity:0;
 	z-index:1050;
-	
+	top:-1000px;
+		
 	border-width: @modal-boarder-width;
 	border-style: solid;	
 	
 	.roundcorner(@modal-corner-radius);
 
-	-webkit-transition: all 0.3s linear;
-	-moz-transition: all 0.3s linear;
-	-ms-transition: all 0.3s linear;
-	-o-transition: all 0.3s linear;
-	transition: all 0.3s linear;
+	-webkit-transition: opacity 0.3s linear;
+	-moz-transition: opacity 0.3s linear;
+	-ms-transition: opacity 0.3s linear;
+	-o-transition: opacity 0.3s linear;
+	transition: opacity 0.3s linear;
+
+	&.slide{
+		-webkit-transition: opacity 0.3s linear, top 0.3s linear;
+		-moz-transition: opacity 0.3s linear, top 0.3s linear;
+		-ms-transition: opacity 0.3s linear, top 0.3s linear;
+		-o-transition: opacity 0.3s linear, top 0.3s linear;
+		transition: opacity 0.3s linear, top 0.3s linear;
+	}
+
+	&.in{
+	  opacity:1;
+	  visibility: visible;
+	  top:50%;
+	}
+
+	&.out{
+		opacity:0;
+		visibility: hidden;
+	 	top:-1500px;
+	}
 
 
 	& > .modal-header{
@@ -106,34 +127,12 @@
 		.clearfix();
 		bottom:0;
 		
-		& > [class*="btn"]{
+		& > .btn-group ,& > .btn{
 			margin:0;
 		}
 		
 	}
 
-
-	&.slide{
-		top:-2000px;
-	}
-
-	&.in{
-	  opacity:1;
-	  visibility: visible;
-	  
-	  &.slide{
-	 	top:50%;
-	  }
-	}
-
-	&.out{
-		opacity:0;
-		visibility: hidden;
-	  &.slide{
-	 	 top:-1000px;
-	  }
-	  
-	}
 
 
 
