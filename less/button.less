@@ -4,9 +4,6 @@
 @btn-padding-leftright:10px;
 
 
-
-
-
 .gen-btn(@color){
 
 
@@ -37,9 +34,11 @@
 	}
 	
 	&[disabled] ,&.disabled {
+		border-color:darken(@color,10%) darken(@color,10%) darken(@color,20%);
 		.vertival-gradient(@color, @color);
 		.shadow(0,0,0,0,inset);
 		cursor:not-allowed;
+		.textcolor(fadeout(@color,70%));
 	}
 
 
