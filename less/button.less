@@ -7,7 +7,7 @@
 .gen-btn(@color){
 
 
-	.vertival-gradient(lighten(@color,10%),darken(@color,2%));
+	.vertical-gradient(lighten(@color,10%),darken(@color,2%));
 	.shadow(1px,1px,0,0,lighten(@color,20%),inset);
 	
 	border-color:darken(@color,10%) darken(@color,10%) darken(@color,20%);
@@ -16,14 +16,14 @@
 	
 	&:hover,&.hover {
 	
-    	.vertival-gradient(lighten(@color,6%), lighten(@color,3%));
+    	.vertical-gradient(lighten(@color,6%), lighten(@color,3%));
 		.shadow(0px,0px,2px,0px, fadeout(@color,50%));
 		z-index:1000;
 	}	
 	
 	&:active , &.active{
 	
-		.vertival-gradient(darken(@color,10%), lighten(@color,3%));
+		.vertical-gradient(darken(@color,10%), lighten(@color,3%));
 		 border-color: darken(@color,35%) darken(@color,20%) darken(@color,10%);
 		
 		//todo multi shadow
@@ -35,7 +35,7 @@
 	
 	&[disabled] ,&.disabled {
 		border-color:darken(@color,10%) darken(@color,10%) darken(@color,20%);
-		.vertival-gradient(@color, @color);
+		.vertical-gradient(@color, @color);
 		.shadow(0,0,0,0,inset);
 		cursor:not-allowed;
 		.textcolor(fadeout(@color,70%));

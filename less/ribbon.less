@@ -1,54 +1,242 @@
-.ribbon-full,
-.ribbon {
- position: relative;
-  
- .vertival-gradient(lighten(@ribboncolor,20%),@ribboncolor);
- 
- text-align: center;
 
- padding: @ribbonsize/2;
- margin:0 -@ribbonsize/2 0 -@ribbonsize/2;
- .shadow(0,0,5px);
-color: darken(@ribboncolor,15%);
-.textshadow( 1px, 1px, 0px, lighten(@ribboncolor,20%);
 
-}
+@ribbon-size : 10px;
+@ribbon-padding : 8px;
+@ribbon-boarder-width : 1px;
+@ribbon-corner-radius: 5px;
 
-.ribbon-full:before, .ribbon-full:after {
-	 content: "";
-	 position: absolute;
-	 display: block;
-	 bottom: @ribbonsize/2*-1;
-	 border: @ribbonsize*0.75 solid darken(@ribboncolor,15%);
-	 z-index: -1;
-}
-.ribbon-full:before {
-	 left: @ribbonsize*-1;
-	 border-right-width: @ribbonsize*0.75;
-	 border-left-color: transparent;
-}
-.ribbon-full:after {
-	 right: @ribbonsize*-1;
-	 border-left-width: @ribbonsize*0.75;
-	 border-right-color: transparent;
+.ribboncolor(@color:@white){
+
+	.vertical-gradient(lighten(@color,10%),darken(@color,2%));
+	.textcolor(@color);
+	border-color:darken(@color,10%) darken(@color,10%) darken(@color,20%);
+	
+	&.left:before,&.right:before{
+		border-top-color:darken(@color,10%);
+	}
+	&.lefttop:before{
+		border-left-color:darken(@color,10%);
+	}
+	&.righttop:before{
+		border-right-color:darken(@color,10%);
+	}
+
 }
 
-.ribbon-full .ribbon-content:before, .ribbon-full .ribbon-content:after ,
-.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
- content: "";
- position: absolute;
- display: block;
- border-style: solid;
- border-color: darken(@ribboncolor,25%) transparent transparent transparent;
- bottom: @ribbonsize/2*-1;
+
+
+
+
+.ribbon{
+
+	position: relative;
+	padding:@ribbon-padding;
+	
+	border-width: @ribbon-boarder-width;
+	border-style: solid;
+	
+	
+	&.lefttop{
+		float:left;
+		margin-left:@ribbon-size*2;
+		top: -@ribbon-size+@ribbon-boarder-width;
+    	.roundcorner-bottom(@ribbon-corner-radius);
+		.roundcorner-top-left(@ribbon-corner-radius);
+		margin: 0 @ribbon-size/2  0 @ribbon-size/2;
+		clear:left;
+		
+		&:before{
+				 content: '';
+				 position: absolute;
+				 display: block;
+				 width:0;
+				 height:0;
+				 top: 0;
+				 right:-(@ribbon-size * 2 + @ribbon-boarder-width);
+				 border-width: @ribbon-size;
+				 border-style: solid;
+				 border-color: transparent;
+				 border-bottom-width: 0;
+				 z-index: -1;
+		}
+	}
+	
+	&.righttop{
+		float:right;
+		margin-right:@ribbon-size*2;
+		top: -@ribbon-size+@ribbon-boarder-width;
+    	.roundcorner-bottom(@ribbon-corner-radius);
+		.roundcorner-top-right(@ribbon-corner-radius);
+		margin: 0 @ribbon-size/2  0 @ribbon-size/2;
+		clear:right;
+		
+		&:before{
+				 content: '';
+				 position: absolute;
+				 display: block;
+				 width:0;
+				 height:0;
+				 top: 0;
+				 left:-(@ribbon-size * 2 + @ribbon-boarder-width);
+				 border-width: @ribbon-size;
+				 border-style: solid;
+				 border-color: transparent;
+				 border-bottom-width: 0;
+				 z-index: -1;
+		}
+	}	
+
+	&.left{
+		float:left;
+		right: @ribbon-size+@ribbon-boarder-width;
+    	.roundcorner-right(@ribbon-corner-radius);
+		.roundcorner-top-left(@ribbon-corner-radius);
+		margin:@ribbon-size/2 0 @ribbon-size/2 0;
+		clear:left;
+		
+		&:before{
+				 content: '';
+				 position: absolute;
+				 display: block;
+				 width:0;
+				 height:0;
+				 bottom: -(@ribbon-size * 2 + @ribbon-boarder-width);
+				 left: 0;
+				 border-width: @ribbon-size;
+				 border-style: solid;
+				 border-color: transparent;
+				 border-right-width: 0;
+				 z-index: -1;
+		}
+	}
+
+	
+	&.right{
+		float:right;
+		left: @ribbon-size+@ribbon-boarder-width;
+    	.roundcorner-left(@ribbon-corner-radius);
+		.roundcorner-top-right(@ribbon-corner-radius);
+		margin:@ribbon-size/2 0 @ribbon-size/2 0;
+		clear:right;
+		
+		&:before{
+				 content: '';
+				 position: absolute;
+				 display: block;
+				 width:0;
+				 height:0;
+				 bottom: -(@ribbon-size * 2 + @ribbon-boarder-width);
+				 right: 0;
+				 border-width: @ribbon-size;
+				 border-style: solid;
+				 border-color: transparent;
+				 border-left-width: 0;
+				 z-index: -1;
+		}
+	}
+	 
+
+
+
+
+
+	 
+
+	.ribboncolor();
+	
+	&.black{
+		.ribboncolor(@black);
+	}
+	 
+	&.red{
+		.ribboncolor(@red);
+	}
+	
+	&.orange{
+		.ribboncolor(@orange);
+	}
+	
+	&.yellow{
+		.ribboncolor(@yellow);
+	}
+	
+	&.green{
+		.ribboncolor(@green);
+	}
+	
+	&.blue{
+		.ribboncolor(@blue);
+	}
+	
+	&.purple{
+		.ribboncolor(@purple);
+	}		
+	&.gray{
+		.ribboncolor(@gray);
+	}
+		
+	&.pink{
+		.ribboncolor(@pink);
+	}	
+	 
+	 
+	
+
+
 }
-.ribbon-full .ribbon-content:before,
-.ribbon .ribbon-content:before {
-	 left: 0;
-   border-width: @ribbonsize/2 0 0 @ribbonsize/2;
-}
-.ribbon-full .ribbon-content:after,
-.ribbon .ribbon-content:after {
-	 right: 0;
-	 border-width: @ribbonsize/2 @ribbonsize/2 0 0;
-}
+
+
+
+//.ribbon-full,.ribbon {
+//	 position: relative;
+// 	.vertival-gradient(lighten(@ribboncolor,20%),@ribboncolor);
+//	
+// 	text-align: center;
+// 	padding: @ribbonsize / 2;
+// 	margin:0 -@ribbonsize / 2 0 -@ribbonsize / 2;
+//	.shadow(0,0,5px);
+//	color: darken(@ribboncolor,15%);
+//	//.textshadow( 1px, 1px, 0px, lighten(@ribboncolor,20%);
+//
+//}
+//
+//.ribbon-full:before, .ribbon-full:after {
+//	 content: "";
+//	 position: absolute;
+//	 display: block;
+//	 bottom: @ribbonsize/2 * -1;
+//	 border: @ribbonsize * 0.75 solid darken(@ribboncolor,15%);
+//	 z-index: -1;
+//}
+//
+//.ribbon-full:before {
+//	 left: @ribbonsize * -1;
+//	 border-right-width: @ribbonsize * 0.75;
+//	 border-left-color: transparent;
+//}
+//
+//.ribbon-full:after {
+//	 right: @ribbonsize * -1;
+//	 border-left-width: @ribbonsize * 0.75;
+//	 border-right-color: transparent;
+//}
+//
+//.ribbon-full .ribbon-content:before, .ribbon-full .ribbon-content:after ,
+//.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+//	 content: "";
+//	 position: absolute;
+//	 display: block;
+//	 border-style: solid;
+//	 border-color: darken(@ribboncolor,25%) transparent transparent transparent;
+//	 bottom: @ribbonsize / 2 * -1;
+//}
+//
+//.ribbon-full .ribbon-content:before,.ribbon .ribbon-content:before {
+//	 left: 0;
+//  	 border-width: @ribbonsize / 2 0 0 @ribbonsize / 2;
+//}
+//
+//.ribbon-full .ribbon-content:after,.ribbon .ribbon-content:after {
+//	 right: 0;
+//	 border-width: @ribbonsize / 2 @ribbonsize / 2 0 0;
+//}

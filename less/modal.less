@@ -14,7 +14,7 @@
 	.shadow(0px,0px,4px,0px, fadeout(@color,50%));
 
 	& > .modal-header{
-		.vertival-gradient(lighten(@color,10%),darken(@color,2%));
+		.vertical-gradient(lighten(@color,10%),darken(@color,2%));
 		border-bottom:@modal-boarder-width solid darken(@color,10%);
 	}
 
@@ -68,38 +68,39 @@
 	
 	.roundcorner(@modal-corner-radius);
 
-	-webkit-transition: opacity 0.3s linear;
-	-moz-transition: opacity 0.3s linear;
-	-ms-transition: opacity 0.3s linear;
-	-o-transition: opacity 0.3s linear;
-	transition: opacity 0.3s linear;
+	-webkit-transition: opacity 0.3s linear,visibility 0.3s linear;
+	-moz-transition: opacity 0.3s linear,visibility 0.3s linear;
+	-ms-transition: opacity 0.3s linear,visibility 0.3s linear;
+	-o-transition: opacity 0.3s linear,visibility 0.3s linear;
+	transition: opacity 0.3s linear,visibility 0.3s linear;
 
 	&.slide-top{
-		top:-1000px;
+		margin: -1250px 0 0 -280px;
 	}
 	&.slide-bottom{
-	  	top:2000px;
+	  	margin: 1250px 0 0 -280px;
+	}
+	&.slide-left{
+		margin: -250px 0 0 -1280px;
+	}
+	&.slide-right{
+		margin: -250px 0 0 1280px;
 	}
 	
-	&.slide-top , &.slide-bottom{
-		-webkit-transition:  top 0.3s linear,opacity 0.3s linear,visibility 0.3s linear;
-		-moz-transition:  top 0.3s linear,opacity 0.3s linear,visibility 0.3s linear;
-		-ms-transition:  top 0.3s linear,opacity 0.3s linear,visibility 0.3s linear;
-		-o-transition:  top 0.3s linear,opacity 0.3s linear,visibility 0.3s linear;
-		transition: top 0.3s linear,opacity 0.3s linear,visibility 0.3s linear;
+	&.slide-left,&.slide-right,&.slide-top , &.slide-bottom{
+		-webkit-transition:  margin 0.3s linear,opacity 0.3s linear,visibility 0.3s linear;
+		-moz-transition:  margin 0.3s linear,opacity 0.3s linear,visibility 0.3s linear;
+		-ms-transition:  margin 0.3s linear,opacity 0.3s linear,visibility 0.3s linear;
+		-o-transition:  margin 0.3s linear,opacity 0.3s linear,visibility 0.3s linear;
+		transition: margin 0.3s linear,opacity 0.3s linear,visibility 0.3s linear;
 	}
-		
 	
-
 	&.in{
-	
 	  opacity:1;
 	  visibility: visible;
-	  
-	  &.slide-top,&.slide-bottom{
-	  	top:50%;
+	  &.slide-top,&.slide-bottom,&.slide-left,&.slide-right{
+	  	margin: -250px 0 0 -280px;
 	  }
-
 	}
 
 
