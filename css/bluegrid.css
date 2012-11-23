@@ -4352,19 +4352,15 @@ ul.gallery li {
   opacity: 0;
   visibility: hidden;
   z-index: 1020;
-  -webkit-transition: opacity 0.3s linear;
-  -moz-transition: opacity 0.3s linear;
-  -ms-transition: opacity 0.3s linear;
-  -o-transition: opacity 0.3s linear;
-  transition: opacity 0.3s linear;
+  -webkit-transition: opacity 0.3s linear,visibility 0.3s linear;
+  -moz-transition: opacity 0.3s linear,visibility 0.3s linear;
+  -ms-transition: opacity 0.3s linear,visibility 0.3s linear;
+  -o-transition: opacity 0.3s linear,visibility 0.3s linear;
+  transition: opacity 0.3s linear,visibility 0.3s linear;
 }
 .modal-backdrop.in {
   opacity: 1;
   visibility: visible;
-}
-.modal-backdrop.out {
-  opacity: 0;
-  visibility: hidden;
 }
 .modal {
   position: fixed;
@@ -4373,10 +4369,9 @@ ul.gallery li {
   width: 560px;
   margin: -250px 0 0 -280px;
   height: auto;
-  visibility: hidden;
   opacity: 0;
   z-index: 1050;
-  top: -1000px;
+  visibility: hidden;
   border-width: 1px;
   border-style: solid;
   -webkit-border-radius: 6px;
@@ -4395,22 +4390,27 @@ ul.gallery li {
   -moz-box-shadow: 0px 0px 4px 0px rgba(238, 238, 238, 0.5) ;
   box-shadow: 0px 0px 4px 0px rgba(238, 238, 238, 0.5) ;
 }
-.modal.slide {
-  -webkit-transition: opacity 0.3s linear, top 0.3s linear;
-  -moz-transition: opacity 0.3s linear, top 0.3s linear;
-  -ms-transition: opacity 0.3s linear, top 0.3s linear;
-  -o-transition: opacity 0.3s linear, top 0.3s linear;
-  transition: opacity 0.3s linear, top 0.3s linear;
+.modal.slide-top {
+  top: -1000px;
+}
+.modal.slide-bottom {
+  top: 2000px;
+}
+.modal.slide-top,
+.modal.slide-bottom {
+  -webkit-transition: top 0.3s linear,opacity 0.3s linear,visibility 0.3s linear;
+  -moz-transition: top 0.3s linear,opacity 0.3s linear,visibility 0.3s linear;
+  -ms-transition: top 0.3s linear,opacity 0.3s linear,visibility 0.3s linear;
+  -o-transition: top 0.3s linear,opacity 0.3s linear,visibility 0.3s linear;
+  transition: top 0.3s linear,opacity 0.3s linear,visibility 0.3s linear;
 }
 .modal.in {
   opacity: 1;
   visibility: visible;
-  top: 50%;
 }
-.modal.out {
-  opacity: 0;
-  visibility: hidden;
-  top: -1500px;
+.modal.in.slide-top,
+.modal.in.slide-bottom {
+  top: 50%;
 }
 .modal  > .modal-header {
   display: block;

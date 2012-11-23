@@ -38,21 +38,17 @@
 
 	z-index:1020;
 	
-	-webkit-transition: opacity 0.3s linear;
-	-moz-transition: opacity 0.3s linear;
-	-ms-transition: opacity 0.3s linear;
-	-o-transition: opacity 0.3s linear;
-	transition: opacity 0.3s linear;
+	-webkit-transition: opacity 0.3s linear,visibility 0.3s linear;
+	-moz-transition: opacity 0.3s linear,visibility 0.3s linear;
+	-ms-transition: opacity 0.3s linear,visibility 0.3s linear;
+	-o-transition: opacity 0.3s linear,visibility 0.3s linear;
+	transition: opacity 0.3s linear,visibility 0.3s linear;
 	
 	&.in{
 	  opacity:1;
 	  visibility: visible;
 	}
 
-	&.out{
-		opacity:0;
-		visibility: hidden;
-	}
 }
 
 .modal{
@@ -62,10 +58,10 @@
 	width:560px;
 	margin: -250px 0 0 -280px;
 	height:auto;
-	visibility: hidden;
 	opacity:0;
 	z-index:1050;
-	top:-1000px;
+	
+	visibility: hidden;
 		
 	border-width: @modal-boarder-width;
 	border-style: solid;	
@@ -78,24 +74,32 @@
 	-o-transition: opacity 0.3s linear;
 	transition: opacity 0.3s linear;
 
-	&.slide{
-		-webkit-transition: opacity 0.3s linear, top 0.3s linear;
-		-moz-transition: opacity 0.3s linear, top 0.3s linear;
-		-ms-transition: opacity 0.3s linear, top 0.3s linear;
-		-o-transition: opacity 0.3s linear, top 0.3s linear;
-		transition: opacity 0.3s linear, top 0.3s linear;
+	&.slide-top{
+		top:-1000px;
 	}
+	&.slide-bottom{
+	  	top:2000px;
+	}
+	
+	&.slide-top , &.slide-bottom{
+		-webkit-transition:  top 0.3s linear,opacity 0.3s linear,visibility 0.3s linear;
+		-moz-transition:  top 0.3s linear,opacity 0.3s linear,visibility 0.3s linear;
+		-ms-transition:  top 0.3s linear,opacity 0.3s linear,visibility 0.3s linear;
+		-o-transition:  top 0.3s linear,opacity 0.3s linear,visibility 0.3s linear;
+		transition: top 0.3s linear,opacity 0.3s linear,visibility 0.3s linear;
+	}
+		
+	
 
 	&.in{
+	
 	  opacity:1;
 	  visibility: visible;
-	  top:50%;
-	}
+	  
+	  &.slide-top,&.slide-bottom{
+	  	top:50%;
+	  }
 
-	&.out{
-		opacity:0;
-		visibility: hidden;
-	 	top:-1500px;
 	}
 
 
