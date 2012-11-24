@@ -109,7 +109,6 @@
 		font-weight: bold;
 		padding:		@modal-padding;
 		.roundcorner-top(@modal-corner-radius);
-		.clearfix();
 		
 		& > h1,& > h2 ,& > h3,& > h4,& > h5,& > h6{
 			margin:0;
@@ -122,14 +121,13 @@
 		padding: 0 @modal-padding;
 		max-height: 400px;
     	overflow-y: auto;
-	
 	}
 
 	& > .modal-footer{
 		display: block;
 		padding:	@modal-padding;
 		.roundcorner-bottom(@modal-corner-radius);
-		.clearfix();
+
 		bottom:0;
 		
 		& > .btn-group ,& > .btn{
@@ -138,7 +136,7 @@
 		
 	}
 
-
+	.clearfix();
 
 
 	.gen-modal();

@@ -6,7 +6,6 @@
 @ribbon-corner-radius: 5px;
 
 .ribboncolor(@color:@white){
-
 	.vertical-gradient(lighten(@color,10%),darken(@color,2%));
 	.textcolor(@color);
 	border-color:darken(@color,10%) darken(@color,10%) darken(@color,20%);
@@ -20,128 +19,90 @@
 	&.righttop:before{
 		border-right-color:darken(@color,10%);
 	}
-
 }
-
-
-
 
 
 .ribbon{
 
 	position: relative;
 	padding:@ribbon-padding;
-	
 	border-width: @ribbon-boarder-width;
 	border-style: solid;
 	
-	
-	&.lefttop{
-		float:left;
-		margin-left:@ribbon-size*2;
-		top: -@ribbon-size+@ribbon-boarder-width;
-    	.roundcorner-bottom(@ribbon-corner-radius);
-		.roundcorner-top-left(@ribbon-corner-radius);
-		margin: 0 @ribbon-size/2  0 @ribbon-size/2;
-		clear:left;
-		
+	&.left,&.lefttop,&.right,&.righttop{
 		&:before{
-				 content: '';
-				 position: absolute;
-				 display: block;
-				 width:0;
-				 height:0;
-				 top: 0;
-				 right:-(@ribbon-size * 2 + @ribbon-boarder-width);
-				 border-width: @ribbon-size;
-				 border-style: solid;
-				 border-color: transparent;
-				 border-bottom-width: 0;
-				 z-index: -1;
+			content: '';
+			position: absolute;
+			display: block;
+			width:0;
+			height:0;
+			border-width: @ribbon-size;
+			border-style: solid;
+			border-color: transparent;
+			z-index: -1;
 		}
+	}
+
+	&.left,&.lefttop{
+		float:left;
+		clear:left;
+		.roundcorner-top-left(@ribbon-corner-radius);
+	}
+	
+	&.right,&.righttop{
+		float:right;
+		clear:right;
+		.roundcorner-top-right(@ribbon-corner-radius);
+	}
+	
+	&.right,&.left{
+		margin: @ribbon-size 0 @ribbon-size 0;
+	}
+	
+	&.righttop,&.lefttop{
+		margin: 0 @ribbon-size 0 @ribbon-size;
 	}
 	
 	&.righttop{
-		float:right;
-		margin-right:@ribbon-size*2;
 		top: -@ribbon-size+@ribbon-boarder-width;
     	.roundcorner-bottom(@ribbon-corner-radius);
-		.roundcorner-top-right(@ribbon-corner-radius);
-		margin: 0 @ribbon-size/2  0 @ribbon-size/2;
-		clear:right;
-		
 		&:before{
-				 content: '';
-				 position: absolute;
-				 display: block;
-				 width:0;
-				 height:0;
-				 top: 0;
-				 left:-(@ribbon-size * 2 + @ribbon-boarder-width);
-				 border-width: @ribbon-size;
-				 border-style: solid;
-				 border-color: transparent;
-				 border-bottom-width: 0;
-				 z-index: -1;
+			top: 0;
+			left:-(@ribbon-size * 2 + @ribbon-boarder-width);
+		 	border-bottom-width: 0;
 		}
 	}	
 
-	&.left{
-		float:left;
-		right: @ribbon-size+@ribbon-boarder-width;
-    	.roundcorner-right(@ribbon-corner-radius);
-		.roundcorner-top-left(@ribbon-corner-radius);
-		margin:@ribbon-size/2 0 @ribbon-size/2 0;
-		clear:left;
-		
-		&:before{
-				 content: '';
-				 position: absolute;
-				 display: block;
-				 width:0;
-				 height:0;
-				 bottom: -(@ribbon-size * 2 + @ribbon-boarder-width);
-				 left: 0;
-				 border-width: @ribbon-size;
-				 border-style: solid;
-				 border-color: transparent;
-				 border-right-width: 0;
-				 z-index: -1;
-		}
-	}
-
-	
 	&.right{
-		float:right;
 		left: @ribbon-size+@ribbon-boarder-width;
     	.roundcorner-left(@ribbon-corner-radius);
-		.roundcorner-top-right(@ribbon-corner-radius);
-		margin:@ribbon-size/2 0 @ribbon-size/2 0;
-		clear:right;
-		
 		&:before{
-				 content: '';
-				 position: absolute;
-				 display: block;
-				 width:0;
-				 height:0;
-				 bottom: -(@ribbon-size * 2 + @ribbon-boarder-width);
-				 right: 0;
-				 border-width: @ribbon-size;
-				 border-style: solid;
-				 border-color: transparent;
-				 border-left-width: 0;
-				 z-index: -1;
+			right: 0;
+			bottom: -(@ribbon-size * 2 + @ribbon-boarder-width);
+			border-left-width: 0;
 		}
 	}
-	 
 
-
-
-
-
-	 
-
+	&.lefttop{
+		top: -@ribbon-size+@ribbon-boarder-width;
+    	.roundcorner-bottom(@ribbon-corner-radius);
+		&:before{
+				top: 0;
+				right:-(@ribbon-size * 2 + @ribbon-boarder-width); 
+				border-bottom-width: 0;
+		}
+	}
+	
+	&.left{
+		right: @ribbon-size+@ribbon-boarder-width;
+    	.roundcorner-right(@ribbon-corner-radius);
+		&:before{
+				left: 0;
+				bottom: -(@ribbon-size * 2 + @ribbon-boarder-width);
+				border-right-width: 0;
+		}
+	}
+	
 	.ribboncolor();
 	
 	&.black{
@@ -179,10 +140,6 @@
 		.ribboncolor(@pink);
 	}	
 	 
-	 
-	
-
-
 }
 
 
