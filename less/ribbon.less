@@ -1,5 +1,3 @@
-
-
 @ribbon-size : 10px;
 @ribbon-padding : 8px;
 @ribbon-boarder-width : 1px;
@@ -7,23 +5,27 @@
 
 .ribboncolor(@color:@white){
 
+	
 	.vertical-gradient(lighten(@color,10%),darken(@color,2%));
 	.textcolor(@color);
 	border-color:darken(@color,10%) darken(@color,10%) darken(@color,20%);
-	
-	
+	.shadow(0px,2px,4px,0px, fadeout(darken(@color,10%),50%));
+
 	&.full{
 		&:before,&:after {
-			border-top-color:darken(@color,10%);
+			border-top-color:darken(@color,20%);
 		}
 	}
-	
-	&.left:before,&.right:before{
-		border-top-color:darken(@color,10%);
+	&.left,&.right{
+		&:before {
+			border-top-color:darken(@color,20%);
+		}
 	}
+
 	&.lefttop:before{
 		border-left-color:darken(@color,10%);
 	}
+	
 	&.righttop:before{
 		border-right-color:darken(@color,10%);
 	}
@@ -39,13 +41,12 @@
 	
 	&.full{
 		display:block;
-		margin:@ribbon-size -@ribbon-size 0 -@ribbon-size;
+		margin:@ribbon-size -(@ribbon-size + @ribbon-boarder-width) 0 -(@ribbon-size + @ribbon-boarder-width);
 		.roundcorner-top(@ribbon-corner-radius);
 	
 		&:before,&:after {
 				content: '';
 				position: absolute;
-				display: block;
 				width:0;
 				height:0;
 				border-width: @ribbon-size;
@@ -63,15 +64,12 @@
 				bottom: -(@ribbon-size * 2 + @ribbon-boarder-width);
 				border-left-width: 0;
 			}
-		
 	}
 
-	
 	&.left,&.lefttop,&.right,&.righttop{
 		&:before{
 			content: '';
 			position: absolute;
-			display: block;
 			width:0;
 			height:0;
 			border-width: @ribbon-size;
@@ -102,17 +100,17 @@
 	}
 	
 	&.righttop{
-		top: -@ribbon-size+@ribbon-boarder-width;
+		top: -( @ribbon-size + @ribbon-boarder-width );
     	.roundcorner-bottom(@ribbon-corner-radius);
 		&:before{
 			top: 0;
-			left:-(@ribbon-size * 2 + @ribbon-boarder-width);
+			left: -(@ribbon-size * 2 + @ribbon-boarder-width);
 		 	border-bottom-width: 0;
 		}
 	}	
 
 	&.right{
-		left: @ribbon-size+@ribbon-boarder-width;
+		left: @ribbon-size + @ribbon-boarder-width;
     	.roundcorner-left(@ribbon-corner-radius);
 		&:before{
 			right: 0;
@@ -122,7 +120,7 @@
 	}
 
 	&.lefttop{
-		top: -@ribbon-size+@ribbon-boarder-width;
+		top: -(@ribbon-size + @ribbon-boarder-width);
     	.roundcorner-bottom(@ribbon-corner-radius);
 		&:before{
 				top: 0;
@@ -132,7 +130,7 @@
 	}
 	
 	&.left{
-		right: @ribbon-size+@ribbon-boarder-width;
+		right: @ribbon-size + @ribbon-boarder-width;
     	.roundcorner-right(@ribbon-corner-radius);
 		&:before{
 				left: 0;
@@ -180,58 +178,3 @@
 	 
 }
 
-
-
-//.ribbon-full,.ribbon {
-//	 position: relative;
-// 	.vertival-gradient(lighten(@ribboncolor,20%),@ribboncolor);
-//	
-// 	text-align: center;
-// 	padding: @ribbonsize / 2;
-// 	margin:0 -@ribbonsize / 2 0 -@ribbonsize / 2;
-//	.shadow(0,0,5px);
-//	color: darken(@ribboncolor,15%);
-//	//.textshadow( 1px, 1px, 0px, lighten(@ribboncolor,20%);
-//
-//}
-//
-//.ribbon-full:before, .ribbon-full:after {
-//	 content: "";
-//	 position: absolute;
-//	 display: block;
-//	 bottom: @ribbonsize/2 * -1;
-//	 border: @ribbonsize * 0.75 solid darken(@ribboncolor,15%);
-//	 z-index: -1;
-//}
-//
-//.ribbon-full:before {
-//	 left: @ribbonsize * -1;
-//	 border-right-width: @ribbonsize * 0.75;
-//	 border-left-color: transparent;
-//}
-//
-//.ribbon-full:after {
-//	 right: @ribbonsize * -1;
-//	 border-left-width: @ribbonsize * 0.75;
-//	 border-right-color: transparent;
-//}
-//
-//.ribbon-full .ribbon-content:before, .ribbon-full .ribbon-content:after ,
-//.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
-//	 content: "";
-//	 position: absolute;
-//	 display: block;
-//	 border-style: solid;
-//	 border-color: darken(@ribboncolor,25%) transparent transparent transparent;
-//	 bottom: @ribbonsize / 2 * -1;
-//}
-//
-//.ribbon-full .ribbon-content:before,.ribbon .ribbon-content:before {
-//	 left: 0;
-//  	 border-width: @ribbonsize / 2 0 0 @ribbonsize / 2;
-//}
-//
-//.ribbon-full .ribbon-content:after,.ribbon .ribbon-content:after {
-//	 right: 0;
-//	 border-width: @ribbonsize / 2 @ribbonsize / 2 0 0;
-//}

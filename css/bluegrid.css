@@ -5224,10 +5224,13 @@ ul.gallery li {
   color: #888888;
   text-shadow: 1px 1px 0px #ffffff;
   border-color: #d5d5d5 #d5d5d5 #bbbbbb;
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(213, 213, 213, 0.5) ;
+  -moz-box-shadow: 0px 2px 4px 0px rgba(213, 213, 213, 0.5) ;
+  box-shadow: 0px 2px 4px 0px rgba(213, 213, 213, 0.5) ;
 }
 .ribbon.full {
   display: block;
-  margin: 10px -10px 0 -10px;
+  margin: 10px -11px 0 -11px;
   -webkit-border-top-left-radius: 5px;
   -webkit-border-top-right-radius: 5px;
   -moz-border-radius-topleft: 5px;
@@ -5239,7 +5242,6 @@ ul.gallery li {
 .ribbon.full:after {
   content: '';
   position: absolute;
-  display: block;
   width: 0;
   height: 0;
   border-width: 10px;
@@ -5263,7 +5265,6 @@ ul.gallery li {
 .ribbon.righttop:before {
   content: '';
   position: absolute;
-  display: block;
   width: 0;
   height: 0;
   border-width: 10px;
@@ -5296,7 +5297,7 @@ ul.gallery li {
   margin: 0 10px 0 10px;
 }
 .ribbon.righttop {
-  top: -9px;
+  top: -11px;
   -webkit-border-bottom-right-radius: 5px;
   -webkit-border-bottom-left-radius: 5px;
   -moz-border-radius-bottomright: 5px;
@@ -5324,7 +5325,7 @@ ul.gallery li {
   border-left-width: 0;
 }
 .ribbon.lefttop {
-  top: -9px;
+  top: -11px;
   -webkit-border-bottom-right-radius: 5px;
   -webkit-border-bottom-left-radius: 5px;
   -moz-border-radius-bottomright: 5px;
@@ -5353,11 +5354,11 @@ ul.gallery li {
 }
 .ribbon.full:before,
 .ribbon.full:after {
-  border-top-color: #d5d5d5;
+  border-top-color: #bbbbbb;
 }
 .ribbon.left:before,
 .ribbon.right:before {
-  border-top-color: #d5d5d5;
+  border-top-color: #bbbbbb;
 }
 .ribbon.lefttop:before {
   border-left-color: #d5d5d5;
@@ -5377,14 +5378,17 @@ ul.gallery li {
   color: #999999;
   text-shadow: 1px 1px 0px #1a1a1a;
   border-color: #1a1a1a #1a1a1a #000000;
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(26, 26, 26, 0.5) ;
+  -moz-box-shadow: 0px 2px 4px 0px rgba(26, 26, 26, 0.5) ;
+  box-shadow: 0px 2px 4px 0px rgba(26, 26, 26, 0.5) ;
 }
 .ribbon.black.full:before,
 .ribbon.black.full:after {
-  border-top-color: #1a1a1a;
+  border-top-color: #000000;
 }
 .ribbon.black.left:before,
 .ribbon.black.right:before {
-  border-top-color: #1a1a1a;
+  border-top-color: #000000;
 }
 .ribbon.black.lefttop:before {
   border-left-color: #1a1a1a;
@@ -5404,14 +5408,17 @@ ul.gallery li {
   color: #ffb9b2;
   text-shadow: 1px 1px 0px #b21000;
   border-color: #b21000 #b21000 #7f0b00;
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(178, 16, 0, 0.5) ;
+  -moz-box-shadow: 0px 2px 4px 0px rgba(178, 16, 0, 0.5) ;
+  box-shadow: 0px 2px 4px 0px rgba(178, 16, 0, 0.5) ;
 }
 .ribbon.red.full:before,
 .ribbon.red.full:after {
-  border-top-color: #b21000;
+  border-top-color: #7f0b00;
 }
 .ribbon.red.left:before,
 .ribbon.red.right:before {
-  border-top-color: #b21000;
+  border-top-color: #7f0b00;
 }
 .ribbon.red.lefttop:before {
   border-left-color: #b21000;
@@ -5431,14 +5438,17 @@ ul.gallery li {
   color: #ffebcc;
   text-shadow: 1px 1px 0px #cc7a00;
   border-color: #cc7a00 #cc7a00 #995c00;
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(204, 122, 0, 0.5) ;
+  -moz-box-shadow: 0px 2px 4px 0px rgba(204, 122, 0, 0.5) ;
+  box-shadow: 0px 2px 4px 0px rgba(204, 122, 0, 0.5) ;
 }
 .ribbon.orange.full:before,
 .ribbon.orange.full:after {
-  border-top-color: #cc7a00;
+  border-top-color: #995c00;
 }
 .ribbon.orange.left:before,
 .ribbon.orange.right:before {
-  border-top-color: #cc7a00;
+  border-top-color: #995c00;
 }
 .ribbon.orange.lefttop:before {
   border-left-color: #cc7a00;
@@ -5458,14 +5468,17 @@ ul.gallery li {
   color: #fff1cc;
   text-shadow: 1px 1px 0px #cc9600;
   border-color: #cc9600 #cc9600 #997000;
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(204, 150, 0, 0.5) ;
+  -moz-box-shadow: 0px 2px 4px 0px rgba(204, 150, 0, 0.5) ;
+  box-shadow: 0px 2px 4px 0px rgba(204, 150, 0, 0.5) ;
 }
 .ribbon.yellow.full:before,
 .ribbon.yellow.full:after {
-  border-top-color: #cc9600;
+  border-top-color: #997000;
 }
 .ribbon.yellow.left:before,
 .ribbon.yellow.right:before {
-  border-top-color: #cc9600;
+  border-top-color: #997000;
 }
 .ribbon.yellow.lefttop:before {
   border-left-color: #cc9600;
@@ -5485,14 +5498,17 @@ ul.gallery li {
   color: #b3e6b3;
   text-shadow: 1px 1px 0px #267326;
   border-color: #267326 #267326 #194d19;
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(38, 115, 38, 0.5) ;
+  -moz-box-shadow: 0px 2px 4px 0px rgba(38, 115, 38, 0.5) ;
+  box-shadow: 0px 2px 4px 0px rgba(38, 115, 38, 0.5) ;
 }
 .ribbon.green.full:before,
 .ribbon.green.full:after {
-  border-top-color: #267326;
+  border-top-color: #194d19;
 }
 .ribbon.green.left:before,
 .ribbon.green.right:before {
-  border-top-color: #267326;
+  border-top-color: #194d19;
 }
 .ribbon.green.lefttop:before {
   border-left-color: #267326;
@@ -5512,14 +5528,17 @@ ul.gallery li {
   color: #bee9ff;
   text-shadow: 1px 1px 0px #007fbe;
   border-color: #007fbe #007fbe #005d8b;
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 127, 190, 0.5) ;
+  -moz-box-shadow: 0px 2px 4px 0px rgba(0, 127, 190, 0.5) ;
+  box-shadow: 0px 2px 4px 0px rgba(0, 127, 190, 0.5) ;
 }
 .ribbon.blue.full:before,
 .ribbon.blue.full:after {
-  border-top-color: #007fbe;
+  border-top-color: #005d8b;
 }
 .ribbon.blue.left:before,
 .ribbon.blue.right:before {
-  border-top-color: #007fbe;
+  border-top-color: #005d8b;
 }
 .ribbon.blue.lefttop:before {
   border-left-color: #007fbe;
@@ -5539,14 +5558,17 @@ ul.gallery li {
   color: #cc99ff;
   text-shadow: 1px 1px 0px #4c0099;
   border-color: #4c0099 #4c0099 #330066;
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(76, 0, 153, 0.5) ;
+  -moz-box-shadow: 0px 2px 4px 0px rgba(76, 0, 153, 0.5) ;
+  box-shadow: 0px 2px 4px 0px rgba(76, 0, 153, 0.5) ;
 }
 .ribbon.purple.full:before,
 .ribbon.purple.full:after {
-  border-top-color: #4c0099;
+  border-top-color: #330066;
 }
 .ribbon.purple.left:before,
 .ribbon.purple.right:before {
-  border-top-color: #4c0099;
+  border-top-color: #330066;
 }
 .ribbon.purple.lefttop:before {
   border-left-color: #4c0099;
@@ -5566,14 +5588,17 @@ ul.gallery li {
   color: #cccccc;
   text-shadow: 1px 1px 0px #4d4d4d;
   border-color: #4d4d4d #4d4d4d #333333;
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(77, 77, 77, 0.5) ;
+  -moz-box-shadow: 0px 2px 4px 0px rgba(77, 77, 77, 0.5) ;
+  box-shadow: 0px 2px 4px 0px rgba(77, 77, 77, 0.5) ;
 }
 .ribbon.gray.full:before,
 .ribbon.gray.full:after {
-  border-top-color: #4d4d4d;
+  border-top-color: #333333;
 }
 .ribbon.gray.left:before,
 .ribbon.gray.right:before {
-  border-top-color: #4d4d4d;
+  border-top-color: #333333;
 }
 .ribbon.gray.lefttop:before {
   border-left-color: #4d4d4d;
@@ -5593,14 +5618,17 @@ ul.gallery li {
   color: #f5d6f5;
   text-shadow: 1px 1px 0px #a329a3;
   border-color: #a329a3 #a329a3 #7a1f7a;
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(163, 41, 163, 0.5) ;
+  -moz-box-shadow: 0px 2px 4px 0px rgba(163, 41, 163, 0.5) ;
+  box-shadow: 0px 2px 4px 0px rgba(163, 41, 163, 0.5) ;
 }
 .ribbon.pink.full:before,
 .ribbon.pink.full:after {
-  border-top-color: #a329a3;
+  border-top-color: #7a1f7a;
 }
 .ribbon.pink.left:before,
 .ribbon.pink.right:before {
-  border-top-color: #a329a3;
+  border-top-color: #7a1f7a;
 }
 .ribbon.pink.lefttop:before {
   border-left-color: #a329a3;
