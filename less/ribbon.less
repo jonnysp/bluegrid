@@ -6,9 +6,17 @@
 @ribbon-corner-radius: 5px;
 
 .ribboncolor(@color:@white){
+
 	.vertical-gradient(lighten(@color,10%),darken(@color,2%));
 	.textcolor(@color);
 	border-color:darken(@color,10%) darken(@color,10%) darken(@color,20%);
+	
+	
+	&.full{
+		&:before,&:after {
+			border-top-color:darken(@color,10%);
+		}
+	}
 	
 	&.left:before,&.right:before{
 		border-top-color:darken(@color,10%);
@@ -28,6 +36,36 @@
 	padding:@ribbon-padding;
 	border-width: @ribbon-boarder-width;
 	border-style: solid;
+	
+	&.full{
+		display:block;
+		margin:@ribbon-size -@ribbon-size 0 -@ribbon-size;
+		.roundcorner-top(@ribbon-corner-radius);
+	
+		&:before,&:after {
+				content: '';
+				position: absolute;
+				display: block;
+				width:0;
+				height:0;
+				border-width: @ribbon-size;
+				border-style: solid;
+				border-color: transparent;
+				z-index: -1;
+			} 
+		&:before {
+				left: 0;
+				bottom: -(@ribbon-size * 2 + @ribbon-boarder-width);
+				border-right-width: 0;
+			}
+		&:after {
+				right: 0;
+				bottom: -(@ribbon-size * 2 + @ribbon-boarder-width);
+				border-left-width: 0;
+			}
+		
+	}
+
 	
 	&.left,&.lefttop,&.right,&.righttop{
 		&:before{
@@ -56,7 +94,7 @@
 	}
 	
 	&.right,&.left{
-		margin: @ribbon-size 0 @ribbon-size 0;
+		margin-top: @ribbon-size ;
 	}
 	
 	&.righttop,&.lefttop{
