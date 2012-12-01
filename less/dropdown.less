@@ -2,33 +2,48 @@
 @dropdown-corner-radius:6px;
 @dropdown-item-padding:3px;
 @dropdown-boarder-width:1px;
-
+@dropdown-arrow-width: 8px;
 
 .gen-dropdown(@color){
 
 	background-color:@color;
 	border-color:darken(@color,10%) darken(@color,10%) darken(@color,20%);
-	.shadow(0px,0px,4px,0px, fadeout(darken(@color,50%),50%));
+	//.shadow(0px,0px,4px,0px, fadeout(darken(@color,50%),50%));
+	
+	
+	&.up{
+		&:before{
+			border-color: darken(@color,10%) transparent transparent transparent;
+		}
+		&:after{
+			border-color: @color transparent transparent transparent;
+		}
+	}
+		
+	&.down{
+		&:before{
+			border-color:transparent transparent darken(@color,10%) transparent;
+		}
+		&:after{
+			border-color: transparent transparent @color transparent;
+		}
+	}
 	
 	&> li{
+	
+	
 		&:hover,&:active:hover,&.active:hover{
-
-		.vertical-gradient(darken(@color,10%), lighten(@color,3%));
-		 border-color: darken(@color,35%) darken(@color,20%) darken(@color,10%);
-		
-		//todo multi shadow
-		 box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25) inset, 0 1px 0 fadeout(lighten(@color,20%),40%);
-
-
-
-		}
-
-		&:active,&.active{
 			.vertical-gradient(lighten(@color,10%),darken(@color,2%));
 			border-color:transparent;
 			box-shadow: none;
 		}
 
+		&:active,&.active{
+			.vertical-gradient(darken(@color,10%), lighten(@color,3%));
+		 	border-color: darken(@color,35%) darken(@color,20%) darken(@color,10%);
+			//todo multi shadow
+		 	box-shadow: 0 1px 5px fadeout(darken(@color,15%),50%) inset, 0 1px 0 fadeout(lighten(@color,50%),40%);
+		}
 
 		&> a ,&> span{
 			.textcolor(@color);
@@ -37,7 +52,6 @@
 		//divider
 		&.divider{
 			border-top:@dropdown-boarder-width solid darken(@color,10%);
-			
 				box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25) inset, 0 1px 0 fadeout(lighten(@color,20%),40%);
 		}
 
@@ -61,6 +75,59 @@
 	
 	.roundcorner(@dropdown-corner-radius);
 
+
+	&.up,&.down{
+		&:before{
+			border-width: (@dropdown-arrow-width + @dropdown-boarder-width);
+			margin-left:(@dropdown-arrow-width + @dropdown-boarder-width)*-1;
+		}
+		&:after{
+			border-width: @dropdown-arrow-width;
+			margin-left:@dropdown-arrow-width*-1;
+		}
+		&:before,&:after{
+			content:'';
+			height:0;
+			width:0;
+			position:absolute;
+			border-color: transparent;
+			border-style: solid; 
+			left:50%;
+		}
+	}
+
+
+
+	&.up{
+		margin-bottom: @dropdown-arrow-width+1;
+		&:before{
+			bottom: (@dropdown-arrow-width + @dropdown-boarder-width)*-1;
+		}
+		&:after{
+			bottom: @dropdown-arrow-width*-1;
+		}
+		&:before,&:after{
+			border-bottom-width:0px;
+		}
+	}
+	
+	&.down{
+		margin-top: @dropdown-arrow-width+1;
+		&:before{
+			top: (@dropdown-arrow-width + @dropdown-boarder-width)*-1;
+		}
+		&:after{
+			top: @dropdown-arrow-width*-1;
+		}
+		&:before,&:after{
+		  border-top-width:0px;
+		}
+	
+	
+	}
+
+
+
 	&> li{
 
 	
@@ -69,25 +136,20 @@
 		}
 		
 		&> a ,&> span{
-		
 			outline: 0;
 			text-decoration:none;
 			display:block;
 			font-size: @font-size;
 			line-height: @line-height;
 			padding:@dropdown-item-padding @font-size;
-
-			
 		}
 		
 		&.divider{
 			margin:@dropdown-corner-radius 0;
 		}
-		
-		
+
 		&.submenu {
 
-			//caret
 			&> a:after ,&> span:after  {
 				 font-family: 'fontello';
 				 font-style: normal;
@@ -99,10 +161,8 @@
   				width: 1em;
 				float: right;
 				content: "\25b8";
-				
 			}
 			
-			//submenue dropdown
 			&>.dropdown{
 				.roundcorner();
 				.roundcorner-top-right(@dropdown-corner-radius);
@@ -115,8 +175,7 @@
 			&:hover>.dropdown{
 				display:block;
 			}
-			
-			
+
 		}
 	
 	
