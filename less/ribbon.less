@@ -3,7 +3,7 @@
 @ribbon-boarder-width : 1px;
 @ribbon-corner-radius: 5px;
 
-.ribboncolor(@color:@white){
+.gen-ribbon(@color:@white){
 
 	
 	.vertical-gradient(lighten(@color,10%),darken(@color,2%));
@@ -139,42 +139,45 @@
 		}
 	}
 	
-	.ribboncolor();
+	.gen-ribbon();
 	
 	&.black{
-		.ribboncolor(@black);
+		.gen-ribbon(@black);
 	}
 	 
 	&.red{
-		.ribboncolor(@red);
+		.gen-ribbon(@red);
 	}
 	
 	&.orange{
-		.ribboncolor(@orange);
+		.gen-ribbon(@orange);
 	}
 	
 	&.yellow{
-		.ribboncolor(@yellow);
+		.gen-ribbon(@yellow);
 	}
 	
 	&.green{
-		.ribboncolor(@green);
+		.gen-ribbon(@green);
 	}
 	
 	&.blue{
-		.ribboncolor(@blue);
+		.gen-ribbon(@blue);
 	}
 	
 	&.purple{
-		.ribboncolor(@purple);
+		.gen-ribbon(@purple);
 	}		
 	&.gray{
-		.ribboncolor(@gray);
+		.gen-ribbon(@gray);
 	}
 		
 	&.pink{
-		.ribboncolor(@pink);
-	}	
-	 
+		.gen-ribbon(@pink);
+	}
+	
+	&.darkblue{
+		.gen-ribbon(@darkblue);
+	}
 }
 

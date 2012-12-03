@@ -5,7 +5,7 @@
 @popover-boarder-width: 1px;
 //------------------------------------
 
-.popovercolor(@color:@white){
+.gen-popover(@color:@white){
 
 	border-color:darken(@color,10%) darken(@color,10%) darken(@color,20%);
 	background-color: @color;
@@ -184,44 +184,47 @@
 		border-left-width:0px;
 	}
 
-	.popovercolor();
+	.gen-popover();
 
 	&.black{
-		.popovercolor(@black);
+		.gen-popover(@black);
 	}
 	
 	&.red{
-		.popovercolor(@red);
+		.gen-popover(@red);
 	}
 	
 	&.orange{
-		.popovercolor(@orange);
+		.gen-popover(@orange);
 	}
 	
 	&.yellow{
-		.popovercolor(@yellow);
+		.gen-popover(@yellow);
 	}
 	
 	&.green{
-		.popovercolor(@green);
+		.gen-popover(@green);
 	}
 	
 	&.blue{
-		.popovercolor(@blue);
+		.gen-popover(@blue);
 	}
 	
 	&.purple{
-		.popovercolor(@purple);
+		.gen-popover(@purple);
 	}
 	
 	&.pink{
-		.popovercolor(@pink);
+		.gen-popover(@pink);
 	}
 	
 	&.gray{
-		.popovercolor(@gray);
+		.gen-popover(@gray);
 	}
 	
+	&.darkblue{
+		.gen-popover(@darkblue);
+	}
 	
 	//animation 
 	

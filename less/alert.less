@@ -4,7 +4,7 @@
 @alert-boarder-width: 1px;
 //------------------------------------
 
-.alertcolor(@color:@white){
+.gen-alert(@color:@white){
 
 .textcolor(@color);
 .vertical-gradient(lighten(@color,10%),darken(@color,2%));
@@ -53,44 +53,47 @@ border-color:darken(@color,10%) darken(@color,10%) darken(@color,20%);
 	
 	
 	
-	.alertcolor();
+	.gen-alert();
 
 	&.black{
-		.alertcolor(@black);
+		.gen-alert(@black);
 	}
 	
 	&.red{
-		.alertcolor(@red);
+		.gen-alert(@red);
 	}
 	
 	&.orange{
-		.alertcolor(@orange);
+		.gen-alert(@orange);
 	}
 	
 	&.yellow{
-		.alertcolor(@yellow);
+		.gen-alert(@yellow);
 	}
 	
 	&.green{
-		.alertcolor(@green);
+		.gen-alert(@green);
 	}
 	
 	&.blue{
-		.alertcolor(@blue);
+		.gen-alert(@blue);
 	}
 	
 	&.purple{
-		.alertcolor(@purple);
+		.gen-alert(@purple);
 	}
 	
 	&.pink{
-		.alertcolor(@pink);
+		.gen-alert(@pink);
 	}
 	
 	&.gray{
-		.alertcolor(@gray);
+		.gen-alert(@gray);
 	}
-
+	
+	&.darkblue{
+		.gen-alert(@darkblue);
+	}
 
 
 

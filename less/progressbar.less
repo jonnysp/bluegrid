@@ -1,6 +1,6 @@
 @progress-height:@line-height - 6;
 
-.colorize-progress(@color){
+.gen-progress(@color){
 
 	.vertical-gradient(darken(@color,10%), lighten(@color,3%));
 	border-color: darken(@color,35%) darken(@color,20%) darken(@color,10%);
@@ -64,43 +64,45 @@
 				  animation: progress-bar 3s linear infinite;
 		}
 
-		.colorize-progress(@white);
+		.gen-progress(@white);
 
 		&.red{
-			.colorize-progress(@red);
+			.gen-progress(@red);
 		}
 		
 		&.black{
-			.colorize-progress(@black);
+			.gen-progress(@black);
 		}
 		
 		&.gray{
-			.colorize-progress(@gray);
+			.gen-progress(@gray);
 		}
 		
 		&.orange{
-			.colorize-progress(@orange);
+			.gen-progress(@orange);
 		}
 	
 		&.yellow{
-			.colorize-progress(@yellow);
+			.gen-progress(@yellow);
 		}
 		
 		&.green{
-			.colorize-progress(@green);
+			.gen-progress(@green);
 		}
 		
 		&.blue{
-			.colorize-progress(@blue);
+			.gen-progress(@blue);
 		}
 		
 		&.purple{
-			.colorize-progress(@purple);
+			.gen-progress(@purple);
 		}
 		&.pink{
-			.colorize-progress(@pink);
+			.gen-progress(@pink);
 		}	
-		
+		&.darkblue{
+			.gen-progress(@darkblue);
+		}
 
 }	
 
