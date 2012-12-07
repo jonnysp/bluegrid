@@ -6,10 +6,11 @@
 
 .gen-dropdown(@color){
 
-	background-color:@color;
+	.vertical-gradient(lighten(@color,10%),darken(@color,2%));
+	.shadow(1px,1px,0,0,lighten(@color,20%),inset);
 	border-color:darken(@color,10%) darken(@color,10%) darken(@color,20%);
-	//.shadow(0px,0px,4px,0px, fadeout(darken(@color,50%),50%));
-	
+	.textcolor(@color);
+
 	
 	&.up{
 		&:before{
@@ -31,26 +32,20 @@
 	
 	&> li{
 	
-	
-		&:hover,&:active:hover,&.active:hover{
+		&:hover,&:active:hover,&.active:hover,&:active,&.active{
 			.vertical-gradient(lighten(@color,10%),darken(@color,2%));
 			border-color:transparent;
 			box-shadow: none;
 		}
 
-		&:active,&.active{
-			.vertical-gradient(darken(@color,10%), lighten(@color,3%));
-		 	border-color: darken(@color,35%) darken(@color,20%) darken(@color,10%);
-			//todo multi shadow
-		 	box-shadow: 0 1px 5px fadeout(darken(@color,15%),50%) inset, 0 1px 0 fadeout(lighten(@color,50%),40%);
-		}
+
 
 		&> a ,&> span{
 			.textcolor(@color);
 		}
 
 		//divider
-		&.divider{
+		&.divider,&.divider:active{
 			border-top:@dropdown-boarder-width solid darken(@color,10%);
 				box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25) inset, 0 1px 0 fadeout(lighten(@color,20%),40%);
 		}
@@ -129,7 +124,7 @@
 
 
 	&> li{
-
+margin:@dropdown-boarder-width;
 	
 		&> span{
 			cursor:default;
@@ -167,12 +162,13 @@
 				.roundcorner();
 				.roundcorner-top-right(@dropdown-corner-radius);
 				.roundcorner-bottom(@dropdown-corner-radius);
-				margin-top: (@dropdown-corner-radius * -1) - (@dropdown-item-padding * 2) - @line-height - @dropdown-boarder-width ;
+				margin-top: (@dropdown-corner-radius * -1) - (@dropdown-item-padding * 2) - @line-height - @dropdown-boarder-width - @dropdown-boarder-width ;
+				margin-left:-@dropdown-boarder-width;
 				left:100%;
 				display:none;
 			}
 		
-			&:hover>.dropdown{
+			&:hover > .dropdown{
 				display:block;
 			}
 
