@@ -1,0 +1,169 @@
+@form-border-width:1px;
+@form-corner-radius:4px;
+@form-padding:4px;
+
+
+.gen-input(@color){
+		.vertical-gradient(darken(@color,10%), lighten(@color,3%));
+		.textcolor(@color); 
+		//todo multi shadow
+		box-shadow: 0 1px 5px fadeout(darken(@color,15%),50%) inset, 0 1px 0 fadeout(lighten(@color,50%),40%);
+		border-color: darken(@color,35%) darken(@color,20%) darken(@color,10%);
+		
+		
+		
+}
+
+
+.gen-form(@color){
+	
+	& input[type=text],& textarea,& input[type=password],& select{
+	
+		.vertical-gradient(darken(@color,10%), lighten(@color,3%));
+		.textcolor(@color); 
+		//todo multi shadow
+		box-shadow: 0 1px 5px fadeout(darken(@color,15%),50%) inset, 0 1px 0 fadeout(lighten(@color,50%),40%);
+		border-color: darken(@color,35%) darken(@color,20%) darken(@color,10%);
+	
+	}
+
+}
+
+
+
+
+.formvertical{
+	
+	padding:20px;
+
+	& > .control-group{
+		
+		margin-bottom:@form-padding;
+		display:block;
+		.clearfix;
+		
+		& > .control-label{
+			float:left;
+			width:160px;
+			text-align:right;
+			font-weight:bold;
+			margin:@form-padding+@form-border-width 0 @form-padding+@form-border-width 0;
+		}
+		
+		& > .controls{
+			margin-left:180px;
+
+//			input[type=text],textarea,input[type=password],select{
+//				border-width: @form-border-width;
+//				border-style: solid;
+//				.roundcorner(@form-corner-radius);
+//				padding:@form-padding;
+//				display: inline-block;
+//				width: 206px;
+//			}
+
+			select{
+				width: 215px;
+			}
+
+		}
+
+	}
+	
+	
+	
+	.gen-form(@white);
+	
+    &.black{
+		.gen-form(@black);
+	}
+	 
+	&.red{
+		.gen-form(@red);
+	}
+	
+	&.orange{
+		.gen-form(@orange);
+	}
+	
+	&.yellow{
+		.gen-form(@yellow);
+	}
+	
+	&.green{
+		.gen-form(@green);
+	}
+	
+	&.blue{
+		.gen-form(@blue);
+	}
+	
+	&.purple{
+		.gen-form(@purple);
+	}		
+	&.gray{
+		.gen-form(@gray);
+	}
+		
+	&.pink{
+		.gen-form(@pink);
+	}	
+	
+	&.darkblue{
+		.gen-form(@darkblue);
+	}
+	
+}
+
+
+input[type=text],textarea,input[type=password],select{
+
+	border-width: @form-border-width;
+	border-style: solid;
+	.roundcorner(@form-corner-radius);
+	padding:@form-padding;
+	display: inline-block;
+	width: 206px;
+	
+	.gen-input(@white);
+	
+    &.black{
+		.gen-input(@black);
+	}
+	 
+	&.red{
+		.gen-input(@red);
+	}
+	
+	&.orange{
+		.gen-input(@orange);
+	}
+	
+	&.yellow{
+		.gen-input(@yellow);
+	}
+	
+	&.green{
+		.gen-input(@green);
+	}
+	
+	&.blue{
+		.gen-input(@blue);
+	}
+	
+	&.purple{
+		.gen-input(@purple);
+	}		
+	&.gray{
+		.gen-input(@gray);
+	}
+		
+	&.pink{
+		.gen-input(@pink);
+	}	
+	
+	&.darkblue{
+		.gen-input(@darkblue);
+	}
+	
+}

@@ -44,16 +44,64 @@ overflow: auto;
   
   
 
-<div id="wizzard" class="modal darkblue">
-    <!--<div class="modal-header"><h2>Step 1</h2></div>-->
-    <div class="ribbon full yellow"><h3><i class="icon-info-circle"></i> Ribbon</h3></div>
+<div id="wizzard" class="modal yellow">
+    <div class="modal-header"><h2>Step 1</h2></div>
+    <div class="ribbon right yellow"><i class="icon-info-circle"></i> Ribbon</div>
     <div class="modal-content" style="text-align:justify;">
-    	<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    	
+         <form class="formvertical yellow">
+
+    	<div class="control-group">
+        	<label class="control-label" for="1">Label1</label>
+        	<div class="controls">
+            	<input id="1" type="text" />
+            </div>
+        </div>
+    <div class="control-group">
+        	<label class="control-label" for="2">Label2</label>
+        	<div class="controls">
+            	<input id="2" type="password" />
+            </div>
+        </div>
+        <div class="control-group">
+        	<label class="control-label" for="3">Label3</label>
+        	<div class="controls">
+            	<select id="3">
+                	<option>Select 1</option>
+                	<option>Select 2</option>
+                	<option>Select 3</option>
+                	<option>Select 4</option>
+                </select>
+            </div>
+        </div>
+        <div class="control-group">
+        	<label class="control-label" for="4">Label4</label>
+        	<div class="controls">
+            	<textarea id="4"></textarea>
+            </div>
+        </div>
+        <div class="control-group">
+        	<label class="control-label" for="5">Label5</label>
+        	<div class="controls">
+            		<select id="5" size="4">
+                	<option>Select 1</option>
+                	<option>Select 2</option>
+                	<option>Select 3</option>
+                	<option>Select 4</option>
+                </select>
+            </div>
+        </div>
+        
+
+    </form>
+        
+        
+        
     </div>
     <div class="modal-footer">
-            <button class="btn darkblue pull-right" rel="modal" data-close="#wizzard">Close</button>
+            <button class="btn yellow pull-right" rel="modal" data-close="#wizzard">Close</button>
         <div class="btn-group">
-            <button class="btn darkblue" rel="modal" data-target="#wizzard1" data-close="#wizzard">Step 2</button>
+            <button class="btn yellow" rel="modal" data-target="#wizzard1" data-close="#wizzard">Step 2</button>
         </div>
     </div>
 </div>
