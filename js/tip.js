@@ -3,7 +3,7 @@
 		function Tip(element) {
 			this.$element = $(element);
 			this.$target =  $(this.$element.data('target')).length > 0 ? $(this.$element.data('target')) : this.$element;
-			this.$tip = $('<div />').addClass('tip').addClass('out');
+			this.$tip = $('<div />').addClass('tip').hide();
 			this.$pos = 'top';
 			this.$visible = false;
 		};
@@ -12,43 +12,28 @@
 			init: function(self) {
 				
 					self.$element.hover(
-						function(){self.show()},
-						function(){self.hide()}
+						function(){self._show()},
+						function(){self._hide()}
 					);
 					
 			},
 			
-			show: function() {
+			_show: function() {
 				
 					this.$tip.appendTo('body');
 					this.setcontent();
 					this.$visible = true;
 				    this.setpos();
-				    this.$tip.addClass('in').removeClass('out').show();
+				    this.$tip.show();
 
 				},
 				
-			hide: function() {
+			_hide: function() {
 				
-					this.$tip.addClass('out').removeClass('in');	
-			
-					var supptran = 'WebkitTransition' in document.body.style 
-						|| 'MozTransition' in document.body.style 
-						|| 'msTransition' in document.body.style 
-						|| 'OTransition' in document.body.style 
-						|| 'Transition' in document.body.style;
-						
-					if (supptran && this.$visible){
-						this.$tip.one("transitionend webkitTransitionEnd otransitionend", function(){ 
-							this.$visible = false;
-							$(this).detach();
-						});
-					}else{
-						this.$tip.detach();
-						this.$visible = false;
-					}
-
-				
+					this.$tip.hide();	
+					this.$tip.detach();
+					this.$visible = false;
+		
 				},
 				
 			setcontent: function(){

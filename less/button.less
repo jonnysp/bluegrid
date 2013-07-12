@@ -1,45 +1,31 @@
 @btn-border-width:1px;
-@btn-corner-radius:4px;
-@btn-padding-topbottom:4px;
-@btn-padding-leftright:10px;
+@btn-corner-radius:5px;
+@btn-padding-topbottom:8px;
+@btn-padding-leftright:12px;
 
 
 .gen-btn(@color){
-
-	.vertical-gradient(lighten(@color,10%),darken(@color,2%));
-	.shadow(1px,1px,0,0,lighten(@color,20%),inset);
-	.textcolor(@color);
-	border-color:darken(@color,10%) darken(@color,10%) darken(@color,20%);
+	background-color:@color;
+	border-color: @color;
 		
-	&:hover,&.hover {
-    	.vertical-gradient(lighten(@color,6%), lighten(@color,3%));
-		.shadow(0px,0px,2px,0px, fadeout(@color,50%));
-		z-index:1000;
+	&:hover,&.hover,&:active,&.active {
+		background-color: darken(@color,5%);
+		border-color: darken(@color,10%);
 	}	
 	
 	&:active , &.active{
-	
-		.vertical-gradient(darken(@color,10%), lighten(@color,3%));
-		 border-color: darken(@color,35%) darken(@color,20%) darken(@color,10%);
-		//todo multi shadow
-		 box-shadow: 0 1px 5px fadeout(darken(@color,15%),50%) inset, 0 1px 0 fadeout(lighten(@color,50%),40%);
-		
+		box-shadow: 0 3px @btn-padding-topbottom/2 fadeout(darken(@color,30%),50%) inset;
+		border-color: darken(@color,10%);
 		outline: 0;
-		z-index:999;
 	}
 	
 	&[disabled] ,&.disabled {
-		border-color:darken(@color,10%) darken(@color,10%) darken(@color,20%);
-		.vertical-gradient(@color, @color);
-		.shadow(0,0,0,0,inset);
+		color:lighten(@color,10%);
+		box-shadow: 0;
 		cursor:not-allowed;
-		.textcolor(fadeout(@color,70%));
 	}
 
-
 }
-
-
 
 input.btn {
   	height:@line-height + (@btn-padding-topbottom * 2) + (@btn-border-width * 2) ;
@@ -47,26 +33,47 @@ input.btn {
 
 .btn{
 
-
-	*zoom:1; //IE-fix
+	*zoom:1;
 	font-size: @font-size;
     line-height: @line-height;
 	text-align: center;
 	text-decoration: none;
-	font-weight: bold;
 	position:relative;
 	
 	vertical-align:middle;
 	display: inline-block;
 	padding:@btn-padding-topbottom @btn-padding-leftright;
 	cursor: pointer;
-	
+	color:#FFF;
 	border-width: @btn-border-width;
 	border-style: solid;
+	white-space:nowrap;
 	
 	.noselect();
-
 	.roundcorner(@btn-corner-radius);
+	
+	&.block{
+		display:block;
+		width:100%;
+	}
+	
+	&.block+&.block,&+&.block,&.block+& {
+		margin-top: 5px;
+	}
+
+	&.small{
+		font-size: @font-size / 1.5;
+    	line-height: @line-height / 1.5;
+		padding:@btn-padding-topbottom / 1.5 @btn-padding-leftright / 1.5;
+		.roundcorner(@btn-corner-radius -1);
+	}
+	
+	&.large{
+		font-size: @font-size * 1.5;
+    	line-height: @line-height * 1.5;
+		padding:@btn-padding-topbottom * 1.5 @btn-padding-leftright * 1.5;
+		.roundcorner(@btn-corner-radius + 1);
+	}
 	
 	&:focus,&.focus{
 		outline: 0;
@@ -98,50 +105,28 @@ input.btn {
 		}
 	  }
 
-
-	.gen-btn(@white);
+	.gen-btn(@gray);
 	
-	&.black{
-		.gen-btn(@black);
-	}
-	 
-	&.red{
+	&.btn-red{
 		.gen-btn(@red);
 	}
 	
-	&.orange{
+	&.btn-orange{
 		.gen-btn(@orange);
 	}
 	
-	&.yellow{
-		.gen-btn(@yellow);
-	}
-	
-	&.green{
+	&.btn-green{
 		.gen-btn(@green);
 	}
 	
-	&.blue{
+	&.btn-blue{
 		.gen-btn(@blue);
 	}
-	
-	&.purple{
-		.gen-btn(@purple);
-	}		
-	&.gray{
-		.gen-btn(@gray);
-	}
-		
-	&.pink{
-		.gen-btn(@pink);
-	}	
-	
-	&.darkblue{
+
+	&.btn-darkblue{
 		.gen-btn(@darkblue);
 	}
-		
 
-	
 }
 
 
@@ -150,16 +135,22 @@ input.btn {
 
 	font-size: 0;
 	margin:10px 0 0 0;
-	//vertical-align:middle;
+	vertical-align:middle;
+
+	&.justified{
+		display: table;
+		& > .btn{
+			display:table-cell;	
+			width: 1%;
+		}
+	}
 	
+
 	& > .btn{
 	  .roundcorner();
-	   margin-left:@btn-border-width*-1px;
-				
 		&:first-child{
 			.roundcorner-left(@btn-corner-radius);
 		}
-		
 		&:last-child {
 			.roundcorner-right(@btn-corner-radius);
 		}
@@ -173,7 +164,7 @@ input.btn {
 
 	vertical-align: text-top;
 	font-size: 0;
-	margin:10px 0 0 0;
+	margin:5px 0 0 0;
 	display:inline-block;
 	
 	&> button.btn{
@@ -184,11 +175,9 @@ input.btn {
 	    .roundcorner();
 		float:none;
 		display:block;
-		margin-top: @btn-border-width*-1px;
 		
 		&:first-child{
 			.roundcorner-top(@btn-corner-radius);
-			margin-top: 0px;
 		}
 		
 		&:last-child{
@@ -204,11 +193,7 @@ input.btn {
 	font-size: 0;
 	&> .btn-group {
 		display:inline-block;
-		margin-left:5px;
-		
-		&:first-child{
-			margin-left:0;
-		}
+		margin-right:5px;
 	}
 }
 

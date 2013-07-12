@@ -1,15 +1,16 @@
 //tipsettings
-@tip-padding: 	  5px;
-@tip-arrow-width:   5px;
-@tip-corner-radius: 6px;
+
+@tip-arrow-width:   7px;
+@tip-corner-radius: 4px;
+
+@tip-padding-topbottom:8px;
+@tip-padding-leftright:12px;
+
 //------------------------------------
 
-.gen-tip(@tipcolor:@black) {
+.gen-tip(@color:@black) {
   
-  @color : fadeout(@tipcolor,5%);
-  
-  .shadow(0px,0px,2px,0px, fadeout(@tipcolor,50%));
-  .textcolor(@color);  
+  color:#FFF;
    background-color:@color;
 
     &.bottom:before{
@@ -30,19 +31,16 @@
 
 .tip{
 	
-
   z-index:2000;
-  padding:		@tip-padding;
+  padding:		@tip-padding-topbottom @tip-padding-leftright;
   position:		absolute;
-  opacity:0;
   display:none;
-  font-size:@font-size;
+  
+font-size: @font-size;
+  line-height: @line-height;
+text-align: center;
+text-decoration: none;
 
-	-webkit-transition: opacity 0.2s linear;
-	-moz-transition: opacity 0.2s linear;
-	-ms-transition: opacity 0.2s linear;
-	-o-transition: opacity 0.2s linear;
-    transition: opacity 0.2s linear;	
 	
   min-width:@tip-arrow-width+@tip-corner-radius*2;
   min-height:@tip-arrow-width+@tip-corner-radius*2;
@@ -68,14 +66,6 @@
    &:after{
      top:50%;
    } 
-
-	&.in{
-	  opacity:1;
-	}
-
-	&.out{
-		opacity:0;
-	}
 
 
  &.bottom{
@@ -128,24 +118,18 @@
 	&.orange{
 		.gen-tip(@orange);
 	}
-	&.yellow{
-		.gen-tip(@yellow);
-	}
+
 	&.green{
 		.gen-tip(@green);
 	}
 	&.blue{
 		.gen-tip(@blue);
 	}
-	&.purple{
-		.gen-tip(@purple);
-	}
+
 	&.white{
 		.gen-tip(@white);
 	}
-	&.pink{
-		.gen-tip(@pink);
-	}
+
 	
 	&.darkblue{
 		.gen-tip(@darkblue);

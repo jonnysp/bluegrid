@@ -1,38 +1,71 @@
 
+
 .container {
-
-	margin:0 auto;
-	width: (@cols * @colwith) + (@gutter * (@cols - 1));
-
+	@media all and (max-width: @desktop-width) {
+		max-width: 100%;
+	}
+	@media all and (min-width: @desktop-width) {
+		margin:0 auto;
+		max-width: @desktop-width;
+	}
 }
 
 .row{
 	.clearfix();
-	margin-left: @gutter  * -1;
-	margin-bottom:@gutter;
 }
 
-	[class*="span"] {
-		float: left;
-		margin-left: @gutter;
-	  }
-  
- 
-    .spanX (@index) when (@index > 0) {
-      (~".span@{index}") { 
-	  	.span(@index);
-//		background-color: lighten( @testcolor, @index*6);
-//		position:relative;
-	 }
-      .spanX(@index - 1);
-    }
-    
-	.spanX (0) {}
-	
-    .span (@columns) {
-      width: (@colwith * @columns) + (@gutter * (@columns - 1));
-    }
+	[class*="col"]{
 
-  
-.spanX (@cols);  
-  
+		float: left;
+		min-height: 1px;
+		width:100%;
+		
+		.box-sizing(border-box);
+
+		padding-left: (@grid-column-padding / 2);
+		padding-right: (@grid-column-padding / 2);	
+				
+	}
+
+
+	.type(@type) when (@type = width) {
+		width:percentage(@index / @grid-columns);	
+	}
+	
+	.type(@type) when (@type = left) {
+		position:relative;
+		left:percentage(@index / @grid-columns);	
+	}
+	
+	.type(@type) when (@type = right) {
+		position:relative;
+		right:percentage(@index / @grid-columns);	
+	}
+	
+	.type(@type) when (@type = margin-left) {
+			margin-left:percentage(@index / @grid-columns);	
+	}
+
+    .colX (@index,@prefix:-,@min,@type) when (@index > 0) {
+		.col@{prefix}@{index}{
+			@media (min-width: @min) {
+				.type(@type);
+			}
+			background-color: lighten( #666, @index*6);
+		}
+      .colX(@index - 1,@prefix,@min,@type);
+    }
+	.colX (0) {}
+	
+
+.colX (@grid-columns,-,0,width); 
+
+.colX (@grid-columns,-sm-,@mobile-width,width); 
+.colX (@grid-columns,-push-,@mobile-width,left);
+.colX (@grid-columns,-pull-,@mobile-width,right);
+
+.colX (@grid-columns,-lg-,@tablet-width,width);
+.colX (@grid-columns,-offset-,@tablet-width,margin-left);
+	
+
+

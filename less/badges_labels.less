@@ -1,17 +1,7 @@
 
-@badge-font-zize : @font-size - 3;
-
 .setbadgelabel(@color){
-
-	.textcolor(@color);
-	.vertical-gradient(darken(@color,10%), lighten(@color,3%));
-	 border-color: darken(@color,35%) darken(@color,20%) darken(@color,10%);
-	//todo multi shadow
-	 box-shadow: 0 1px 5px fadeout(darken(@color,15%),50%) inset, 0 1px 0 fadeout(lighten(@color,50%),40%);
-		
-	
+	background-color:@color;
 }
-
 
 .badge{
 	.roundcorner(@line-height / 2);
@@ -22,19 +12,16 @@
 }
 
 
-
 .badge,.label{
 
 	display:inline-block;
 	height:@line-height - 1;
-	font-size: @badge-font-zize;
-	padding: 0 @line-height / 2;
-	
-	font-weight:bold;
+	font-size: 75%;
+	padding: 0 @line-height / 3;
 	vertical-align: 1px;
+	color:#FFF;
 
-	//colors
-	.setbadgelabel(@white);
+	.setbadgelabel(@gray);
 
 	&.red{
 		.setbadgelabel(@red);
@@ -44,9 +31,6 @@
 		.setbadgelabel(@orange);
 	}
 
-	&.yellow{
-		.setbadgelabel(@yellow);
-	}
 	
 	&.green{
 		.setbadgelabel(@green);
@@ -56,17 +40,8 @@
 		.setbadgelabel(@blue);
 	}
 	
-	&.purple{
-		.setbadgelabel(@purple);
-	}
-	&.black{
-		.setbadgelabel(@black);
-	}
-	&.gray{
-		.setbadgelabel(@gray);
-	}
-	&.pink{
-		.setbadgelabel(@pink);
+	&.darkblue{
+		.setbadgelabel(@darkblue);
 	}
 	
 
