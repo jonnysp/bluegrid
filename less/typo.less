@@ -4,9 +4,64 @@ body{
 	line-height :@line-height;
 	color:@text-color;
 	background-color: @body-background;
-	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-family: Arial, sans-serif;
+	font-family:@font-family;
 }
+
+
+
+//headings
+
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
+  margin-bottom: (@line-height / 2);
+  font-weight:@headings-font-weight;
+  line-height:@headings-line-height;
+}
+
+h1,h2,h3,.h1,.h2,.h3{  margin-top: @line-height;}
+h4,h5,h6,.h4,.h5,.h6{  margin-top: (@line-height / 2);}
+
+h1,.h1{	font-size: ceil(@font-size * 2.70);}
+h2,.h2{	font-size: ceil(@font-size * 2.25);}
+h3,.h3{	font-size: ceil(@font-size * 1.70);}
+h4,.h4{	font-size: ceil(@font-size * 1.25);}
+h5,.h5{	font-size: @font-size;}
+h6,.h6{	font-size: ceil(@font-size * 0.80);}
+
+p {
+  margin: (@line-height / 2) 0 ;
+}
+
+pre , code{
+	display:block;
+	border:1px solid @gray;
+	padding:5px;
+	.roundcorner(5px);
+}
+
+//blockquote
+q,blockquote,.blockquote{
+	
+	margin: (@line-height / 2) 0;
+	border-left: 5px solid @gray;
+	padding:0 0 0 (@line-height / 2)  ;
+	
+	& p{
+		font-size: (@font-size * 1.25);
+		font-weight: 300;
+		line-height: 1.25;
+		&:first-child { margin-top: 0; }
+		&:last-child { margin-bottom: 0; }	
+	}
+	
+	&.right{
+		border-left: 0;
+		padding:0 (@line-height / 2) 0 0;
+		border-right: 5px solid @gray;
+		text-align:right;
+	}
+	
+}
+
 
 
 .pull-right{

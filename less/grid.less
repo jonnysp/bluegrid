@@ -1,6 +1,8 @@
 
 
 .container {
+	
+	padding:0 (@grid-column-padding) 0 (@grid-column-padding);
 	@media all and (max-width: @desktop-width) {
 		max-width: 100%;
 	}
@@ -8,23 +10,20 @@
 		margin:0 auto;
 		max-width: @desktop-width;
 	}
+	.clearfix();
 }
 
 .row{
+	margin:0 (@grid-column-padding / -2) 0 (@grid-column-padding / -2);
 	.clearfix();
 }
 
 	[class*="col"]{
-
 		float: left;
 		min-height: 1px;
 		width:100%;
-		
+		padding:0 (@grid-column-padding / 2) 0 (@grid-column-padding / 2);
 		.box-sizing(border-box);
-
-		padding-left: (@grid-column-padding / 2);
-		padding-right: (@grid-column-padding / 2);	
-				
 	}
 
 
@@ -46,7 +45,7 @@
 			margin-left:percentage(@index / @grid-columns);	
 	}
 
-    .colX (@index,@prefix:-,@min,@type) when (@index > 0) {
+    .colX (@index,@prefix:-,@min,@type:width) when (@index > 0) {
 		.col@{prefix}@{index}{
 			@media (min-width: @min) {
 				.type(@type);
