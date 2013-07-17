@@ -1,17 +1,17 @@
 //tipsettings
 
 @tip-arrow-width:   7px;
-@tip-corner-radius: 4px;
+@tip-corner-radius: @corner-radius;
 
 @tip-padding-topbottom:8px;
 @tip-padding-leftright:12px;
 
 //------------------------------------
 
-.gen-tip(@color:@black) {
+.gen-tip(@color:@gray) {
   
-  color:#FFF;
-   background-color:@color;
+    color:#FFF;
+    background-color:@color;
 
     &.bottom:before{
 	  border-color: transparent transparent @color transparent;
@@ -31,24 +31,23 @@
 
 .tip{
 	
-  z-index:2000;
-  padding:		@tip-padding-topbottom @tip-padding-leftright;
-  position:		absolute;
-  display:none;
-  
-font-size: @font-size;
-  line-height: @line-height;
-text-align: center;
-text-decoration: none;
-
+	z-index:2000;
+	padding: @tip-padding-topbottom @tip-padding-leftright;
+	position: absolute;
+	display:none;
 	
-  min-width:@tip-arrow-width+@tip-corner-radius*2;
-  min-height:@tip-arrow-width+@tip-corner-radius*2;
-  max-width: 30%;
-  
-  .noselect();
-  .roundcorner(@tip-corner-radius);
-	 
+	font-size: @font-size;
+	line-height: @line-height;
+	text-decoration: none;
+	
+	min-width:@tip-arrow-width+@tip-corner-radius*2;
+	min-height:@tip-arrow-width+@tip-corner-radius*2;
+	max-width: 30%;
+	
+	.noselect();
+	.roundcorner(@tip-corner-radius);
+	
+	//arrow
    &:before,&:after{
 	  content:'';
 	  height:0;
@@ -68,24 +67,24 @@ text-decoration: none;
    } 
 
 
- &.bottom{
- 	margin-top: @tip-arrow-width+1;
- }
- &.top{
- 	margin-bottom: @tip-arrow-width+1;
- }
- &.left{
- 	margin-right: @tip-arrow-width+1;
- }
- &.right{
- 	margin-left: @tip-arrow-width+1;
- }
+	 &.bottom{
+		margin-top: @tip-arrow-width;
+	 }
+	 &.top{
+		margin-bottom: @tip-arrow-width;
+	 }
+	 &.left{
+		margin-right: @tip-arrow-width;
+	 }
+	 &.right{
+		margin-left: @tip-arrow-width;
+	 }
 
-   &.bottom:before{
+	 &.bottom:before{
 	  top: @tip-arrow-width*-1;
 	  border-top-width:0px;
 	  margin-left:@tip-arrow-width*-1;
-   } 
+    } 
 	 
 	&.top:before{
 	  bottom: @tip-arrow-width*-1;
@@ -109,29 +108,21 @@ text-decoration: none;
 
 	.gen-tip();
 
-	&.gray{
-		.gen-tip(@gray);
-	}
-	&.red{
+	&.tip-red{
 		.gen-tip(@red);
 	}
-	&.orange{
+	&.tip-orange{
 		.gen-tip(@orange);
 	}
 
-	&.green{
+	&.tip-green{
 		.gen-tip(@green);
 	}
-	&.blue{
+	&.tip-blue{
 		.gen-tip(@blue);
 	}
 
-	&.white{
-		.gen-tip(@white);
-	}
-
-	
-	&.darkblue{
+	&.tip-darkblue{
 		.gen-tip(@darkblue);
 	}
 
