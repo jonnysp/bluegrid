@@ -1,17 +1,13 @@
 //alertsettings
-@alert-corner-radius: 5px;
-@alert-padding: 	  8px;
-@alert-boarder-width: 1px;
+@alert-corner-radius: @corner-radius;
+@alert-padding: 	  (@line-height / 2);
+@alert-boarder-width: @boarder-width;
 //------------------------------------
 
-.gen-alert(@color:@white){
-
-.textcolor(@color);
-.vertical-gradient(lighten(@color,10%),darken(@color,2%));
-border-color:darken(@color,10%) darken(@color,10%) darken(@color,20%);
-.shadow(0px,0px,4px,0px, fadeout(darken(@color,50%),50%));
-
-
+.gen-alert(@color:@gray){
+	color:@color;
+	background-color:lighten(@color,32%);
+	border-color: @color;
 }
 
 
@@ -19,67 +15,35 @@ border-color:darken(@color,10%) darken(@color,10%) darken(@color,20%);
 .alert{
 
 	display:block;
-	padding:@alert-padding;
-	margin-bottom:@alert-padding;
+	padding:0 @alert-padding;
+	margin:(@line-height/2) 0;
 	border-width: @alert-boarder-width;
 	border-style: solid;
-	  
 	.roundcorner(@alert-corner-radius);
-	
-	
-	
-	&:before{
-	
-	 	font-family: 'fontello';
-		font-style: normal;
-		font-weight: normal;
-		speak: none;
-		text-align: center;
-		display: inline-block;
-		text-decoration: inherit;
-	  	line-height: 1;
-		width: 1em;
-		content: "\2715";
-		
-		float:right;
-		cursor: pointer;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
+
+	&>:first-child { margin-top: @alert-padding; }
+	&>:last-child { margin-bottom: @alert-padding; }	
+
 	
 	.gen-alert();
 
-	&.black{
-		.gen-alert(@black);
-	}
-	
-	&.red{
+	&.alert-red{
 		.gen-alert(@red);
 	}
 	
-	&.orange{
+	&.alert-orange{
 		.gen-alert(@orange);
 	}
 
-	&.green{
+	&.alert-green{
 		.gen-alert(@green);
 	}
 	
-	&.blue{
+	&.alert-blue{
 		.gen-alert(@blue);
 	}
-	
-	&.gray{
-		.gen-alert(@gray);
-	}
-	
-	&.darkblue{
+
+	&.alert-darkblue{
 		.gen-alert(@darkblue);
 	}
 
