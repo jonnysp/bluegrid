@@ -15,16 +15,15 @@
 .alert{
 
 	display:block;
-	padding:0 @alert-padding;
+	padding:@alert-padding;
 	margin:(@line-height/2) 0;
 	border-width: @alert-boarder-width;
 	border-style: solid;
 	.roundcorner(@alert-corner-radius);
 
-	&>:first-child { margin-top: @alert-padding; }
-	&>:last-child { margin-bottom: @alert-padding; }	
+	&>:first-child { margin-top: 0; }
+	&>:last-child { margin-bottom:0; }	
 
-	
 	.gen-alert();
 
 	&.alert-red{

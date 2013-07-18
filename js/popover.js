@@ -3,7 +3,7 @@
 		function Popover(element) {
 			this.$element = $(element);
 			this.$target =  $(this.$element.data('target')).length > 0 ? $(this.$element.data('target')) : this.$element;
-			this.$popover = $('<div />').addClass("popover").addClass('out');
+			this.$popover = $('<div />').addClass("popover");
 			this.$title = $('<div />').addClass("popover-title").appendTo(this.$popover);
 			this.$content = $('<div />').addClass("popover-content").appendTo(this.$popover);
 			this.$pos = 'top';
@@ -18,69 +18,61 @@
 				 switch(this.$trigger){
 					  case 'hover':
 					  	 self.$element.hover(
-							function(){self.show()},
-							function(){self.hide()}
+							function(){self._show()},
+							function(){self._hide()}
 						  );
 					  break;
 					  case 'focus':
 					  	 self.$element.focusin(
-							function(){self.show()}
+							function(){self._show()}
 						  );
 						  self.$element.focusout(
-							function(){self.hide()}
+							function(){self._hide()}
 						  );
 					  break;
 					  default:
-						  self.$element.toggle(
-							function(){self.show()},
-							function(){self.hide()}
-						  );
+ 						  self.$element.click( function(){
+						  
+							if ( self.$visible == true ) {
+								self._hide();
+							} else if ( self.$visible == false ) {
+								self._show();
+							}
+							
+							
+						  });
 					  break;
 				}
 				
 
 				$(window).resize(function(e) {
 					if (self.$visible){
-						self.setpos();
+						self._setpos();
 					}
     			});
 				
 			},
 			
-			show: function() {
+			_show: function() {
 					
 					this.$popover.appendTo('body');
-					this.setcontent();
+					this._setcontent();
 					this.$visible = true;
-				    this.setpos();
-				    this.$popover.addClass('in').removeClass('out').show();
+				    this._setpos();
+				    this.$popover.show();
 					
 				},
 				
-			hide: function() {
+			_hide: function() {
 					
-					this.$popover.addClass('out').removeClass('in');	
-			
-					var supptran = 'WebkitTransition' in document.body.style 
-						|| 'MozTransition' in document.body.style 
-						|| 'msTransition' in document.body.style 
-						|| 'OTransition' in document.body.style 
-						|| 'Transition' in document.body.style;
-						
-					if (supptran && this.$visible){
-						this.$popover.one("transitionend webkitTransitionEnd otransitionend", function(){ 
-							$(this).detach();
-							this.$visible = false;
-						});
-					}else{
-						this.$popover.detach();
-						this.$visible = false;
-					}
+					this.$popover.hide();	
+					this.$popover.detach();
+					this.$visible = false;
 
 				
 				},
 				
-			setcontent: function(){
+			_setcontent: function(){
 
 					this.$pos = this.$element.data('pos') ? this.$element.data('pos') : 'top';
 
@@ -92,7 +84,7 @@
 					this.$title.html(this.$element.data('title') ? this.$element.data('title'): '');
 				},	
 				
-			setpos: function(){
+			_setpos: function(){
 
 					  var pop_width = this.$popover.outerWidth(true),
 						  pop_height = this.$popover.outerHeight(true),

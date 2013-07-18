@@ -1,51 +1,51 @@
 //popoversettings
 @popover-padding: 	  8px;
 @popover-arrow-width:   8px;
-@popover-corner-radius: 5px;
-@popover-boarder-width: 1px;
+@popover-corner-radius: @corner-radius;
+@popover-boarder-width: @border-width;
 //------------------------------------
 
-.gen-popover(@color:@white){
+.gen-popover(@color:@gray){
 
-	border-color:darken(@color,10%) darken(@color,10%) darken(@color,20%);
-	background-color: @color;
-	.shadow(0px,0px,4px,0px, fadeout(@color,50%));
-	.textcolor(@color);
+	border-color:@color;
+	background-color: lighten(@color,32%);
+	color:@color;
 	
 	&>.popover-title{
-	 	.vertical-gradient(lighten(@color,10%),darken(@color,2%));
-		border-bottom:@popover-boarder-width solid darken(@color,10%);
+	 	background-color: @color;
+		color:#FFF;
+		border:@popover-boarder-width solid @color;
 	}
 	
 	&.top:before{
-		border-color: darken(@color,20%) transparent transparent transparent;
+		border-color: @color transparent transparent transparent;
 	}
 	
 	&.top:after{
-		border-color: @color transparent transparent transparent;
+		border-color: lighten(@color,32%) transparent transparent transparent;
 	}
 	&.bottom:before{
-		border-color:transparent transparent darken(@color,10%) transparent;
+		border-color:transparent transparent @color transparent;
 	}
 	
 	&.bottom:after{
-		border-color: transparent transparent lighten(@color,10%) transparent;
+		border-color: transparent transparent @color transparent;
 	}
 	
 	&.left:before{
-		border-color: transparent transparent transparent darken(@color,10%);
+		border-color: transparent transparent transparent @color;
 	}
 	
 	&.left:after{
-		border-color: transparent transparent transparent @color ;
+		border-color: transparent transparent transparent lighten(@color,32%) ;
 	}
 	
 	&.right:before{
-		border-color: transparent darken(@color,10%) transparent transparent;
+		border-color: transparent @color transparent transparent;
 	}
 	
 	&.right:after{
-		border-color:transparent  @color transparent transparent;
+		border-color:transparent  lighten(@color,32%) transparent transparent;
 	}
 }
 
@@ -58,14 +58,7 @@
 	  border-width: @popover-boarder-width;
 	  border-style: solid;
 	  max-width: 30%;
-	  opacity:0;
 	   
-	    -webkit-transition: opacity 0.2s linear;
-        -moz-transition: opacity 0.2s linear;
-		-ms-transition: opacity 0.2s linear;
-        -o-transition: opacity 0.2s linear;
-        transition: opacity 0.2s linear;
-	  
 	  
 	 .roundcorner(@popover-corner-radius);
 	  
@@ -75,7 +68,6 @@
 		padding:		@popover-padding;
 		.roundcorner-top(@popover-corner-radius);
 		.clearfix();
-		
 	 }
 	 
 	 &>.popover-content{
@@ -84,6 +76,7 @@
 		.roundcorner-bottom(@popover-corner-radius);
 		
 		max-height: 200px;
+		min-height:@line-height +  (@popover-padding * 2) + (@popover-arrow-width / 2);
 		overflow:auto;
 		
 	 }
@@ -98,16 +91,16 @@
 	 }
 
 	 &.bottom{
-		margin-top: @popover-arrow-width+1;
+		margin-top: @popover-arrow-width;
 	 }
 	 &.top{
-		margin-bottom: @popover-arrow-width+1;
+		margin-bottom: @popover-arrow-width;
 	 }
 	 &.left{
-		margin-right: @popover-arrow-width+1;
+		margin-right: @popover-arrow-width;
 	 }
 	 &.right{
-		margin-left: @popover-arrow-width+1;
+		margin-left: @popover-arrow-width;
 	 }
 
 
@@ -184,47 +177,32 @@
 		border-left-width:0px;
 	}
 
+
+
+
+
 	.gen-popover();
 
-	&.black{
-		.gen-popover(@black);
-	}
-	
-	&.red{
+	&.popover-red{
 		.gen-popover(@red);
 	}
 	
-	&.orange{
+	&.popover-orange{
 		.gen-popover(@orange);
 	}
 	
-	
-	&.green{
+	&.popover-green{
 		.gen-popover(@green);
 	}
 	
-	&.blue{
+	&.popover-blue{
 		.gen-popover(@blue);
 	}
 	
-	&.gray{
-		.gen-popover(@gray);
-	}
-	
-	&.darkblue{
+	&.popover-darkblue{
 		.gen-popover(@darkblue);
 	}
 	
-	//animation 
-	
-	&.in{
-	   opacity:1;
-	}
-
-	&.out{
-		opacity:0;
-	}
-
 	
 	
 }
