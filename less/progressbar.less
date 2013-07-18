@@ -39,14 +39,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@{startcolor}
 		
 		border-width: @progress-border-width;
 		border-style: solid;
-
+		
+	   -webkit-bg-clip: padding-box;
+     	-moz-bg-clip: padding;
+  		background-clip: padding-box;
 
 		&> .bar{
 			display:block;
 			float:left;
 			height:@progress-height;
 		
-			.roundcorner-left(@progress-height - 1) ;
+			//.roundcorner-left(@progress-height - 1) ;
 			
 		   background-position: 0 0;
 		  -webkit-animation: progress-bar 3s linear infinite;
