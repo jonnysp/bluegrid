@@ -1,33 +1,30 @@
 @ribbon-size : 10px;
 @ribbon-padding : 8px;
-@ribbon-boarder-width : 1px;
-@ribbon-corner-radius: 5px;
-
-.gen-ribbon(@color:@white){
+@ribbon-corner-radius:  @corner-radius;
+.gen-ribbon(@color:@gray){
 
 	
-	.vertical-gradient(lighten(@color,10%),darken(@color,2%));
-	.textcolor(@color);
-	border-color:darken(@color,10%) darken(@color,10%) darken(@color,20%);
-	.shadow(0px,2px,4px,0px, fadeout(darken(@color,10%),50%));
+	background-color:@color;
+	color:#ffffff;
+
 
 	&.full{
 		&:before,&:after {
-			border-top-color:darken(@color,20%);
+			border-top-color:darken(@color,32%);
 		}
 	}
 	&.left,&.right{
 		&:before {
-			border-top-color:darken(@color,20%);
+			border-top-color:darken(@color,32%);
 		}
 	}
 
 	&.lefttop:before{
-		border-left-color:darken(@color,10%);
+		border-left-color:darken(@color,32%);
 	}
 	
 	&.righttop:before{
-		border-right-color:darken(@color,10%);
+		border-right-color:darken(@color,32%);
 	}
 }
 
@@ -36,12 +33,10 @@
 
 	position: relative;
 	padding:@ribbon-padding;
-	border-width: @ribbon-boarder-width;
-	border-style: solid;
 	
 	&.full{
 		display:block;
-		margin:@ribbon-size -(@ribbon-size + @ribbon-boarder-width) 0 -(@ribbon-size + @ribbon-boarder-width);
+		margin:@ribbon-size -(@ribbon-size) 0 -(@ribbon-size);
 		.roundcorner-top(@ribbon-corner-radius);
 	
 		&:before,&:after {
@@ -56,12 +51,12 @@
 			} 
 		&:before {
 				left: 0;
-				bottom: -(@ribbon-size * 2 + @ribbon-boarder-width);
+				bottom: -(@ribbon-size * 2 );
 				border-right-width: 0;
 			}
 		&:after {
 				right: 0;
-				bottom: -(@ribbon-size * 2 + @ribbon-boarder-width);
+				bottom: -(@ribbon-size * 2 );
 				border-left-width: 0;
 			}
 	}
@@ -100,51 +95,47 @@
 	}
 	
 	&.righttop{
-		top: -( @ribbon-size + @ribbon-boarder-width );
+		top: -( @ribbon-size  );
     	.roundcorner-bottom(@ribbon-corner-radius);
 		&:before{
 			top: 0;
-			left: -(@ribbon-size * 2 + @ribbon-boarder-width);
+			left: -(@ribbon-size * 2 );
 		 	border-bottom-width: 0;
 		}
 	}	
 
 	&.right{
-		left: @ribbon-size + @ribbon-boarder-width;
+		left: @ribbon-size ;
     	.roundcorner-left(@ribbon-corner-radius);
 		&:before{
 			right: 0;
-			bottom: -(@ribbon-size * 2 + @ribbon-boarder-width);
+			bottom: -(@ribbon-size * 2);
 			border-left-width: 0;
 		}
 	}
 
 	&.lefttop{
-		top: -(@ribbon-size + @ribbon-boarder-width);
+		top: -(@ribbon-size );
     	.roundcorner-bottom(@ribbon-corner-radius);
 		&:before{
 				top: 0;
-				right:-(@ribbon-size * 2 + @ribbon-boarder-width); 
+				right:-(@ribbon-size * 2); 
 				border-bottom-width: 0;
 		}
 	}
 	
 	&.left{
-		right: @ribbon-size + @ribbon-boarder-width;
+		right: @ribbon-size ;
     	.roundcorner-right(@ribbon-corner-radius);
 		&:before{
 				left: 0;
-				bottom: -(@ribbon-size * 2 + @ribbon-boarder-width);
+				bottom: -(@ribbon-size * 2);
 				border-right-width: 0;
 		}
 	}
 	
 	.gen-ribbon();
 	
-	&.black{
-		.gen-ribbon(@black);
-	}
-	 
 	&.red{
 		.gen-ribbon(@red);
 	}
@@ -160,11 +151,7 @@
 	&.blue{
 		.gen-ribbon(@blue);
 	}
-			
-	&.gray{
-		.gen-ribbon(@gray);
-	}
-		
+
 	&.darkblue{
 		.gen-ribbon(@darkblue);
 	}

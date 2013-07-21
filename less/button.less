@@ -1,4 +1,4 @@
-@btn-border-width: @border-width;
+
 @btn-corner-radius: @corner-radius;
 @btn-padding-topbottom:8px;
 @btn-padding-leftright:12px;
@@ -6,17 +6,14 @@
 
 .gen-btn(@color){
 	background-color:@color;
-	border-color: @color;
+	border-color: transparent;
 		
 	&:hover,&.hover,&:active,&.active {
-
 		background-color: darken(@color,5%);
-		border-color: darken(@color,5%);
 	}	
 	
 	&:active , &.active{
 		box-shadow: 0 3px @btn-padding-topbottom/2 fadeout(darken(@color,30%),50%) inset;
-		border-color: darken(@color,5%);
 		outline: 0;
 	}
 	
@@ -29,7 +26,7 @@
 }
 
 input.btn {
-  	height:@line-height + (@btn-padding-topbottom * 2) + (@btn-border-width * 2) ;
+  	height:@line-height + (@btn-padding-topbottom * 2) ;
 }
 
 .btn{
@@ -46,8 +43,7 @@ input.btn {
 	padding:@btn-padding-topbottom @btn-padding-leftright;
 	cursor: pointer;
 	color:#FFF;
-	border-width: @btn-border-width;
-	border-style: solid;
+	border: 0px solid transparent;
 	white-space:nowrap;
 	
 	.noselect();
