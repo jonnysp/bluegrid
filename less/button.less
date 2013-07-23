@@ -4,9 +4,10 @@
 @btn-padding-leftright:12px;
 
 
-.gen-btn(@color){
+.gen-btn(@color:@gray){
 	background-color:@color;
 	border-color: transparent;
+	.textcolor(@color);
 		
 	&:hover,&.hover,&:active,&.active {
 		background-color: darken(@color,5%);
@@ -42,7 +43,6 @@ input.btn {
 	display: inline-block;
 	padding:@btn-padding-topbottom @btn-padding-leftright;
 	cursor: pointer;
-	color:#FFF;
 	border: 0px solid transparent;
 	white-space:nowrap;
 	
@@ -102,7 +102,7 @@ input.btn {
 		}
 	  }
 
-	.gen-btn(@gray);
+	.gen-btn();
 	
 	&.btn-red{
 		.gen-btn(@red);

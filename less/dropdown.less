@@ -1,20 +1,19 @@
 
-@dropdown-corner-radius:6px;
+@dropdown-corner-radius:@corner-radius;
+@dropdown-border-width:@border-width;
 @dropdown-item-padding:3px;
-@dropdown-boarder-width:1px;
 @dropdown-arrow-width: 8px;
 
-.gen-dropdown(@color){
+.gen-dropdown(@color:@gray){
 
-	.vertical-gradient(lighten(@color,10%),darken(@color,2%));
-	.shadow(1px,1px,0,0,lighten(@color,20%),inset);
-	border-color:darken(@color,10%) darken(@color,10%) darken(@color,20%);
+	background-color:@color;
+	border-color:darken(@color,16%);
 	.textcolor(@color);
 
 	
 	&.up{
 		&:before{
-			border-color: darken(@color,10%) transparent transparent transparent;
+			border-color: darken(@color,16%) transparent transparent transparent;
 		}
 		&:after{
 			border-color: @color transparent transparent transparent;
@@ -23,7 +22,7 @@
 		
 	&.down{
 		&:before{
-			border-color:transparent transparent darken(@color,10%) transparent;
+			border-color:transparent transparent darken(@color,16%) transparent;
 		}
 		&:after{
 			border-color: transparent transparent @color transparent;
@@ -33,12 +32,10 @@
 	&> li{
 	
 		&:hover,&:active:hover,&.active:hover,&:active,&.active{
-			.vertical-gradient(lighten(@color,10%),darken(@color,2%));
+			background-color: darken(@color,5%);
 			border-color:transparent;
 			box-shadow: none;
 		}
-
-
 
 		&> a ,&> span{
 			.textcolor(@color);
@@ -46,8 +43,7 @@
 
 		//divider
 		&.divider,&.divider:active{
-			border-top:@dropdown-boarder-width solid darken(@color,10%);
-				box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25) inset, 0 1px 0 fadeout(lighten(@color,20%),40%);
+			border-top:@dropdown-border-width solid darken(@color,16%);
 		}
 
 	}
@@ -65,7 +61,7 @@
 	margin:0;
 	min-width:150px;
 	padding:@dropdown-corner-radius 0;
-	border-width: @dropdown-boarder-width;
+	border-width: @dropdown-border-width;
 	border-style: solid;
 	
 	.roundcorner(@dropdown-corner-radius);
@@ -73,8 +69,8 @@
 
 	&.up,&.down{
 		&:before{
-			border-width: (@dropdown-arrow-width + @dropdown-boarder-width);
-			margin-left:(@dropdown-arrow-width + @dropdown-boarder-width)*-1;
+			border-width: (@dropdown-arrow-width + @dropdown-border-width);
+			margin-left:(@dropdown-arrow-width + @dropdown-border-width)*-1;
 		}
 		&:after{
 			border-width: @dropdown-arrow-width;
@@ -96,7 +92,7 @@
 	&.up{
 		margin-bottom: @dropdown-arrow-width+1;
 		&:before{
-			bottom: (@dropdown-arrow-width + @dropdown-boarder-width)*-1;
+			bottom: (@dropdown-arrow-width + @dropdown-border-width)*-1;
 		}
 		&:after{
 			bottom: @dropdown-arrow-width*-1;
@@ -109,7 +105,7 @@
 	&.down{
 		margin-top: @dropdown-arrow-width+1;
 		&:before{
-			top: (@dropdown-arrow-width + @dropdown-boarder-width)*-1;
+			top: (@dropdown-arrow-width + @dropdown-border-width)*-1;
 		}
 		&:after{
 			top: @dropdown-arrow-width*-1;
@@ -124,13 +120,12 @@
 
 
 	&> li{
-margin:@dropdown-boarder-width;
-	
+
 		&> span{
 			cursor:default;
 		}
 		
-		&> a ,&> span{
+		> a ,> span{
 			outline: 0;
 			text-decoration:none;
 			display:block;
@@ -146,9 +141,9 @@ margin:@dropdown-boarder-width;
 		&.submenu {
 
 			&> a:after ,&> span:after  {
-				 font-family: 'fontello';
-				 font-style: normal;
-				 font-weight: normal;
+				font-family: 'fontello';
+				font-style: normal;
+				font-weight: normal;
 				float: right;
 				content: "\25b8";
 			}
@@ -157,8 +152,8 @@ margin:@dropdown-boarder-width;
 				.roundcorner();
 				.roundcorner-top-right(@dropdown-corner-radius);
 				.roundcorner-bottom(@dropdown-corner-radius);
-				margin-top: (@dropdown-corner-radius * -1) - (@dropdown-item-padding * 2) - @line-height - @dropdown-boarder-width - @dropdown-boarder-width ;
-				margin-left:-@dropdown-boarder-width;
+				margin-top: (@dropdown-corner-radius * -1) - (@dropdown-item-padding * 2) - @line-height - @dropdown-border-width ;
+				//margin-left:-@dropdown-border-width;
 				left:100%;
 				display:none;
 			}
@@ -174,38 +169,26 @@ margin:@dropdown-boarder-width;
 
 
 
+	.gen-dropdown(@gray);
 
-
-
-
-	.gen-dropdown(@white);
-
-	&.black{
-		.gen-dropdown(@black);
-	}
-	
-	&.gray{
-		.gen-dropdown(@gray);
-	}	
-	 
-	&.red{
+ 
+	&.dropdown-red{
 		.gen-dropdown(@red);
 	}
 	
-	&.orange{
+	&.dropdown-orange{
 		.gen-dropdown(@orange);
 	}
 	
-	
-	&.green{
+	&.dropdown-green{
 		.gen-dropdown(@green);
 	}
 	
-	&.blue{
+	&.dropdown-blue{
 		.gen-dropdown(@blue);
 	}
 	
-	&.darkblue{
+	&.dropdown-darkblue{
 		.gen-dropdown(@darkblue);
 	}
 		

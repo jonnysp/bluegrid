@@ -1,12 +1,12 @@
 @ribbon-size : 10px;
 @ribbon-padding : 8px;
 @ribbon-corner-radius:  @corner-radius;
+
+
 .gen-ribbon(@color:@gray){
 
-	
 	background-color:@color;
-	color:#ffffff;
-
+	.textcolor(@color);
 
 	&.full{
 		&:before,&:after {
