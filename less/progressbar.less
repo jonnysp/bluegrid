@@ -1,11 +1,13 @@
-@progress-height:@line-height - @border-width * 2;
+@progress-height: @line-height - (@border-width * 2);
 @progress-border-width:@border-width;
+@progress-corner-radius:@corner-radius;
 
 .gen-progress(@color:@gray){
 
-	background: lighten(@color,32%);
+	background: @body-background;
 	border-color: @color;
-
+	.shadow(0px,3px,@btn-padding-topbottom/2,0px, fadeout(@color,50%) ,inset);
+	
 	&> .bar{
 
 		border-right:@progress-border-width solid @color;;
@@ -34,7 +36,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@{startcolor}
 	
 		display:block;
 		height:@progress-height;
-		.roundcorner(@progress-height);
+		.roundcorner(@progress-corner-radius);
 		overflow: hidden;
 		
 		border-width: @progress-border-width;

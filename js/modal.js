@@ -4,9 +4,6 @@
 			this.$element = $(element);
 			this.$target =  $(this.$element.data('target')).length > 0 ? $(this.$element.data('target')) : $(this.$element.data('target'));
 			this.$close =   $(this.$element.data('close')).length > 0 ? $(this.$element.data('close')) : $(this.$element.data('close'));
-			if (this.$target.length > 0){
-				this.$target.data('backdrop', $('<div />').addClass('modal-backdrop').addClass('out') );
-			}
 
 		};
 
@@ -17,28 +14,24 @@
 							self.show();
 						});
 						if (self.$target.length > 0){
-							self.$target.data('backdrop').click(function(){
+							self.$target.click(function(){
 								self.hide(self.$target);
 							});	
-						}
+						};
+						
 			},
 			
 			show: function() {
-				
 					if (this.$target.length > 0){
-						this.$target.data('backdrop').appendTo('body').addClass('in');
 						this.$target.addClass('in');
+						this.hide(this.$close);
 					}
-					this.hide(this.$close);
-					
 			},
 			
 			hide: function(elm) {
-					if (elm.length > 0){
-						elm.data('backdrop').removeClass('in');
-						elm.removeClass('in');
-					}
-				    
+				if (elm.length > 0){
+					elm.removeClass('in');
+				}
 			}
 
 	}

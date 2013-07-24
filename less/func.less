@@ -102,9 +102,6 @@
 }
 
 
-
-
-
 .textshadow(@x:0,@y:1px,@z:0,@color:rgba(255,255,255,0.5)){
 		text-shadow: @arguments;
 }
@@ -179,14 +176,11 @@
 	//opacity: @opacity;
 //}
 
-
 .textcolor(@color) when (lightness(@color) >= 70%) {
 	color:darken(@color,45%);
-//	.textshadow( 1px, 1px, 0px, lighten(@color,10%));
 }
 .textcolor(@color) when (lightness(@color) < 70%) {
 	color:lighten(@color,45%);
-//	.textshadow( 1px, 1px, 0px, darken(@color,10%));
 }
 
 
@@ -214,11 +208,6 @@
 	 border-radius:~"@{first}% / @{second}%";
 }
 
-//.shadow(@x:0px,@y:0px,@blur:0px,@spread:0px,@color:rgba(0, 0, 0, 0.3)){
-//	-webkit-box-shadow: @arguments;
-//	-moz-box-shadow: @arguments;
-//    box-shadow: @arguments;
-//}
 
 .rotate(@deg:0deg){
 	-webkit-transform: rotate(@arguments); 

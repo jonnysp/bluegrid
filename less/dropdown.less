@@ -6,44 +6,43 @@
 
 .gen-dropdown(@color:@gray){
 
-	background-color:@color;
-	border-color:darken(@color,16%);
-	.textcolor(@color);
-
+	background-color:@body-background;
+	border-color:@color;
+    .shadow(0px,0px,4px,0px, fadeout(darken(@color,50%),50%));
 	
-	&.up{
+
+	&.dropdown-up,&.dropdown-up-left,&.dropdown-up-right{
 		&:before{
-			border-color: darken(@color,16%) transparent transparent transparent;
+			border-color: @color transparent transparent transparent;
 		}
 		&:after{
-			border-color: @color transparent transparent transparent;
+			border-color: @body-background transparent transparent transparent;
 		}
 	}
 		
-	&.down{
+	&.dropdown-down,&.dropdown-down-left,&.dropdown-down-right{
 		&:before{
-			border-color:transparent transparent darken(@color,16%) transparent;
+			border-color:transparent transparent @color transparent;
 		}
 		&:after{
-			border-color: transparent transparent @color transparent;
+			border-color: transparent transparent @body-background transparent;
 		}
 	}
 	
 	&> li{
 	
+
 		&:hover,&:active:hover,&.active:hover,&:active,&.active{
-			background-color: darken(@color,5%);
-			border-color:transparent;
-			box-shadow: none;
+			background-color: @color;
+			&> a ,&> span{
+				.textcolor(@color);
+			}
 		}
 
-		&> a ,&> span{
-			.textcolor(@color);
-		}
 
 		//divider
 		&.divider,&.divider:active{
-			border-top:@dropdown-border-width solid darken(@color,16%);
+			border-top:@dropdown-border-width solid @color;
 		}
 
 	}
@@ -67,14 +66,14 @@
 	.roundcorner(@dropdown-corner-radius);
 
 
-	&.up,&.down{
+	&.dropdown-up,&.dropdown-up-left,&.dropdown-up-right,&.dropdown-down,&.dropdown-down-left,&.dropdown-down-right{
 		&:before{
 			border-width: (@dropdown-arrow-width + @dropdown-border-width);
 			margin-left:(@dropdown-arrow-width + @dropdown-border-width)*-1;
 		}
 		&:after{
 			border-width: @dropdown-arrow-width;
-			margin-left:@dropdown-arrow-width*-1;
+			margin-left:@dropdown-arrow-width * -1;
 		}
 		&:before,&:after{
 			content:'';
@@ -83,32 +82,47 @@
 			position:absolute;
 			border-color: transparent;
 			border-style: solid; 
+			
+		}
+	}
+
+	&.dropdown-up,&.dropdown-down{
+		&:before,&:after{
 			left:50%;
+		}	
+		&-right{ 
+			&:before,&:after{
+				left:10%;
+			}
+		}
+		&-left{ 
+			&:before,&:after{
+				left:90%;
+			}
 		}
 	}
 
 
-
-	&.up{
-		margin-bottom: @dropdown-arrow-width+1;
+	&.dropdown-up,&.dropdown-up-left,&.dropdown-up-right{
+		margin-bottom: @dropdown-arrow-width + 1;
 		&:before{
-			bottom: (@dropdown-arrow-width + @dropdown-border-width)*-1;
+			bottom: (@dropdown-arrow-width + @dropdown-border-width) * -1;
 		}
 		&:after{
-			bottom: @dropdown-arrow-width*-1;
+			bottom: @dropdown-arrow-width * -1;
 		}
 		&:before,&:after{
 			border-bottom-width:0px;
 		}
 	}
 	
-	&.down{
-		margin-top: @dropdown-arrow-width+1;
+	&.dropdown-down,&.dropdown-down-left,&.dropdown-down-right{
+		margin-top: @dropdown-arrow-width + 1;
 		&:before{
-			top: (@dropdown-arrow-width + @dropdown-border-width)*-1;
+			top: (@dropdown-arrow-width + @dropdown-border-width) * -1;
 		}
 		&:after{
-			top: @dropdown-arrow-width*-1;
+			top: @dropdown-arrow-width * -1;
 		}
 		&:before,&:after{
 		  border-top-width:0px;
@@ -132,6 +146,7 @@
 			font-size: @font-size;
 			line-height: @line-height;
 			padding:@dropdown-item-padding @font-size;
+			color:@text-color;
 		}
 		
 		&.divider{
@@ -139,7 +154,6 @@
 		}
 
 		&.submenu {
-
 			&> a:after ,&> span:after  {
 				font-family: 'fontello';
 				font-style: normal;
@@ -153,7 +167,6 @@
 				.roundcorner-top-right(@dropdown-corner-radius);
 				.roundcorner-bottom(@dropdown-corner-radius);
 				margin-top: (@dropdown-corner-radius * -1) - (@dropdown-item-padding * 2) - @line-height - @dropdown-border-width ;
-				//margin-left:-@dropdown-border-width;
 				left:100%;
 				display:none;
 			}

@@ -43,160 +43,103 @@ overflow: auto;
   
   
   
-
-<div id="wizzard" class="modal yellow">
-    <div class="modal-header"><h2>Step 1</h2></div>
-    <div class="ribbon right yellow"><i class="icon-info-circle"></i> Ribbon</div>
-    <div class="modal-content" style="text-align:justify;">
-    	
-         <form class="formvertical yellow">
-
-    	<div class="control-group">
-        	<label class="control-label" for="1">Label1</label>
-        	<div class="controls">
-            	<input id="1" type="text" />
+<div id="wizzard" class="modal">
+    <div class="modal-dialog yellow">
+        <div class="modal-header"><h2>Step 1</h2></div>
+        <div class="ribbon right yellow"><i class="icon-info-circle"></i> Ribbon</div>
+        <div class="modal-content" style="text-align:justify;">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        </div>
+        <div class="modal-footer">
+                <button class="btn yellow pull-right" rel="modal" data-close="#wizzard">Close</button>
+            <div class="btn-group">
+                <button class="btn yellow" rel="modal" data-target="#wizzard1" data-close="#wizzard">Step 2</button>
             </div>
         </div>
-    <div class="control-group">
-        	<label class="control-label" for="2">Label2</label>
-        	<div class="controls">
-            	<input id="2" type="password" />
-            </div>
-        </div>
-        <div class="control-group">
-        	<label class="control-label" for="3">Label3</label>
-        	<div class="controls">
-            	<select id="3">
-                	<option>Select 1</option>
-                	<option>Select 2</option>
-                	<option>Select 3</option>
-                	<option>Select 4</option>
-                </select>
-            </div>
-        </div>
-        <div class="control-group">
-        	<label class="control-label" for="4">Label4</label>
-        	<div class="controls">
-            	<textarea id="4"></textarea>
-            </div>
-        </div>
-        <div class="control-group">
-        	<label class="control-label" for="5">Label5</label>
-        	<div class="controls">
-            		<select id="5" size="4">
-                	<option>Select 1</option>
-                	<option>Select 2</option>
-                	<option>Select 3</option>
-                	<option>Select 4</option>
-                </select>
-            </div>
-        </div>
-        
-
-    </form>
-        
-        
-        
     </div>
-    <div class="modal-footer">
-            <button class="btn yellow pull-right" rel="modal" data-close="#wizzard">Close</button>
-        <div class="btn-group">
-            <button class="btn yellow" rel="modal" data-target="#wizzard1" data-close="#wizzard">Step 2</button>
+</div>
+
+
+<div id="wizzard1" class="modal">
+    <div class="modal-dialog">
+         <div class="ribbon righttop red"><i class="icon-info-circle"></i> Ribbon</div>
+        <div class="modal-header">
+            <h2>Step 2</h2>
+        </div>
+        
+        <div class="ribbon right orange"><i class="icon-info-circle"></i> Ribbon</div>
+        <div class="ribbon left blue"><i class="icon-info-circle"></i> Ribbon</div>
+        
+        <div class="ribbon left pink"><i class="icon-info-circle"></i> Ribbon</div>
+        <div class="modal-content" style="text-align:justify;">
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="modal-footer">
+                <button class="btn pull-right" rel="modal" data-close="#wizzard1">Close</button>
+            <div class="btn-group">
+                <button class="btn" rel="modal" data-target="#wizzard" data-close="#wizzard1">Step 1</button>
+                <button class="btn" rel="modal" data-target="#wizzard2" data-close="#wizzard1">Step 3</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="wizzard2" class="modal">
+    <div class="modal-dialog blue">
+            <div class="modal-header"><h2>Step 3</h2></div>
+            <div class="modal-content" style="text-align:justify;">
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="modal-footer">
+                    <button class="btn blue pull-right" rel="modal" data-close="#wizzard2">close</button>
+                    <div class="btn-group">
+                    <button class="btn blue" rel="modal" data-target="#wizzard1" data-close="#wizzard2">Step 2</button>
+                    <button class="btn blue" rel="modal" data-target="#wizzard3" data-close="#wizzard2">Step 4</button>
+                    </div>
+            </div>
+        </div>
+</div>
+
+
+<div id="wizzard3" class="modal">
+    <div class="modal-dialog orange">
+        <div class="modal-header"><h2>Step 4</h2></div>
+        <div class="modal-content" style="text-align:justify;">
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="modal-footer">
+                <button class="btn orange pull-right" rel="modal" data-close="#wizzard3">close</button>
+                <div class="btn-group">
+                <button class="btn orange" rel="modal" data-target="#wizzard2" data-close="#wizzard3">Step 3</button>
+                <button class="btn orange" rel="modal" data-target="#wizzard4" data-close="#wizzard3">Step 5</button>
+                </div>
         </div>
     </div>
 </div>
 
 
 
-
-<div id="wizzard1" class="modal slide-left">
-	 <div class="ribbon righttop red"><i class="icon-info-circle"></i> Ribbon</div>
-    <div class="modal-header">
-       
-        <h2>Step 2</h2>
-    </div>
+<div id="wizzard4" class="modal">
+    <div class="modal-dialog black">
+          
+        <div class="ribbon lefttop">Step 5</div>
+        <div class="modal-header">&nbsp;</div>
+        <div class="ribbon left orange"><div class="badge orange">100</div></div>
     
-    <div class="ribbon right orange"><i class="icon-info-circle"></i> Ribbon</div>
-    <div class="ribbon left blue"><i class="icon-info-circle"></i> Ribbon</div>
-    
-    <div class="ribbon left pink"><i class="icon-info-circle"></i> Ribbon</div>
-    <div class="modal-content" style="text-align:justify;">
-    	<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-    </div>
-    <div class="modal-footer">
-            <button class="btn pull-right" rel="modal" data-close="#wizzard1">Close</button>
-        <div class="btn-group">
-       		<button class="btn" rel="modal" data-target="#wizzard" data-close="#wizzard1">Step 1</button>
-            <button class="btn" rel="modal" data-target="#wizzard2" data-close="#wizzard1">Step 3</button>
+        <div class="modal-content" style="text-align:justify;">
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="modal-footer">
+                <button class="btn black pull-right" rel="modal" data-close="#wizzard4">close</button>
+                <div class="btn-group">
+                    <button class="btn black" rel="modal" data-target="#wizzard3" data-close="#wizzard4">Step 4</button>
+                </div>
         </div>
     </div>
 </div>
-
-
-
-
-
-<div id="wizzard2" class="modal blue slide-top">
-    <div class="modal-header"><h2>Step 3</h2></div>
-    <div class="modal-content" style="text-align:justify;">
-    	<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-    </div>
-    <div class="modal-footer">
-        	<button class="btn blue pull-right" rel="modal" data-close="#wizzard2">close</button>
-            <div class="btn-group">
-            <button class="btn blue" rel="modal" data-target="#wizzard1" data-close="#wizzard2">Step 2</button>
-            <button class="btn blue" rel="modal" data-target="#wizzard3" data-close="#wizzard2">Step 4</button>
-            </div>
-    </div>
-</div>
-
-
-
-
-
-<div id="wizzard3" class="modal slide-bottom orange">
-    <div class="modal-header"><h2>Step 4</h2></div>
-    <div class="modal-content" style="text-align:justify;">
-    	<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-    </div>
-    <div class="modal-footer">
-        	<button class="btn orange pull-right" rel="modal" data-close="#wizzard3">close</button>
-            <div class="btn-group">
-            <button class="btn orange" rel="modal" data-target="#wizzard2" data-close="#wizzard3">Step 3</button>
-            <button class="btn orange" rel="modal" data-target="#wizzard4" data-close="#wizzard3">Step 5</button>
-            </div>
-    </div>
-</div>
-
-
-
-
-
-<div id="wizzard4" class="modal black slide-right ">
-      
-     <div class="ribbon lefttop blue"><button class="btn blue" rel="modal" data-close="#wizzard4"><i class="icon-cancel"></i></button></div>
-     <div class="ribbon righttop red">
-      	<div class="progress red" style="width:200px;"><div class="bar" style="width:50%;"></div></div>
-     </div> 
-
-	<div class="modal-header"><h2>Step 5</h2></div>
-    <div class="ribbon full blue"><i class="icon-info-circle"></i> Ribbon</div>
-    <div class="ribbon left orange"><div class="badge orange">100</div></div>
-
-    <div class="modal-content" style="text-align:justify;">
-    	<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-    </div>
-    <div class="modal-footer">
-        	<button class="btn black pull-right" rel="modal" data-close="#wizzard4">close</button>
-            <div class="btn-group">
-            	<button class="btn black" rel="modal" data-target="#wizzard3" data-close="#wizzard4">Step 4</button>
-            </div>
-    </div>
-</div>
-
        
 
 

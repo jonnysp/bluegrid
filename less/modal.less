@@ -25,94 +25,55 @@
 
 
 
-.modal-backdrop{
+.modal{
 	position:fixed;
 	top:0;
 	right:0;
 	bottom:0;
 	left:0;
 	background-color:fadeout(@modal-backdrop-color,30%);
-	opacity:0;
-	visibility: hidden;
-
+	display:none;
+	overflow-x: hidden;
+	overflow-y: auto;
 	z-index:1020;
 	
-	-webkit-transition: opacity 0.3s linear,visibility 0.3s linear;
-	-moz-transition: opacity 0.3s linear,visibility 0.3s linear;
-	-ms-transition: opacity 0.3s linear,visibility 0.3s linear;
-	-o-transition: opacity 0.3s linear,visibility 0.3s linear;
-	transition: opacity 0.3s linear,visibility 0.3s linear;
+	padding:50px 0 0 0;
+	@media (max-width: (@tablet-width)) {
+		padding:(@grid-column-padding / 2);
+	}
+	
 	
 	&.in{
-	  opacity:1;
-	  visibility: visible;
+		display:block;
 	}
 
 }
 
-.modal{
-	position:fixed;
-	top:50%;
+.modal-dialog{
+	position:relative;
+	margin-left: -280px;
 	left:50%;
+	
 	width:560px;
-	margin: -250px 0 0 -280px;
-	height:auto;
-	opacity:0;
+	@media (max-width: (@tablet-width)) {
+		width:100%;
+		left:0;
+		margin-left:0;
+	}
+	
+
 	z-index:1050;
 	
-	visibility: hidden;
-		
 	border-width: @modal-border-width;
 	border-style: solid;	
-	
-	 -webkit-bg-clip: padding-box;
-     -moz-bg-clip: padding;
-  	 background-clip: padding-box;
-	
-	
 	.roundcorner-top(@modal-corner-radius);
-
-	-webkit-transition: opacity 0.3s linear,visibility 0.3s linear;
-	-moz-transition: opacity 0.3s linear,visibility 0.3s linear;
-	-ms-transition: opacity 0.3s linear,visibility 0.3s linear;
-	-o-transition: opacity 0.3s linear,visibility 0.3s linear;
-	transition: opacity 0.3s linear,visibility 0.3s linear;
-
-	&.slide-top{
-		margin: -1250px 0 0 -280px;
-	}
-	&.slide-bottom{
-	  	margin: 1250px 0 0 -280px;
-	}
-	&.slide-left{
-		margin: -250px 0 0 -1280px;
-	}
-	&.slide-right{
-		margin: -250px 0 0 1280px;
-	}
 	
-	&.slide-left,&.slide-right,&.slide-top , &.slide-bottom{
-		-webkit-transition:  margin 0.3s linear,opacity 0.3s linear,visibility 0.3s linear;
-		-moz-transition:  margin 0.3s linear,opacity 0.3s linear,visibility 0.3s linear;
-		-ms-transition:  margin 0.3s linear,opacity 0.3s linear,visibility 0.3s linear;
-		-o-transition:  margin 0.3s linear,opacity 0.3s linear,visibility 0.3s linear;
-		transition: margin 0.3s linear,opacity 0.3s linear,visibility 0.3s linear;
-	}
-	
-	&.in{
-	  opacity:1;
-	  visibility: visible;
-	  &.slide-top,&.slide-bottom,&.slide-left,&.slide-right{
-	  	margin: -250px 0 0 -280px;
-	  }
-	}
-
-
 	& > .modal-header{
+			
 		display: block;
 		font-weight: bold;
 		padding:		@modal-padding;
-
+		.roundcorner-top(@modal-corner-radius);
 		& > h1,& > h2 ,& > h3,& > h4,& > h5,& > h6{
 			margin:0;
 			padding:0;
@@ -122,8 +83,6 @@
 	
 	& > .modal-content{
 		padding: 0 @modal-padding;
-		max-height: 400px;
-    	overflow-y: auto;
 	}
 
 	& > .modal-footer{
@@ -143,6 +102,7 @@
 
 
 	.gen-modal();
+	
 	&.black{
 		.gen-modal(@black);
 	}
