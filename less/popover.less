@@ -10,6 +10,7 @@
 	border-color:@color;
 	background-color: lighten(@color,32%);
 	color:@color;
+	.shadow(0px,0px,4px,0px, fadeout(darken(@color,50%),50%));
 	
 	&>.popover-title{
 	 	.vertical-gradient(@color, darken(@color,5%)) ;
@@ -69,13 +70,14 @@
 		display: block;
 		font-weight: bold;
 		padding:		@popover-padding;
+		.roundcorner-top(@popover-corner-radius - 1);
 		.clearfix();
 	 }
 	 
 	 &>.popover-content{
 		padding:		@popover-padding;
 		margin-bottom:@popover-corner-radius;
-		.roundcorner-bottom(@popover-corner-radius);
+		.roundcorner-bottom(@popover-corner-radius - 1);
 		max-height: 200px;
 		overflow:auto;
 		

@@ -14,8 +14,10 @@
 							self.show();
 						});
 						if (self.$target.length > 0){
-							self.$target.click(function(){
-								self.hide(self.$target);
+							self.$target.click(function(event){
+								if ($(event.target).is(this) || $(event.target).is(self.$element)){
+									self.hide(self.$target);
+								}
 							});	
 						};
 						
