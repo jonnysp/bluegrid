@@ -3,7 +3,7 @@
 @form-padding:4px;
 
 
-.gen-input(@color){
+.gen-input(@color:@default){
 		.vertical-gradient(darken(@color,10%), lighten(@color,3%));
 		.textcolor(@color); 
 		//todo multi shadow
@@ -15,7 +15,7 @@
 }
 
 
-.gen-form(@color){
+.gen-form(@color:@default){
 	
 	& input[type=text],& textarea,& input[type=password],& select{
 	
@@ -72,7 +72,7 @@
 	
 	
 	
-	.gen-form(@white);
+	.gen-form();
 	
     &.black{
 		.gen-form(@black);

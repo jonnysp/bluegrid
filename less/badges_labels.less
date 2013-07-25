@@ -1,5 +1,5 @@
 
-.setbadgelabel(@color){
+.setbadgelabel(@color:@default){
 	background-color:@color;
 	.textcolor(@color);
 }
@@ -21,7 +21,7 @@
 	padding: 0 @line-height / 3;
 	vertical-align: 1px;
 
-	.setbadgelabel(@gray);
+	.setbadgelabel();
 
 	&.red{
 		.setbadgelabel(@red);

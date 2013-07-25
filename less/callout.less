@@ -1,0 +1,47 @@
+//calloutsettings
+@callout-padding: 	  (@line-height / 2);
+//------------------------------------
+
+.gen-callout(@color:@default){
+	color:@color;
+	background-color:lighten(@color,32%);
+	border-left-color: @color;
+}
+
+.callout{
+
+	display:block;
+	padding:@callout-padding;
+	margin:(@line-height/2) 0;
+    border-left-width: 5px;
+	border-left-style: solid;
+
+
+	&>:first-child { margin-top: 0; }
+	&>:last-child { margin-bottom:0; }	
+
+	.gen-callout();
+
+	&.callout-red{
+		.gen-callout(@red);
+	}
+	
+	&.callout-orange{
+		.gen-callout(@orange);
+	}
+
+	&.callout-green{
+		.gen-callout(@green);
+	}
+	
+	&.callout-blue{
+		.gen-callout(@blue);
+	}
+
+	&.callout-darkblue{
+		.gen-callout(@darkblue);
+	}
+
+
+
+}

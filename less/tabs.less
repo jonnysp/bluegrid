@@ -4,7 +4,7 @@
 @tab-border-width:1px;
 
 
-.gen-tabs(@color){
+.gen-tabs(@color:@default){
 
 	border-bottom: @tab-border-width solid darken(@color,20%);
 
@@ -73,7 +73,7 @@
 		
 	}
 
-	.gen-tabs(@white);
+	.gen-tabs();
 
 	&.black{
 		.gen-tabs(@black);

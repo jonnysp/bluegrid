@@ -4,7 +4,7 @@
 @dropdown-item-padding:3px;
 @dropdown-arrow-width: 8px;
 
-.gen-dropdown(@color:@gray){
+.gen-dropdown(@color:@default){
 
 	background-color:@body-background;
 	border-color:@color;
@@ -33,7 +33,7 @@
 	
 
 		&:hover,&:active:hover,&.active:hover,&:active,&.active{
-			background-color: @color;
+			.vertical-gradient(@color, darken(@color,5%)) ;
 			&> a ,&> span{
 				.textcolor(@color);
 			}
@@ -182,7 +182,7 @@
 
 
 
-	.gen-dropdown(@gray);
+	.gen-dropdown();
 
  
 	&.dropdown-red{

@@ -3,9 +3,9 @@
 @ribbon-corner-radius:  @corner-radius;
 
 
-.gen-ribbon(@color:@gray){
+.gen-ribbon(@color:@default){
 
-	background-color:@color;
+	.vertical-gradient(@color, darken(@color,5%)) ;
 	.textcolor(@color);
 
 	&.full{
