@@ -1,6 +1,6 @@
 //popoversettings
-@popover-padding: 	  8px;
-@popover-arrow-width:   8px;
+@popover-padding: 	  7px;
+@popover-arrow-width:   10px;
 @popover-corner-radius: @corner-radius;
 @popover-border-width: @border-width;
 //------------------------------------
@@ -10,7 +10,9 @@
 	border-color:@color;
 	background-color: lighten(@color,32%);
 	color:@color;
-	.shadow(0px,0px,4px,0px, fadeout(darken(@color,50%),50%));
+	.shadow(0px,0px,10px,0px, fadeout(darken(@color,50%),80%));
+	
+	
 	
 	&>.popover-title{
 	 	.vertical-gradient(@color, darken(@color,5%)) ;
@@ -74,13 +76,10 @@
 		.clearfix();
 	 }
 	 
-	 &>.popover-content{
-		padding:		@popover-padding;
+	 &>.content{
 		margin-bottom:@popover-corner-radius;
-		.roundcorner-bottom(@popover-corner-radius - 1);
 		max-height: 200px;
 		overflow:auto;
-		
 	 }
 	 
 	 &:before,&:after{

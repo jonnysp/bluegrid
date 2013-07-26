@@ -7,23 +7,26 @@
 
 	.vertical-gradient(@color, darken(@color,5%)) ;
 	.textcolor(@color);
+	.shadow(0,0,5px,0px, fadeout(darken(@color,50%),50%));
 
-	&.full{
+	&.ribbon-full{
 		&:before,&:after {
 			border-top-color:darken(@color,32%);
+			
 		}
 	}
-	&.left,&.right{
+	
+	&.ribbon-left,&.ribbon-right{
 		&:before {
 			border-top-color:darken(@color,32%);
 		}
 	}
 
-	&.lefttop:before{
+	&.ribbon-topleft:before{
 		border-left-color:darken(@color,32%);
 	}
 	
-	&.righttop:before{
+	&.ribbon-topright:before{
 		border-right-color:darken(@color,32%);
 	}
 }
@@ -33,8 +36,9 @@
 
 	position: relative;
 	padding:@ribbon-padding;
+	z-index:1;
 	
-	&.full{
+	&.ribbon-full{
 		display:block;
 		margin:@ribbon-size -(@ribbon-size) 0 -(@ribbon-size);
 		.roundcorner-top(@ribbon-corner-radius);
@@ -47,7 +51,7 @@
 				border-width: @ribbon-size;
 				border-style: solid;
 				border-color: transparent;
-				z-index: -1;
+				z-index: -100;
 			} 
 		&:before {
 				left: 0;
@@ -61,7 +65,7 @@
 			}
 	}
 
-	&.left,&.lefttop,&.right,&.righttop{
+	&.ribbon-left,&.ribbon-topleft,&.ribbon-right,&.ribbon-topright{
 		&:before{
 			content: '';
 			position: absolute;
@@ -74,27 +78,27 @@
 		}
 	}
 
-	&.left,&.lefttop{
+	&.ribbon-left,&.ribbon-topleft{
 		float:left;
 		clear:left;
 		.roundcorner-top-left(@ribbon-corner-radius);
 	}
 	
-	&.right,&.righttop{
+	&.ribbon-right,&.ribbon-topright{
 		float:right;
 		clear:right;
 		.roundcorner-top-right(@ribbon-corner-radius);
 	}
 	
-	&.right,&.left{
+	&.ribbon-right,&.ribbon-left{
 		margin-top: @ribbon-size ;
 	}
 	
-	&.righttop,&.lefttop{
+	&.ribbon-topright,&.ribbon-topleft{
 		margin: 0 @ribbon-size 0 @ribbon-size;
 	}
 	
-	&.righttop{
+	&.ribbon-topright{
 		top: -( @ribbon-size  );
     	.roundcorner-bottom(@ribbon-corner-radius);
 		&:before{
@@ -104,7 +108,7 @@
 		}
 	}	
 
-	&.right{
+	&.ribbon-right{
 		left: @ribbon-size ;
     	.roundcorner-left(@ribbon-corner-radius);
 		&:before{
@@ -114,7 +118,7 @@
 		}
 	}
 
-	&.lefttop{
+	&.ribbon-topleft{
 		top: -(@ribbon-size );
     	.roundcorner-bottom(@ribbon-corner-radius);
 		&:before{
@@ -124,7 +128,7 @@
 		}
 	}
 	
-	&.left{
+	&.ribbon-left{
 		right: @ribbon-size ;
     	.roundcorner-right(@ribbon-corner-radius);
 		&:before{
@@ -136,23 +140,23 @@
 	
 	.gen-ribbon();
 	
-	&.red{
+	&.ribbon-red{
 		.gen-ribbon(@red);
 	}
 	
-	&.orange{
+	&.ribbon-orange{
 		.gen-ribbon(@orange);
 	}
 	
-	&.green{
+	&.ribbon-green{
 		.gen-ribbon(@green);
 	}
 	
-	&.blue{
+	&.ribbon-blue{
 		.gen-ribbon(@blue);
 	}
 
-	&.darkblue{
+	&.ribbon-darkblue{
 		.gen-ribbon(@darkblue);
 	}
 }

@@ -25,8 +25,6 @@
   	-ms-user-select: none;     
  	 -o-user-select: none;
  	 user-select: none;  
-
-
 }
 
 .roundcorner(@radius:0){
@@ -95,7 +93,7 @@
 	border-bottom-right-radius: @right;
 }
 
-.shadow(@x:0,@y:0,@blur:0,@spread:0, @color:@shadow,@inset:~"") {
+.shadow(@x:0,@y:0,@blur:0,@spread:0, @color:@shadow,...) {
 	 -webkit-box-shadow: @arguments;
 		-moz-box-shadow: @arguments;
 	         box-shadow: @arguments;

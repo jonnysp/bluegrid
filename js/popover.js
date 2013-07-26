@@ -5,7 +5,7 @@
 			this.$target =  $(this.$element.data('target')).length > 0 ? $(this.$element.data('target')) : this.$element;
 			this.$popover = $('<div />').addClass("popover");
 			this.$title = $('<div />').addClass("popover-title").appendTo(this.$popover);
-			this.$content = $('<div />').addClass("popover-content").appendTo(this.$popover);
+			this.$content = $('<div />').addClass("content").appendTo(this.$popover);
 			this.$pos = 'top';
 			this.$trigger = this.$element.data('trigger') ? this.$element.data('trigger') : 'toggle';
 			this.$visible = false;

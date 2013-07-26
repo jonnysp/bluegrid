@@ -2,7 +2,7 @@
 
 .container {
 	
-	padding:0 (@grid-column-padding) 0 (@grid-column-padding);
+	padding:0 (@contentpadding);
 	@media all and (max-width: @desktop-width) {
 		max-width: 100%;
 	}
@@ -13,16 +13,16 @@
 	.clearfix();
 }
 
-.row{
-	margin:0 (@grid-column-padding / -2) 0 (@grid-column-padding / -2);
-	.clearfix();
-}
+	.row{
+		margin:0 (@grid-column-padding / -2);
+		.clearfix();
+	}
 
 	[class*="col"]{
 		float: left;
 		min-height: 1px;
 		width:100%;
-		padding:0 (@grid-column-padding / 2) 0 (@grid-column-padding / 2);
+		padding:0 (@grid-column-padding / 2);
 		.box-sizing(border-box);
 	}
 

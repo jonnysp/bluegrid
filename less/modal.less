@@ -11,7 +11,7 @@
 	background-color:lighten(@color,32%);
 	border-color:@color;
 	color:@color;
-	.shadow(0px,0px,4px,0px, fadeout(darken(@color,50%),50%));
+	.shadow(0px,0px,10px,0px, fadeout(darken(@color,50%),80%));
 
 	& > .modal-header{
 		.vertical-gradient(@color, darken(@color,5%)) ;
@@ -40,7 +40,7 @@
 	
 	padding:50px 0 0 0;
 	@media (max-width: (@tablet-width)) {
-		padding:(@grid-column-padding / 2);
+		padding:(@contentpadding / 2);
 	}
 	
 	
@@ -85,7 +85,7 @@
 		
 	}
 	
-	& > .modal-content{
+	& > .content{
 		padding: 0 @modal-padding;
 	}
 
@@ -107,31 +107,31 @@
 
 	.gen-modal();
 	
-	&.black{
+	&.modal-gray{
+		.gen-modal(@gray);
+	}
+		
+	&.modal-black{
 		.gen-modal(@black);
 	}
 	
-	&.red{
+	&.modal-red{
 		.gen-modal(@red);
 	}
 	
-	&.orange{
+	&.modal-orange{
 		.gen-modal(@orange);
 	}
 	
-	&.green{
+	&.modal-green{
 		.gen-modal(@green);
 	}
 	
-	&.blue{
+	&.modal-blue{
 		.gen-modal(@blue);
 	}
 
-	&.gray{
-		.gen-modal(@gray);
-	}
-	
-	&.darkblue{
+	&.modal-darkblue{
 		.gen-modal(@darkblue);
 	}
 

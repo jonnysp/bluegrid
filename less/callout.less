@@ -5,21 +5,19 @@
 .gen-callout(@color:@default){
 	color:@color;
 	background-color:lighten(@color,32%);
-	border-left-color: @color;
+	.shadow(@contentpadding,0,0,0, @color, inset);
 }
 
 .callout{
 
-	display:block;
-	padding:@callout-padding;
-	margin:(@line-height/2) 0;
-    border-left-width: 5px;
-	border-left-style: solid;
+	margin:@callout-padding 0;
 
-
-	&>:first-child { margin-top: 0; }
-	&>:last-child { margin-bottom:0; }	
-
+	& > .content{
+		& >:first-child { margin-top: 0; }
+	    & >:last-child { margin-bottom:0; }
+		padding-left:@contentpadding * 2;
+	}
+	
 	.gen-callout();
 
 	&.callout-red{

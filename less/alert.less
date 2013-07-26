@@ -12,15 +12,15 @@
 
 .alert{
 
-	display:block;
-	padding:@alert-padding;
-	margin:(@line-height/2) 0;
+	margin:@alert-padding 0;
 	border-width: @alert-boarder-width;
 	border-style: solid;
 	.roundcorner(@alert-corner-radius);
 
-	&>:first-child { margin-top: 0; }
-	&>:last-child { margin-bottom:0; }	
+    & > .content{
+		&>:first-child { margin-top: 0; }
+		&>:last-child { margin-bottom:0; }	
+	}
 
 	.gen-alert();
 
