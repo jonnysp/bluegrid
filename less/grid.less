@@ -27,21 +27,21 @@
 	}
 
 	.type(@type) when (@type = width) {
-		width:percentage(@index / @grid-columns);	
+		width:percentage( round(@index / @grid-columns,5));	
 	}
 	
 	.type(@type) when (@type = left) {
 		position:relative;
-		left:percentage(@index / @grid-columns);	
+		left:percentage( round(@index / @grid-columns,5));	
 	}
 	
 	.type(@type) when (@type = right) {
 		position:relative;
-		right:percentage(@index / @grid-columns);	
+		right:percentage( round(@index / @grid-columns,5));
 	}
 	
 	.type(@type) when (@type = margin-left) {
-			margin-left:percentage(@index / @grid-columns);	
+			margin-left:percentage( round(@index / @grid-columns,5));
 	}
 
     .colX (@index,@prefix:-,@type:width) when (@index > 0) {

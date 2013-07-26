@@ -1,0 +1,21 @@
+
+
+.gen-thumbnail(@color:@lightgray){
+	border-color:@color;
+}
+
+
+
+.thumbnail{
+	.roundcorner(@corner-radius);
+	border-width:@border-width;
+	border-style:solid;
+	padding:(@line-height / 2);
+	
+	& > img{
+		width:100%;
+	}
+	
+	.gen-thumbnail();
+	
+}
