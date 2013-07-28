@@ -1,7 +1,6 @@
 
 
-.container {
-	
+.container {	
 	padding:0 (@contentpadding);
 	@media all and (max-width: @desktop-width) {
 		max-width: 100%;
@@ -13,49 +12,46 @@
 	.clearfix();
 }
 
-	.row{
-		margin:0 (@grid-column-padding / -2);
-		.clearfix();
-	}
+.row{
+	margin:0 (@grid-column-padding / -2);
+	.clearfix();
+}
 
-	[class*="col"]{
-		float: left;
-		min-height: 1px;
-		width:100%;
-		padding:0 (@grid-column-padding / 2);
-		.box-sizing(border-box);
-	}
+[class*="col"]{
+	float: left;
+	min-height: 1px;
+	width:100%;
+	padding:0 (@grid-column-padding / 2);
+}
 
-	.type(@type) when (@type = width) {
-		width:percentage( round(@index / @grid-columns,5));	
-	}
-	
-	.type(@type) when (@type = left) {
-		position:relative;
-		left:percentage( round(@index / @grid-columns,5));	
-	}
-	
-	.type(@type) when (@type = right) {
-		position:relative;
-		right:percentage( round(@index / @grid-columns,5));
-	}
-	
-	.type(@type) when (@type = margin-left) {
-			margin-left:percentage( round(@index / @grid-columns,5));
-	}
+.type(@type) when (@type = width) {
+	width:percentage( round(@index / @grid-columns,5));	
+}
+  
+.type(@type) when (@type = left) {
+	position:relative;
+	left:percentage( round(@index / @grid-columns,5));	
+}
+  
+.type(@type) when (@type = right) {
+	position:relative;
+	right:percentage( round(@index / @grid-columns,5));
+}
 
-    .colX (@index,@prefix:-,@type:width) when (@index > 0) {
-		.col@{prefix}@{index}{
-			.type(@type);
-			//background-color: lighten( #666, @index*6);
-		}
-      .colX(@index - 1,@prefix,@type);
-    }
-	
-	.colX (0) {}
-	
+.type(@type) when (@type = margin-left) {
+		margin-left:percentage( round(@index / @grid-columns,5));
+}
 
 
+.colX (@index,@prefix:-,@type:width) when (@index > 0) {
+	.col@{prefix}@{index}{
+		.type(@type);
+	}
+  .colX(@index - 1,@prefix,@type);
+}
+.colX (0) {}
+	
+	
 .colX (@grid-columns); 
 
 @media (min-width: @mobile-width) {

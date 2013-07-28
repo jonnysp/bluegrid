@@ -1,153 +1,49 @@
 @form-border-width:1px;
 @form-corner-radius:4px;
-@form-padding:4px;
+@form-padding:8px;
 
 
-.gen-input(@color:@default){
-		.vertical-gradient(darken(@color,10%), lighten(@color,3%));
-		.textcolor(@color); 
-		//todo multi shadow
-		box-shadow: 0 1px 5px fadeout(darken(@color,15%),50%) inset, 0 1px 0 fadeout(lighten(@color,50%),40%);
-		border-color: darken(@color,35%) darken(@color,20%) darken(@color,10%);
-		
-		
-		
+label{
+	text-align:right;
+	font-weight:bold;
+	margin:@form-padding+@form-border-width 0 @form-padding+@form-border-width 0;
 }
-
-
-.gen-form(@color:@default){
-	
-	& input[type=text],& textarea,& input[type=password],& select{
-	
-		.vertical-gradient(darken(@color,10%), lighten(@color,3%));
-		.textcolor(@color); 
-		//todo multi shadow
-		box-shadow: 0 1px 5px fadeout(darken(@color,15%),50%) inset, 0 1px 0 fadeout(lighten(@color,50%),40%);
-		border-color: darken(@color,35%) darken(@color,20%) darken(@color,10%);
-	
-	}
-
-}
-
-
-
-
-.formvertical{
-	
-	padding:20px;
-
-	& > .control-group{
 		
-		margin-bottom:@form-padding;
-		display:block;
-		.clearfix;
 		
-		& > .control-label{
-			float:left;
-			width:160px;
-			text-align:right;
-			font-weight:bold;
-			margin:@form-padding+@form-border-width 0 @form-padding+@form-border-width 0;
-		}
-		
-		& > .controls{
-			margin-left:180px;
-
-//			input[type=text],textarea,input[type=password],select{
-//				border-width: @form-border-width;
-//				border-style: solid;
-//				.roundcorner(@form-corner-radius);
-//				padding:@form-padding;
-//				display: inline-block;
-//				width: 206px;
-//			}
-
-			select{
-				width: 215px;
-			}
-
-		}
-
-	}
-	
-	
-	
-	.gen-form();
-	
-    &.black{
-		.gen-form(@black);
-	}
-	 
-	&.red{
-		.gen-form(@red);
-	}
-	
-	&.orange{
-		.gen-form(@orange);
-	}
-	
-	
-	&.green{
-		.gen-form(@green);
-	}
-	
-	&.blue{
-		.gen-form(@blue);
-	}
-		
-	&.gray{
-		.gen-form(@gray);
-	}
-			
-	&.darkblue{
-		.gen-form(@darkblue);
-	}
-	
-}
-
-
 input[type=text],textarea,input[type=password],select{
 
-	border-width: @form-border-width;
-	border-style: solid;
+	border: @form-border-width solid @lightgray;
+
+	background-color:@body-background;
+	color:@text-color; 
+
 	.roundcorner(@form-corner-radius);
 	padding:@form-padding;
 	display: inline-block;
-	width: 206px;
+	width: 100%;
 	
-	.gen-input(@white);
-	
-    &.black{
-		.gen-input(@black);
-	}
-	 
-	&.red{
-		.gen-input(@red);
-	}
-	
-	&.orange{
-		.gen-input(@orange);
-	}
-	
-
-	
-	&.green{
-		.gen-input(@green);
-	}
-	
-	&.blue{
-		.gen-input(@blue);
-	}
-	
-		
-	&.gray{
-		.gen-input(@gray);
-	}
-		
-
-	
-	&.darkblue{
-		.gen-input(@darkblue);
-	}
+//	.gen-input(@default);
+//	
+//
+//	&.red{
+//		.gen-input(@red);
+//	}
+//	
+//	&.orange{
+//		.gen-input(@orange);
+//	}
+//	
+//	&.green{
+//		.gen-input(@green);
+//	}
+//	
+//	&.blue{
+//		.gen-input(@blue);
+//	}
+//	
+//	&.darkblue{
+//		.gen-input(@darkblue);
+//	}
+//	
 	
 }

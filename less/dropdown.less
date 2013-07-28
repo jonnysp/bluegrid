@@ -8,10 +8,7 @@
 
 	background-color:@body-background;
 	border-color:@color;
-	
-	@shadowcolor: fadeout(darken(@color,50%),50%);
-	
-    .shadow(0px,0px,4px,0px,@shadowcolor);
+   .shadow(0px,0px,10px,0px, fadeout(darken(@color,50%),80%));
 	
 
 	&.dropdown-up,&.dropdown-up-left,&.dropdown-up-right{

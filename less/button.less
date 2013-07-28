@@ -38,15 +38,15 @@ input.btn {
 	text-align: center;
 	text-decoration: none;
 	position:relative;
+	display: inline-block;	
 	
 	vertical-align:middle;
-	display: inline-block;
-	padding:@btn-padding-topbottom @btn-padding-leftright;
+	padding:@btn-padding-topbottom @btn-padding-leftright;	
+	
 	cursor: pointer;
 	border: 0px solid transparent;
 	white-space:nowrap;
 	
-	.noselect();
 	.roundcorner(@btn-corner-radius);
 	
 	&.block{
@@ -137,12 +137,12 @@ input.btn {
 	&.justified{
 		display: table;
 		& > .btn{
-			display:table-cell;	
+			display:table-cell;
 			width: 1%;
 		}
 	}
-	
 
+	
 	& > .btn{
 	  .roundcorner();
 		&:first-child{
