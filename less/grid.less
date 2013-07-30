@@ -14,6 +14,7 @@
 
 .row{
 	margin:0 (@grid-column-padding / -2);
+	padding-bottom:@grid-column-padding / 2;
 	.clearfix();
 }
 
@@ -25,21 +26,21 @@
 }
 
 .type(@type) when (@type = width) {
-	width:percentage( round(@index / @grid-columns,5));	
+	width:percentage( @index / @grid-columns,5);	
 }
   
 .type(@type) when (@type = left) {
 	position:relative;
-	left:percentage( round(@index / @grid-columns,5));	
+	left:percentage( @index / @grid-columns,5);	
 }
   
 .type(@type) when (@type = right) {
 	position:relative;
-	right:percentage( round(@index / @grid-columns,5));
+	right:percentage( @index / @grid-columns,5);
 }
 
 .type(@type) when (@type = margin-left) {
-		margin-left:percentage( round(@index / @grid-columns,5));
+		margin-left:percentage( @index / @grid-columns,5);
 }
 
 
@@ -53,6 +54,7 @@
 	
 	
 .colX (@grid-columns); 
+
 
 @media (min-width: @mobile-width) {
 	.colX (@grid-columns,-sm-,width);

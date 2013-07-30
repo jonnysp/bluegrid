@@ -1,49 +1,93 @@
-@form-border-width:1px;
-@form-corner-radius:4px;
-@form-padding:8px;
+@form-controll-border-width:@border-width;
+@form-controll-radius:@corner-radius;
+@form-controll-padding:8px;
 
+fieldset{
+	border:0px;
+	padding:0;
+	margin:0;
+}
 
+legend{
+	border-bottom:@form-controll-border-width solid @lightgray;
+	display:block;
+	font-size: ceil(@font-size * 1.25);
+	width:100%;
+	margin-bottom:@form-controll-padding * 2;
+}
+	
 label{
-	text-align:right;
+	display:block;
 	font-weight:bold;
-	margin:@form-padding+@form-border-width 0 @form-padding+@form-border-width 0;
 }
-		
-		
-input[type=text],textarea,input[type=password],select{
-
-	border: @form-border-width solid @lightgray;
-
-	background-color:@body-background;
-	color:@text-color; 
-
-	.roundcorner(@form-corner-radius);
-	padding:@form-padding;
-	display: inline-block;
+	
+.form-control{
+	display:block;
 	width: 100%;
+	border: @form-controll-border-width solid @lightgray;
+	padding:@form-controll-padding;
 	
-//	.gen-input(@default);
-//	
-//
-//	&.red{
-//		.gen-input(@red);
-//	}
-//	
-//	&.orange{
-//		.gen-input(@orange);
-//	}
-//	
-//	&.green{
-//		.gen-input(@green);
-//	}
-//	
-//	&.blue{
-//		.gen-input(@blue);
-//	}
-//	
-//	&.darkblue{
-//		.gen-input(@darkblue);
-//	}
-//	
+	color:@text-color; 
+	background-color:@body-background;
+
+	.roundcorner(@form-controll-radius);
+	.shadow(0px,0px,0px,0px, @body-background);	
+	.transition(~"border-color ease-in-out .15s, box-shadow ease-in-out .15s");
 	
+	&:focus{
+		border-color:  @default;
+		.shadow(0px,0px,8px,0px, fadeout(@default,75%));
+	}
 }
+
+.form-horizontal{
+	
+	& .form-group{
+		margin-left:(@grid-column-padding / -2);
+		margin-right:(@grid-column-padding / -2);
+	}
+	
+	& label{
+		padding-top:@form-controll-padding - @form-controll-border-width;
+		@media (min-width: @tablet-width) {
+			text-align:right;
+		}
+	}
+}
+
+.gen-form-group(@color:@default){
+	& label{
+		color:@color;
+	}
+	& .form-control{
+		border-color:  @color;
+		&:focus{
+			.shadow(0px,0px,8px,0px, fadeout(@color,50%));
+			border-color:  @color;
+		}
+	}
+}
+
+.form-group{
+	margin-bottom:@font-size;
+	.clearfix();
+	
+
+	&.control-red{
+		.gen-form-group(@red);
+	}
+	&.control-orange{
+		.gen-form-group(@orange);
+	}
+	&.control-green{
+		.gen-form-group(@green);
+	}
+	&.control-blue{
+		.gen-form-group(@blue);
+	}
+	&.control-darkblue{
+		.gen-form-group(@darkblue);
+	}
+
+}
+

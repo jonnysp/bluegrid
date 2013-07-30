@@ -1,0 +1,93 @@
+//panelsettings
+@panel-padding: 	  10px;
+@panel-corner-radius: @corner-radius;
+@panel-border-width: @border-width;
+//------------------------------------
+
+.gen-panel(@color:@default){
+	border-color:@color;
+	& > .panel-header{
+		background-color:@color;
+		.textcolor(@color);
+	}
+	& > .panel-footer{
+		border-top-color:lighten(@color,16%);
+		color:@color;
+		background-color:lighten(@color,32%);
+	}
+}
+
+
+
+
+.panel{
+
+	border-width: @panel-border-width;
+	border-style: solid;
+	margin-bottom:@grid-column-padding / 2;
+		.roundcorner(@panel-corner-radius);
+	
+	& > .panel-header{
+		display: block;
+		font-weight: bold;
+		padding:@panel-padding;
+		.roundcorner-top(@panel-corner-radius - 1);
+		& > *{
+			margin:0;
+		}
+	}
+	
+
+	& > .panel-footer{
+		display: block;
+		bottom:0;
+		padding:@panel-padding;
+		border-top-width: @panel-border-width;
+	    border-top-style: solid;
+		.roundcorner-bottom(@panel-corner-radius - 1);
+		& > *{
+			margin:0;
+		}
+	}
+
+
+
+	.gen-panel();
+	
+	&.panel-gray{
+		.gen-panel(@gray);
+	}
+		
+	&.panel-black{
+		.gen-panel(@black);
+	}
+	
+	&.panel-red{
+		.gen-panel(@red);
+	}
+	
+	&.panel-orange{
+		.gen-panel(@orange);
+	}
+	
+	&.panel-green{
+		.gen-panel(@green);
+	}
+	
+	&.panel-blue{
+		.gen-panel(@blue);
+	}
+
+	&.panel-darkblue{
+		.gen-panel(@darkblue);
+	}
+
+}
+
+
+
+
+
+
+
+

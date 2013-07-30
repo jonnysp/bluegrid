@@ -15,16 +15,16 @@
 		@startcolor : @color;
 		@stopcolor	: lighten(@color,32%);
 	
-background: @startcolor;
-background: -moz-linear-gradient(45deg,  @startcolor 25%, @stopcolor 25%, @stopcolor 50%, @stopcolor 50%, @startcolor 50%, @startcolor 75%, @stopcolor 75%, @stopcolor 100%);
-background: -webkit-gradient(linear, left bottom, right top, color-stop(25%,@startcolor), color-stop(25%,@stopcolor), color-stop(50%,@stopcolor), color-stop(50%,@stopcolor), color-stop(50%,@startcolor), color-stop(75%,@startcolor), color-stop(75%,@stopcolor), color-stop(100%,@stopcolor));
-background: -webkit-linear-gradient(45deg,  @startcolor 25%,@stopcolor 25%,@stopcolor 50%,@stopcolor 50%,@startcolor 50%,@startcolor 75%,@stopcolor 75%,@stopcolor 100%);
-background: -o-linear-gradient(45deg,  @startcolor 25%,@stopcolor 25%,@stopcolor 50%,@stopcolor 50%,@startcolor 50%,@startcolor 75%,@stopcolor 75%,@stopcolor 100%);
-background: -ms-linear-gradient(45deg,  @startcolor 25%,@stopcolor 25%,@stopcolor 50%,@stopcolor 50%,@startcolor 50%,@startcolor 75%,@stopcolor 75%,@stopcolor 100%);
-background: linear-gradient(45deg,  @startcolor 25%,@stopcolor 25%,@stopcolor 50%,@stopcolor 50%,@startcolor 50%,@startcolor 75%,@stopcolor 75%,@stopcolor 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@{startcolor}', endColorstr='@{stopcolor}',GradientType=1 );
+		background: @startcolor;
+		background: -moz-linear-gradient(45deg,  @startcolor 25%, @stopcolor 25%, @stopcolor 50%, @stopcolor 50%, @startcolor 50%, @startcolor 75%, @stopcolor 75%, @stopcolor 100%);
+		background: -webkit-gradient(linear, left bottom, right top, color-stop(25%,@startcolor), color-stop(25%,@stopcolor), color-stop(50%,@stopcolor), color-stop(50%,@stopcolor), color-stop(50%,@startcolor), color-stop(75%,@startcolor), color-stop(75%,@stopcolor), color-stop(100%,@stopcolor));
+		background: -webkit-linear-gradient(45deg,  @startcolor 25%,@stopcolor 25%,@stopcolor 50%,@stopcolor 50%,@startcolor 50%,@startcolor 75%,@stopcolor 75%,@stopcolor 100%);
+		background: -o-linear-gradient(45deg,  @startcolor 25%,@stopcolor 25%,@stopcolor 50%,@stopcolor 50%,@startcolor 50%,@startcolor 75%,@stopcolor 75%,@stopcolor 100%);
+		background: -ms-linear-gradient(45deg,  @startcolor 25%,@stopcolor 25%,@stopcolor 50%,@stopcolor 50%,@startcolor 50%,@startcolor 75%,@stopcolor 75%,@stopcolor 100%);
+		background: linear-gradient(45deg,  @startcolor 25%,@stopcolor 25%,@stopcolor 50%,@stopcolor 50%,@startcolor 50%,@startcolor 75%,@stopcolor 75%,@stopcolor 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@{startcolor}', endColorstr='@{stopcolor}',GradientType=1 );
 
-		background-size:  @progress-height*2 @progress-height*2;
+		background-size:  (@progress-height * 2) (@progress-height * 2);
 
 	}
 	

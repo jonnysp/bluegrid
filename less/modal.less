@@ -19,7 +19,7 @@
 	}
 
 	& > .modal-footer{
-		border-top:@color;
+		border-top-color:@color;
 		background-color:lighten(@color,16%);
 	}
 }
@@ -52,57 +52,47 @@
 
 .modal-dialog{
 	position:relative;
+	z-index:1050;
 	
 	margin-left: -280px;
 	width:560px;
-	
 	left:50%;
 	
+	border-width: @modal-border-width;
+	border-style: solid;	
+	 .roundcorner(@modal-corner-radius);	
+	 
 	@media (max-width: (@tablet-width)) {
 		width:100%;
 		left:0;
 		margin-left:0;
 	}
-	
-	z-index:1050;
-	
-	border-width: @modal-border-width;
-	border-style: solid;	
-	  -webkit-bg-clip: padding-box;
-      -moz-bg-clip: padding;
-  	  background-clip: padding-box;
-	 .roundcorner-top(@modal-corner-radius);
+
 	
 	& > .modal-header{
 		display: block;
 		font-weight: bold;
 		padding:		@modal-padding;
 		.roundcorner-top(@modal-corner-radius - 1);
-		.clearfix();
-		& > h1,& > h2 ,& > h3,& > h4,& > h5,& > h6{
+		& > *{
 			margin:0;
 		}
 		
 	}
 	
-	& > .content{
-		padding: 0 @modal-padding;
-	}
 
 	& > .modal-footer{
 		display: block;
-		padding:	@modal-padding;
-		border-top-width: @modal-border-width;
-	    border-top-style: solid;	
 		bottom:0;
-		
-		& > .btn-group ,& > .btn{
+		padding: @modal-padding;
+		border-top-width: @modal-border-width;
+	    border-top-style: solid;
+		.roundcorner-bottom(@modal-corner-radius - 1);	
+		& > *{
 			margin:0;
 		}
-		
 	}
 
-	.clearfix();
 
 
 	.gen-modal();
