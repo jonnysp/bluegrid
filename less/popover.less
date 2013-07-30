@@ -8,8 +8,6 @@
 .gen-popover(@color:@default){
 
 	border-color:@color;
-	background-color: lighten(@color,32%);
-	color:@color;
 	.shadow(0px,0px,10px,0px, fadeout(darken(@color,50%),80%));
 	
 	
@@ -24,9 +22,6 @@
 		border-color: @color transparent transparent transparent;
 	}
 	
-	&.top:after{
-		border-color: lighten(@color,32%) transparent transparent transparent;
-	}
 	&.bottom:before{
 		border-color:transparent transparent @color transparent;
 	}
@@ -38,18 +33,12 @@
 	&.left:before{
 		border-color: transparent transparent transparent @color;
 	}
-	
-	&.left:after{
-		border-color: transparent transparent transparent lighten(@color,32%) ;
-	}
-	
+
 	&.right:before{
 		border-color: transparent @color transparent transparent;
 	}
 	
-	&.right:after{
-		border-color:transparent  lighten(@color,32%) transparent transparent;
-	}
+
 }
 
 
@@ -62,9 +51,7 @@
 	  border-style: solid;
 	  max-width: @mobile-width;
 	  
-	  -webkit-bg-clip: padding-box;
-      -moz-bg-clip: padding;
-  	  background-clip: padding-box;
+	background-color: @body-background;
 	  
 	 .roundcorner(@popover-corner-radius);
 	  
@@ -134,6 +121,7 @@
 	&.top:after{
 		bottom: @popover-arrow-width*-1;
 		border-bottom-width:0px;
+		border-color: @body-background transparent transparent transparent;
 	}
 	
 	&.bottom:before{
@@ -166,6 +154,7 @@
 	&.left:after{
 		right: @popover-arrow-width*-1;
 		border-right-width:0px;
+		border-color: transparent transparent transparent @body-background;
 	}
 	
 	&.right:before{
@@ -176,6 +165,7 @@
 	&.right:after{
 		left: @popover-arrow-width*-1;
 		border-left-width:0px;
+		border-color:transparent @body-background transparent transparent;
 	}
 
 

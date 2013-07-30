@@ -6,11 +6,10 @@
 //------------------------------------
 
 
-.gen-modal(@color:@default){
-	
-	background-color:lighten(@color,32%);
+.gen-modal-dialog(@color:@default){
+
 	border-color:@color;
-	color:@color;
+	
 	.shadow(0px,0px,10px,0px, fadeout(darken(@color,50%),80%));
 
 	& > .modal-header{
@@ -19,8 +18,9 @@
 	}
 
 	& > .modal-footer{
-		border-top-color:@color;
-		background-color:lighten(@color,16%);
+		border-top-color:lighten(@color,16%);
+		color:@color;
+		background-color:lighten(@color,32%);
 	}
 }
 
@@ -37,10 +37,10 @@
 	overflow-x: hidden;
 	overflow-y: auto;
 	z-index:1020;
-	
 	padding:50px 0 0 0;
+	
 	@media (max-width: (@tablet-width)) {
-		padding:(@contentpadding / 2);
+		padding:@contentpadding;
 	}
 	
 	
@@ -53,14 +53,16 @@
 .modal-dialog{
 	position:relative;
 	z-index:1050;
-	
+	margin-bottom:@contentpadding;
 	margin-left: -280px;
 	width:560px;
 	left:50%;
 	
 	border-width: @modal-border-width;
-	border-style: solid;	
-	 .roundcorner(@modal-corner-radius);	
+	border-style: solid;
+	background-color:@body-background;
+		
+	.roundcorner(@modal-corner-radius);	
 	 
 	@media (max-width: (@tablet-width)) {
 		width:100%;
@@ -72,12 +74,11 @@
 	& > .modal-header{
 		display: block;
 		font-weight: bold;
-		padding:		@modal-padding;
+		padding: @modal-padding;
 		.roundcorner-top(@modal-corner-radius - 1);
 		& > *{
 			margin:0;
 		}
-		
 	}
 	
 
@@ -95,34 +96,34 @@
 
 
 
-	.gen-modal();
+	.gen-modal-dialog();
 	
 	&.modal-gray{
-		.gen-modal(@gray);
+		.gen-modal-dialog(@gray);
 	}
 		
 	&.modal-black{
-		.gen-modal(@black);
+		.gen-modal-dialog(@black);
 	}
 	
 	&.modal-red{
-		.gen-modal(@red);
+		.gen-modal-dialog(@red);
 	}
 	
 	&.modal-orange{
-		.gen-modal(@orange);
+		.gen-modal-dialog(@orange);
 	}
 	
 	&.modal-green{
-		.gen-modal(@green);
+		.gen-modal-dialog(@green);
 	}
 	
 	&.modal-blue{
-		.gen-modal(@blue);
+		.gen-modal-dialog(@blue);
 	}
 
 	&.modal-darkblue{
-		.gen-modal(@darkblue);
+		.gen-modal-dialog(@darkblue);
 	}
 
 }
