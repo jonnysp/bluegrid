@@ -1,8 +1,5 @@
 //modalsettings
-@modal-padding: 	  10px;
-@modal-corner-radius: @corner-radius;
 @modal-backdrop-color:   @black;
-@modal-border-width: @border-width;
 //------------------------------------
 
 
@@ -53,16 +50,17 @@
 .modal-dialog{
 	position:relative;
 	z-index:1050;
+	padding:@contentpadding;
 	margin-bottom:@contentpadding;
 	margin-left: -280px;
 	width:560px;
 	left:50%;
 	
-	border-width: @modal-border-width;
+	border-width: @border-width;
 	border-style: solid;
 	background-color:@body-background;
 		
-	.roundcorner(@modal-corner-radius);	
+	.roundcorner(@corner-radius);	
 	 
 	@media (max-width: (@tablet-width)) {
 		width:100%;
@@ -74,8 +72,10 @@
 	& > .modal-header{
 		display: block;
 		font-weight: bold;
-		padding: @modal-padding;
-		.roundcorner-top(@modal-corner-radius - 1);
+		padding: @contentpadding;
+		margin:@contentpadding * -1;
+		margin-bottom:0;
+		.roundcorner-top(@corner-radius - 1);
 		& > *{
 			margin:0;
 		}
@@ -85,10 +85,12 @@
 	& > .modal-footer{
 		display: block;
 		bottom:0;
-		padding: @modal-padding;
-		border-top-width: @modal-border-width;
+		padding: @contentpadding;
+		margin:@contentpadding * -1;
+		margin-top:0;
+		border-top-width: @border-width;
 	    border-top-style: solid;
-		.roundcorner-bottom(@modal-corner-radius - 1);	
+		.roundcorner-bottom(@corner-radius - 1);	
 		& > *{
 			margin:0;
 		}

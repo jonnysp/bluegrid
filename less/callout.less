@@ -1,21 +1,28 @@
 //calloutsettings
-@callout-padding: 	  (@line-height / 2);
 //------------------------------------
 
 .gen-callout(@color:@default){
 	color:@color;
 	background-color:lighten(@color,32%);
-	.shadow(@contentpadding,0,0,0, @color, inset);
+	border-color:lighten(@color,32%);
+	border-left-color:@color;
+	//.shadow(@contentpadding,0,0,0, @color, inset);
 }
 
 .callout{
 
-	margin:@callout-padding 0;
+	margin:@contentpadding 0;
+	padding:@contentpadding;
+	
+	border-width:@border-width;
+	border-left-width:@contentpadding;
+	border-style:solid;
 
-	& > .content{
-		& >:first-child { margin-top: 0; }
-	    & >:last-child { margin-bottom:0; }
-		padding-left:@contentpadding * 2;
+	& > .ribbon.ribbon-left{
+		right: @contentpadding * 3;
+	}
+	& > .ribbon.ribbon-full{
+		margin-left: (@contentpadding * 3) * -1;
 	}
 	
 	.gen-callout();

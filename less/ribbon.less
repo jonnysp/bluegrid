@@ -1,6 +1,3 @@
-@ribbon-size : @contentpadding;
-@ribbon-padding : 8px;
-@ribbon-corner-radius:  @corner-radius;
 
 
 .gen-ribbon(@color:@default){
@@ -35,32 +32,32 @@
 .ribbon{
 
 	position: relative;
-	padding:@ribbon-padding;
+	padding:@contentpadding;
 	z-index:1;
 	
 	&.ribbon-full{
 		display:block;
-		margin:@ribbon-size -(@ribbon-size) 0 -(@ribbon-size);
-		.roundcorner-top(@ribbon-corner-radius);
+		margin:@contentpadding -(@contentpadding * 2 + @border-width) 0 -(@contentpadding * 2 + @border-width);
+		.roundcorner-top(@corner-radius);
 	
 		&:before,&:after {
 				content: '';
 				position: absolute;
 				width:0;
 				height:0;
-				border-width: @ribbon-size;
+				border-width: @contentpadding;
 				border-style: solid;
 				border-color: transparent;
 				z-index: -100;
 			} 
 		&:before {
 				left: 0;
-				bottom: -(@ribbon-size * 2 );
+				bottom: -(@contentpadding * 2 );
 				border-right-width: 0;
 			}
 		&:after {
 				right: 0;
-				bottom: -(@ribbon-size * 2 );
+				bottom: -(@contentpadding * 2 );
 				border-left-width: 0;
 			}
 	}
@@ -71,7 +68,7 @@
 			position: absolute;
 			width:0;
 			height:0;
-			border-width: @ribbon-size;
+			border-width: @contentpadding;
 			border-style: solid;
 			border-color: transparent;
 			z-index: -1;
@@ -81,59 +78,59 @@
 	&.ribbon-left,&.ribbon-topleft{
 		float:left;
 		clear:left;
-		.roundcorner-top-left(@ribbon-corner-radius);
+		.roundcorner-top-left(@corner-radius);
 	}
 	
 	&.ribbon-right,&.ribbon-topright{
 		float:right;
 		clear:right;
-		.roundcorner-top-right(@ribbon-corner-radius);
+		.roundcorner-top-right(@corner-radius);
 	}
 	
 	&.ribbon-right,&.ribbon-left{
-		margin-top: @ribbon-size ;
+		margin-top: @contentpadding ;
 	}
 	
 	&.ribbon-topright,&.ribbon-topleft{
-		margin: 0 @ribbon-size 0 @ribbon-size;
+		margin: 0 @contentpadding 0 @contentpadding;
 	}
 	
 	&.ribbon-topright{
-		top: -( @ribbon-size  );
-    	.roundcorner-bottom(@ribbon-corner-radius);
+		top: -( @contentpadding  * 2 + @border-width);
+    	.roundcorner-bottom(@corner-radius);
 		&:before{
 			top: 0;
-			left: -(@ribbon-size * 2 );
+			left: -(@contentpadding * 2 );
 		 	border-bottom-width: 0;
 		}
 	}	
 
 	&.ribbon-right{
-		left: @ribbon-size ;
-    	.roundcorner-left(@ribbon-corner-radius);
+		left: @contentpadding * 2 + @border-width;
+    	.roundcorner-left(@corner-radius);
 		&:before{
 			right: 0;
-			bottom: -(@ribbon-size * 2);
+			bottom: -(@contentpadding * 2);
 			border-left-width: 0;
 		}
 	}
 
 	&.ribbon-topleft{
-		top: -(@ribbon-size );
-    	.roundcorner-bottom(@ribbon-corner-radius);
+		top: -(@contentpadding * 2 + @border-width);
+    	.roundcorner-bottom(@corner-radius);
 		&:before{
 				top: 0;
-				right:-(@ribbon-size * 2); 
+				right:-(@contentpadding * 2); 
 				border-bottom-width: 0;
 		}
 	}
 	
 	&.ribbon-left{
-		right: @ribbon-size ;
-    	.roundcorner-right(@ribbon-corner-radius);
+		right: @contentpadding * 2 + @border-width ;
+    	.roundcorner-right(@corner-radius);
 		&:before{
 				left: 0;
-				bottom: -(@ribbon-size * 2);
+				bottom: -(@contentpadding * 2);
 				border-right-width: 0;
 		}
 	}

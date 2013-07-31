@@ -13,14 +13,15 @@
 .alert{
 
 	margin:@alert-padding 0;
+	padding:@contentpadding;
 	border-width: @alert-boarder-width;
 	border-style: solid;
 	.roundcorner(@alert-corner-radius);
 
-    & > .content{
-		&>:first-child { margin-top: 0; }
-		&>:last-child { margin-bottom:0; }	
-	}
+//    & > .content{
+//		&>:first-child { margin-top: 0; }
+//		&>:last-child { margin-bottom:0; }	
+//	}
 
 	.gen-alert();
 
