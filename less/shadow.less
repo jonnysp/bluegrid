@@ -1,14 +1,12 @@
-@background : @body-background;
-@shadowcolor :rgba(0, 0, 0, 0.3);
+@shadowcolor :  fadeout(@darkgray,70%);
 @shadowpadding : 4%;
 @shadowrotation : 4deg;
-@shadowwidth : 10px;
 @shadowmax : 300px;
 
 
 .shadow{
 
-	background-color: @background;
+	background-color: @body-background;
     position: relative;
     z-index: inherit;
 	
@@ -36,7 +34,7 @@
 		&:before,&:after{
 			height: 46%;
 			max-height:@shadowmax;
-			width: @shadowwidth;
+			width: @contentpadding;
 		}
 		&:before{
 			top:@shadowpadding ;
@@ -50,8 +48,8 @@
 	
 	&.shadow-curl-right{
 		&:before,&:after{
-			.shadow( @shadowwidth,0 , round(@shadowwidth / 2) , 0 ,@shadowcolor);
-			right:@shadowwidth;
+			.shadow( @contentpadding,0 , round(@contentpadding / 2) , 0 ,@shadowcolor);
+			right:@contentpadding;
 		}
 		&:before{
 			.rotate(@shadowrotation);	
@@ -65,8 +63,8 @@
 	
 	&.shadow-curl-left{
 		&:before,&:after{
-			.shadow( -@shadowwidth,0 , round(@shadowwidth / 2) , 0 ,@shadowcolor);
-			left:@shadowwidth;
+			.shadow( -@contentpadding,0 , round(@contentpadding / 2) , 0 ,@shadowcolor);
+			left:@contentpadding;
 		}
 		&:before{
 		    .rotate(-@shadowrotation);
@@ -81,7 +79,7 @@
 	&.shadow-curl-bottom,
 	&.shadow-curl-top {
 		&:before,&:after{
-			height: @shadowwidth;
+			height: @contentpadding;
 			width: 46%;
 			max-width:@shadowmax;
 		}
@@ -97,8 +95,8 @@
 	
 	&.shadow-curl-bottom {
 		&:before,&:after{
-			.shadow(0 , @shadowwidth, round(@shadowwidth / 2) , 0 ,@shadowcolor);
-			bottom: @shadowwidth;
+			.shadow(0 , @contentpadding, round(@contentpadding / 2) , 0 ,@shadowcolor);
+			bottom: @contentpadding;
 		}
 		&:before{
 			.rotate(-@shadowrotation);
@@ -112,8 +110,8 @@
 	
 	&.shadow-curl-top{
 		&:before,&:after{
-			.shadow(0 , -@shadowwidth, round(@shadowwidth / 2) , 0 ,@shadowcolor);
-			top:@shadowwidth ;
+			.shadow(0 , -@contentpadding, round(@contentpadding / 2) , 0 ,@shadowcolor);
+			top:@contentpadding ;
 		}
 		&:before{
 		    .rotate(@shadowrotation);
@@ -130,13 +128,13 @@
 		&:before,&:after{
 			width: 46%;
 			max-width:@shadowmax;
-			height:@shadowwidth;
+			height:@contentpadding;
 		}
 		&:before{
-			top:@shadowwidth ;
+			top:@contentpadding ;
 		}
 		&:after{
-			bottom: @shadowwidth;
+			bottom: @contentpadding;
 		}
 	}
 	
@@ -147,11 +145,11 @@
 			left: @shadowpadding;
 		}
 		&:before{
-			.shadow( 0,-@shadowwidth , round(@shadowwidth / 2) , 0 ,@shadowcolor);
+			.shadow( 0,-@contentpadding , round(@contentpadding / 2) , 0 ,@shadowcolor);
 			.rotate(@shadowrotation);
 		}
 		&:after{
-			.shadow( 0,@shadowwidth , round(@shadowwidth / 2) , 0 ,@shadowcolor);
+			.shadow( 0,@contentpadding , round(@contentpadding / 2) , 0 ,@shadowcolor);
 			.rotate(-@shadowrotation);
 		}
 	}
@@ -163,11 +161,11 @@
 			right:@shadowpadding;
 		}
 		&:before{
-			.shadow( 0,-@shadowwidth , round(@shadowwidth / 2) , 0 ,@shadowcolor);
+			.shadow( 0,-@contentpadding , round(@contentpadding / 2) , 0 ,@shadowcolor);
 			.rotate(-@shadowrotation);
 		}
 		&:after{
-			.shadow( 0,@shadowwidth , round(@shadowwidth / 2) , 0 ,@shadowcolor);
+			.shadow( 0,@contentpadding , round(@contentpadding / 2) , 0 ,@shadowcolor);
 			.rotate(@shadowrotation);
 		}
 	}
@@ -179,13 +177,13 @@
 		&:before,&:after{
 			height: 46%;
 			max-height:@shadowmax;
-			width: @shadowwidth;
+			width: @contentpadding;
 		}
 		&:before{
-			left: @shadowwidth;
+			left: @contentpadding;
 		}
 		&:after{
-			right:@shadowwidth;
+			right:@contentpadding;
 		}
 	}
 
@@ -196,11 +194,11 @@
 			top:@shadowpadding ;
 		}
 		&:before{
-			.shadow( -@shadowwidth ,0, round(@shadowwidth / 2) , 0 ,@shadowcolor);
+			.shadow( -@contentpadding ,0, round(@contentpadding / 2) , 0 ,@shadowcolor);
 			.rotate(-@shadowrotation);
 		}
 		&:after{
-			.shadow( @shadowwidth ,0, round(@shadowwidth / 2) , 0 ,@shadowcolor);
+			.shadow( @contentpadding ,0, round(@contentpadding / 2) , 0 ,@shadowcolor);
 			.rotate(@shadowrotation);
 		}
 	}
@@ -212,11 +210,11 @@
 			bottom:@shadowpadding;
 		}
 		&:before{
-			.shadow( -@shadowwidth ,0, round(@shadowwidth / 2) , 0 ,@shadowcolor);
+			.shadow( -@contentpadding ,0, round(@contentpadding / 2) , 0 ,@shadowcolor);
 			.rotate(@shadowrotation);
 		}
 		&:after{
-			.shadow( @shadowwidth ,0, round(@shadowwidth / 2) , 0 ,@shadowcolor);
+			.shadow( @contentpadding ,0, round(@contentpadding / 2) , 0 ,@shadowcolor);
 			.rotate(-@shadowrotation);
 		}
 	}
@@ -236,8 +234,8 @@
 
 	&.shadow-bottom{
 		&:after{
-			.shadow( 0 ,round(@shadowwidth / 2), round(@shadowwidth / 2) , 0 ,@shadowcolor);
-			.borderradius(100% , @shadowwidth * 2);
+			.shadow( 0 ,round(@contentpadding / 2), round(@contentpadding / 2) , 0 ,@shadowcolor);
+			.borderradius(100% , @contentpadding * 2);
 			left: @shadowpadding;
 			right:@shadowpadding;
 			bottom: 0;
@@ -249,8 +247,8 @@
 
 	&.shadow-right{
 		&:after{
-			.shadow( round(@shadowwidth / 2),0 , round(@shadowwidth / 2) , 0  ,@shadowcolor);
-			.borderradius( @shadowwidth * 2,100%);			
+			.shadow( round(@contentpadding / 2),0 , round(@contentpadding / 2) , 0  ,@shadowcolor);
+			.borderradius( @contentpadding * 2,100%);			
 			bottom:  @shadowpadding;
 			top:  @shadowpadding;
 			right:0;
@@ -262,8 +260,8 @@
 	
 	&.shadow-left{
 		&:before{
-			.shadow( -(round(@shadowwidth / 2)),0 , round(@shadowwidth / 2) , 0  ,@shadowcolor);
-			.borderradius( @shadowwidth * 2,100%);
+			.shadow( -(round(@contentpadding / 2)),0 , round(@contentpadding / 2) , 0  ,@shadowcolor);
+			.borderradius( @contentpadding * 2,100%);
 			bottom:  @shadowpadding;
 			top:  @shadowpadding;
 			left: 0;
@@ -275,8 +273,8 @@
 
 	&.shadow-top{
 		&:before{
-			.shadow( 0 ,-(round(@shadowwidth / 2)), round(@shadowwidth / 2) , 0  ,@shadowcolor);
-			.borderradius(100% , @shadowwidth * 2);
+			.shadow( 0 ,-(round(@contentpadding / 2)), round(@contentpadding / 2) , 0  ,@shadowcolor);
+			.borderradius(100% , @contentpadding * 2);
 			left: @shadowpadding;
 			right:@shadowpadding;
 			top: 0;
