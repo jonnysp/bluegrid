@@ -1,8 +1,5 @@
 //popoversettings
-@popover-padding: 	  7px;
-@popover-arrow-width:   10px;
-@popover-corner-radius: @corner-radius;
-@popover-border-width: @border-width;
+
 //------------------------------------
 
 .gen-popover(@color:@default){
@@ -11,11 +8,10 @@
 	.shadow(0px,0px,10px,0px, fadeout(darken(@color,50%),80%));
 	
 	
-	
 	&>.popover-title{
 	 	.vertical-gradient(@color, darken(@color,5%)) ;
 		color:#FFF;
-		border-bottom:@popover-border-width solid @color;
+		border-bottom:@border-width solid @color;
 	}
 	
 	&.top:before{
@@ -47,24 +43,27 @@
 	  z-index:2000;
 	  position:	absolute;
 	  font-size:@font-size;
-	  border-width: @popover-border-width;
+	  border-width: @border-width;
 	  border-style: solid;
 	  max-width: @mobile-width;
+	  padding:@contentpadding;
 	  
 	background-color: @body-background;
 	  
-	 .roundcorner(@popover-corner-radius);
+	 .roundcorner(@corner-radius);
 	  
 	 &>.popover-title{
 		display: block;
 		font-weight: bold;
-		padding:		@popover-padding;
-		.roundcorner-top(@popover-corner-radius - 1);
+		margin:@contentpadding * -1;
+		margin-bottom:@contentpadding;
+		padding:@contentpadding;
+		.roundcorner-top(@corner-radius - 1);
 		.clearfix();
 	 }
 	 
 	 &>.content{
-		margin-bottom:@popover-corner-radius;
+		margin-bottom:@corner-radius;
 		max-height: 200px;
 		overflow:auto;
 	 }
@@ -79,26 +78,26 @@
 	 }
 
 	 &.bottom{
-		margin-top: @popover-arrow-width;
+		margin-top: @contentpadding;
 	 }
 	 &.top{
-		margin-bottom: @popover-arrow-width;
+		margin-bottom: @contentpadding;
 	 }
 	 &.left{
-		margin-right: @popover-arrow-width;
-		min-height: (@line-height * 2) + (@popover-padding * 4) + (@popover-arrow-width * 2) + (@popover-border-width * 2);
+		margin-right: @contentpadding;
+		min-height: (@line-height * 2) + (@contentpadding * 6) + (@border-width * 2);
 	 }
 	 &.right{
-		margin-left: @popover-arrow-width;
-		min-height: (@line-height * 2) + (@popover-padding * 4) + (@popover-arrow-width * 2) + (@popover-border-width * 2);
+		margin-left: @contentpadding;
+		min-height: (@line-height * 2) + (@contentpadding * 6) + (@border-width * 2);
 	 }
 
 	 &:before{
-		 border-width: (@popover-arrow-width + @popover-border-width);
+		 border-width: (@contentpadding + @border-width);
 	 }
 	 
 	 &:after{
-	 	border-width: @popover-arrow-width;
+	 	border-width: @contentpadding;
 	 }
 
 	&.top:before,&.top:after,&.bottom:before,&.bottom:after{
@@ -106,31 +105,31 @@
 	}
 	
     &.top:before,&.bottom:before{
-		margin-left:(@popover-arrow-width + @popover-border-width)*-1;
+		margin-left:(@contentpadding + @border-width)*-1;
 	}
 	
 	&.top:after,&.bottom:after{
-		margin-left:@popover-arrow-width*-1;
+		margin-left:@contentpadding * -1;
 	}
 	
 	&.top:before{
-		bottom: (@popover-arrow-width + @popover-border-width)*-1;
+		bottom: (@contentpadding + @border-width)*-1;
 		border-bottom-width:0px;
 	}
 	
 	&.top:after{
-		bottom: @popover-arrow-width*-1;
+		bottom: @contentpadding * -1;
 		border-bottom-width:0px;
 		border-color: @body-background transparent transparent transparent;
 	}
 	
 	&.bottom:before{
-		top: (@popover-arrow-width + @popover-border-width)*-1;
+		top: (@contentpadding + @border-width)*-1;
 		border-top-width:0px;
 	}
 	
 	&.bottom:after{
-		top: @popover-arrow-width*-1;
+		top: @contentpadding * -1;
 		border-top-width:0px;
 	}
 
@@ -139,31 +138,31 @@
 	}
 	
 	&.left:before,&.right:before{
-		margin-top:(@popover-arrow-width + @popover-border-width)*-1;
+		margin-top:(@contentpadding + @border-width)*-1;
 	}
 	
 	&.left:after,&.right:after{
-		margin-top:@popover-arrow-width*-1;
+		margin-top:@contentpadding * -1;
 	}
 	
 	&.left:before{
-		right: (@popover-arrow-width + @popover-border-width)*-1;
+		right: (@contentpadding + @border-width)*-1;
 		border-right-width:0px;
 	}
 	
 	&.left:after{
-		right: @popover-arrow-width*-1;
+		right: @contentpadding * -1;
 		border-right-width:0px;
 		border-color: transparent transparent transparent @body-background;
 	}
 	
 	&.right:before{
-		left: (@popover-arrow-width + @popover-border-width)*-1;
+		left: (@contentpadding + @border-width)*-1;
 		border-left-width:0px;
 	}
 	
 	&.right:after{
-		left: @popover-arrow-width*-1;
+		left: @contentpadding * -1;
 		border-left-width:0px;
 		border-color:transparent @body-background transparent transparent;
 	}

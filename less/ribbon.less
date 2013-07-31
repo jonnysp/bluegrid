@@ -96,7 +96,7 @@
 	}
 	
 	&.ribbon-topright{
-		top: -( @contentpadding  * 2 + @border-width);
+		margin-top: -(@contentpadding * 2 + @border-width);
     	.roundcorner-bottom(@corner-radius);
 		&:before{
 			top: 0;
@@ -106,7 +106,9 @@
 	}	
 
 	&.ribbon-right{
-		left: @contentpadding * 2 + @border-width;
+		margin-right: (@contentpadding * 2 + @border-width) * -1;
+		margin-left:@contentpadding;
+		
     	.roundcorner-left(@corner-radius);
 		&:before{
 			right: 0;
@@ -116,7 +118,7 @@
 	}
 
 	&.ribbon-topleft{
-		top: -(@contentpadding * 2 + @border-width);
+		margin-top: -(@contentpadding * 2 + @border-width);
     	.roundcorner-bottom(@corner-radius);
 		&:before{
 				top: 0;
@@ -126,7 +128,8 @@
 	}
 	
 	&.ribbon-left{
-		right: @contentpadding * 2 + @border-width ;
+		margin-left: (@contentpadding * 2 + @border-width) * -1 ;
+		margin-right:@contentpadding;
     	.roundcorner-right(@corner-radius);
 		&:before{
 				left: 0;
