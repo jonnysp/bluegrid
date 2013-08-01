@@ -35,12 +35,11 @@ input.btn {
 	*zoom:1;
 	font-size: @font-size;
     line-height: @line-height;
-	text-align: center;
+	//text-align: center;
 	text-decoration: none;
-	position:relative;
 	display: inline-block;	
 	
-	vertical-align:middle;
+    //vertical-align:middle;
 	padding:@btn-padding-topbottom @btn-padding-leftright;	
 	
 	cursor: pointer;
@@ -51,6 +50,7 @@ input.btn {
 	
 	&.block{
 		display:block;
+		text-align: center;
 		width:100%;
 	}
 	
@@ -58,19 +58,7 @@ input.btn {
 		margin-top: 5px;
 	}
 
-	&.small{
-		font-size: @font-size / 1.5;
-    	line-height: @line-height / 1.5;
-		padding:@btn-padding-topbottom / 1.5 @btn-padding-leftright / 1.5;
-		.roundcorner(@btn-corner-radius -1);
-	}
-	
-	&.large{
-		font-size: @font-size * 1.5;
-    	line-height: @line-height * 1.5;
-		padding:@btn-padding-topbottom * 1.5 @btn-padding-leftright * 1.5;
-		.roundcorner(@btn-corner-radius + 1);
-	}
+
 	
 	&:focus,&.focus{
 		outline: 0;
@@ -81,9 +69,9 @@ input.btn {
 		font-family: 'fontello';
 		font-style: normal;
 		font-weight: normal;
+		
 		line-height: 1;
 		speak: none;
-		text-align: center;
 		display: inline-block;
 		text-decoration: inherit;
 		width: 1em;
@@ -133,11 +121,15 @@ input.btn {
 	font-size: 0;
 	margin:(@line-height/2) 0 0 0;
 	vertical-align:middle;
+	
 
 	&.justified{
+		text-align: center;
 		display: table;
+		overflow-x:auto;
 		& > .btn{
 			display:table-cell;
+			float:none;
 			width: 1%;
 		}
 	}
@@ -163,6 +155,7 @@ input.btn {
 	font-size: 0;
 	margin:5px 0 0 0;
 	display:inline-block;
+	text-align: center;
 	
 	&> button.btn{
 		width:100%;
