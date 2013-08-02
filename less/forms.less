@@ -36,7 +36,7 @@ label{
 	
 	&:focus{
 		border-color:  @default;
-		.shadow(0px,0px,8px,0px, fadeout(@default,75%));
+		.shadow(0px,0px,8px,0px, fade(@default,25%));
 	}
 }
 
@@ -62,7 +62,7 @@ label{
 	& .form-control{
 		border-color:  @color;
 		&:focus{
-			.shadow(0px,0px,8px,0px, fadeout(@color,50%));
+			.shadow(0px,0px,8px,0px, fade(@color,50%));
 			border-color:  @color;
 		}
 	}
