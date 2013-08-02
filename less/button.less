@@ -1,7 +1,5 @@
-
-@btn-corner-radius: @corner-radius;
 @btn-padding-topbottom:8px;
-@btn-padding-leftright:12px;
+@btn-padding-leftright:10px;
 
 
 .gen-btn(@color:@default){
@@ -32,21 +30,19 @@ input.btn {
 
 .btn{
 
-	*zoom:1;
+
 	font-size: @font-size;
     line-height: @line-height;
-	//text-align: center;
 	text-decoration: none;
 	display: inline-block;	
-	
-    //vertical-align:middle;
+
 	padding:@btn-padding-topbottom @btn-padding-leftright;	
 	
 	cursor: pointer;
 	border: 0px solid transparent;
 	white-space:nowrap;
 	
-	.roundcorner(@btn-corner-radius);
+	.roundcorner(@corner-radius);
 	
 	&.block{
 		display:block;
@@ -58,37 +54,11 @@ input.btn {
 		margin-top: 5px;
 	}
 
-
 	
 	&:focus,&.focus{
-		outline: 0;
+		outline:none;
 	}
 
-	 &> .caret{ 	
-
-		font-family: 'fontello';
-		font-style: normal;
-		font-weight: normal;
-		
-		line-height: 1;
-		speak: none;
-		display: inline-block;
-		text-decoration: inherit;
-		width: 1em;
-		
-		&.left:after{
-			content: "\25c2";
-		}
-		&.right:after{
-			content: "\25b8";
-		}
-		&.up:after{	
-			 content: "\25b4";
-		}
-		&.down:after{
-			 content: "\25be";
-		}
-	  }
 
 	.gen-btn();
 	
@@ -120,12 +90,14 @@ input.btn {
 
 	font-size: 0;
 	margin:(@line-height/2) 0 0 0;
-	vertical-align:middle;
+	
 	
 
 	&.justified{
+		display: block;
+		table-layout:fixed;
 		text-align: center;
-		display: table;
+		vertical-align:middle;
 		overflow-x:auto;
 		& > .btn{
 			display:table-cell;
@@ -138,10 +110,10 @@ input.btn {
 	& > .btn{
 	  .roundcorner();
 		&:first-child{
-			.roundcorner-left(@btn-corner-radius);
+			.roundcorner-left(@corner-radius);
 		}
 		&:last-child {
-			.roundcorner-right(@btn-corner-radius);
+			.roundcorner-right(@corner-radius);
 		}
 	}
 
@@ -167,11 +139,11 @@ input.btn {
 		display:block;
 		
 		&:first-child{
-			.roundcorner-top(@btn-corner-radius);
+			.roundcorner-top(@corner-radius);
 		}
 		
 		&:last-child{
-			.roundcorner-bottom(@btn-corner-radius);
+			.roundcorner-bottom(@corner-radius);
 		}
 	}
 

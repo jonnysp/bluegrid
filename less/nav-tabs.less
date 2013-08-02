@@ -1,4 +1,4 @@
-@tab-padding:8px 10px;
+@tabs-padding:8px 10px;
 
 
 
@@ -7,15 +7,13 @@
 	border-bottom:@border-width solid @lightgray;	
 	padding-left: 0;
 	list-style:none;
-	.clearfix();
+	display:block;
 	
 	&>li{
-		float:left;	
+
 		display:inline-block;
 		margin-bottom: @border-width * -1;
-		margin-right: 3px;
-		border-top: @border-width solid transparent;
-		
+		margin-right: @contentpadding / 2;
 		.roundcorner-top(@corner-radius);
 
 		&:hover{
@@ -26,7 +24,7 @@
 		}	
 
 		&>a{
-			padding:@tab-padding;
+			padding:@tabs-padding;
 			display:block;
 			text-decoration: none;
 			outline:none;
@@ -44,7 +42,9 @@
 		
 	}
 
-	&.justified{
+	&.nav-tabs-justified{
+		display:block;
+		table-layout:fixed;
 		border-bottom-width:0px;
 		overflow-x:auto;
 			& > li{

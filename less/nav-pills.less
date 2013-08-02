@@ -1,0 +1,59 @@
+@nav-pills-padding:8px 10px;
+
+
+.nav-pills{
+	
+	list-style:none;
+	display:block;
+	padding-left:0;
+	margin:@contentpadding 0;
+	
+	& > li{
+		display:inline-block;
+		margin-bottom:@contentpadding / 2;
+		
+		& > a {
+			display:block;
+			text-decoration: none;
+			outline:none;
+			padding:@nav-pills-padding;
+		}
+		
+		&.active a,& a:hover{
+			background-color:@default;
+			.textcolor(@default);
+			.roundcorner(@corner-radius);
+		}
+		
+
+	}
+	
+	
+	&.nav-pills-justified{
+		table-layout:fixed;
+		overflow-x:auto;
+			& > li{
+				display:table-cell;
+				float:none;
+				width: 1%;
+				& > a {
+					margin-right:@contentpadding / 2;
+					text-align: center;
+					vertical-align:middle;
+				}
+			}
+			& > li:last-child{
+				& > a {
+					margin-right:0;
+				}		
+			}
+	}
+	
+	
+	&.nav-pills-vertical{
+		& > li{
+			display:block;
+		}
+	}
+	
+}
