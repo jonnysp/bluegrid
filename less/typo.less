@@ -34,7 +34,7 @@ h5,.h5{	font-size: @font-size;}
 h6,.h6{	font-size: ceil(@font-size * 0.80);}
 
 p {
-  margin: (@line-height / 2) 0 ;
+  margin: @contentpadding 0 ;
 }
 
 pre , code{
@@ -60,7 +60,7 @@ q,blockquote,.blockquote{
 	
 	&.right{
 		border-left: 0;
-		padding:0 (@line-height / 2) 0 0;
+		padding:0 @contentpadding 0 0;
 		border-right: 5px solid @gray;
 		text-align:right;
 	}
@@ -71,8 +71,16 @@ q,blockquote,.blockquote{
 a,a:focus{ 
 	outline:none;
 	text-decoration:none;
+	color:@default;
 }
 	
+.page-header{
+	display:block;
+	padding-bottom:@contentpadding;
+	border-bottom:@border-width solid @lightgray;
+	
+}	
+
 
 .pull-right{
 	float:right;
