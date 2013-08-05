@@ -3824,6 +3824,7 @@ a.thumbnail:focus {
   -webkit-border-radius: 0;
   border-radius: 0;
   text-align: center;
+  white-space: nowrap;
 }
 .nav-list.nav-list-justified > li:first-child a {
   -webkit-border-top-left-radius: 5px;
