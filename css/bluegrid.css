@@ -2340,29 +2340,29 @@ input.btn {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-.btn-group-vertival {
+.btn-group.btn-group-vertical {
   vertical-align: text-top;
   font-size: 0;
   margin: 5px 0 0 0;
   display: inline-block;
   text-align: center;
 }
-.btn-group-vertival > button.btn {
+.btn-group.btn-group-vertical > button.btn {
   width: 100%;
 }
-.btn-group-vertival > .btn {
+.btn-group.btn-group-vertical > .btn {
   -webkit-border-radius: 0;
   border-radius: 0;
   float: none;
   display: block;
 }
-.btn-group-vertival > .btn:first-child {
+.btn-group.btn-group-vertical > .btn:first-child {
   -webkit-border-top-left-radius: 5px;
   -webkit-border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
-.btn-group-vertival > .btn:last-child {
+.btn-group.btn-group-vertical > .btn:last-child {
   -webkit-border-bottom-right-radius: 5px;
   -webkit-border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;

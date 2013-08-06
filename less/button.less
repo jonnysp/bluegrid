@@ -120,37 +120,40 @@ input.btn {
 		}
 	}
 
+	&.btn-group-vertical{
+	
+		vertical-align: text-top;
+		font-size: 0;
+		margin:5px 0 0 0;
+		display:inline-block;
+		text-align: center;
+		
+		&> button.btn{
+			width:100%;
+		}
+		
+		& > .btn{
+			.roundcorner();
+			float:none;
+			display:block;
+			
+			&:first-child{
+				.roundcorner-top(@corner-radius);
+			}
+			
+			&:last-child{
+				.roundcorner-bottom(@corner-radius);
+			}
+		}
+	
+	}
+
+
+
 }
 
 
-// button group vertival
-.btn-group-vertival{
-
-	vertical-align: text-top;
-	font-size: 0;
-	margin:5px 0 0 0;
-	display:inline-block;
-	text-align: center;
-	
-	&> button.btn{
-		width:100%;
-	}
-	
-	& > .btn{
-	    .roundcorner();
-		float:none;
-		display:block;
-		
-		&:first-child{
-			.roundcorner-top(@corner-radius);
-		}
-		
-		&:last-child{
-			.roundcorner-bottom(@corner-radius);
-		}
-	}
-
-}
+// button group vertical
 
 
 //button bar
