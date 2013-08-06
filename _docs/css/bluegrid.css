@@ -2174,6 +2174,9 @@ input.btn {
   box-shadow: 0 3px 4px rgba(90, 93, 94, 0.5) inset;
   outline: 0;
 }
+.btn:focus {
+  color: #ffffff;
+}
 .btn[disabled],
 .btn.disabled {
   color: #c1c2c3;
@@ -2195,6 +2198,9 @@ input.btn {
 .btn.btn-red.active {
   box-shadow: 0 3px 4px rgba(118, 28, 25, 0.5) inset;
   outline: 0;
+}
+.btn.btn-red:focus {
+  color: #ffffff;
 }
 .btn.btn-red[disabled],
 .btn.btn-red.disabled {
@@ -2218,6 +2224,9 @@ input.btn {
   box-shadow: 0 3px 4px rgba(152, 95, 13, 0.5) inset;
   outline: 0;
 }
+.btn.btn-orange:focus {
+  color: #ffffff;
+}
 .btn.btn-orange[disabled],
 .btn.btn-orange.disabled {
   color: #f4c37d;
@@ -2239,6 +2248,9 @@ input.btn {
 .btn.btn-green.active {
   box-shadow: 0 3px 4px rgba(37, 86, 37, 0.5) inset;
   outline: 0;
+}
+.btn.btn-green:focus {
+  color: #ffffff;
 }
 .btn.btn-green[disabled],
 .btn.btn-green.disabled {
@@ -2262,6 +2274,9 @@ input.btn {
   box-shadow: 0 3px 4px rgba(27, 109, 133, 0.5) inset;
   outline: 0;
 }
+.btn.btn-blue:focus {
+  color: #ffffff;
+}
 .btn.btn-blue[disabled],
 .btn.btn-blue.disabled {
   color: #85d0e7;
@@ -2283,6 +2298,9 @@ input.btn {
 .btn.btn-darkblue.active {
   box-shadow: 0 3px 4px rgba(25, 60, 90, 0.5) inset;
   outline: 0;
+}
+.btn.btn-darkblue:focus {
+  color: #ffffff;
 }
 .btn.btn-darkblue[disabled],
 .btn.btn-darkblue.disabled {

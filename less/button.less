@@ -15,6 +15,9 @@
 		box-shadow: 0 3px @btn-padding-topbottom/2 fade(darken(@color,30%),50%) inset;
 		outline: 0;
 	}
+	&:focus{
+		.textcolor(@color);
+	}
 	
 	&[disabled] ,&.disabled {
 		color:lighten(@color,10%);
