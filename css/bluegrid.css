@@ -2145,6 +2145,7 @@ input.btn {
   white-space: nowrap;
   -webkit-border-radius: 5px;
   border-radius: 5px;
+  margin-bottom: 5px;
   background-color: #a7a9aa;
   border-color: transparent;
   color: #ffffff;
@@ -2153,11 +2154,6 @@ input.btn {
   display: block;
   text-align: center;
   width: 100%;
-}
-.btn.block + .btn.block,
-.btn + .btn.block,
-.btn.block + .btn {
-  margin-top: 5px;
 }
 .btn:focus,
 .btn.focus {
@@ -2310,7 +2306,7 @@ input.btn {
 }
 .btn-group {
   font-size: 0;
-  margin: 10px 0 0 0;
+  margin-bottom: 5px;
 }
 .btn-group.btn-group-justified {
   display: block;
@@ -2325,6 +2321,7 @@ input.btn {
   width: 1%;
 }
 .btn-group > .btn {
+  margin-bottom: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
 }
@@ -2342,13 +2339,10 @@ input.btn {
 }
 .btn-group.btn-group-vertical {
   vertical-align: text-top;
-  font-size: 0;
-  margin: 5px 0 0 0;
+  margin-right: 5px;
+  margin-bottom: 5px;
   display: inline-block;
   text-align: center;
-}
-.btn-group.btn-group-vertical > button.btn {
-  width: 100%;
 }
 .btn-group.btn-group-vertical > .btn {
   -webkit-border-radius: 0;
