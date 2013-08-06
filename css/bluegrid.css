@@ -427,6 +427,11 @@ h6,
 .h6 {
   font-size: 12px;
 }
+.page-header {
+  display: block;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dddddd;
+}
 p {
   margin: 10px 0;
 }
@@ -444,14 +449,14 @@ blockquote,
   border-left: 5px solid #555555;
   padding: 0 0 0 10px;
 }
-q p:first-child,
-blockquote p:first-child,
-.blockquote p:first-child {
+q:first-child,
+blockquote:first-child,
+.blockquote:first-child {
   margin-top: 0;
 }
-q p:last-child,
-blockquote p:last-child,
-.blockquote p:last-child {
+q:last-child,
+blockquote:last-child,
+.blockquote:last-child {
   margin-bottom: 0;
 }
 q.right,
@@ -465,13 +470,16 @@ blockquote.right,
 a,
 a:focus {
   outline: none;
-  text-decoration: none;
   color: #a7a9aa;
 }
-.page-header {
-  display: block;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #dddddd;
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
 }
 .pull-right {
   float: right;
@@ -3731,6 +3739,7 @@ a.thumbnail:focus {
   width: 1%;
 }
 .nav-tabs.nav-tabs-justified > li > a {
+  white-space: nowrap;
   border-bottom: 1px solid #dddddd;
   text-align: center;
   vertical-align: middle;
@@ -3771,6 +3780,7 @@ a.thumbnail:focus {
   width: 1%;
 }
 .nav-pills.nav-pills-justified > li > a {
+  white-space: nowrap;
   margin-right: 5px;
   text-align: center;
   vertical-align: middle;
