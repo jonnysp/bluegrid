@@ -1,118 +1,38 @@
 //breadcrumbsettings
-@breadcrumb-padding: 	  10px;
-@breadcrumb-corner-radius: 6px;
-@breadcrumb-boarder-width:1px;
-@breadcrumb-arrow-width: 20px;
+
 //------------------------------------
 
-
-.gen-breadcrumb(@color:@default){
-
-	.vertical-gradient(lighten(@color,10%),darken(@color,2%));
-	border-color:darken(@color,10%) darken(@color,10%) darken(@color,20%);
-
-	& > li {
-			& > a {
-						   
-			  .textcolor(@color);
-			  .horizontal-gradient(lighten(@color,10%),darken(@color,2%));
-			 
-				&:hover{
-					background: @color;
-				}
-			  
-				&:after{
-  					border-left-color: darken(@color,2%); 
-			    }
-				
-				&:before{
-				  border-left-color: darken(@color,20%); 
-				}
-				
-				&:hover:after{
-				  border-left-color: @color;
-				}
-			}
-
-	}
-
-
-}
 
 
 .breadcrumb{
 
-	margin: 0;
- 	padding: 0;
     list-style: none;
-	
-	border-width: @breadcrumb-boarder-width;
-	border-style: solid;
-	.roundcorner(@breadcrumb-corner-radius);
+	display:block;
+	background-color:@lightgray;
+	padding:@contentpadding;
+	.roundcorner(@corner-radius);
 	.clearfix();
+	overflow-x:auto;
 	
 	& > li {
-
+		display: table-cell;
 		
-		&:first-child a {
-			padding-left: @breadcrumb-padding;
-			.roundcorner-left(@breadcrumb-corner-radius);
-		}
-
 		& > a {
-			  
-			  height:@breadcrumb-arrow-width;
-			  padding: @breadcrumb-padding;
-			  padding-left:@breadcrumb-arrow-width+@breadcrumb-padding;
-			  float: left;
-			  text-decoration: none;
-			  position: relative;
-			  outline:0;
-
-			  &:hover{
-			 		 background: #fff;
-			  }
-			  
-			  &:after,&:before{
-			  
-				  content:'';
-				  height:0;
-				  width:0;
-				  position:absolute;
-				  border-color: transparent;
-				  border-style: solid;  
-				  border-width: @breadcrumb-arrow-width;
-			  	  top:50%;
-			  	  margin-top:@breadcrumb-arrow-width*-1;
-			  	  border-right-width:0px;
-				  right:(@breadcrumb-arrow-width - 1)*-1;
-				  
-				
-				}
-				
-				&:after{
-			   	 	z-index: 2;
-			    }
-				
-				&:before{
-				  right:(@breadcrumb-arrow-width+@breadcrumb-boarder-width - 1)*-1;
-				  z-index: 1; 
-				}
-				
-
-			  
+			text-decoration:none;
+			white-space:nowrap;
+			padding-right:@contentpadding;
+			&:hover, &:active{
+				text-decoration:underline;
+			}
 		}
-	 
-		&.active,&.active:hover{
-			  font-weight: bold;
+	}	
+	
+    & > li:not(:last-child){
+		&:after{
+				padding-right:@contentpadding;	
+				content : '/';
+				color:@darkgray;
 		}
-	 
-		&.active:after,&.active:before{
-		  content: normal;  
-		}
-			
 	}
-
-.gen-breadcrumb();
 
 }
