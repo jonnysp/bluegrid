@@ -2347,6 +2347,7 @@ input.btn {
 .btn-group.btn-group-vertical > .btn {
   -webkit-border-radius: 0;
   border-radius: 0;
+  width: 100%;
   float: none;
   display: block;
 }
