@@ -2312,14 +2312,14 @@ input.btn {
   font-size: 0;
   margin: 10px 0 0 0;
 }
-.btn-group.justified {
+.btn-group.btn-group-justified {
   display: block;
   table-layout: fixed;
   text-align: center;
   vertical-align: middle;
   overflow-x: auto;
 }
-.btn-group.justified > .btn {
+.btn-group.btn-group-justified > .btn {
   display: table-cell;
   float: none;
   width: 1%;
