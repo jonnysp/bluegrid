@@ -2131,9 +2131,6 @@ label {
 .icon-block:before {
   content: '\1f6ab';
 }
-input.btn {
-  height: 36px;
-}
 .btn {
   font-size: 14px;
   line-height: 20px;
