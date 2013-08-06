@@ -6,7 +6,7 @@
 	background-color:@color;
 	border-color: transparent;
 	.textcolor(@color);
-		
+
 	&:hover,&.hover,&:active,&.active {
 		background-color: darken(@color,5%);
 	}	
@@ -15,6 +15,7 @@
 		box-shadow: 0 3px @btn-padding-topbottom/2 fade(darken(@color,30%),50%) inset;
 		outline: 0;
 	}
+	
 	&:focus{
 		.textcolor(@color);
 	}
@@ -24,7 +25,6 @@
 		box-shadow: 0;
 		cursor:not-allowed;
 	}
-
 }
 
 input.btn {
@@ -33,19 +33,16 @@ input.btn {
 
 .btn{
 
-
 	font-size: @font-size;
     line-height: @line-height;
 	text-decoration: none;
 	display: inline-block;	
-
 	padding:@btn-padding-topbottom @btn-padding-leftright;	
-	
 	cursor: pointer;
 	border: 0px solid transparent;
 	white-space:nowrap;
-	
 	.roundcorner(@corner-radius);
+	margin-bottom: @contentpadding / 2;
 	
 	&.block{
 		display:block;
@@ -53,15 +50,9 @@ input.btn {
 		width:100%;
 	}
 	
-	&.block+&.block,&+&.block,&.block+& {
-		margin-top: 5px;
-	}
-
-	
 	&:focus,&.focus{
 		outline:none;
 	}
-
 
 	.gen-btn();
 	
@@ -92,8 +83,7 @@ input.btn {
 .btn-group{
 
 	font-size: 0;
-	margin:(@line-height/2) 0 0 0;
-	
+	margin-bottom:@contentpadding / 2;
 	
 
 	&.btn-group-justified{
@@ -111,6 +101,7 @@ input.btn {
 
 	
 	& > .btn{
+	  margin-bottom: 0;
 	  .roundcorner();
 		&:first-child{
 			.roundcorner-left(@corner-radius);
@@ -123,15 +114,11 @@ input.btn {
 	&.btn-group-vertical{
 	
 		vertical-align: text-top;
-		font-size: 0;
-		margin:5px 0 0 0;
+		margin-right:@contentpadding / 2;
+		margin-bottom:@contentpadding / 2;
 		display:inline-block;
 		text-align: center;
-		
-		&> button.btn{
-			width:100%;
-		}
-		
+
 		& > .btn{
 			.roundcorner();
 			float:none;
@@ -145,11 +132,7 @@ input.btn {
 				.roundcorner-bottom(@corner-radius);
 			}
 		}
-	
 	}
-
-
-
 }
 
 
@@ -159,9 +142,9 @@ input.btn {
 //button bar
 .btn-bar{
 	font-size: 0;
-	&> .btn-group {
+	&>.btn-group {
 		display:inline-block;
-		margin-right:5px;
+		margin-right:@contentpadding / 2;
 	}
 }
 
