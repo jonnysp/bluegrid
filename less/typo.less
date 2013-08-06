@@ -33,6 +33,12 @@ h4,.h4{	font-size: ceil(@font-size * 1.25);}
 h5,.h5{	font-size: @font-size;}
 h6,.h6{	font-size: ceil(@font-size * 0.80);}
 
+.page-header{
+	display:block;
+	padding-bottom:@contentpadding;
+	border-bottom:@border-width solid @lightgray;
+}
+
 p {
   margin: @contentpadding 0 ;
 }
@@ -50,13 +56,8 @@ q,blockquote,.blockquote{
 	border-left: 5px solid @gray;
 	padding:0 0 0 (@line-height / 2)  ;
 	
-	& p{
-		//font-size: (@font-size * 1.25);
-//		font-weight: 300;
-//		line-height: 1.25;
-		&:first-child { margin-top: 0; }
-		&:last-child { margin-bottom: 0; }	
-	}
+	&:first-child { margin-top: 0; }
+	&:last-child { margin-bottom: 0; }	
 	
 	&.right{
 		border-left: 0;
@@ -70,17 +71,20 @@ q,blockquote,.blockquote{
 
 a,a:focus{ 
 	outline:none;
-	text-decoration:none;
+	//text-decoration:none;
 	color:@default;
 }
 	
-.page-header{
-	display:block;
-	padding-bottom:@contentpadding;
-	border-bottom:@border-width solid @lightgray;
 	
-}	
-
+.text-left{
+	text-align:left;
+}
+.text-right{
+	text-align:right;
+}
+.text-center{
+	text-align:center;
+}
 
 .pull-right{
 	float:right;
