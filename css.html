@@ -9,10 +9,17 @@
 <link rel="stylesheet" type="text/css" href="css/bluegrid.css">
 <link rel="stylesheet" type="text/css" href="css/prettify.css">
 
-
 <script src="js/prettify.js" type="text/javascript"></script>
-<script src="js/less-1.4.2.min.js" type="text/javascript"></script>
 <script src="js/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="js/bluegrid.js" type="text/javascript"></script>
+
+<style>
+.icons > span{
+	margin:0 4px;
+}
+
+</style>
+
 
 </head>
 
@@ -43,6 +50,7 @@
         <div class="col-lg-3">
         	<ul class="nav-list">
                 <li><a href="#content">Content</a></li>
+                <li><a href="#icons">Icons</a></li>
             </ul>
         </div>
         
@@ -71,8 +79,282 @@
 </div>               
 
 
+<div class="panel">
+<div class="panel-header">Lists</div>
+<div class="row">
+<div class="col-lg-6">
+<h4>Unordert List</h4>
+<ul>
+    <li>List Item 1</li>
+    <li>List Item 2</li>
+    <li>List Item 3
+        <ul>
+            <li>Sub Item 1</li>
+            <li>Sub Item 2</li>
+            <li>Sub Item 3</li>
+        </ul>
+    </li>
+</ul>
+<pre class="prettyprint linenums">
+&lt;ul&gt;
+    &lt;li&gt;List Item 1&lt;/li&gt;
+    &lt;li&gt;List Item 2&lt;/li&gt;
+    &lt;li&gt;List Item 3&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+</div>
+<div class="col-lg-6">
+<h4>Ordert List</h4>
+<ol>
+    <li>List Item 1</li>
+    <li>List Item 2</li>
+    <li>List Item 3
+        <ol>
+            <li>Sub Item 1</li>
+            <li>Sub Item 2</li>
+            <li>Sub Item 3</li>
+        </ol>
+    </li>
+</ol>
+<pre class="prettyprint linenums">
+&lt;ol&gt;
+    &lt;li&gt;List Item 1&lt;/li&gt;
+    &lt;li&gt;List Item 2&lt;/li&gt;
+    &lt;li&gt;List Item 3&lt;/li&gt;
+&lt;/ol&gt;
+</pre>
+</div>
+</div>
+
+</div> 
 
 
+
+
+<h1 id="icons" class="page-header">Icons</h1>
+<div class="panel">
+<div class="panel-header">the Icons</div>
+
+<div class="text-center icons" style="font-size:20px; line-height:2;">
+
+<span class="icon-plus" rel="tip" data-class="tip-red" data-content="icon-plus"></span>
+<span class="icon-minus" rel="tip" data-class="tip-red" data-content="icon-minus"></span>
+<span class="icon-left" rel="tip" data-class="tip-red" data-content="icon-left"></span>
+<span class="icon-up" rel="tip" data-class="tip-red" data-content="icon-up"></span>
+<span class="icon-right" rel="tip" data-class="tip-red" data-content="icon-right"></span>
+<span class="icon-down" rel="tip" data-class="tip-red" data-content="icon-down"></span>
+<span class="icon-home" rel="tip" data-class="tip-red" data-content="icon-home"></span>
+<span class="icon-pause" rel="tip" data-class="tip-red" data-content="icon-pause"></span>
+<span class="icon-fast-fw" rel="tip" data-class="tip-red" data-content="icon-fast-fw"></span>
+<span class="icon-fast-bw" rel="tip" data-class="tip-red" data-content="icon-fast-bw"></span>
+<span class="icon-to-end" rel="tip" data-class="tip-red" data-content="icon-to-end"></span>
+<span class="icon-to-start" rel="tip" data-class="tip-red" data-content="icon-to-start"></span>
+<span class="icon-stop" rel="tip" data-class="tip-red" data-content="icon-stop"></span>
+<span class="icon-up-dir" rel="tip" data-class="tip-red" data-content="icon-up-dir"></span>
+<span class="icon-play" rel="tip" data-class="tip-red" data-content="icon-play"></span>
+<span class="icon-right-dir" rel="tip" data-class="tip-red" data-content="icon-right-dir"></span>
+<span class="icon-down-dir" rel="tip" data-class="tip-red" data-content="icon-down-dir"></span>
+<span class="icon-left-dir" rel="tip" data-class="tip-red" data-content="icon-left-dir"></span>
+<span class="icon-cloud" rel="tip" data-class="tip-red" data-content="icon-cloud"></span>
+<span class="icon-umbrella" rel="tip" data-class="tip-red" data-content="icon-umbrella"></span>
+<span class="icon-star" rel="tip" data-class="tip-red" data-content="icon-star"></span>
+<span class="icon-star-empty" rel="tip" data-class="tip-red" data-content="icon-star-empty"></span>
+<span class="icon-check" rel="tip" data-class="tip-red" data-content="icon-check"></span>
+<span class="icon-left-hand" rel="tip" data-class="tip-red" data-content="icon-left-hand"></span>
+<span class="icon-up-hand" rel="tip" data-class="tip-red" data-content="icon-up-hand"></span>
+<span class="icon-right-hand" rel="tip" data-class="tip-red" data-content="icon-right-hand"></span>
+<span class="icon-down-hand" rel="tip" data-class="tip-red" data-content="icon-down-hand"></span>
+<span class="icon-th-list" rel="tip" data-class="tip-red" data-content="icon-th-list"></span>
+<span class="icon-heart-empty" rel="tip" data-class="tip-red" data-content="icon-heart-empty"></span>
+<span class="icon-heart" rel="tip" data-class="tip-red" data-content="icon-heart"></span>
+<span class="icon-note" rel="tip" data-class="tip-red" data-content="icon-note"></span>
+<span class="icon-music" rel="tip" data-class="tip-red" data-content="icon-music"></span>
+<span class="icon-th" rel="tip" data-class="tip-red" data-content="icon-th"></span>
+<span class="icon-flag" rel="tip" data-class="tip-red" data-content="icon-flag"></span>
+<span class="icon-cog" rel="tip" data-class="tip-red" data-content="icon-cog"></span>
+<span class="icon-attention" rel="tip" data-class="tip-red" data-content="icon-attention"></span>
+<span class="icon-flash" rel="tip" data-class="tip-red" data-content="icon-flash"></span>
+<span class="icon-cog-alt" rel="tip" data-class="tip-red" data-content="icon-cog-alt"></span>
+<span class="icon-scissors" rel="tip" data-class="tip-red" data-content="icon-scissors"></span>
+<span class="icon-flight" rel="tip" data-class="tip-red" data-content="icon-flight"></span>
+<span class="icon-mail" rel="tip" data-class="tip-red" data-content="icon-mail"></span>
+<span class="icon-edit" rel="tip" data-class="tip-red" data-content="icon-edit"></span>
+<span class="icon-pencil" rel="tip" data-class="tip-red" data-content="icon-pencil"></span>
+<span class="icon-ok" rel="tip" data-class="tip-red" data-content="icon-ok"></span>
+<span class="icon-ok-circle" rel="tip" data-class="tip-red" data-content="icon-ok-circle"></span>
+<span class="icon-cancel" rel="tip" data-class="tip-red" data-content="icon-cancel"></span>
+<span class="icon-cancel-circle" rel="tip" data-class="tip-red" data-content="icon-cancel-circle"></span>
+<span class="icon-asterisk" rel="tip" data-class="tip-red" data-content="icon-asterisk"></span>
+<span class="icon-attention-circle" rel="tip" data-class="tip-red" data-content="icon-attention-circle"></span>
+<span class="icon-plus-circle" rel="tip" data-class="tip-red" data-content="icon-plus-circle"></span>
+<span class="icon-minus-circle" rel="tip" data-class="tip-red" data-content="icon-minus-circle"></span>
+<span class="icon-forward" rel="tip" data-class="tip-red" data-content="icon-forward"></span>
+<span class="icon-ccw" rel="tip" data-class="tip-red" data-content="icon-ccw"></span>
+<span class="icon-cw" rel="tip" data-class="tip-red" data-content="icon-cw"></span>
+<span class="icon-resize-vertical" rel="tip" data-class="tip-red" data-content="icon-resize-vertical"></span>
+<span class="icon-resize-horizontal" rel="tip" data-class="tip-red" data-content="icon-resize-horizontal"></span>
+<span class="icon-eject" rel="tip" data-class="tip-red" data-content="icon-eject"></span>
+<span class="icon-star-half" rel="tip" data-class="tip-red" data-content="icon-star-half"></span>
+<span class="icon-ok-circle2" rel="tip" data-class="tip-red" data-content="icon-ok-circle2"></span>
+<span class="icon-cancel-circle2" rel="tip" data-class="tip-red" data-content="icon-cancel-circle2"></span>
+<span class="icon-help-circle" rel="tip" data-class="tip-red" data-content="icon-help-circle"></span>
+<span class="icon-info-circle" rel="tip" data-class="tip-red" data-content="icon-info-circle"></span>
+<span class="icon-th-large" rel="tip" data-class="tip-red" data-content="icon-th-large"></span>
+<span class="icon-eye" rel="tip" data-class="tip-red" data-content="icon-eye"></span>
+<span class="icon-eye-off" rel="tip" data-class="tip-red" data-content="icon-eye-off"></span>
+<span class="icon-tag" rel="tip" data-class="tip-red" data-content="icon-tag"></span>
+<span class="icon-tags" rel="tip" data-class="tip-red" data-content="icon-tags"></span>
+<span class="icon-camera-alt" rel="tip" data-class="tip-red" data-content="icon-camera-alt"></span>
+<span class="icon-export" rel="tip" data-class="tip-red" data-content="icon-export"></span>
+<span class="icon-print" rel="tip" data-class="tip-red" data-content="icon-print"></span>
+<span class="icon-retweet" rel="tip" data-class="tip-red" data-content="icon-retweet"></span>
+<span class="icon-comment" rel="tip" data-class="tip-red" data-content="icon-comment"></span>
+<span class="icon-chat" rel="tip" data-class="tip-red" data-content="icon-chat"></span>
+<span class="icon-location" rel="tip" data-class="tip-red" data-content="icon-location"></span>
+<span class="icon-trash" rel="tip" data-class="tip-red" data-content="icon-trash"></span>
+<span class="icon-basket" rel="tip" data-class="tip-red" data-content="icon-basket"></span>
+<span class="icon-login" rel="tip" data-class="tip-red" data-content="icon-login"></span>
+<span class="icon-logout" rel="tip" data-class="tip-red" data-content="icon-logout"></span>
+<span class="icon-resize-full" rel="tip" data-class="tip-red" data-content="icon-resize-full"></span>
+<span class="icon-resize-small" rel="tip" data-class="tip-red" data-content="icon-resize-small"></span>
+<span class="icon-zoom-in" rel="tip" data-class="tip-red" data-content="icon-zoom-in"></span>
+<span class="icon-zoom-out" rel="tip" data-class="tip-red" data-content="icon-zoom-out"></span>
+<span class="icon-down-circle2" rel="tip" data-class="tip-red" data-content="icon-down-circle2"></span>
+<span class="icon-up-circle2" rel="tip" data-class="tip-red" data-content="icon-up-circle2"></span>
+<span class="icon-down-open" rel="tip" data-class="tip-red" data-content="icon-down-open"></span>
+<span class="icon-left-open" rel="tip" data-class="tip-red" data-content="icon-left-open"></span>
+<span class="icon-right-open" rel="tip" data-class="tip-red" data-content="icon-right-open"></span>
+<span class="icon-up-open" rel="tip" data-class="tip-red" data-content="icon-up-open"></span>
+<span class="icon-arrows-cw" rel="tip" data-class="tip-red" data-content="icon-arrows-cw"></span>
+<span class="icon-play-circle2" rel="tip" data-class="tip-red" data-content="icon-play-circle2"></span>
+<span class="icon-to-end-alt" rel="tip" data-class="tip-red" data-content="icon-to-end-alt"></span>
+<span class="icon-to-start-alt" rel="tip" data-class="tip-red" data-content="icon-to-start-alt"></span>
+<span class="icon-inbox" rel="tip" data-class="tip-red" data-content="icon-inbox"></span>
+<span class="icon-font" rel="tip" data-class="tip-red" data-content="icon-font"></span>
+<span class="icon-bold" rel="tip" data-class="tip-red" data-content="icon-bold"></span>
+<span class="icon-italic" rel="tip" data-class="tip-red" data-content="icon-italic"></span>
+<span class="icon-text-height" rel="tip" data-class="tip-red" data-content="icon-text-height"></span>
+<span class="icon-text-width" rel="tip" data-class="tip-red" data-content="icon-text-width"></span>
+<span class="icon-align-left" rel="tip" data-class="tip-red" data-content="icon-align-left"></span>
+<span class="icon-align-center" rel="tip" data-class="tip-red" data-content="icon-align-center"></span>
+<span class="icon-align-right" rel="tip" data-class="tip-red" data-content="icon-align-right"></span>
+<span class="icon-align-justify" rel="tip" data-class="tip-red" data-content="icon-align-justify"></span>
+<span class="icon-list" rel="tip" data-class="tip-red" data-content="icon-list"></span>
+<span class="icon-indent-left" rel="tip" data-class="tip-red" data-content="icon-indent-left"></span>
+<span class="icon-indent-right" rel="tip" data-class="tip-red" data-content="icon-indent-right"></span>
+<span class="icon-off" rel="tip" data-class="tip-red" data-content="icon-off"></span>
+<span class="icon-road" rel="tip" data-class="tip-red" data-content="icon-road"></span>
+<span class="icon-list-alt" rel="tip" data-class="tip-red" data-content="icon-list-alt"></span>
+<span class="icon-qrcode" rel="tip" data-class="tip-red" data-content="icon-qrcode"></span>
+<span class="icon-barcode" rel="tip" data-class="tip-red" data-content="icon-barcode"></span>
+<span class="icon-ajust" rel="tip" data-class="tip-red" data-content="icon-ajust"></span>
+<span class="icon-tint" rel="tip" data-class="tip-red" data-content="icon-tint"></span>
+<span class="icon-magnet" rel="tip" data-class="tip-red" data-content="icon-magnet"></span>
+<span class="icon-move" rel="tip" data-class="tip-red" data-content="icon-move"></span>
+<span class="icon-link-ext" rel="tip" data-class="tip-red" data-content="icon-link-ext"></span>
+<span class="icon-check-empty" rel="tip" data-class="tip-red" data-content="icon-check-empty"></span>
+<span class="icon-bookmark-empty" rel="tip" data-class="tip-red" data-content="icon-bookmark-empty"></span>
+<span class="icon-phone-squared" rel="tip" data-class="tip-red" data-content="icon-phone-squared"></span>
+<span class="icon-twitter" rel="tip" data-class="tip-red" data-content="icon-twitter"></span>
+<span class="icon-facebook" rel="tip" data-class="tip-red" data-content="icon-facebook"></span>
+<span class="icon-github" rel="tip" data-class="tip-red" data-content="icon-github"></span>
+<span class="icon-rss" rel="tip" data-class="tip-red" data-content="icon-rss"></span>
+<span class="icon-hdd" rel="tip" data-class="tip-red" data-content="icon-hdd"></span>
+<span class="icon-certificate" rel="tip" data-class="tip-red" data-content="icon-certificate"></span>
+<span class="icon-left-circled" rel="tip" data-class="tip-red" data-content="icon-left-circled"></span>
+<span class="icon-right-circled" rel="tip" data-class="tip-red" data-content="icon-right-circled"></span>
+<span class="icon-up-circled" rel="tip" data-class="tip-red" data-content="icon-up-circled"></span>
+<span class="icon-down-circled" rel="tip" data-class="tip-red" data-content="icon-down-circled"></span>
+<span class="icon-tasks" rel="tip" data-class="tip-red" data-content="icon-tasks"></span>
+<span class="icon-filter" rel="tip" data-class="tip-red" data-content="icon-filter"></span>
+<span class="icon-resize-full-alt" rel="tip" data-class="tip-red" data-content="icon-resize-full-alt"></span>
+<span class="icon-beaker" rel="tip" data-class="tip-red" data-content="icon-beaker"></span>
+<span class="icon-docs" rel="tip" data-class="tip-red" data-content="icon-docs"></span>
+<span class="icon-blank" rel="tip" data-class="tip-red" data-content="icon-blank"></span>
+<span class="icon-menu" rel="tip" data-class="tip-red" data-content="icon-menu"></span>
+<span class="icon-list-bullet" rel="tip" data-class="tip-red" data-content="icon-list-bullet"></span>
+<span class="icon-list-numbered" rel="tip" data-class="tip-red" data-content="icon-list-numbered"></span>
+<span class="icon-strike" rel="tip" data-class="tip-red" data-content="icon-strike"></span>
+<span class="icon-underline" rel="tip" data-class="tip-red" data-content="icon-underline"></span>
+<span class="icon-table" rel="tip" data-class="tip-red" data-content="icon-table"></span>
+<span class="icon-magic" rel="tip" data-class="tip-red" data-content="icon-magic"></span>
+<span class="icon-pinterest-circled" rel="tip" data-class="tip-red" data-content="icon-pinterest-circled"></span>
+<span class="icon-pinterest-squared" rel="tip" data-class="tip-red" data-content="icon-pinterest-squared"></span>
+<span class="icon-gplus-squared" rel="tip" data-class="tip-red" data-content="icon-gplus-squared"></span>
+<span class="icon-gplus" rel="tip" data-class="tip-red" data-content="icon-gplus"></span>
+<span class="icon-money" rel="tip" data-class="tip-red" data-content="icon-money"></span>
+<span class="icon-columns" rel="tip" data-class="tip-red" data-content="icon-columns"></span>
+<span class="icon-sort" rel="tip" data-class="tip-red" data-content="icon-sort"></span>
+<span class="icon-sort-down" rel="tip" data-class="tip-red" data-content="icon-sort-down"></span>
+<span class="icon-sort-up" rel="tip" data-class="tip-red" data-content="icon-sort-up"></span>
+<span class="icon-mail-alt" rel="tip" data-class="tip-red" data-content="icon-mail-alt"></span>
+<span class="icon-linkedin" rel="tip" data-class="tip-red" data-content="icon-linkedin"></span>
+<span class="icon-gauge" rel="tip" data-class="tip-red" data-content="icon-gauge"></span>
+<span class="icon-comment-1" rel="tip" data-class="tip-red" data-content="icon-comment-1"></span>
+<span class="icon-chat-1" rel="tip" data-class="tip-red" data-content="icon-chat-1"></span>
+<span class="icon-sitemap" rel="tip" data-class="tip-red" data-content="icon-sitemap"></span>
+<span class="icon-paste" rel="tip" data-class="tip-red" data-content="icon-paste"></span>
+<span class="icon-user-md" rel="tip" data-class="tip-red" data-content="icon-user-md"></span>
+<span class="icon-github-squared" rel="tip" data-class="tip-red" data-content="icon-github-squared"></span>
+<span class="icon-twitter-squared" rel="tip" data-class="tip-red" data-content="icon-twitter-squared"></span>
+<span class="icon-facebook-squared" rel="tip" data-class="tip-red" data-content="icon-facebook-squared"></span>
+<span class="icon-linkedin-squared" rel="tip" data-class="tip-red" data-content="icon-linkedin-squared"></span>
+<span class="icon-picture" rel="tip" data-class="tip-red" data-content="icon-picture"></span>
+<span class="icon-globe" rel="tip" data-class="tip-red" data-content="icon-globe"></span>
+<span class="icon-leaf" rel="tip" data-class="tip-red" data-content="icon-leaf"></span>
+<span class="icon-lemon" rel="tip" data-class="tip-red" data-content="icon-lemon"></span>
+<span class="icon-glass" rel="tip" data-class="tip-red" data-content="icon-glass"></span>
+<span class="icon-gift" rel="tip" data-class="tip-red" data-content="icon-gift"></span>
+<span class="icon-videocam" rel="tip" data-class="tip-red" data-content="icon-videocam"></span>
+<span class="icon-headphones" rel="tip" data-class="tip-red" data-content="icon-headphones"></span>
+<span class="icon-video" rel="tip" data-class="tip-red" data-content="icon-video"></span>
+<span class="icon-target" rel="tip" data-class="tip-red" data-content="icon-target"></span>
+<span class="icon-award" rel="tip" data-class="tip-red" data-content="icon-award"></span>
+<span class="icon-thumbs-up" rel="tip" data-class="tip-red" data-content="icon-thumbs-up"></span>
+<span class="icon-thumbs-down" rel="tip" data-class="tip-red" data-content="icon-thumbs-down"></span>
+<span class="icon-user" rel="tip" data-class="tip-red" data-content="icon-user"></span>
+<span class="icon-users" rel="tip" data-class="tip-red" data-content="icon-users"></span>
+<span class="icon-credit-card" rel="tip" data-class="tip-red" data-content="icon-credit-card"></span>
+<span class="icon-briefcase" rel="tip" data-class="tip-red" data-content="icon-briefcase"></span>
+<span class="icon-floppy" rel="tip" data-class="tip-red" data-content="icon-floppy"></span>
+<span class="icon-folder" rel="tip" data-class="tip-red" data-content="icon-folder"></span>
+<span class="icon-folder-open" rel="tip" data-class="tip-red" data-content="icon-folder-open"></span>
+<span class="icon-doc" rel="tip" data-class="tip-red" data-content="icon-doc"></span>
+<span class="icon-calendar" rel="tip" data-class="tip-red" data-content="icon-calendar"></span>
+<span class="icon-chart-bar" rel="tip" data-class="tip-red" data-content="icon-chart-bar"></span>
+<span class="icon-pin" rel="tip" data-class="tip-red" data-content="icon-pin"></span>
+<span class="icon-attach" rel="tip" data-class="tip-red" data-content="icon-attach"></span>
+<span class="icon-book" rel="tip" data-class="tip-red" data-content="icon-book"></span>
+<span class="icon-phone" rel="tip" data-class="tip-red" data-content="icon-phone"></span>
+<span class="icon-megaphone" rel="tip" data-class="tip-red" data-content="icon-megaphone"></span>
+<span class="icon-upload" rel="tip" data-class="tip-red" data-content="icon-upload"></span>
+<span class="icon-download" rel="tip" data-class="tip-red" data-content="icon-download"></span>
+<span class="icon-signal" rel="tip" data-class="tip-red" data-content="icon-signal"></span>
+<span class="icon-camera" rel="tip" data-class="tip-red" data-content="icon-camera"></span>
+<span class="icon-shuffle" rel="tip" data-class="tip-red" data-content="icon-shuffle"></span>
+<span class="icon-volume-off" rel="tip" data-class="tip-red" data-content="icon-volume-off"></span>
+<span class="icon-volume-down" rel="tip" data-class="tip-red" data-content="icon-volume-down"></span>
+<span class="icon-volume-up" rel="tip" data-class="tip-red" data-content="icon-volume-up"></span>
+<span class="icon-search" rel="tip" data-class="tip-red" data-content="icon-search"></span>
+<span class="icon-key" rel="tip" data-class="tip-red" data-content="icon-key"></span>
+<span class="icon-lock" rel="tip" data-class="tip-red" data-content="icon-lock"></span>
+<span class="icon-lock-open" rel="tip" data-class="tip-red" data-content="icon-lock-open"></span>
+<span class="icon-bell" rel="tip" data-class="tip-red" data-content="icon-bell"></span>
+<span class="icon-bookmark" rel="tip" data-class="tip-red" data-content="icon-bookmark"></span>
+<span class="icon-link" rel="tip" data-class="tip-red" data-content="icon-link"></span>
+<span class="icon-fire" rel="tip" data-class="tip-red" data-content="icon-fire"></span>
+<span class="icon-wrench" rel="tip" data-class="tip-red" data-content="icon-wrench"></span>
+<span class="icon-hammer" rel="tip" data-class="tip-red" data-content="icon-hammer"></span>
+<span class="icon-clock" rel="tip" data-class="tip-red" data-content="icon-clock"></span>
+<span class="icon-truck" rel="tip" data-class="tip-red" data-content="icon-truck"></span>
+<span class="icon-block" rel="tip" data-class="tip-red" data-content="icon-block"></span>
+</div>
+
+<pre class="prettyprint linenums">
+&lt;span class="icon-..."&gt;&lt;/span&gt;
+</pre>
+</div>  
 
 
 
