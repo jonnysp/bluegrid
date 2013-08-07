@@ -1070,6 +1070,13 @@ a:focus {
 .ribbon.ribbon-over.ribbon-top-right {
   right: 19px;
 }
+html,
+body {
+  height: 100%;
+}
+body {
+  overflow-x: hidden;
+}
 .container {
   padding: 0 10px;
 }
@@ -3011,7 +3018,6 @@ a.thumbnail:focus {
   text-decoration: none;
   min-width: 15px;
   min-height: 15px;
-  max-width: 30%;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
