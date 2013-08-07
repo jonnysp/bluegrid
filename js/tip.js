@@ -95,5 +95,3 @@
 $(document).ready(function(){
 	$('*[rel="tip"]').tip();	
 });
-	
-

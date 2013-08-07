@@ -237,8 +237,6 @@ $(document).ready(function(){
 	$('*[rel="popover"]').popover();	
 });
 	
-	
-	
 (function($){
 		
 		function Tip(element) {
@@ -336,6 +334,3 @@ $(document).ready(function(){
 $(document).ready(function(){
 	$('*[rel="tip"]').tip();	
 });
-	
-
-

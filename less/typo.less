@@ -44,6 +44,7 @@ p {
 }
 
 pre , code{
+	margin:0 0 @contentpadding 0;
 	border:1px solid @gray;
 	padding:3px;
 	.roundcorner(5px);
@@ -52,14 +53,14 @@ pre , code{
 //blockquote
 q,blockquote,.blockquote{
 	
-	margin: (@line-height / 2) 0;
+	margin: 0 0 @contentpadding 0;
 	border-left: 5px solid @gray;
-	padding:0 0 0 (@line-height / 2)  ;
+	padding:0 0 0 @contentpadding;
 	
-	&:first-child { margin-top: 0; }
-	&:last-child { margin-bottom: 0; }	
+//	&:first-child { margin-top: 0; }
+//	&:last-child { margin-bottom: 0; }	
 	
-	&.right{
+	&.blockquote-right{
 		border-left: 0;
 		padding:0 @contentpadding 0 0;
 		border-right: 5px solid @gray;

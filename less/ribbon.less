@@ -169,27 +169,27 @@
 		float:none;
 		
 		&.ribbon-full,&.ribbon-right,&.ribbon-left{
-			top:@contentpadding * 2;
+			top:@contentpadding * 2 - @border-width;
 		}
 		
 		&.ribbon-top-left,&.ribbon-top-right{
-			top: @contentpadding * -1;
+			top: @contentpadding * -1 - @border-width;
 		}
 		
 		&.ribbon-full,&.ribbon-left{
-			left: @contentpadding * -1;
+			left: @contentpadding * -1 - @border-width;
 		}
 		
 		&.ribbon-full,&.ribbon-right{
- 			right: @contentpadding * -1;
+ 			right: @contentpadding * -1 - @border-width;
 	    }
 
 		&.ribbon-top-left{
-			left: @contentpadding * 2;
+			left: @contentpadding * 2 - @border-width;
 		}
 		
 		&.ribbon-top-right{
-			right: @contentpadding * 2;
+			right: @contentpadding * 2 - @border-width;
 		}
 		
 		

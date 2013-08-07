@@ -1,10 +1,5 @@
-//tipsettings
+// Bluegrid Tip
 
-@tip-arrow-width:   7px;
-@tip-corner-radius: @corner-radius;
-
-@tip-padding-topbottom:8px;
-@tip-padding-leftright:12px;
 
 //------------------------------------
 
@@ -28,11 +23,14 @@
 
 }
 
+[rel="tip"]{
+	cursor:pointer;
+}
 
 .tip{
 	
 	z-index:2000;
-	padding: @tip-padding-topbottom @tip-padding-leftright;
+	padding: (@contentpadding / 2) @contentpadding;
 	position: absolute;
 	display:none;
 	
@@ -40,12 +38,12 @@
 	line-height: @line-height;
 	text-decoration: none;
 	
-	min-width:@tip-arrow-width+@tip-corner-radius*2;
-	min-height:@tip-arrow-width+@tip-corner-radius*2;
+	min-width:(@contentpadding / 2)+@corner-radius*2;
+	min-height:(@contentpadding / 2)+@corner-radius*2;
 	max-width: 30%;
 	
 	.noselect();
-	.roundcorner(@tip-corner-radius);
+	.roundcorner(@corner-radius);
 	
 	//arrow
    &:before,&:after{
@@ -55,7 +53,7 @@
 	  position:absolute;
 	  border-color: transparent;
 	  border-style: solid;
-	  border-width: @tip-arrow-width;
+	  border-width: (@contentpadding / 2);
    } 
 	 
    &:before{
@@ -68,40 +66,40 @@
 
 
 	 &.bottom{
-		margin-top: @tip-arrow-width;
+		margin-top: (@contentpadding / 2);
 	 }
 	 &.top{
-		margin-bottom: @tip-arrow-width;
+		margin-bottom: (@contentpadding / 2);
 	 }
 	 &.left{
-		margin-right: @tip-arrow-width;
+		margin-right: (@contentpadding / 2);
 	 }
 	 &.right{
-		margin-left: @tip-arrow-width;
+		margin-left: (@contentpadding / 2);
 	 }
 
 	 &.bottom:before{
-	  top: @tip-arrow-width*-1;
+	  top: (@contentpadding / 2)*-1;
 	  border-top-width:0px;
-	  margin-left:@tip-arrow-width*-1;
+	  margin-left:(@contentpadding / 2)*-1;
     } 
 	 
 	&.top:before{
-	  bottom: @tip-arrow-width*-1;
+	  bottom: (@contentpadding / 2)*-1;
 	  border-bottom-width:0px;
-	  margin-left:@tip-arrow-width*-1;
+	  margin-left:(@contentpadding / 2)*-1;
 	}  
 	 
 	&.left:after{
-	  right: @tip-arrow-width*-1;
+	  right: (@contentpadding / 2)*-1;
 	  border-right-width:0px;
-	  margin-top:@tip-arrow-width*-1;
+	  margin-top:(@contentpadding / 2)*-1;
 	}
 		 
 	&.right:after{
-	  left: @tip-arrow-width*-1;
+	  left: (@contentpadding / 2)*-1;
 	  border-left-width:0px;
-	  margin-top:@tip-arrow-width*-1;
+	  margin-top:(@contentpadding / 2)*-1;
 	}	  
 
 

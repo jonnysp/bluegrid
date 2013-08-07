@@ -11,8 +11,8 @@
 
 
 <script src="js/prettify.js" type="text/javascript"></script>
-<script src="js/less-1.4.2.min.js" type="text/javascript"></script>
 <script src="js/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="js/bluegrid.js" type="text/javascript"></script>
 
 </head>
 
@@ -31,18 +31,17 @@
                 <li><a href="javascript.html">JavaScript</a></li>
             </ul>
         </div>
-    </div
-
-
-
-
-
-
-
-    ><div class="row">
+    </div>
+    
+    
+    
+    
+    <div class="row">
         <div class="col-lg-3">
         	<ul class="nav-list">
                 <li><a href="#headings">Buttons</a></li>
+                <li><a href="#thumbnails">Thumbnails</a></li>
+                <li><a href="#ribbons">Ribbons</a></li>
             </ul>
         </div>
         
@@ -110,7 +109,7 @@
 
 
 <div class="panel">
-	<div class="panel-header">Buttongroups justifyed</div>
+	<div class="panel-header">Buttongroups justified</div>
 
 <div class="btn-group btn-group-justified">
     <a href="#" class="btn"><span class="icon-home"></span></a>
@@ -155,14 +154,92 @@
 
 
 
+<h1 id="thumbnails" class="page-header">Thumbnails</h1>
+<div class="panel">
+	<div class="panel-header">Thumbnail</div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="thumbnail text-center">
+                <img src="img/test.png"><p>Thumbnail</p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="thumbnail text-center">
+                <img src="img/test.png"><p>Thumbnail</p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="thumbnail text-center">
+                <img src="img/test.png"><p>Thumbnail</p>
+            </div>
+        </div>
+    </div>
+     
+<pre class="prettyprint linenums">
+&lt;div class="thumbnail text-center"&gt;
+     &lt;img src="img/test.png"&gt;&lt;p&gt;Thumbnail&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+
+</div> 
 
 
 
+<h1 id="ribbons" class="page-header">Ribbons</h1>
+<div class="panel">
+	<div class="panel-header">Ribbons</div>
 
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="thumbnail">
+                <div class="ribbon ribbon-left ribbon-red ribbon-over">ribbon-left</div>
+                <img src="img/test.png">
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="thumbnail">
+                <div class="ribbon ribbon-full ribbon-orange ribbon-over text-center" >ribbon-full</div>
+                <img src="img/test.png">
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="thumbnail">
+            	<div class="ribbon ribbon-right ribbon-green ribbon-over">ribbon-right</div>
+                <img src="img/test.png">
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="thumbnail">
+                <div class="ribbon ribbon-top-left ribbon-blue ribbon-over">ribbon-top-left</div>
+                <img src="img/test.png">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="thumbnail">
+            	<div class="ribbon ribbon-top-right ribbon-darkblue ribbon-over" >ribbon-top-right</div>
+                <img src="img/test.png">
+            </div>
+        </div>
+    </div>
+    
+<div class="callout callout-green">
+for use on "panels, thumbnails, popover, alert, callout and modals"
+</div>
+        
+<pre class="prettyprint linenums">
+&lt;!-- left ribbon with paddings --&gt;
+&lt;div class="ribbon ribbon-left" &gt;Title&lt;/div&gt;
+&lt;!-- left ribbon with paddings and color blue --&gt;
+&lt;div class="ribbon ribbon-left ribbon-blue" &gt;Title&lt;/div&gt;
+&lt;!-- left ribbon with  position-absolute and color blue --&gt;
+&lt;div class="ribbon ribbon-left ribbon-blue ribbon-over" &gt;Title&lt;/div&gt;
+</pre>
 
-
-
-
+</div> 
 
 
 
