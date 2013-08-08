@@ -13,17 +13,16 @@
 	
 	&:active , &.active{
 		box-shadow: 0 3px @btn-padding-topbottom/2 fade(darken(@color,30%),50%) inset;
-		outline: 0;
 	}
 	
 	&:focus{
 		.textcolor(@color);
 	}
 	
-	&[disabled] ,&.disabled {
+	&[disabled] ,&.disabled , &.active.disabled{
 		color:lighten(@color,10%);
-		box-shadow: 0;
-		cursor:not-allowed;
+		background-color:@color;
+		box-shadow: none;
 	}
 }
 
@@ -49,8 +48,12 @@
 		text-align: center;
 		width:100%;
 	}
-	
-	&:focus,&.focus{
+
+	&[disabled] ,&.disabled {
+		cursor:not-allowed;
+	}
+
+	&:focus,&.focus,&:active,&.active{
 		outline:none;
 	}
 

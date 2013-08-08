@@ -23,11 +23,9 @@
 		background: -ms-linear-gradient(45deg,  @startcolor 25%,@stopcolor 25%,@stopcolor 50%,@stopcolor 50%,@startcolor 50%,@startcolor 75%,@stopcolor 75%,@stopcolor 100%);
 		background: linear-gradient(45deg,  @startcolor 25%,@stopcolor 25%,@stopcolor 50%,@stopcolor 50%,@startcolor 50%,@startcolor 75%,@stopcolor 75%,@stopcolor 100%);
 //		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@{startcolor}', endColorstr='@{stopcolor}',GradientType=1 );
-
 		background-size:  (@progress-height * 2) (@progress-height * 2);
 
 	}
-	
 }
 	
 .progress{
@@ -49,7 +47,7 @@
 			
 		   background-position: 0 0;
 		  -webkit-animation: progress-bar 3s linear infinite;
-			 -moz-animation: progress-bar 3s linear infinite;
+//			 -moz-animation: progress-bar 3s linear infinite;
 			  -ms-animation: progress-bar 3s linear infinite;
 			   -o-animation: progress-bar 3s linear infinite;
 				  animation: progress-bar 3s linear infinite;
@@ -77,14 +75,14 @@
 
 
 
-@-moz-keyframes progress-bar {
-  from {
-    background-position: (@progress-height * -2) 0;
-  }
-  to {
-    background-position: 0 0;
-  }
-}
+//@-moz-keyframes progress-bar {
+//  from {
+//    background-position: (@progress-height * -2) 0;
+//  }
+//  to {
+//    background-position: 0 0;
+//  }
+//}
 @-webkit-keyframes progress-bar {
 	 from {
     background-position: (@progress-height * -2) 0;
@@ -102,7 +100,7 @@
   }
 }
 
-@-o-keyframes progress-bar-stripes {
+@-o-keyframes progress-bar {
   from {
  	 background-position: (@progress-height * -2) 0;
   }
@@ -111,7 +109,7 @@
   }
 }
 
-@keyframes progress-bar-stripes {
+@keyframes progress-bar {
   from {
     background-position: (@progress-height * -2) 0;
   }

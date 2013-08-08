@@ -2144,8 +2144,14 @@ label {
   text-align: center;
   width: 100%;
 }
+.btn[disabled],
+.btn.disabled {
+  cursor: not-allowed;
+}
 .btn:focus,
-.btn.focus {
+.btn.focus,
+.btn:active,
+.btn.active {
   outline: none;
 }
 .btn:hover,
@@ -2157,16 +2163,16 @@ label {
 .btn:active,
 .btn.active {
   box-shadow: 0 3px 4px rgba(90, 93, 94, 0.5) inset;
-  outline: 0;
 }
 .btn:focus {
   color: #ffffff;
 }
 .btn[disabled],
-.btn.disabled {
+.btn.disabled,
+.btn.active.disabled {
   color: #c1c2c3;
-  box-shadow: 0;
-  cursor: not-allowed;
+  background-color: #a7a9aa;
+  box-shadow: none;
 }
 .btn.btn-red {
   background-color: #d9534f;
@@ -2182,16 +2188,16 @@ label {
 .btn.btn-red:active,
 .btn.btn-red.active {
   box-shadow: 0 3px 4px rgba(118, 28, 25, 0.5) inset;
-  outline: 0;
 }
 .btn.btn-red:focus {
   color: #ffffff;
 }
 .btn.btn-red[disabled],
-.btn.btn-red.disabled {
+.btn.btn-red.disabled,
+.btn.btn-red.active.disabled {
   color: #e27c79;
-  box-shadow: 0;
-  cursor: not-allowed;
+  background-color: #d9534f;
+  box-shadow: none;
 }
 .btn.btn-orange {
   background-color: #f0ad4e;
@@ -2207,16 +2213,16 @@ label {
 .btn.btn-orange:active,
 .btn.btn-orange.active {
   box-shadow: 0 3px 4px rgba(152, 95, 13, 0.5) inset;
-  outline: 0;
 }
 .btn.btn-orange:focus {
   color: #ffffff;
 }
 .btn.btn-orange[disabled],
-.btn.btn-orange.disabled {
+.btn.btn-orange.disabled,
+.btn.btn-orange.active.disabled {
   color: #f4c37d;
-  box-shadow: 0;
-  cursor: not-allowed;
+  background-color: #f0ad4e;
+  box-shadow: none;
 }
 .btn.btn-green {
   background-color: #5cb85c;
@@ -2232,16 +2238,16 @@ label {
 .btn.btn-green:active,
 .btn.btn-green.active {
   box-shadow: 0 3px 4px rgba(37, 86, 37, 0.5) inset;
-  outline: 0;
 }
 .btn.btn-green:focus {
   color: #ffffff;
 }
 .btn.btn-green[disabled],
-.btn.btn-green.disabled {
+.btn.btn-green.disabled,
+.btn.btn-green.active.disabled {
   color: #80c780;
-  box-shadow: 0;
-  cursor: not-allowed;
+  background-color: #5cb85c;
+  box-shadow: none;
 }
 .btn.btn-blue {
   background-color: #5bc0de;
@@ -2257,16 +2263,16 @@ label {
 .btn.btn-blue:active,
 .btn.btn-blue.active {
   box-shadow: 0 3px 4px rgba(27, 109, 133, 0.5) inset;
-  outline: 0;
 }
 .btn.btn-blue:focus {
   color: #ffffff;
 }
 .btn.btn-blue[disabled],
-.btn.btn-blue.disabled {
+.btn.btn-blue.disabled,
+.btn.btn-blue.active.disabled {
   color: #85d0e7;
-  box-shadow: 0;
-  cursor: not-allowed;
+  background-color: #5bc0de;
+  box-shadow: none;
 }
 .btn.btn-darkblue {
   background-color: #428bca;
@@ -2282,16 +2288,16 @@ label {
 .btn.btn-darkblue:active,
 .btn.btn-darkblue.active {
   box-shadow: 0 3px 4px rgba(25, 60, 90, 0.5) inset;
-  outline: 0;
 }
 .btn.btn-darkblue:focus {
   color: #ffffff;
 }
 .btn.btn-darkblue[disabled],
-.btn.btn-darkblue.disabled {
+.btn.btn-darkblue.disabled,
+.btn.btn-darkblue.active.disabled {
   color: #6aa3d5;
-  box-shadow: 0;
-  cursor: not-allowed;
+  background-color: #428bca;
+  box-shadow: none;
 }
 .btn-group {
   font-size: 0;
@@ -2822,7 +2828,6 @@ label {
   height: 18px;
   background-position: 0 0;
   -webkit-animation: progress-bar 3s linear infinite;
-  -moz-animation: progress-bar 3s linear infinite;
   -ms-animation: progress-bar 3s linear infinite;
   -o-animation: progress-bar 3s linear infinite;
   animation: progress-bar 3s linear infinite;
@@ -2923,14 +2928,6 @@ label {
   background: linear-gradient(45deg, #428bca 25%, #c1d9ee 25%, #c1d9ee 50%, #c1d9ee 50%, #428bca 50%, #428bca 75%, #c1d9ee 75%, #c1d9ee 100%);
   background-size: 36px 36px;
 }
-@-moz-keyframes progress-bar {
-  from {
-    background-position: -36px 0;
-  }
-  to {
-    background-position: 0 0;
-  }
-}
 @-webkit-keyframes progress-bar {
   from {
     background-position: -36px 0;
@@ -2947,7 +2944,7 @@ label {
     background-position: 0 0;
   }
 }
-@-o-keyframes progress-bar-stripes {
+@-o-keyframes progress-bar {
   from {
     background-position: -36px 0;
   }
@@ -2955,7 +2952,7 @@ label {
     background-position: 0 0;
   }
 }
-@keyframes progress-bar-stripes {
+@keyframes progress-bar {
   from {
     background-position: -36px 0;
   }
