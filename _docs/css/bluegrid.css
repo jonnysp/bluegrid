@@ -2923,6 +2923,14 @@ label {
   background: linear-gradient(45deg, #428bca 25%, #c1d9ee 25%, #c1d9ee 50%, #c1d9ee 50%, #428bca 50%, #428bca 75%, #c1d9ee 75%, #c1d9ee 100%);
   background-size: 36px 36px;
 }
+@-moz-keyframes progress-bar {
+  from {
+    background-position: -36px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
 @-webkit-keyframes progress-bar {
   from {
     background-position: -36px 0;
