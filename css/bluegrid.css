@@ -2836,7 +2836,6 @@ label {
   background: -o-linear-gradient(45deg, #a7a9aa 25%, #fafafa 25%, #fafafa 50%, #fafafa 50%, #a7a9aa 50%, #a7a9aa 75%, #fafafa 75%, #fafafa 100%);
   background: -ms-linear-gradient(45deg, #a7a9aa 25%, #fafafa 25%, #fafafa 50%, #fafafa 50%, #a7a9aa 50%, #a7a9aa 75%, #fafafa 75%, #fafafa 100%);
   background: linear-gradient(45deg, #a7a9aa 25%, #fafafa 25%, #fafafa 50%, #fafafa 50%, #a7a9aa 50%, #a7a9aa 75%, #fafafa 75%, #fafafa 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a7a9aa', endColorstr='#fafafa', GradientType=1);
   background-size: 36px 36px;
 }
 .progress.progress-red {
@@ -2854,7 +2853,6 @@ label {
   background: -o-linear-gradient(45deg, #d9534f 25%, #f6d6d5 25%, #f6d6d5 50%, #f6d6d5 50%, #d9534f 50%, #d9534f 75%, #f6d6d5 75%, #f6d6d5 100%);
   background: -ms-linear-gradient(45deg, #d9534f 25%, #f6d6d5 25%, #f6d6d5 50%, #f6d6d5 50%, #d9534f 50%, #d9534f 75%, #f6d6d5 75%, #f6d6d5 100%);
   background: linear-gradient(45deg, #d9534f 25%, #f6d6d5 25%, #f6d6d5 50%, #f6d6d5 50%, #d9534f 50%, #d9534f 75%, #f6d6d5 75%, #f6d6d5 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d9534f', endColorstr='#f6d6d5', GradientType=1);
   background-size: 36px 36px;
 }
 .progress.progress-orange {
@@ -2872,7 +2870,6 @@ label {
   background: -o-linear-gradient(45deg, #f0ad4e 25%, #fdf3e4 25%, #fdf3e4 50%, #fdf3e4 50%, #f0ad4e 50%, #f0ad4e 75%, #fdf3e4 75%, #fdf3e4 100%);
   background: -ms-linear-gradient(45deg, #f0ad4e 25%, #fdf3e4 25%, #fdf3e4 50%, #fdf3e4 50%, #f0ad4e 50%, #f0ad4e 75%, #fdf3e4 75%, #fdf3e4 100%);
   background: linear-gradient(45deg, #f0ad4e 25%, #fdf3e4 25%, #fdf3e4 50%, #fdf3e4 50%, #f0ad4e 50%, #f0ad4e 75%, #fdf3e4 75%, #fdf3e4 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0ad4e', endColorstr='#fdf3e4', GradientType=1);
   background-size: 36px 36px;
 }
 .progress.progress-green {
@@ -2890,7 +2887,6 @@ label {
   background: -o-linear-gradient(45deg, #5cb85c 25%, #ceeace 25%, #ceeace 50%, #ceeace 50%, #5cb85c 50%, #5cb85c 75%, #ceeace 75%, #ceeace 100%);
   background: -ms-linear-gradient(45deg, #5cb85c 25%, #ceeace 25%, #ceeace 50%, #ceeace 50%, #5cb85c 50%, #5cb85c 75%, #ceeace 75%, #ceeace 100%);
   background: linear-gradient(45deg, #5cb85c 25%, #ceeace 25%, #ceeace 50%, #ceeace 50%, #5cb85c 50%, #5cb85c 75%, #ceeace 75%, #ceeace 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cb85c', endColorstr='#ceeace', GradientType=1);
   background-size: 36px 36px;
 }
 .progress.progress-blue {
@@ -2908,7 +2904,6 @@ label {
   background: -o-linear-gradient(45deg, #5bc0de 25%, #e3f4f9 25%, #e3f4f9 50%, #e3f4f9 50%, #5bc0de 50%, #5bc0de 75%, #e3f4f9 75%, #e3f4f9 100%);
   background: -ms-linear-gradient(45deg, #5bc0de 25%, #e3f4f9 25%, #e3f4f9 50%, #e3f4f9 50%, #5bc0de 50%, #5bc0de 75%, #e3f4f9 75%, #e3f4f9 100%);
   background: linear-gradient(45deg, #5bc0de 25%, #e3f4f9 25%, #e3f4f9 50%, #e3f4f9 50%, #5bc0de 50%, #5bc0de 75%, #e3f4f9 75%, #e3f4f9 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5bc0de', endColorstr='#e3f4f9', GradientType=1);
   background-size: 36px 36px;
 }
 .progress.progress-darkblue {
@@ -2926,7 +2921,6 @@ label {
   background: -o-linear-gradient(45deg, #428bca 25%, #c1d9ee 25%, #c1d9ee 50%, #c1d9ee 50%, #428bca 50%, #428bca 75%, #c1d9ee 75%, #c1d9ee 100%);
   background: -ms-linear-gradient(45deg, #428bca 25%, #c1d9ee 25%, #c1d9ee 50%, #c1d9ee 50%, #428bca 50%, #428bca 75%, #c1d9ee 75%, #c1d9ee 100%);
   background: linear-gradient(45deg, #428bca 25%, #c1d9ee 25%, #c1d9ee 50%, #c1d9ee 50%, #428bca 50%, #428bca 75%, #c1d9ee 75%, #c1d9ee 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#428bca', endColorstr='#c1d9ee', GradientType=1);
   background-size: 36px 36px;
 }
 @-moz-keyframes progress-bar {
