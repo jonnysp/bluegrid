@@ -10,14 +10,14 @@
 	.shadow(0px,0px,10px,0px, fade(darken(@color,50%),20%));
 
 	& > .modal-header{
-		.vertical-gradient(@color, darken(@color,5%)) ;
+		background-color:@color;
 		.textcolor(@color);
 	}
 
 	& > .modal-footer{
-		border-top-color:lighten(@color,16%);
+		border-top-color:@color;
 		color:@color;
-		background-color:lighten(@color,32%);
+		background-color:lighten(@color,30%);
 	}
 }
 

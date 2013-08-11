@@ -23,8 +23,8 @@
 					this.$tip.appendTo('body');
 					this.setcontent();
 					this.$visible = true;
+					this.$tip.show();
 				    this.setpos();
-				    this.$tip.show();
 
 				},
 				

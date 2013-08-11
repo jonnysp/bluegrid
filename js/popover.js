@@ -58,8 +58,9 @@
 					this.$popover.appendTo('body');
 					this._setcontent();
 					this.$visible = true;
+					this.$popover.show();
 				    this._setpos();
-				    this.$popover.show();
+				    
 					
 				},
 				
