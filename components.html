@@ -43,6 +43,8 @@
                 <li><a href="#thumbnails">Thumbnails</a></li>
                 <li><a href="#ribbons">Ribbons</a></li>
                 <li><a href="#shadows">Shadows</a></li>
+                <li><a href="#panels">Panels</a></li>
+                <li><a href="#progress">Progress</a></li>
             </ul>
         </div>
         
@@ -207,11 +209,11 @@ for use on "panels, thumbnails, popover, alert, callout and modals"
 </div>
         
 <pre class="prettyprint linenums">
-&lt;!-- left ribbon with paddings --&gt;
+&lt;!-- left ribbon with margins --&gt;
 &lt;div class="ribbon ribbon-left" &gt;Title&lt;/div&gt;
-&lt;!-- left ribbon with paddings and color blue --&gt;
+&lt;!-- left ribbon with margins and  blue color--&gt;
 &lt;div class="ribbon ribbon-left ribbon-blue" &gt;Title&lt;/div&gt;
-&lt;!-- left ribbon with  position-absolute and color blue --&gt;
+&lt;!-- left ribbon with position-absolute and blue color --&gt;
 &lt;div class="ribbon ribbon-left ribbon-blue ribbon-over" &gt;Title&lt;/div&gt;
 </pre>
 
@@ -222,19 +224,19 @@ for use on "panels, thumbnails, popover, alert, callout and modals"
 
             <div class="row">
               <div class="col-sm-4">
-              	<div class="thumbnail shadow shadow-top">
+              	<div class="thumbnail shadow shadow-top text-center">
                     <img src="img/test.png">
                     <br><p>shadow shadow-top</p>
                 </div>
               </div>
               <div class="col-sm-4">
-              	<a href="#" class="thumbnail shadow shadow-top shadow-bottom ">
+              	<a href="#" class="thumbnail shadow shadow-top shadow-bottom text-center">
                     <img src="img/test.png">
                     <br><p>shadow shadow-top shadow-bottom</p>
                 </a>
               </div>
               <div class="col-sm-4">
-              	<div class="thumbnail shadow shadow-bottom">
+              	<div class="thumbnail shadow shadow-bottom text-center">
                      <img src="img/test.png">
                      <br><p>shadow shadow-bottom</p>
                 </div>
@@ -243,19 +245,19 @@ for use on "panels, thumbnails, popover, alert, callout and modals"
             
 
             <div class="row">
-              <div class="col-sm-4"><div class="thumbnail shadow shadow-left">               
+              <div class="col-sm-4"><div class="thumbnail shadow shadow-left text-center">               
                   	<img src="img/test.png">
                     <br><p>shadow shadow-left</p>
                   </div>
               </div>
               <div class="col-sm-4">
-                  <a href="#" class="thumbnail shadow shadow-left shadow-right">
+                  <a href="#" class="thumbnail shadow shadow-left shadow-right text-center">
                      <img src="img/test.png">
                      <br><p>shadow shadow-left shadow-right</p>
                   </a>
               </div>
               <div class="col-sm-4">
-              	<div class="thumbnail shadow shadow-right">
+              	<div class="thumbnail shadow shadow-right text-center">
                   	<img src="img/test.png">
                     <br><p>shadow shadow-right</p>
                   </div>
@@ -263,48 +265,53 @@ for use on "panels, thumbnails, popover, alert, callout and modals"
             </div>
 
             <div class="row">
-              <div class="col-lg-3">
-              	<div class="thumbnail shadow shadow-curl-top">
+              <div class="col-lg-3 col-sm-6">
+              	<div class="thumbnail shadow shadow-curl-top text-center">
                 	<img src="img/test.png">
                     <br><p>shadow shadow-curl-top</p></div></div>
-              <div class="col-lg-3">
-              	<div class="thumbnail shadow shadow-curl-bottom ">
+              <div class="col-lg-3 col-sm-6">
+              	<div class="thumbnail shadow shadow-curl-bottom text-center">
                 	<img src="img/test.png">
                     <br><p>shadow shadow-curl-bottom</p></div></div>
- 			  <div class="col-lg-3">
-              	<div class="thumbnail shadow shadow-curl-left">
+ 			  <div class="col-lg-3 col-sm-6">
+              	<div class="thumbnail shadow shadow-curl-left text-center">
                 	<img src="img/test.png">
                     <br><p>shadow shadow-curl-left</p></div></div>
-              <div class="col-lg-3">
-              	<div class="thumbnail shadow shadow-curl-right">
+              <div class="col-lg-3 col-sm-6">
+              	<div class="thumbnail shadow shadow-curl-right text-center">
                 	<img src="img/test.png">
                     <br><p>shadow shadow-curl-right</p></div></div>
             </div>
             
 
             <div class="row">
-              <div class="col-lg-3">
-              	<div class="thumbnail shadow shadow-flip-top">
+              <div class="col-lg-3 col-sm-6">
+              	<div class="thumbnail shadow shadow-flip-top text-center">
                 	<img src="img/test.png">
                     <br><p>shadow shadow-flip-top</p></div></div>
-              <div class="col-lg-3">
-              	<div class="thumbnail shadow shadow-flip-bottom">
+              <div class="col-lg-3 col-sm-6">
+              	<div class="thumbnail shadow shadow-flip-bottom text-center">
                 	<img src="img/test.png">
                     <br><p>shadow shadow-flip-bottom</p></div></div>
-              <div class="col-lg-3">
-              	<div class="thumbnail shadow shadow-flip-left">
+              <div class="col-lg-3 col-sm-6">
+              	<div class="thumbnail shadow shadow-flip-left text-center">
                 	<img src="img/test.png">
                     <br><p>shadow shadow-flip-left</p></div></div>
-              <div class="col-lg-3">
-              	<div class="thumbnail shadow shadow-flip-right">
+              <div class="col-lg-3 col-sm-6">
+              	<div class="thumbnail shadow shadow-flip-right text-center">
                 	<img src="img/test.png">
                     <br><p>shadow shadow-flip-right</p></div></div>
             </div>
             
+<pre class="prettyprint linenums">
+
+</pre>
+
+<!-- end shadows-->
 
 
 
-
+<!-- panels-->
 <h1 id="panels" class="page-header">Panels</h1>
 
     <div class="row">
@@ -323,7 +330,7 @@ for use on "panels, thumbnails, popover, alert, callout and modals"
             </div>
         </div>
         <div class="col-sm-4">
-            <div class="panel panel-green">
+            <div class="panel panel-orange">
             	<div class="panel-header">.panel-header</div>
                 some content
                 <div class="panel-footer">.panel-footer</div>
@@ -332,14 +339,21 @@ for use on "panels, thumbnails, popover, alert, callout and modals"
     </div>
     
     <div class="row">
-        <div class="col-sm-6">
-            <div class="panel panel-blue">
+        <div class="col-sm-4">
+            <div class="panel panel-green">
             	<div class="panel-header">.panel-header</div>
                 some content
                 <div class="panel-footer">.panel-footer</div>
           	</div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
+            <div class="panel panel-blue">
+            	<div class="panel-header">.panel-header</div>
+                some content
+                <div class="panel-footer">.panel-footer</div>
+            </div>
+        </div>
+         <div class="col-sm-4">
             <div class="panel panel-darkblue">
             	<div class="panel-header">.panel-header</div>
                 some content
@@ -352,6 +366,167 @@ for use on "panels, thumbnails, popover, alert, callout and modals"
 <pre class="prettyprint linenums">
 
 </pre>
+
+<!-- end panels-->
+
+
+
+<!-- alerts-->
+<h1 id="alerts" class="page-header">Alerts</h1>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="alert">
+                some content
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="alert alert-red">
+                some content
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="alert alert-orange">
+                some content
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="alert alert-green">
+                some content
+          	</div>
+        </div>
+        <div class="col-sm-4">
+            <div class="alert alert-blue">
+                some content
+            </div>
+        </div>
+         <div class="col-sm-4">
+            <div class="alert alert-darkblue">
+                some content
+            </div>
+        </div>
+    </div>
+    
+        
+<pre class="prettyprint linenums">
+
+</pre>
+
+<!-- end alert-->
+
+
+<!-- callouts-->
+<h1 id="callouts" class="page-header">Callout</h1>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="callout">
+                some content
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="callout callout-red">
+                some content
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="callout callout-orange">
+                some content
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="callout callout-green">
+                some content
+          	</div>
+        </div>
+        <div class="col-sm-4">
+            <div class="callout callout-blue">
+                some content
+            </div>
+        </div>
+         <div class="col-sm-4">
+            <div class="callout callout-darkblue">
+                some content
+            </div>
+        </div>
+    </div>
+    
+        
+<pre class="prettyprint linenums">
+
+</pre>
+
+<!-- end callout-->
+
+
+
+
+
+
+<!-- progress-->
+<h1 id="progress" class="page-header">Progressbars</h1>
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="progress">
+        	<div class="progress-bar" style="width:80%;"></div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-10">
+        <div class="progress progress-red">
+        	<div class="progress-bar" style="width:80%;"></div>
+        </div>
+    </div>
+    <div class="col-2"></div>
+</div>
+<div class="row">
+    <div class="col-8">
+        <div class="progress progress-orange">
+        	<div class="progress-bar" style="width:80%;"></div>
+        </div>
+    </div>
+    <div class="col-4"></div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <div class="progress progress-green">
+        	<div class="progress-bar" style="width:80%;"></div>
+        </div>
+    </div>
+    <div class="col-6"></div>
+</div>
+<div class="row">
+    <div class="col-4">
+        <div class="progress progress-blue">
+        	<div class="progress-bar" style="width:80%;"></div>
+        </div>
+    </div>
+    <div class="col-8"></div>
+</div>
+<div class="row">
+    <div class="col-2">
+        <div class="progress progress-darkblue">
+        	<div class="progress-bar" style="width:80%;"></div>
+        </div>
+    </div>
+    <div class="col-10"></div>
+</div>
+
+<pre class="prettyprint linenums">
+
+</pre>
+<!-- end progress-->
+
+
 
 
 
