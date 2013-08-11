@@ -4,24 +4,38 @@
 .gen-callout(@color:@default){
 	color:@color;
 	background-color:lighten(@color,32%);
-	border-color:lighten(@color,32%);
+	border-right-color:lighten(@color,32%);
 	border-left-color:@color;
-	//.shadow(@contentpadding,0,0,0, @color, inset);
 }
 
 .callout{
-
+	
+	display:block;
+	position:relative;
 	margin:0 0 @contentpadding 0;
 	padding:@contentpadding;
 	
-	border-width:@border-width;
+	border-right-width:@border-width;
+	border-right-style:solid;
+
 	border-left-width:@contentpadding;
-	border-style:solid;
+	border-left-style:solid;
 
 	& > .ribbon.ribbon-left , & > .ribbon.ribbon-full{
-		margin-left: (@contentpadding * 3 )* -1;
+		margin-left: @contentpadding * -3;
+		&.ribbon-over{
+			margin-left:0;
+			left: @contentpadding * -2 ;
+		}
 	}
 	
+	& > .ribbon.ribbon-top-right,& > .ribbon.ribbon-top-left {
+		margin-top: @contentpadding * -2;
+		&.ribbon-over{
+			margin-top:0;
+			top: @contentpadding * -1 ;
+		}
+	}
 	
 	.gen-callout();
 

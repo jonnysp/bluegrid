@@ -8,7 +8,7 @@
 	border-color: @color;
 	.shadow(0px,3px,@btn-padding-topbottom/2,0px, fade(@color,50%) ,inset);
 	
-	&> .bar{
+	&> .progress-bar{
 
 		border-right:@progress-border-width solid @color;;
 		
@@ -31,7 +31,7 @@
 .progress{
 
 		margin:( @line-height - @progress-height - 2 ) / 2  0;
-	
+
 		display:block;
 		height:@progress-height;
 		.roundcorner(@progress-corner-radius);
@@ -40,7 +40,7 @@
 		border-width: @progress-border-width;
 		border-style: solid;
 
-		&> .bar{
+		&> .progress-bar{
 			display:block;
 			float:left;
 			height:@progress-height;
