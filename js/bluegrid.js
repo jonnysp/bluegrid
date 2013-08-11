@@ -160,8 +160,9 @@ $(document).ready(function(){
 					this.$popover.appendTo('body');
 					this._setcontent();
 					this.$visible = true;
+					this.$popover.show();
 				    this._setpos();
-				    this.$popover.show();
+				    
 					
 				},
 				
@@ -262,8 +263,8 @@ $(document).ready(function(){
 					this.$tip.appendTo('body');
 					this.setcontent();
 					this.$visible = true;
+					this.$tip.show();
 				    this.setpos();
-				    this.$tip.show();
 
 				},
 				
