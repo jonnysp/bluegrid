@@ -1,5 +1,5 @@
 
-@dropdown-item-padding:3px;
+@dropdown-item-padding:@contentpadding / 2;
 @dropdown-arrow-width: @contentpadding;
 
 .gen-dropdown(@color:@default){
@@ -21,7 +21,8 @@
 	&> li{
 	
 		&:hover,&:active:hover,&.active:hover,&:active,&.active{
-			.vertical-gradient(@color, darken(@color,5%)) ;
+			background-color:@color;
+			//.vertical-gradient(@color, darken(@color,5%)) ;
 			&> a ,&> span{
 				.textcolor(@color);
 			}

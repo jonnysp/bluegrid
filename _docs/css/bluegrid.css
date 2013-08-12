@@ -2462,7 +2462,7 @@ label {
   text-decoration: none;
   color: #333333;
   display: block;
-  padding: 3px 14px;
+  padding: 5px 14px;
 }
 .dropdown > li.divider {
   margin: 5px 0;
@@ -2484,7 +2484,7 @@ label {
   -webkit-border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
-  margin-top: -32px;
+  margin-top: -36px;
   left: 100%;
   display: none;
 }
@@ -2506,12 +2506,7 @@ label {
 .dropdown > li.active:hover,
 .dropdown > li:active,
 .dropdown > li.active {
-  background: #a7a9aa;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a7a9aa), color-stop(100%, #9a9c9d));
-  background: -webkit-linear-gradient(top, #a7a9aa 0%, #9a9c9d 100%);
-  background: -o-linear-gradient(top, #a7a9aa 0%, #9a9c9d 100%);
-  background: -ms-linear-gradient(top, #a7a9aa 0%, #9a9c9d 100%);
-  background: linear-gradient(to bottom, #a7a9aa 0%, #9a9c9d 100%);
+  background-color: #a7a9aa;
 }
 .dropdown > li:hover > a,
 .dropdown > li:active:hover > a,
@@ -2547,12 +2542,7 @@ label {
 .dropdown.dropdown-red > li.active:hover,
 .dropdown.dropdown-red > li:active,
 .dropdown.dropdown-red > li.active {
-  background: #d9534f;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d9534f), color-stop(100%, #d43f3a));
-  background: -webkit-linear-gradient(top, #d9534f 0%, #d43f3a 100%);
-  background: -o-linear-gradient(top, #d9534f 0%, #d43f3a 100%);
-  background: -ms-linear-gradient(top, #d9534f 0%, #d43f3a 100%);
-  background: linear-gradient(to bottom, #d9534f 0%, #d43f3a 100%);
+  background-color: #d9534f;
 }
 .dropdown.dropdown-red > li:hover > a,
 .dropdown.dropdown-red > li:active:hover > a,
@@ -2588,12 +2578,7 @@ label {
 .dropdown.dropdown-orange > li.active:hover,
 .dropdown.dropdown-orange > li:active,
 .dropdown.dropdown-orange > li.active {
-  background: #f0ad4e;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f0ad4e), color-stop(100%, #eea236));
-  background: -webkit-linear-gradient(top, #f0ad4e 0%, #eea236 100%);
-  background: -o-linear-gradient(top, #f0ad4e 0%, #eea236 100%);
-  background: -ms-linear-gradient(top, #f0ad4e 0%, #eea236 100%);
-  background: linear-gradient(to bottom, #f0ad4e 0%, #eea236 100%);
+  background-color: #f0ad4e;
 }
 .dropdown.dropdown-orange > li:hover > a,
 .dropdown.dropdown-orange > li:active:hover > a,
@@ -2629,12 +2614,7 @@ label {
 .dropdown.dropdown-green > li.active:hover,
 .dropdown.dropdown-green > li:active,
 .dropdown.dropdown-green > li.active {
-  background: #5cb85c;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5cb85c), color-stop(100%, #4cae4c));
-  background: -webkit-linear-gradient(top, #5cb85c 0%, #4cae4c 100%);
-  background: -o-linear-gradient(top, #5cb85c 0%, #4cae4c 100%);
-  background: -ms-linear-gradient(top, #5cb85c 0%, #4cae4c 100%);
-  background: linear-gradient(to bottom, #5cb85c 0%, #4cae4c 100%);
+  background-color: #5cb85c;
 }
 .dropdown.dropdown-green > li:hover > a,
 .dropdown.dropdown-green > li:active:hover > a,
@@ -2670,12 +2650,7 @@ label {
 .dropdown.dropdown-blue > li.active:hover,
 .dropdown.dropdown-blue > li:active,
 .dropdown.dropdown-blue > li.active {
-  background: #5bc0de;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5bc0de), color-stop(100%, #46b8da));
-  background: -webkit-linear-gradient(top, #5bc0de 0%, #46b8da 100%);
-  background: -o-linear-gradient(top, #5bc0de 0%, #46b8da 100%);
-  background: -ms-linear-gradient(top, #5bc0de 0%, #46b8da 100%);
-  background: linear-gradient(to bottom, #5bc0de 0%, #46b8da 100%);
+  background-color: #5bc0de;
 }
 .dropdown.dropdown-blue > li:hover > a,
 .dropdown.dropdown-blue > li:active:hover > a,
@@ -2711,12 +2686,7 @@ label {
 .dropdown.dropdown-darkblue > li.active:hover,
 .dropdown.dropdown-darkblue > li:active,
 .dropdown.dropdown-darkblue > li.active {
-  background: #428bca;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #428bca), color-stop(100%, #357ebd));
-  background: -webkit-linear-gradient(top, #428bca 0%, #357ebd 100%);
-  background: -o-linear-gradient(top, #428bca 0%, #357ebd 100%);
-  background: -ms-linear-gradient(top, #428bca 0%, #357ebd 100%);
-  background: linear-gradient(to bottom, #428bca 0%, #357ebd 100%);
+  background-color: #428bca;
 }
 .dropdown.dropdown-darkblue > li:hover > a,
 .dropdown.dropdown-darkblue > li:active:hover > a,
