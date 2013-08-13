@@ -6,25 +6,26 @@
 	.textcolor(@color);
 	.shadow(0,0,5px,0px, fade(darken(@color,50%),50%));
 
+	@arrow-color:darken(@color,20%);
+
 	&.ribbon-full{
 		&:before,&:after {
-			border-top-color:darken(@color,32%);
-			
+			border-top-color:@arrow-color;
 		}
 	}
 	
 	&.ribbon-left,&.ribbon-right{
 		&:before {
-			border-top-color:darken(@color,32%);
+			border-top-color:@arrow-color;
 		}
 	}
 
 	&.ribbon-top-left:before{
-		border-left-color:darken(@color,32%);
+		border-left-color:@arrow-color;
 	}
 	
 	&.ribbon-top-right:before{
-		border-right-color:darken(@color,32%);
+		border-right-color:@arrow-color;
 	}
 }
 
