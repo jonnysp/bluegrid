@@ -25,6 +25,7 @@
 			
 			show: function() {
 					if (this.$target.length > 0){
+						$('html').css({overflowX:'hidden'});
 						this.$target.addClass('in');
 						this.hide(this.$close);
 					}
@@ -32,6 +33,7 @@
 			
 			hide: function(elm) {
 				if (elm.length > 0){
+					$('html').css({overflowX:'auto'});
 					elm.removeClass('in');
 				}
 			}

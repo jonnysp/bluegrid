@@ -47,6 +47,8 @@
                 <li><a href="#alerts">Alerts</a></li>
                 <li><a href="#callouts">Callout</a></li>
                 <li><a href="#progress">Progress</a></li>
+                <li><a href="#tabs">Nav Tabs</a></li>
+                <li><a href="#pills">Nav Pills</a></li>
             </ul>
         </div>
         
@@ -366,7 +368,11 @@ for use on "panels, thumbnails, popover, alert, callout and modals"
     
         
 <pre class="prettyprint linenums">
-
+&lt;div class="panel panel-darkblue"&gt;
+    &lt;div class="panel-header"&gt;...&lt;/div&gt;
+    ...
+    &lt;div class="panel-footer"&gt;...&lt;/div&gt;
+&lt;/div&gt;
 </pre>
 
 <!-- end panels-->
@@ -414,7 +420,9 @@ for use on "panels, thumbnails, popover, alert, callout and modals"
     
         
 <pre class="prettyprint linenums">
-
+&lt;div class="alert alert-blue"&gt;
+    ...
+&lt;/div&gt;
 </pre>
 
 <!-- end alert-->
@@ -461,7 +469,9 @@ for use on "panels, thumbnails, popover, alert, callout and modals"
     
         
 <pre class="prettyprint linenums">
-
+&lt;div class="callout callout-orange"&gt;
+      ...
+&lt;/div&gt;
 </pre>
 
 <!-- end callout-->
@@ -523,15 +533,126 @@ for use on "panels, thumbnails, popover, alert, callout and modals"
     <div class="col-10"></div>
 </div>
 
-<pre class="prettyprint linenums">
+<div>
 
+<button class="btn" id="animateprogress">animate</button>
+<script>
+$(document).ready(function(e) {
+	
+	$('#animateprogress').click(function(e) {
+		$('.progress-bar').each(function() {
+			$(this).animate(
+				{width: ''+(Math.floor(Math.random() * 75) + 25) +'%'},
+				{queue: false , 
+					duration: Math.random() * 5000, 
+					step: function( now, fx ) { 
+							var width = $(fx.elem).width();
+							var parentWidth = $(fx.elem).parent().width();
+							var percent = Math.round(100*width/parentWidth);
+							$(this).html( percent + ' %');
+					}
+				}
+			)}); 
+	});
+	
+});
+</script>
+</div>
+
+
+<pre class="prettyprint linenums">
+&lt;div class="progress progress-green"&gt;
+     &lt;div class="progress-bar" style="width:80%;"&gt;80 %&lt;/div&gt;
+&lt;/div&gt;
 </pre>
 <!-- end progress-->
 
 
 
 
+<h1 id="tabs" class="page-header">Nav Tabs</h1>
 
+ <br>
+ 
+          <ul class="nav-tabs">
+          	<li><a href="#">Tab 1</a></li>            
+            <li class="active"><a href="#">Tab 2</a></li> 
+            <li><a href="#">Tab 3</a></li> 
+            <li><a href="#">Tab 4</a></li> 
+            <li><a href="#">Tab 5</a></li>  
+ 
+          </ul>
+          
+<pre class="prettyprint linenums">
+&lt;ul class="nav-tabs"&gt;
+     &lt;li class="active"&gt;&lt;a href="#"&gt;Tab 1&lt;/a&gt;&lt;/li&gt;            
+     &lt;li&gt;&lt;a href="#"&gt;Tab 2&lt;/a&gt;&lt;/li&gt; 
+     ...
+&lt;/ul&gt;
+</pre>   
+   
+          <ul class="nav-tabs nav-tabs-justified">
+          	<li><a href="#">Tab 1</a></li>            
+            <li><a href="#">Tab 2</a></li> 
+            <li class="active"><a href="#">Tab 3</a></li> 
+            <li><a href="#">Tab 4</a></li> 
+            <li><a href="#">Tab 5</a></li>  
+          </ul>
+<pre class="prettyprint linenums">
+&lt;ul class="nav-tabs nav-tabs-justified"&gt;
+     &lt;li class="active"&gt;&lt;a href="#"&gt;Tab 1&lt;/a&gt;&lt;/li&gt;            
+     &lt;li&gt;&lt;a href="#"&gt;Tab 2&lt;/a&gt;&lt;/li&gt; 
+     ...
+&lt;/ul&gt;
+</pre>     
+
+
+<h1 id="pills" class="page-header">Nav Pills</h1>
+
+
+ <ul class="nav-pills">
+    <li class="active"><a href="#">Pill 1</a></li>            
+    <li><a href="#">Pill 2</a></li> 
+    <li><a href="#">Pill 3</a></li> 
+    <li><a href="#">Pill 4</a></li> 
+    <li><a href="#">Pill 5</a></li>  
+ </ul>
+<pre class="prettyprint linenums">
+&lt;ul class="nav-pills"&gt;
+    &lt;li class="active"&gt;&lt;a href="#"&gt;Pill 1&lt;/a&gt;&lt;/li&gt;            
+    &lt;li&gt;&lt;a href="#"&gt;Pill 2&lt;/a&gt;&lt;/li&gt; 
+    ... 
+&lt;/ul&gt;
+</pre>
+
+ <ul class="nav-pills nav-pills-justified">
+    <li class="active"><a href="#">Pill 1</a></li>            
+    <li><a href="#">Pill 2</a></li> 
+    <li><a href="#">Pill 3</a></li> 
+    <li><a href="#">Pill 4</a></li> 
+    <li><a href="#">Pill 5</a></li>  
+ </ul>
+ <pre class="prettyprint linenums">
+&lt;ul class="nav-pills nav-pills-justified"&gt;
+    &lt;li class="active"&gt;&lt;a href="#"&gt;Pill 1&lt;/a&gt;&lt;/li&gt;            
+    &lt;li&gt;&lt;a href="#"&gt;Pill 2&lt;/a&gt;&lt;/li&gt; 
+    ...
+&lt;/ul&gt;
+</pre> 
+ <ul class="nav-pills nav-pills-vertical">
+    <li class="active"><a href="#">Pill 1</a></li>            
+    <li><a href="#">Pill 2</a></li> 
+    <li><a href="#">Pill 3</a></li> 
+    <li><a href="#">Pill 4</a></li> 
+    <li><a href="#">Pill 5</a></li>  
+ </ul>
+<pre class="prettyprint linenums">
+&lt;ul class="nav-pills nav-pills-vertical"&gt;
+    &lt;li class="active"&gt;&lt;a href="#"&gt;Pill 1&lt;/a&gt;&lt;/li&gt;            
+    &lt;li&gt;&lt;a href="#"&gt;Pill 2&lt;/a&gt;&lt;/li&gt; 
+    ...
+&lt;/ul&gt;
+</pre>
 
 
 
