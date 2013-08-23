@@ -1041,7 +1041,7 @@ body {
   overflow-x: hidden;
 }
 .container {
-  padding: 0 10px;
+  padding: 0 20px;
 }
 @media all and (max-width: 1170px) {
   .container {
@@ -2764,8 +2764,15 @@ label {
   min-height: 20px;
   text-align: center;
   font-weight: bolder;
-  overflow: hidden;
   white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  /* Required for IE8 */
+
+  -o-text-overflow: ellipsis;
+  /* Required for Opera */
+
+  text-overflow: ellipsis;
   background-position: 0 0;
   -webkit-animation: progress-bar 3s linear infinite;
   -ms-animation: progress-bar 3s linear infinite;
@@ -3770,7 +3777,7 @@ a.thumbnail:focus {
 }
 @media (max-width: 768px) {
   .modal {
-    padding: 10px;
+    padding: 20px;
   }
 }
 .modal.in {
@@ -3779,7 +3786,7 @@ a.thumbnail:focus {
 .modal > .panel {
   position: relative;
   z-index: 1050;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   margin-left: -280px;
   width: 560px;
   left: 50%;
