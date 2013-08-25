@@ -1,37 +1,33 @@
 @table-padding:8px 10px;
 
 
-
-
-
-
 .gen-table(@color:@default){
 	
 	 
 	
-	& > tbody > tr > th{
-//		background-color:lighten(@color,10%);
-//		.textcolor(lighten(@color,10%));
-	}
-
-	& > thead{
-	 	background-color:@color;
+	& > tbody > tr > th,& > thead{
+		background-color:@color;
 		.textcolor(@color);
 	}
+
 	
 	& > tfoot{
 		color:@color;
 		background-color:lighten(@color,30%);
 	}
+	
 	th,td{
 		border-top:@border-width solid @color;
 	}
 	
-	&.table-striped{
-		tr:nth-child(even) {
+	&.table-striped tr:nth-child(even){
 		  background-color: lighten(@color,20%);
-		}
 	}
+	
+	&.table-striped-vertical colgroup > col:nth-child(even) {
+		background-color: lighten(@color,20%);
+	}
+	
 	&.table-hover{
 		tbody > tr:hover {
 		  background-color: lighten(@color,30%);
@@ -41,8 +37,7 @@
 	
 	&.table-borderd{
 		border:@border-width solid @color;
-		
-		th,td{
+		td{
 			border:@border-width solid @color;
 			
 		}
@@ -53,16 +48,11 @@
 
 
 
-
-
-
-
-.table-justified {
+.table-respositive {
 	overflow-x: auto;
 	width:100%; 
 	white-space:nowrap;
 }
-
 
 .table{
 	
@@ -70,20 +60,12 @@
 	text-align:left;
 	vertical-align:top;
 	border-collapse: collapse;
-	//border-spacing:0;
 
 	& > caption{
 		font-weight:bold;
 		text-transform:uppercase;
 	}
 
-//	& > tfoot:last-child > tr:last-child > th,& > tfoot:last-child > tr:last-child > td,
-//	& > tbody:last-child > tr:last-child > th,& > tbody:last-child > tr:last-child > td {
-//		border-bottom:0;
-//	}
-//	
-
-	
 	& > tbody{
 		overflow-x: auto;	
 		border-collapse: collapse;
