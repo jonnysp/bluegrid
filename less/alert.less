@@ -1,8 +1,3 @@
-//alertsettings
-@alert-corner-radius: @corner-radius;
-@alert-padding: 	  (@line-height / 2);
-@alert-boarder-width: @border-width;
-//------------------------------------
 
 .gen-alert(@color:@default){
 	color:@color;
@@ -13,11 +8,11 @@
 .alert{
 	
 	position:relative;
-	margin:@alert-padding 0;
+	margin-bottom:@contentpadding;
 	padding:@contentpadding;
-	border-width: @alert-boarder-width;
+	border-width: @border-width;
 	border-style: solid;
-	.roundcorner(@alert-corner-radius);
+	.roundcorner(@corner-radius);
 
 //    & > .content{
 //		&>:first-child { margin-top: 0; }

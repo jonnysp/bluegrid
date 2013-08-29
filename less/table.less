@@ -1,15 +1,11 @@
-@table-padding:8px 10px;
 
 
 .gen-table(@color:@default){
-	
-	 
 	
 	& > tbody > tr > th,& > thead{
 		background-color:@color;
 		.textcolor(@color);
 	}
-
 	
 	& > tfoot{
 		color:@color;
@@ -60,6 +56,7 @@
 	text-align:left;
 	vertical-align:top;
 	border-collapse: collapse;
+	margin-bottom:@contentpadding;
 
 	& > caption{
 		font-weight:bold;
@@ -74,7 +71,7 @@
 	th,td{
 		text-align:left;
 		vertical-align:top;
-		padding:@table-padding;
+		padding:@padding-vertical @padding-horizontal;
 	}
 	
 

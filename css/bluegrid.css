@@ -769,7 +769,7 @@ a:focus {
 }
 .ribbon {
   position: relative;
-  padding: 10px;
+  padding: 8px 10px;
   z-index: 1;
   display: block;
   background-color: #a7a9aa;
@@ -1334,6 +1334,7 @@ body {
   text-align: left;
   vertical-align: top;
   border-collapse: collapse;
+  margin-bottom: 10px;
 }
 .table > caption {
   font-weight: bold;
@@ -1531,9 +1532,9 @@ fieldset {
 legend {
   border-bottom: 1px solid #dddddd;
   display: block;
-  font-size: 18px;
   width: 100%;
-  margin-bottom: 16px;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 label {
   display: block;
@@ -1543,7 +1544,7 @@ label {
   display: block;
   width: 100%;
   border: 1px solid #dddddd;
-  padding: 8px;
+  padding: 8px 10px;
   color: #333333;
   background-color: #ffffff;
   -webkit-border-radius: 5px;
@@ -2296,7 +2297,7 @@ label {
   line-height: 20px;
   text-decoration: none;
   display: inline-block;
-  padding: 8px 10px;
+  padding: 8px 8px;
   cursor: pointer;
   border: 0px solid transparent;
   white-space: nowrap;
@@ -3131,7 +3132,7 @@ a.thumbnail:focus {
 }
 .tip {
   z-index: 2000;
-  padding: 5px 10px;
+  padding: 8px 10px;
   position: absolute;
   display: none;
   font-size: 14px;
@@ -3574,7 +3575,7 @@ a.thumbnail:focus {
 }
 .alert {
   position: relative;
-  margin: 10px 0;
+  margin-bottom: 10px;
   padding: 10px;
   border-width: 1px;
   border-style: solid;
@@ -3612,7 +3613,7 @@ a.thumbnail:focus {
 .callout {
   display: block;
   position: relative;
-  margin: 0 0 10px 0;
+  margin-bottom: 10px;
   padding: 10px;
   border-right-width: 1px;
   border-right-style: solid;
