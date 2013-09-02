@@ -44,11 +44,7 @@
 
 
 
-.table-respositive {
-	overflow-x: auto;
-	width:100%; 
-	white-space:nowrap;
-}
+
 
 .table{
 	
@@ -97,4 +93,14 @@
 		.gen-table(@darkblue);
 	}
 	
+}
+
+.table-respositive {
+	overflow-x: auto;
+	width:100%; 
+	white-space:nowrap;
+	margin-bottom:@contentpadding;
+	& > .table{
+		margin-bottom:0;
+	}
 }

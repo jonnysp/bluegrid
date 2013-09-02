@@ -1324,11 +1324,6 @@ body {
     margin-left: 8.333333333333332%;
   }
 }
-.table-respositive {
-  overflow-x: auto;
-  width: 100%;
-  white-space: nowrap;
-}
 .table {
   width: 100%;
   text-align: left;
@@ -1523,6 +1518,15 @@ body {
 }
 .table.table-darkblue.table-borderd td {
   border: 1px solid #428bca;
+}
+.table-respositive {
+  overflow-x: auto;
+  width: 100%;
+  white-space: nowrap;
+  margin-bottom: 10px;
+}
+.table-respositive > .table {
+  margin-bottom: 0;
 }
 fieldset {
   border: 0px;
