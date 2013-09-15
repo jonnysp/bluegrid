@@ -1,7 +1,7 @@
 
 .gen-btn(@color:@default){
 	background-color:@color;
-	border-color: transparent;
+	border-color:darken(@color,10%);
 	.textcolor(@color);
 
 	&:hover,&.hover,&:active,&.active {
@@ -35,7 +35,7 @@
 	display: inline-block;	
 	padding:@padding-vertical @padding-vertical;	
 	cursor: pointer;
-	border: 0px solid transparent;
+	border: @border-width solid @default;
 	white-space:nowrap;
 	.roundcorner(@corner-radius);
 	margin-bottom: @contentpadding;
@@ -101,7 +101,8 @@
 
 	
 	& > .btn{
-	  margin-bottom: 0;
+	   margin-right:@border-width * -1;
+	   margin-bottom: 0;
 	  .roundcorner();
 		&:first-child{
 			.roundcorner-left(@corner-radius);
@@ -125,6 +126,7 @@
 			width:100%;
 			float:none;
 			display:block;
+			margin-bottom:@border-width * -1;
 			
 			&:first-child{
 				.roundcorner-top(@corner-radius);
