@@ -4269,6 +4269,30 @@ a.thumbnail:focus {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
+.nav-bar {
+  display: block;
+  background-color: #a7a9aa;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.nav-bar > .nav-bar-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+.nav-bar > .nav-bar-nav > li {
+  display: inline-block;
+}
+.nav-bar > .nav-bar-nav > li > a {
+  padding: 8px 10px;
+  display: block;
+  text-decoration: none;
+  color: #404040;
+}
+.nav-bar > .nav-bar-nav > li > a:hover {
+  background-color: #8d9091;
+}
 .modal {
   position: fixed;
   top: 0;

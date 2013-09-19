@@ -1,5 +1,33 @@
 
 .nav-bar{
+	display:block;
+	background-color:@default;
+	.roundcorner(@corner-radius);
+	
+	&>.nav-bar-nav{
+		list-style:none;
+		
+		margin:0;
+		padding:0;
+		display:block;
+		
+		& > li {
+			display:inline-block;
+			
+			& > a{
+				padding:@padding-vertical @padding-horizontal;
+				display:block;
+				text-decoration: none;
+				.textcolor(@body-background);
+			}
+			
+			& > a:hover{
+				background-color:darken(@default,10%);
+			}
+			
+		}
+	
+	}
 	
 }
 
