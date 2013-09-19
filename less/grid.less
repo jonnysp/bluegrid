@@ -9,7 +9,7 @@ body{
 
 .container {	
 	padding:0 @grid-column-padding;
-	@media all and (max-width: @desktop-width) {
+	@media (max-width: @desktop-width) {
 		max-width: 100%;
 	}
 	@media all and (min-width: @desktop-width) {
@@ -21,7 +21,6 @@ body{
 
 .row{
 	margin:0 (@grid-column-padding / -2);
-	//padding-bottom:@grid-column-padding / 2;
 	.clearfix();
 }
 
@@ -33,53 +32,75 @@ body{
 }
 
 .type(@type) when (@type = width) {
-	width:percentage( @index / @grid-columns,5);	
+	width:percentage( @index / @grid-columns);
+//	width: calc(~"100% / @{idx}");
 }
   
 .type(@type) when (@type = left) {
 	position:relative;
-	left:percentage( @index / @grid-columns,5);	
+	left:percentage( @index / @grid-columns);	
+//	left: calc(~"100% / @{idx}");
 }
   
 .type(@type) when (@type = right) {
 	position:relative;
-	right:percentage( @index / @grid-columns,5);
+	right:percentage( @index / @grid-columns);
+//	right: calc(~"100% / @{idx}");
 }
 
 .type(@type) when (@type = margin-left) {
-		margin-left:percentage( @index / @grid-columns,5);
+	margin-left:percentage( @index / @grid-columns);
+//	margin-left: calc(~"100% / @{idx}");
 }
 
 
 .colX (@index,@prefix:-,@type:width) when (@index > 0) {
 	.col@{prefix}@{index}{
+//		@idx : @grid-columns / @index;
 		.type(@type);
 	}
   .colX(@index - 1,@prefix,@type);
 }
-.colX (0) {}
-	
-	
-.colX (@grid-columns); 
-//.colX (@grid-columns,-push-,left);
-//.colX (@grid-columns,-pull-,right);
-//.colX (@grid-columns,-offset-,margin-left);
 
+
+//Small
+.colX (@grid-columns); 
+@media (max-width: @mobile-width) {
+	.colX (@grid-columns,-push-,left);
+	.colX (@grid-columns,-pull-,right);
+	.colX (@grid-columns,-offset-,margin-left);
+	.hidden{
+			display:none !important;
+			visibility:hidden !important;
+	}	
+}
+
+
+//medium devices
 @media (min-width: @mobile-width) {
 	.colX (@grid-columns,-sm-,width);
+}
+@media (min-width: @mobile-width) and (max-width: @tablet-width) {
 	.colX (@grid-columns,-sm-push-,left);
     .colX (@grid-columns,-sm-pull-,right);
 	.colX (@grid-columns,-sm-offset-,margin-left);
+	.hidden-sm{
+		display:none !important;
+		visibility:hidden !important;
+	}
 }
 
+
+//large devices
 @media (min-width: @tablet-width) {
 	.colX (@grid-columns,-lg-,width);
 	.colX (@grid-columns,-lg-push-,left);
     .colX (@grid-columns,-lg-pull-,right);
 	.colX (@grid-columns,-lg-offset-,margin-left);
+	.hidden-lg{
+		display:none !important;
+		visibility:hidden !important;
+	}
 }
-
-
-	
 
 
