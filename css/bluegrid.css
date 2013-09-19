@@ -1256,6 +1256,8 @@ body {
   .col-offset-1 {
     margin-left: 8.333333333333332%;
   }
+}
+@media (max-width: 479px) {
   .hidden {
     display: none !important;
     visibility: hidden !important;
@@ -1432,6 +1434,8 @@ body {
   .col-sm-offset-1 {
     margin-left: 8.333333333333332%;
   }
+}
+@media (min-width: 480px) and (max-width: 767px) {
   .hidden-sm {
     display: none !important;
     visibility: hidden !important;
