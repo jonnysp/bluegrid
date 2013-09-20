@@ -23,17 +23,14 @@
 	}
 }
 
-//input.btn {
-//  	height:@line-height + (@padding-vertical * 2) ;
-//}
 
 .btn{
-
+    height:@line-height + (@padding-vertical * 2) + (@border-width * 2);
 	font-size: @font-size;
     line-height: @line-height;
 	text-decoration: none;
 	display: inline-block;	
-	padding:@padding-vertical @padding-vertical;	
+	padding:@padding-vertical @padding-horizontal;	
 	cursor: pointer;
 	border: @border-width solid @default;
 	white-space:nowrap;
@@ -96,6 +93,9 @@
 			display:table-cell;
 			float:none;
 			width: 1%;
+		}
+		& > :not(:first-child) {
+			border-left:0px;
 		}
 	}
 

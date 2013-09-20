@@ -20,10 +20,12 @@ label{
 }
 	
 .form-control{
-	display:block;
+	display: block;
+	line-height: @line-height;
+	height:@line-height + (@padding-vertical * 2) + (@border-width * 2);
 	width: 100%;
 	border: @border-width solid @lightgray;
-	padding:@padding-vertical @padding-horizontal;
+	padding: @padding-vertical @padding-horizontal;
 	
 	color:@text-color; 
 	background-color:@body-background;
@@ -38,19 +40,33 @@ label{
 	}
 }
 
+textarea.form-control{
+	resize: vertical;	
+}
+
+textarea.form-control,
+select[size].form-control {
+    height: auto;
+}
+
+
+
 .form-horizontal{
+
+	& label{
+		display:block;
+		padding-top:@padding-vertical + @border-width;
+		@media (min-width: @tablet-width) {
+			text-align:right;
+		}
+	}
 	
 	& .form-group{
 		margin-left:(@grid-column-padding / -2);
 		margin-right:(@grid-column-padding / -2);
 	}
 	
-	& label{
-		padding-top:@padding-vertical - @border-width;
-		@media (min-width: @tablet-width) {
-			text-align:right;
-		}
-	}
+
 }
 
 .gen-form-group(@color:@default){
@@ -67,7 +83,7 @@ label{
 }
 
 .form-group{
-	margin-bottom:@grid-column-padding / 2;
+	margin-bottom:@elementpadding;
 	.clearfix();
 	
 
@@ -89,3 +105,35 @@ label{
 
 }
 
+
+
+
+.input-group{
+	display:table;
+	white-space:nowrap;
+
+	& > * {
+		.roundcorner();
+		display:table-cell;
+		vertical-align:middle;
+		width:1%;
+		margin:0;
+	}
+	
+	& .form-control{
+		width:100%;
+	}
+
+	& > :not(:first-child) {
+		border-left:0px;
+	}
+
+	& > :first-child{
+		.roundcorner-left(@corner-radius);
+	}
+	& > :last-child{
+		.roundcorner-right(@corner-radius);
+	}		
+
+	
+}
