@@ -1828,12 +1828,11 @@ body {
   font-weight: normal;
   font-style: normal;
 }
-[class^="icon-"]:before,
-[class*="icon-"]:before {
+.icon {
   font-family: 'fontello';
   font-style: normal;
   font-weight: normal;
-  line-height: 1;
+  line-height: 20px;
   width: 1em;
   speak: none;
   text-align: center;
@@ -2742,7 +2741,7 @@ label {
   line-height: 20px;
   height: 38px;
   width: 100%;
-  border: 1px solid #dddddd;
+  border: 1px solid #8d9091;
   padding: 8px 10px;
   color: #333333;
   background-color: #ffffff;
@@ -2750,27 +2749,27 @@ label {
   border-radius: 5px;
   -webkit-box-shadow: 0px 0px 0px 0px #ffffff ;
   box-shadow: 0px 0px 0px 0px #ffffff ;
-  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  -moz-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  -ms-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -webkit-transition: box-shadow ease-in-out .15s;
+  -moz-transition: box-shadow ease-in-out .15s;
+  -ms-transition: box-shadow ease-in-out .15s;
+  -o-transition: box-shadow ease-in-out .15s;
+  transition: box-shadow ease-in-out .15s;
 }
 .form-control:focus {
-  border-color: #a7a9aa;
-  -webkit-box-shadow: 0px 0px 8px 0px rgba(167, 169, 170, 0.25) ;
-  box-shadow: 0px 0px 8px 0px rgba(167, 169, 170, 0.25) ;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(167, 169, 170, 0.5) ;
+  box-shadow: 0px 0px 8px 0px rgba(167, 169, 170, 0.5) ;
 }
 textarea.form-control {
   resize: vertical;
+  min-height: 38px;
 }
 textarea.form-control,
 select[size].form-control {
   height: auto;
 }
 .form-horizontal label {
-  display: inline-block;
-  vertical-align: middle;
+  display: block;
+  padding-top: 9px;
 }
 @media (min-width: 768px) {
   .form-horizontal label {
@@ -2796,70 +2795,68 @@ select[size].form-control {
   color: #d9534f;
 }
 .form-group.control-red .form-control {
-  border-color: #d9534f;
+  border-color: #c9302c;
 }
 .form-group.control-red .form-control:focus {
   -webkit-box-shadow: 0px 0px 8px 0px rgba(217, 83, 79, 0.5) ;
   box-shadow: 0px 0px 8px 0px rgba(217, 83, 79, 0.5) ;
-  border-color: #d9534f;
 }
 .form-group.control-orange label {
   color: #f0ad4e;
 }
 .form-group.control-orange .form-control {
-  border-color: #f0ad4e;
+  border-color: #ec971f;
 }
 .form-group.control-orange .form-control:focus {
   -webkit-box-shadow: 0px 0px 8px 0px rgba(240, 173, 78, 0.5) ;
   box-shadow: 0px 0px 8px 0px rgba(240, 173, 78, 0.5) ;
-  border-color: #f0ad4e;
 }
 .form-group.control-green label {
   color: #5cb85c;
 }
 .form-group.control-green .form-control {
-  border-color: #5cb85c;
+  border-color: #449d44;
 }
 .form-group.control-green .form-control:focus {
   -webkit-box-shadow: 0px 0px 8px 0px rgba(92, 184, 92, 0.5) ;
   box-shadow: 0px 0px 8px 0px rgba(92, 184, 92, 0.5) ;
-  border-color: #5cb85c;
 }
 .form-group.control-blue label {
   color: #5bc0de;
 }
 .form-group.control-blue .form-control {
-  border-color: #5bc0de;
+  border-color: #31b0d5;
 }
 .form-group.control-blue .form-control:focus {
   -webkit-box-shadow: 0px 0px 8px 0px rgba(91, 192, 222, 0.5) ;
   box-shadow: 0px 0px 8px 0px rgba(91, 192, 222, 0.5) ;
-  border-color: #5bc0de;
 }
 .form-group.control-darkblue label {
   color: #428bca;
 }
 .form-group.control-darkblue .form-control {
-  border-color: #428bca;
+  border-color: #3071a9;
 }
 .form-group.control-darkblue .form-control:focus {
   -webkit-box-shadow: 0px 0px 8px 0px rgba(66, 139, 202, 0.5) ;
   box-shadow: 0px 0px 8px 0px rgba(66, 139, 202, 0.5) ;
-  border-color: #428bca;
 }
 .input-group {
   display: table;
   white-space: nowrap;
+  width: 100%;
 }
 .input-group > * {
   -webkit-border-radius: 0;
   border-radius: 0;
+  height: 38px;
+  padding: 8px 10px;
   display: table-cell;
   vertical-align: middle;
   width: 1%;
   margin: 0;
 }
-.input-group .form-control {
+.input-group > .form-control {
   width: 100%;
 }
 .input-group > :not(:first-child) {

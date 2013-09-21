@@ -24,7 +24,7 @@ label{
 	line-height: @line-height;
 	height:@line-height + (@padding-vertical * 2) + (@border-width * 2);
 	width: 100%;
-	border: @border-width solid @lightgray;
+	border: @border-width solid darken(@default,10%);;
 	padding: @padding-vertical @padding-horizontal;
 	
 	color:@text-color; 
@@ -32,16 +32,16 @@ label{
 
 	.roundcorner(@corner-radius);
 	.shadow(0px,0px,0px,0px, @body-background);	
-	.transition(~"border-color ease-in-out .15s, box-shadow ease-in-out .15s");
+	.transition(~"box-shadow ease-in-out .15s");
 	
 	&:focus{
-		border-color:  @default;
-		.shadow(0px,0px,8px,0px, fade(@default,25%));
+		.shadow(0px,0px,8px,0px, fade(@default,50%));
 	}
 }
 
 textarea.form-control{
-	resize: vertical;	
+	resize: vertical;
+	min-height:@line-height + (@padding-vertical * 2) + (@border-width * 2);
 }
 
 textarea.form-control,
@@ -74,10 +74,9 @@ select[size].form-control {
 		color:@color;
 	}
 	& .form-control{
-		border-color:  @color;
+		border-color: darken(@color,10%);
 		&:focus{
 			.shadow(0px,0px,8px,0px, fade(@color,50%));
-			border-color:  @color;
 		}
 	}
 }
@@ -111,16 +110,19 @@ select[size].form-control {
 .input-group{
 	display:table;
 	white-space:nowrap;
+	width:100%;
 
 	& > * {
 		.roundcorner();
+		height:@line-height + (@padding-vertical * 2) + (@border-width * 2);
+		padding: @padding-vertical @padding-horizontal;
 		display:table-cell;
 		vertical-align:middle;
 		width:1%;
 		margin:0;
 	}
 	
-	& .form-control{
+	& > .form-control{
 		width:100%;
 	}
 
