@@ -1,15 +1,15 @@
 //panelsettings
 
 .gen-panel(@color:@default){
-	border-color:@color;
+	border-color:darken(@color,10%);
 	& > .panel-header{
-		background-color:@color;
+		background-color:darken(@color,10%);
 		.textcolor(@color);
 	}
 	& > .panel-footer{
-		border-top-color:@color;
-		color:@color;
-		background-color:lighten(@color,30%);
+		border-top-color:darken(@color,10%);
+//		background-color:lighten(@color,30%);
+//		.textcolor(@color);
 	}
 }
 
@@ -18,12 +18,15 @@
 
 .panel{
 
-	border-width: @border-width;
-	border-style: solid;
+
 	margin-bottom:@elementpadding;
 	padding:@contentpadding;
-	.roundcorner(@corner-radius);
 	background-color:@body-background;
+	border-width: @border-width;
+	border-style: solid;
+	.bordercolor(@default,-);
+	.textcolor(@body-background);
+	.roundcorner(@corner-radius);
 	
 	& > .panel-header{
 		display: block;
@@ -31,6 +34,9 @@
 		padding:@contentpadding;
 		margin:@contentpadding * -1;
 		margin-bottom:@contentpadding;
+		.backgroundcolor(@default);
+		.textcolor(@default);
+		
 		.roundcorner-top(@corner-radius - 1);
 		& > *{
 			margin:0;
@@ -46,6 +52,7 @@
 		margin-top:@contentpadding;
 		border-top-width: @border-width;
 	    border-top-style: solid;
+		.bordercolor(@default,top);
 		.roundcorner-bottom(@corner-radius - 1);
 		& > *{
 			margin:0;
@@ -53,9 +60,6 @@
 	}
 
 
-
-	.gen-panel();
-	
 	&.panel-gray{
 		.gen-panel(@gray);
 	}

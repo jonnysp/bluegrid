@@ -14,3 +14,5 @@ Echo "make bluegrid.js"
 copy /b js\alert.js+js\collapse.js+js\modal.js+js\popover.js+js\tip.js js\bluegrid.js /Y > nul
 copy js\bluegrid.js _docs\js\bluegrid.js /Y > nul
 
+
+pause

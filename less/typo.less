@@ -1,13 +1,14 @@
 *, *:before, *:after{ 
- 	.box-sizing(border-box);
+ 	.box-sizing();
 }
 
 body{
+	font-family:@font-family;
 	font-size: @font-size;
 	line-height :@line-height-base;
-	color:@text-color;
 	background-color: @body-background;
-	font-family:@font-family;
+	.textcolor(@body-background);
+	
 }
 
 .content{
@@ -35,7 +36,9 @@ h6,.h6{	font-size: ceil(@font-size * 0.80);}
 .page-header{
 	display:block;
 	padding-bottom:@contentpadding;
-	border-bottom:@border-width solid @lightgray;
+	border-bottom-width: @border-width;
+	border-bottom-style: solid;
+	.bordercolor(@default,bottom);
 }
 
 p {

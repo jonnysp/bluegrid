@@ -7,6 +7,7 @@
 	padding-left:0;
 	margin:@contentpadding 0;
 	
+	
 	& > li{
 		display:inline-block;
 		margin-bottom:@contentpadding / 2;
@@ -16,10 +17,11 @@
 			text-decoration: none;
 			outline:none;
 			padding:@padding-vertical @padding-horizontal;
+			.textcolor(@body-background);
 		}
 		
 		&.active a,& a:hover{
-			background-color:@default;
+			.backgroundcolor(@default);
 			.textcolor(@default);
 			.roundcorner(@corner-radius);
 		}

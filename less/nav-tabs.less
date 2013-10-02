@@ -3,33 +3,40 @@
 	padding-left: 0;
 	list-style:none;
 	display:block;	
-	border-bottom:@border-width solid @lightgray;	
+	border-bottom-width:@border-width;
+	border-bottom-style:solid;
+	.bordercolor(@default,bottom);	
 	
 	&>li{
 
 		display:inline-block;
 		margin-bottom: @border-width * -1;
 		.roundcorner-top(@corner-radius);
+		
 
 		&:hover{
-			background-color:@default;
+			.backgroundcolor(@default);
 			&>a{
 				.textcolor(@default);
 			}
 		}	
 
 		&>a{
+			
+
 			padding:@padding-vertical @padding-horizontal;
 			display:block;
 			text-decoration: none;
 			outline:none;
+			.textcolor(@body-background);
 		}
 		
 		&.active{
 			border-width: @border-width @border-width 0 @border-width;
-		    border-style:solid;
-			border-color:@lightgray;
-			background-color:@body-background;
+		    border-style: solid;
+			.bordercolor(@default,-);	
+			
+			background-color: @body-background;
 			&>a{
 				.textcolor(@body-background);
 			}
@@ -48,7 +55,9 @@
 				width: 1%;
 				& > a {
 					white-space:nowrap;
-					border-bottom:@border-width solid @lightgray;
+					border-bottom-width:@border-width;
+					border-bottom-style:solid;
+					.bordercolor(@default,bottom);	
 					text-align: center;
 					vertical-align:middle;
 				}				
@@ -64,7 +73,10 @@
 	//tabs bottom
 	&.nav-tabs-bottom{
 		border-bottom-width: 0;
-		border-top:@border-width solid @lightgray;
+		border-top-width:@border-width;
+		border-top-style:solid;
+		.bordercolor(@default,top);	
+		
 		&>li{
 			margin-bottom:0;
 			margin-top: @border-width * -1;
@@ -80,7 +92,9 @@
 			border-width:0px;
 			& > li{
 					& > a {
-						border-top:@border-width solid @lightgray;
+						border-top-width:@border-width;
+						border-top-style:solid;
+						.bordercolor(@default,top);	
 						border-bottom-width:0px;
 					}				
 					&.active{

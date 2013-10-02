@@ -1,11 +1,11 @@
 
-.gen-btn(@color:@default){
+.gen-btn(@color){
 	background-color:@color;
 	border-color:darken(@color,10%);
 	.textcolor(@color);
 
 	&:hover,&.hover,&:active,&.active {
-		background-color: darken(@color,5%);
+		background-color: darken(@color,10%);
 	}	
 	
 	&:active , &.active{
@@ -27,15 +27,31 @@
 .btn{
     height:@line-height + (@padding-vertical * 2) + (@border-width * 2);
 	font-size: @font-size;
-    line-height: @line-height;
+    line-height: @line-height-base;
+	border-collapse:collapse;
+	
 	text-decoration: none;
 	display: inline-block;	
 	padding:@padding-vertical @padding-horizontal;	
 	cursor: pointer;
-	border: @border-width solid @default;
+	border-width: @border-width;
+	border-style: solid;
+	.bordercolor(darken(@default,10%));
+	
 	white-space:nowrap;
 	.roundcorner(@corner-radius);
 	margin-bottom: @contentpadding;
+	
+	background-color:@default;
+	.textcolor(@default);
+	
+	&:hover,&.hover,&:active,&.active {
+		.backgroundcolor(@default);
+	}	
+	
+	&:active , &.active{
+		box-shadow: 0 3px @padding-vertical/2 fade(darken(@default,30%),50%) inset;
+	}
 	
 	&.block{
 		display:block;
@@ -49,10 +65,14 @@
 
 	&:focus,&.focus,&:active,&.active{
 		outline:none;
+		.textcolor(@default);
 	}
 
-	.gen-btn();
-	
+
+
+
+
+//------------------------
 	&.btn-red{
 		.gen-btn(@red);
 	}

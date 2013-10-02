@@ -7,7 +7,12 @@ fieldset{
 }
 
 legend{
-	border-bottom:@border-width solid @lightgray;
+	
+
+	border-bottom-width:@border-width;
+	border-bottom-style:solid;
+	.bordercolor(@default,buttom);	
+	
 	display:block;
 	width:100%;
 	font-size: ceil(@font-size * 1.25);
@@ -20,22 +25,25 @@ label{
 }
 	
 .form-control{
-	display: block;
 	line-height: @line-height;
-	height:@line-height + (@padding-vertical * 2) + (@border-width * 2);
+	display: block;
 	width: 100%;
-	border: @border-width solid darken(@default,10%);;
-	padding: @padding-vertical @padding-horizontal;
+	height:@line-height + (@padding-vertical * 2) + (@border-width * 2);
 	
-	color:@text-color; 
+	padding: @padding-vertical @padding-horizontal;
 	background-color:@body-background;
-
+	
+	border-width: @border-width;
+	border-style: solid;
+	
+	.bordercolor(@default,-);
+	.textcolor(@body-background);
 	.roundcorner(@corner-radius);
 	.shadow(0px,0px,0px,0px, @body-background);	
 	.transition(~"box-shadow ease-in-out .15s");
 	
 	&:focus{
-		.shadow(0px,0px,8px,0px, fade(@default,50%));
+		.shadow(0px,0px,8px,0px, fade(@default,10%));
 	}
 }
 

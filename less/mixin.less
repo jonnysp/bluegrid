@@ -121,20 +121,25 @@
 }
 
 
-.scale(@factor) {
-    -webkit-transform:  scale(@factor);
-    -moz-transform:     scale(@factor);
-    -ms-transform:      scale(@factor);
-    -o-transform:       scale(@factor);
-    transform:          scale(@factor);
+.transform(...) {
+	  -webkit-transform: @arguments;
+//	  -moz-transform: @arguments;
+	  -o-transform: @arguments;
+	  -ms-transform: @arguments;
+	  transform: @arguments;
 }
- 
+
+.scale(@factor) {
+    .transform(scale(@factor));
+}
+.scale(@x, @y){
+	.transform(scale(@x, @y));
+} 
 .translate (@x, @y) {
-    -webkit-transform:  translate(@x, @y);
-    -moz-transform:     translate(@x, @y);
-    -ms-transform:      translate(@x, @y);
-    -o-transform:       translate(@x, @y);
-    transform:          translate(@x, @y);
+    .transform( translate(@x, @y));
+}
+.rotate(@deg){
+	.transform( rotate(@deg));
 }
 
 
@@ -158,12 +163,68 @@
 	//opacity: @opacity;
 //}
 
+
+//-----------------Switch backgroundcolor
+.backgroundcolor(@color) when (lightness(@color) >= 70%) {
+	background-color:darken(@color,20%);
+}
+.backgroundcolor(@color) when (lightness(@color) < 70%) {
+	background-color:lighten(@color,20%);
+}
+
+
+//-----------------Switch textcolor
 .textcolor(@color) when (lightness(@color) >= 70%) {
-	color:darken(@color,75%);
+	color:darken(@color,60%);
 }
 .textcolor(@color) when (lightness(@color) < 70%) {
-	color:lighten(@color,75%);
+	color:lighten(@color,60%);
 }
+
+
+//-----------------Switch Bordercolor
+.bordercolor(@color,@prefix:-) when (lightness(@color) >= 70%) {
+	.bcl(@color,@prefix);
+}
+	.bcl(@color,@prefix) when (@prefix = -) {
+		border-color:darken(@color,20%);
+	}
+	.bcl(@color,@prefix) when (@prefix = left) {
+		border-left-color:darken(@color,20%);
+	}
+	.bcl(@color,@prefix) when (@prefix = right) {
+		border-right-color:darken(@color,20%);
+	}
+	.bcl(@color,@prefix) when (@prefix = bottom) {
+		border-bottom-color:darken(@color,20%);
+	}
+	.bcl(@color,@prefix) when (@prefix = top) {
+		border-top-color:darken(@color,20%);
+	}
+
+
+
+.bordercolor(@color,@prefix:-) when (lightness(@color) < 70%) {
+	.bcd(@color,@prefix);
+}
+	.bcd(@color,@prefix) when (@prefix = -) {
+		border-color:lighten(@color,20%);
+	}
+	.bcd(@color,@prefix) when (@prefix = left) {
+		border-left-color:lighten(@color,20%);
+	}
+	.bcd(@color,@prefix) when (@prefix = right) {
+		border-right-color:lighten(@color,20%);
+	}
+	.bcd(@color,@prefix) when (@prefix = bottom) {
+		border-bottom-color:lighten(@color,20%);
+	}
+	.bcd(@color,@prefix) when (@prefix = top) {
+		border-top-color:lighten(@color,20%);
+	}
+
+
+
 
 
 
@@ -186,8 +247,73 @@
 
 .box-sizing(@boxmodel) {
 	-webkit-box-sizing:border-box; 
-	//-moz-box-sizing:border-box; 
+//	-moz-box-sizing:border-box; 
 	-ms-box-sizing:border-box; 
 	box-sizing:border-box; 	
 }
 
+.rotate-90{
+	.rotate(90deg);
+}
+.rotate-180{
+	.rotate(180deg);
+}
+.rotate-270{
+	.rotate(270deg);
+}
+.flip-vertical{
+	.scale(1,-1);
+}
+.flip-horizontal{
+	.scale(-1, 1);
+}
+
+.spin{
+		  -webkit-animation: spin 3s linear infinite;
+//			 -moz-animation: spin 3s linear infinite;
+			  -ms-animation: spin 3s linear infinite;
+			   -o-animation: spin 3s linear infinite;
+				  animation: spin 3s linear infinite;
+}
+//@-moz-keyframes progress-spin {
+//  from {
+//    .rotate(0deg);
+//  }
+//  to {
+//    .rotate(359deg);
+//  }
+//}
+@-webkit-keyframes spin {
+	 from {
+    .rotate(0deg);
+  }
+  to {
+    .rotate(359deg);
+  }
+}
+@-ms-keyframes spin {
+  from {
+    .rotate(0deg);
+  }
+  to {
+    .rotate(359deg);
+  }
+}
+
+@-o-keyframes spin {
+  from {
+ 	 .rotate(0deg);
+  }
+  to {
+    .rotate(359deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    .rotate(0deg);
+  }
+  to {
+    .rotate(359deg);
+  }
+}

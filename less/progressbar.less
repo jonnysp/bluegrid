@@ -2,16 +2,15 @@
 
 .gen-progress(@color:@default){
 
-	background: @body-background;
-	border-color: @color;
+	border-color: darken(@color,10%);
 	//.shadow(0px,3px,@btn-padding-topbottom/2,0px, fade(@color,50%) ,inset);
 	
 	&> .progress-bar{
 		.textcolor(@color);
-		border-right:@border-width solid @color;
+		border-right:@border-width solid darken(@color,10%);
 		
-		@startcolor : @color;
-		@stopcolor	: lighten(@color,5%);
+		@startcolor : darken(@color,10%);
+		@stopcolor	: @color;
 	
 		background: @startcolor;
 		background: -moz-linear-gradient(45deg,  @startcolor 25%, @stopcolor 25%, @stopcolor 50%, @stopcolor 50%, @startcolor 50%, @startcolor 75%, @stopcolor 75%, @stopcolor 100%);
@@ -36,6 +35,9 @@
 		
 		border-width: @border-width;
 		border-style: solid;
+		background: @body-background;
+		.bordercolor(darken(@default,10%));
+
 
 		&> .progress-bar{
 			display:block;
@@ -52,9 +54,31 @@
 			  -ms-animation: progress-bar 3s linear infinite;
 			   -o-animation: progress-bar 3s linear infinite;
 				  animation: progress-bar 3s linear infinite;
+			
+				  
+			.textcolor(@default);
+
+			border-right-width: @border-width;
+		    border-right-style: solid;
+			.bordercolor(darken(@default,10%),right);
+			
+			@startcolor : darken(@default,10%);
+			@stopcolor	: @default;
+		
+			background: @startcolor;
+			background: -moz-linear-gradient(45deg,  @startcolor 25%, @stopcolor 25%, @stopcolor 50%, @stopcolor 50%, @startcolor 50%, @startcolor 75%, @stopcolor 75%, @stopcolor 100%);
+			background: -webkit-gradient(linear, left bottom, right top, color-stop(25%,@startcolor), color-stop(25%,@stopcolor), color-stop(50%,@stopcolor), color-stop(50%,@stopcolor), color-stop(50%,@startcolor), color-stop(75%,@startcolor), color-stop(75%,@stopcolor), color-stop(100%,@stopcolor));
+			background: -webkit-linear-gradient(45deg,  @startcolor 25%,@stopcolor 25%,@stopcolor 50%,@stopcolor 50%,@startcolor 50%,@startcolor 75%,@stopcolor 75%,@stopcolor 100%);
+			background: -o-linear-gradient(45deg,  @startcolor 25%,@stopcolor 25%,@stopcolor 50%,@stopcolor 50%,@startcolor 50%,@startcolor 75%,@stopcolor 75%,@stopcolor 100%);
+			background: -ms-linear-gradient(45deg,  @startcolor 25%,@stopcolor 25%,@stopcolor 50%,@stopcolor 50%,@startcolor 50%,@startcolor 75%,@stopcolor 75%,@stopcolor 100%);
+			background: linear-gradient(45deg,  @startcolor 25%,@stopcolor 25%,@stopcolor 50%,@stopcolor 50%,@startcolor 50%,@startcolor 75%,@stopcolor 75%,@stopcolor 100%);
+	//		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@{startcolor}', endColorstr='@{stopcolor}',GradientType=1 );
+			background-size:  (@contentpadding * 3) (@contentpadding * 3);				  
+				  
+	  
 		}
 
-		.gen-progress();
+
 
 		&.progress-red{
 			.gen-progress(@red);

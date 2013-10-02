@@ -4,7 +4,10 @@
 	display:block;
 	list-style:none;
 	padding-left: 0;
-	border:@border-width solid @lightgray;	
+
+	border-width:@border-width;
+	border-style:solid;
+	.bordercolor(@default,-);	
 	.roundcorner(@corner-radius);
 	
 	& > li{
@@ -14,10 +17,11 @@
 			text-decoration: none;
 			outline:none;
 			padding:@padding-vertical @padding-horizontal;
+			.textcolor(@body-background);
 		}
 		
 		&.active a,& a:hover{
-			background-color:@default;
+			.backgroundcolor(@default);
 			.textcolor(@default);
 		}
 		

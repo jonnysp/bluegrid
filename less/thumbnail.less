@@ -1,8 +1,5 @@
 
 
-.gen-thumbnail(@color:@lightgray){
-	border-color:@color;
-}
 
 
 
@@ -11,8 +8,12 @@
 	position:relative;
 	padding:@contentpadding;
 	margin-bottom:@elementpadding;
-	color:@text-color;
+	background-color:@body-background;
+	
+	.bordercolor(@default,-);	
+	.textcolor(@body-background);
 	.roundcorner(@corner-radius);
+	
 	border-width:@border-width;
 	border-style:solid;
 	.transition();
@@ -21,10 +22,9 @@
 		width:100%;
 	}
 
-	.gen-thumbnail();
 	
 }
 
 a.thumbnail:hover,a.thumbnail:focus{
-	border-color:@default;
+	.bordercolor(lighten(@default,10%),-);
 }

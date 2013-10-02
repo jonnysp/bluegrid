@@ -2,10 +2,12 @@
 //------------------------------------
 
 .gen-callout(@color:@default){
-	color:@color;
-	background-color:lighten(@color,30%);
-	border-right-color:lighten(@color,30%);
-	border-left-color:@color;
+	.textcolor(@color);
+	
+	border-right-color:@color;
+	background-color:@color;
+	border-left-color:darken(@color,10%);
+	
 }
 
 .callout{
@@ -20,6 +22,14 @@
 
 	border-left-width:@contentpadding;
 	border-left-style:solid;
+	.textcolor(@default);
+
+	.bordercolor(darken(@default,10%),left);
+	.bordercolor(@default,right);
+	.backgroundcolor(@default);
+
+
+
 
 	& > .ribbon.ribbon-left , & > .ribbon.ribbon-full{
 		margin-left: @contentpadding * -3;
@@ -37,7 +47,7 @@
 		}
 	}
 	
-	.gen-callout();
+
 
 	&.callout-red{
 		.gen-callout(@red);

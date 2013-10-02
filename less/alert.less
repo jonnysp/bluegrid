@@ -1,8 +1,8 @@
 
 .gen-alert(@color:@default){
-	color:@color;
-	background-color:lighten(@color,30%);
-	border-color: @color;
+	.textcolor(@color);
+	background-color:@color;
+	border-color: darken(@color,10%);
 }
 
 .alert{
@@ -14,12 +14,16 @@
 	border-style: solid;
 	.roundcorner(@corner-radius);
 
+	.textcolor(@default);
+	.backgroundcolor(@default);
+	.bordercolor(darken(@default,10%),-);
+
+
 //    & > .content{
 //		&>:first-child { margin-top: 0; }
 //		&>:last-child { margin-bottom:0; }	
 //	}
 
-	.gen-alert();
 
 	&.alert-red{
 		.gen-alert(@red);
@@ -40,7 +44,4 @@
 	&.alert-darkblue{
 		.gen-alert(@darkblue);
 	}
-
-
-
 }

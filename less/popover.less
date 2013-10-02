@@ -4,34 +4,34 @@
 
 .gen-popover(@color:@default){
 
-	border-color:@color;
+	border-color:darken(@color,10%);
 	.shadow(0px,0px,10px,0px, fade(darken(@color,50%),20%));
 	
 	
 	&>.popover-title{
-	 	background-color:@color;
+	 	background-color:darken(@color,10%);
 		.textcolor(@color);
-		border-bottom:@border-width solid @color;
+		border-bottom:@border-width solid darken(@color,10%);
 	}
 	
 	&.top:before{
-		border-color: @color transparent transparent transparent;
+		border-color: darken(@color,10%) transparent transparent transparent;
 	}
 	
 	&.bottom:before{
-		border-color:transparent transparent @color transparent;
+		border-color:transparent transparent darken(@color,10%) transparent;
 	}
 	
 	&.bottom:after{
-		border-color: transparent transparent @color transparent;
+		border-color: transparent transparent darken(@color,10%) transparent;
 	}
 	
 	&.left:before{
-		border-color: transparent transparent transparent @color;
+		border-color: transparent transparent transparent darken(@color,10%);
 	}
 
 	&.right:before{
-		border-color: transparent @color transparent transparent;
+		border-color: transparent darken(@color,10%) transparent transparent;
 	}
 	
 

@@ -8,33 +8,33 @@
 	}
 	
 	& > tfoot{
-		color:@color;
-		background-color:lighten(@color,30%);
+		//.textcolor(@color);
+		background-color:lighten(@color,20%);
 	}
 	
 	th,td{
-		border-top:@border-width solid @color;
+		border-top:@border-width solid darken(@color,10%);
 	}
 	
 	&.table-striped tr:nth-child(even){
-		  background-color: lighten(@color,20%);
+		  background-color: lighten(@color,10%);
 	}
 	
 	&.table-striped-vertical colgroup > col:nth-child(even) {
-		background-color: lighten(@color,20%);
+		background-color: lighten(@color,10%);
 	}
 	
 	&.table-hover{
 		tbody > tr:hover {
-		  background-color: lighten(@color,30%);
-		  .textcolor(lighten(@color,30%));
+		  background-color: lighten(@color,20%);
+		  .textcolor(lighten(@color,20%));
 		}
 	}
 	
 	&.table-borderd{
 		border:@border-width solid @color;
 		td{
-			border:@border-width solid @color;
+			border:@border-width solid darken(@color,10%);
 			
 		}
 	}
@@ -54,6 +54,12 @@
 	border-collapse: collapse;
 	margin-bottom:@elementpadding;
 
+	& > tbody > tr > th,& > thead{
+		.backgroundcolor(@default);
+		.textcolor(@default);
+	}
+
+
 	& > caption{
 		font-weight:bold;
 		text-transform:uppercase;
@@ -68,12 +74,42 @@
 		text-align:left;
 		vertical-align:top;
 		padding:@padding-vertical @padding-horizontal;
+		border-top-width:@border-width;
+		border-top-style:solid;
+		.bordercolor(darken(@default,10%),top);
 	}
 	
+	& > tfoot{
+		.backgroundcolor(lighten(@default,20%));
+	}
+	
+	&.table-striped tr:nth-child(even){
+		.backgroundcolor(lighten(@default,10%));
+	}
 
+	&.table-striped-vertical colgroup > col:nth-child(even) {
+		.backgroundcolor(lighten(@default,10%));
+	}
+
+	&.table-hover{
+		tbody > tr:hover {
+		  .backgroundcolor(lighten(@default,30%));
+		  .textcolor(@default);
+		}
+	}
 	
-	.gen-table();
-	
+	&.table-borderd{
+		border-width:@border-width;
+		border-style:solid;
+		.bordercolor(@default,-);
+
+		td{
+     		border-width:@border-width;
+			border-style:solid;
+			.bordercolor(darken(@default,10%),-);
+		}
+	}
+
 	&.table-red{
 		.gen-table(@red);
 	}

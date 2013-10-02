@@ -3,10 +3,10 @@
 .gen-ribbon(@color:@default){
 
 	background-color:@color;
-	.textcolor(@color);
 	.shadow(0,0,5px,0px, fade(darken(@color,50%),50%));
+	.textcolor(@color);
 
-	@arrow-color:darken(@color,20%);
+	@arrow-color:darken(@color,10%);
 
 	&.ribbon-full{
 		&:before,&:after {
@@ -36,6 +36,12 @@
 	padding:@padding-vertical @padding-horizontal;
 	z-index:1;
 	display:block;
+	
+	.backgroundcolor(@default);
+//	background-color:darken(@default,10%);
+	.textcolor(@default);
+	.shadow(0,0,5px,0px, fade(darken(@default,50%),50%));
+	
 	
 	&.ribbon-full{
 		margin:@contentpadding ((@contentpadding * 2 + @border-width) * -1) 0 ((@contentpadding * 2 + @border-width) * -1);
